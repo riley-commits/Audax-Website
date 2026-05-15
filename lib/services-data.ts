@@ -646,7 +646,7 @@ export const servicesData: ServiceData[] = [
       "CTOs who need guidance on AI architecture decisions",
     ],
     process: [
-      { step: 1, title: "AI Opportunity Workshop", description: "2-day workshop mapping your business processes to AI capabilities and identifying quick wins and strategic bets.", duration: "1 week" },
+      { step: 1, title: "AI Opportunity Workshop", description: "30-minute call to map out your business processes and AI capabilities to identify quick wins and strategic bets.", duration: "1 week" },
       { step: 2, title: "Use Case Prioritization", description: "Scoring framework to prioritize by ROI, feasibility, and strategic value.", duration: "2–3 days" },
       { step: 3, title: "Proof of Concept", description: "Build a working PoC for the highest-priority use case to validate feasibility and ROI.", duration: "2–4 weeks" },
       { step: 4, title: "Production Implementation", description: "Full implementation with robust evaluation, monitoring, and feedback loops.", duration: "4–16 weeks" },

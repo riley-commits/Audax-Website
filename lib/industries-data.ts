@@ -93,10 +93,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "42%", label: "Reduction in administrative hours per clinic per week" },
-      { stat: "8 weeks", label: "Average time to launch a production patient portal" },
-      { stat: "60%", label: "Drop in patient no-show rate with automated reminders" },
-      { stat: "100%", label: "PIPEDA-compliant architecture on every engagement" },
+      { stat: "8–12 wks", label: "Typical timeline to launch a production patient portal" },
+      { stat: "100%", label: "PIPEDA-compliant architecture on every healthcare engagement" },
+      { stat: "HL7 & FHIR", label: "EHR integration standards supported across major platforms" },
+      { stat: "2–3 wks", label: "Discovery sprint covering compliance, EHR audit, and user research" },
     ],
     whoWeServe: [
       "Primary care and family medicine practices looking to reduce administrative overhead",
@@ -191,10 +191,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "23%", label: "Increase in OEE within 6 months of deployment" },
       { stat: "10 weeks", label: "Typical delivery timeline for a production scheduling system" },
-      { stat: "65%", label: "Reduction in unplanned downtime with predictive maintenance alerts" },
-      { stat: "80%", label: "Faster quality defect reporting with digital inspection forms" },
+      { stat: "2-wk sprints", label: "Agile delivery with working demos at every milestone" },
+      { stat: "ERP + MES", label: "Typical integration scope: shop floor systems connected to back office" },
+      { stat: "100%", label: "IP and source code transferred to you at project close" },
     ],
     whoWeServe: [
       "Precision machining and metalworking shops scaling beyond spreadsheet-based scheduling",
@@ -224,7 +224,7 @@ export const industriesData: IndustryData[] = [
       },
       {
         q: "What does a typical manufacturing software engagement cost?",
-        a: "Focused tools like a digital scheduling board or maintenance tracker typically range from $30,000 to $60,000 CAD. Larger platforms integrating multiple systems across an enterprise range from $80,000 to $200,000+. We provide a detailed estimate after a scoping session.",
+        a: "Cost depends on the scope, number of integrations, and whether we're building from scratch or extending existing systems. Book a free scoping call and we'll give you a detailed estimate.",
       },
     ],
   },
@@ -288,10 +288,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "35%", label: "Reduction in RFI response time with centralized document control" },
       { stat: "12 weeks", label: "Delivery timeline for a full construction project tracking platform" },
-      { stat: "$2M+", label: "In change order disputes prevented by digital audit trails" },
-      { stat: "50%", label: "Fewer inbound tenant calls with self-service communication portal" },
+      { stat: "Mobile-first", label: "Every site-facing tool built for tablets and intermittent connectivity" },
+      { stat: "Offline-ready", label: "Site apps designed to function without a reliable data connection" },
+      { stat: "100%", label: "Code and IP ownership transferred to you at project completion" },
     ],
     whoWeServe: [
       "Residential and commercial real estate developers managing multiple concurrent projects",
@@ -386,10 +386,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "48 hrs", label: "KYC onboarding time reduced to under 48 hours from 5+ days" },
-      { stat: "99.95%", label: "Payment reconciliation accuracy with automated ledger system" },
-      { stat: "70%", label: "Reduction in false positive fraud alerts after ML model deployment" },
       { stat: "6 weeks", label: "Time to launch a FINTRAC-compliant transaction monitoring module" },
+      { stat: "SOC 2-ready", label: "Architecture built to SOC 2-compatible standards from day one" },
+      { stat: "PCI-scoped", label: "Payment flows designed to minimize PCI DSS scope by default" },
+      { stat: "100%", label: "IP and source code owned by you from the first commit" },
     ],
     whoWeServe: [
       "FinTech startups building payment, lending, or investment products for Canadian or US markets",
@@ -483,10 +483,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "2.1s", label: "Average page load time on headless storefront (down from 6.8s)" },
-      { stat: "28%", label: "Increase in average order value after loyalty program launch" },
       { stat: "10 weeks", label: "Time to launch a full headless commerce storefront" },
-      { stat: "45%", label: "Reduction in returns processing cost with self-service portal" },
+      { stat: "< 2s", label: "Target page load time on Next.js headless storefronts" },
+      { stat: "Shopify + custom", label: "We extend your existing platform or build bespoke — your choice" },
+      { stat: "100%", label: "Code ownership and source access transferred at project close" },
     ],
     whoWeServe: [
       "DTC brands on Shopify who need custom functionality beyond what apps can provide",
@@ -508,7 +508,7 @@ export const industriesData: IndustryData[] = [
       },
       {
         q: "What does a headless commerce project cost?",
-        a: "A headless Next.js storefront connected to a Shopify backend typically ranges from $40,000 to $90,000 CAD depending on design complexity, number of custom components, and integration requirements. We scope projects in detail before committing to a number.",
+        a: "Cost depends on design complexity, the number of custom components, and integration requirements. We scope every project in detail before committing to a number — book a free call and we'll give you a clear picture.",
       },
       {
         q: "Can you integrate with our ERP or warehouse management system?",
@@ -580,10 +580,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "3x", label: "Course completion rate improvement after UX redesign of LMS" },
       { stat: "8 weeks", label: "Time to launch a cohort-based course platform for 500+ learners" },
-      { stat: "60%", label: "Reduction in advisor caseload per student with automated early alerts" },
-      { stat: "40%", label: "Increase in corporate training completion with mobile-first delivery" },
+      { stat: "FERPA & PIPEDA", label: "Student data privacy requirements built in from the first line of code" },
+      { stat: "LTI-compatible", label: "Integrates with existing SIS and LMS platforms via open standards" },
+      { stat: "100%", label: "IP and source code owned by the institution from day one" },
     ],
     whoWeServe: [
       "K–12 school boards and independent schools building custom parent and student portals",
@@ -677,10 +677,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "22%", label: "Increase in direct booking revenue after custom booking engine launch" },
       { stat: "6 weeks", label: "Time to build and launch a boutique hotel guest portal" },
-      { stat: "35%", label: "Reduction in front desk check-in time with mobile pre-arrival" },
-      { stat: "4.8★", label: "Average review score for properties using guest messaging platform" },
+      { stat: "PMS-integrated", label: "Works with Opera, Mews, Cloudbeds, and major PMS platforms" },
+      { stat: "Mobile-first", label: "Every guest-facing tool optimized for smartphones from the ground up" },
+      { stat: "100%", label: "Code and IP ownership transferred to you at project completion" },
     ],
     whoWeServe: [
       "Boutique hotels and independent properties seeking to reduce OTA commission dependency",
@@ -774,10 +774,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "1.4 hrs", label: "Additional billable time captured per lawyer per day after time tracking launch" },
-      { stat: "75%", label: "Reduction in document drafting time with automated precedent assembly" },
       { stat: "8 weeks", label: "Time to launch a full client portal and matter management system" },
-      { stat: "50%", label: "Fewer inbound client status calls with self-service client portal" },
+      { stat: "Privilege-safe", label: "Matter-level data isolation and access control built into every platform" },
+      { stat: "e-Sign ready", label: "DocuSign and HelloSign integration built into every client portal" },
+      { stat: "100%", label: "IP and source code owned by your firm at project completion" },
     ],
     whoWeServe: [
       "Boutique and mid-size law firms seeking to modernize practice management without enterprise software costs",
@@ -855,7 +855,7 @@ export const industriesData: IndustryData[] = [
         icon: "👁️",
         title: "Customer Shipment Tracking Portal",
         description:
-          "Branded shipper-facing portal with real-time load status, ETA updates, document retrieval, and exception notifications — reducing inbound tracking calls by 70%+.",
+          "Branded shipper-facing portal with real-time load status, ETA updates, document retrieval, and exception notifications — giving customers the visibility they need without calling your dispatch team.",
       },
       {
         icon: "🤝",
@@ -871,10 +871,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "30%", label: "Improvement in truck utilization after dispatch system deployment" },
-      { stat: "72 hrs", label: "Average invoice cycle reduced from 8 days to 72 hours with digital POD" },
       { stat: "10 weeks", label: "Time to launch a full dispatch and driver mobile app platform" },
-      { stat: "65%", label: "Reduction in inbound tracking calls with self-service customer portal" },
+      { stat: "Offline-ready", label: "Driver apps built to work without a data connection in rural areas" },
+      { stat: "ELD-integrated", label: "Fleet tracking connects to Samsara, Geotab, and major providers" },
+      { stat: "EDI-capable", label: "204/210/214 transaction support for shipper integrations" },
     ],
     whoWeServe: [
       "Regional trucking companies managing 10–200 truck fleets looking to replace manual dispatch",
@@ -968,10 +968,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "3x", label: "Increase in online donations after branded fundraising platform launch" },
       { stat: "6 weeks", label: "Time to build and launch a volunteer management portal" },
-      { stat: "80%", label: "Reduction in grant report preparation time with automated outcome tracking" },
-      { stat: "$0", label: "Additional licensing cost — all software we build is owned outright by the organization" },
+      { stat: "$0", label: "Additional licensing cost — all software is owned outright by your organization" },
+      { stat: "CRA-compliant", label: "Tax receipting built to registered charity requirements" },
+      { stat: "Grant-ready", label: "Outcome tracking designed around funder reporting requirements" },
     ],
     whoWeServe: [
       "Registered Canadian charities seeking to modernize donor management and fundraising technology",
@@ -1065,10 +1065,10 @@ export const industriesData: IndustryData[] = [
       },
     ],
     caseHighlights: [
-      { stat: "0 min", label: "Downtime during a 12-month platform migration for a 5,000-customer SaaS" },
-      { stat: "60%", label: "Reduction in API response latency after data model and caching redesign" },
       { stat: "8 weeks", label: "Time to ship a new AI-powered feature module for an existing SaaS platform" },
-      { stat: "3x", label: "Improvement in deploy frequency after CI/CD pipeline overhaul" },
+      { stat: "Zero-downtime", label: "Migration strategy built around continuous delivery from day one" },
+      { stat: "Senior-only", label: "No juniors on your project — every engineer is mid-to-senior level" },
+      { stat: "100%", label: "All code becomes yours at the end of every sprint" },
     ],
     whoWeServe: [
       "B2B SaaS companies needing senior engineering capacity for a complex migration or new feature module",

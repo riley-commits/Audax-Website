@@ -3,7 +3,6 @@ import CTABanner from "@/components/layout/CTABanner";
 import HeroSection from "@/components/sections/HeroSection";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ProcessSteps from "@/components/sections/ProcessSteps";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import SolutionsOverview from "@/components/sections/SolutionsOverview";
 import StatsBar from "@/components/sections/StatsBar";
 
@@ -51,7 +50,6 @@ export default function HomePage() {
       <ServicesGrid />
       <SolutionsOverview />
       <ProcessSteps />
-      <TestimonialsSection />
       <CTABanner />
     </>
   );

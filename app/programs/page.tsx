@@ -7,7 +7,7 @@ import { solutionsData } from "@/lib/solutions-data";
 export const metadata: Metadata = {
   title: "Programs | Audax Ventures",
   description:
-    "Three structured programs built for where you are in your journey — Catalyst for Founders, Enterprise Innovation Program, and AI Implementation Program.",
+    "Three structured programs built for where you are in your journey — Catalyst for Founders, Enterprise Innovation Program, and AI Implementation.",
   alternates: { canonical: "https://audaxventures.ca/programs" },
   openGraph: {
     title: "Programs | Audax Ventures",

@@ -183,15 +183,15 @@ export const solutionsData: SolutionData[] = [
   },
   {
     slug: "ai-implementation",
-    title: "AI Implementation Program",
-    heroTitle: "AI Implementation Program — Discover, Build, and Evolve With AI",
+    title: "AI Implementation",
+    heroTitle: "AI Implementation — Discover, Build, and Evolve With AI",
     heroSub:
       "A structured, three-phase engagement that takes your business from assessing where AI can drive value, to building the right solution, to refining it over time.",
-    metaTitle: "AI Implementation Program | Audax Ventures",
+    metaTitle: "AI Implementation",
     metaDescription:
-      "Audax Ventures' AI Implementation Program: Discover → Build → Evolve. A structured engagement that takes your business from AI assessment to a deployed, continuously improving solution.",
+      "Audax Ventures' AI Implementation engagement: Discover → Build → Evolve. A structured engagement that takes your business from AI assessment to a deployed, continuously improving solution.",
     description:
-      "Most businesses know AI matters — but not where to start, what to build, or how to make it stick. Our AI Implementation Program is a structured, three-phase engagement designed to cut through the noise. We begin with a comprehensive audit of your business, identify where AI and automation will create the most leverage, build the right solution with your team, and stay engaged to ensure it compounds in value over time.",
+      "Most businesses know AI matters — but not where to start, what to build, or how to make it stick. Our AI Implementation engagement is a structured, three-phase program designed to cut through the noise. We begin with a comprehensive audit of your business, identify where AI and automation will create the most leverage, build the right solution with your team, and stay engaged to ensure it compounds in value over time.",
     phases: [
       {
         number: 1,

@@ -72,7 +72,7 @@ const programs = [
     color: "#60A5FA",
   },
   {
-    label: "AI Implementation Program",
+    label: "AI Implementation",
     href: "/programs/ai-implementation",
     desc: "From AI audit to deployed solution — structured and bespoke.",
     num: "03", icon: "🤖",

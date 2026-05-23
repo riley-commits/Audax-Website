@@ -224,7 +224,7 @@ export default function AiForSmePage() {
               href="/programs/ai-implementation"
               className="inline-flex items-center gap-2 text-base font-medium text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] no-underline group/link"
             >
-              Read the full AI Implementation Program
+              Read the full AI Implementation program
               <span
                 aria-hidden="true"
                 className="inline-block transition-transform duration-200 ease-out motion-safe:group-hover/link:translate-x-1"

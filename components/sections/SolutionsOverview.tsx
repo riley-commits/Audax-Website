@@ -65,7 +65,7 @@ const programs = [
   {
     icon: BrainCircuit,
     badge: "AI Program",
-    title: "AI Implementation Program",
+    title: "AI Implementation",
     description:
       "A structured engagement that takes your business from assessing where AI can drive value, to building the right solution, to refining it over time.",
     href: "/programs/ai-implementation",

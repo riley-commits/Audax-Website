@@ -17,7 +17,7 @@ const services = [
 const solutions = [
   { label: "Catalyst for Founders", href: "/programs/catalyst-for-founders" },
   { label: "Enterprise Innovation Program", href: "/programs/enterprise-innovation-program" },
-  { label: "SME AI Implementation", href: "/programs/sme-ai-implementation" },
+  { label: "AI Implementation Program", href: "/programs/ai-implementation" },
   { label: "Our Process", href: "/process" },
   { label: "Success Stories", href: "/success-stories" },
 ];

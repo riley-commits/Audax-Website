@@ -72,9 +72,9 @@ const programs = [
     color: "#60A5FA",
   },
   {
-    label: "SME AI Implementation",
-    href: "/programs/sme-ai-implementation",
-    desc: "Practical AI deployed into your workflows.",
+    label: "AI Implementation Program",
+    href: "/programs/ai-implementation",
+    desc: "From AI audit to deployed solution — structured and bespoke.",
     num: "03", icon: "🤖",
     phases: ["Assess", "Implement", "Optimise"],
     color: "#34D399",

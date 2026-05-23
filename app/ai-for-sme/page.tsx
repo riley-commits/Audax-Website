@@ -48,7 +48,7 @@ const industriesToShow = [
 ];
 
 export default function AiForSmePage() {
-  const program = getSolutionBySlug("sme-ai-implementation");
+  const program = getSolutionBySlug("ai-implementation");
   if (!program) notFound();
 
   const featuredServices = ["ai-consulting", "process-automation", "internal-tools"]
@@ -221,10 +221,10 @@ export default function AiForSmePage() {
           </div>
           <div className="mt-12">
             <Link
-              href="/programs/sme-ai-implementation"
+              href="/programs/ai-implementation"
               className="inline-flex items-center gap-2 text-base font-medium text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] no-underline group/link"
             >
-              Read the full SME AI program
+              Read the full AI Implementation Program
               <span
                 aria-hidden="true"
                 className="inline-block transition-transform duration-200 ease-out motion-safe:group-hover/link:translate-x-1"

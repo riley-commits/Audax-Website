@@ -7,12 +7,12 @@ import { solutionsData } from "@/lib/solutions-data";
 export const metadata: Metadata = {
   title: "Programs | Audax Ventures",
   description:
-    "Three structured programs built for where you are in your journey — Catalyst for Founders, Enterprise Innovation Program, and SME AI Implementation.",
+    "Three structured programs built for where you are in your journey — Catalyst for Founders, Enterprise Innovation Program, and AI Implementation Program.",
   alternates: { canonical: "https://audaxventures.ca/programs" },
   openGraph: {
     title: "Programs | Audax Ventures",
     description:
-      "Three structured, phased programs — for founders, enterprise teams, and SMEs ready to implement AI. Beyond a typical development agency.",
+      "Three structured, phased programs — for founders, enterprise teams, and businesses ready to implement AI. Beyond a typical development agency.",
     url: "https://audaxventures.ca/programs",
   },
 };
@@ -35,9 +35,9 @@ const programMeta = [
     accentBg: "bg-[#1A1A2E]/8",
   },
   {
-    slug: "sme-ai-implementation",
+    slug: "ai-implementation",
     icon: BrainCircuit,
-    badge: "For SMEs",
+    badge: "AI Program",
     gradient: "from-[#065F46] to-[#059669]",
     accentColor: "text-[#065F46]",
     accentBg: "bg-[#065F46]/8",

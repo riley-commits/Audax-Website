@@ -64,31 +64,31 @@ const programs = [
   },
   {
     icon: BrainCircuit,
-    badge: "For SMEs",
-    title: "SME AI Implementation",
+    badge: "AI Program",
+    title: "AI Implementation Program",
     description:
-      "Practical AI — deployed, measured, and built into your workflows — without the hype or the six-figure consulting bill.",
-    href: "/programs/sme-ai-implementation",
+      "A structured engagement that takes your business from assessing where AI can drive value, to building the right solution, to refining it over time.",
+    href: "/programs/ai-implementation",
     gradient: "from-[#052E16] via-[#065F46] to-[#052E16]",
     accentColor: "#34D399",
     phases: [
       {
-        name: "Assess",
-        duration: "2–3 wks",
-        deliverables: ["AI Readiness report", "Opportunity Map", "ROI projections"],
+        name: "Discover",
+        duration: "1–2 wks",
+        deliverables: ["Business AI audit", "Opportunity identification", "Build vs. buy analysis"],
       },
       {
-        name: "Implement",
-        duration: "6–14 wks",
-        deliverables: ["Deployed AI solution", "Tool integrations", "Staff training"],
+        name: "Build",
+        duration: "4–16 wks",
+        deliverables: ["Custom software or automation", "Platform configuration", "Team training"],
       },
       {
-        name: "Optimise",
-        duration: "3–12 mo",
-        deliverables: ["Performance reviews", "Model iteration", "Use case expansion"],
+        name: "Evolve",
+        duration: "Ongoing",
+        deliverables: ["Performance monitoring", "Iterative improvements", "Roadmap enhancements"],
       },
     ],
-    stat: { value: "40%", label: "avg. efficiency gain" },
+    stat: { value: "100%", label: "IP ownership" },
   },
 ];
 

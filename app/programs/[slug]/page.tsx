@@ -141,16 +141,28 @@ export default async function ProgramPage({ params }: Props) {
                       </div>
                     </div>
                     <p className="text-[#6B7280] leading-relaxed mb-5">{phase.description}</p>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-[#1A1A2E] mb-3">Deliverables</p>
-                      <ul className="grid sm:grid-cols-2 gap-2">
-                        {phase.deliverables.map((d) => (
-                          <li key={d} className="flex items-start gap-2 text-sm text-[#6B7280]">
-                            <CheckCircle2 size={14} className="text-[#2E5F8A] mt-0.5 flex-shrink-0" />
-                            {d}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="grid md:grid-cols-[1fr_auto] gap-5 items-start">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-[#1A1A2E] mb-3">
+                          {phase.outcome ? "What we do" : "Deliverables"}
+                        </p>
+                        <ul className="grid sm:grid-cols-2 gap-2">
+                          {phase.deliverables.map((d) => (
+                            <li key={d} className="flex items-start gap-2 text-sm text-[#6B7280]">
+                              <CheckCircle2 size={14} className="text-[#2E5F8A] mt-0.5 flex-shrink-0" />
+                              {d}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      {phase.outcome && (
+                        <aside className="md:max-w-[260px] border-l-2 border-[#2E5F8A] bg-[#F8F9FA] rounded-r-md px-4 py-3">
+                          <p className="text-[10px] font-semibold uppercase tracking-widest text-[#2E5F8A] mb-1.5">
+                            Phase Deliverable
+                          </p>
+                          <p className="text-sm text-[#1A1A2E] leading-relaxed">{phase.outcome}</p>
+                        </aside>
+                      )}
                     </div>
                   </div>
                 </div>

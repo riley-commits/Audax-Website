@@ -12,7 +12,16 @@ export interface SolutionData {
     icon: string;
     description: string;
     duration: string;
+    /**
+     * Activities / what we do in this phase. Rendered as a checklist.
+     */
     deliverables: string[];
+    /**
+     * Phase-level outcome callout — what you get out of the phase, not
+     * what we do. Renders as a distinct bordered callout. Optional so
+     * older program entries without the outcome split don't fail.
+     */
+    outcome?: string;
   }[];
   whoItsFor: string[];
   differentiators: string[];
@@ -205,8 +214,9 @@ export const solutionsData: SolutionData[] = [
           "Audit of existing software, data, and workflows",
           "Identification of high-impact opportunities",
           "Evaluation of build vs. buy vs. automate paths",
-          "A prioritized set of recommendations outlining the best technologies to implement and a clear path forward",
         ],
+        outcome:
+          "A prioritized set of recommendations outlining the best technologies to implement and a clear path forward.",
       },
       {
         number: 2,
@@ -220,8 +230,9 @@ export const solutionsData: SolutionData[] = [
           "Workflow automation across existing tools",
           "Configuration and rollout of off-the-shelf platforms",
           "Team training and change management support",
-          "A working solution deployed inside your business — adopted by your team and producing measurable results from day one",
         ],
+        outcome:
+          "A working solution deployed inside your business — adopted by your team and producing measurable results from day one.",
       },
       {
         number: 3,
@@ -235,8 +246,9 @@ export const solutionsData: SolutionData[] = [
           "Iterative improvements based on user feedback",
           "New feature development as needs emerge",
           "Continued access to our development team",
-          "A continuously improving platform supported by regular performance reviews and a defined roadmap of enhancements",
         ],
+        outcome:
+          "A continuously improving platform supported by regular performance reviews and a defined roadmap of enhancements.",
       },
     ],
     whoItsFor: [

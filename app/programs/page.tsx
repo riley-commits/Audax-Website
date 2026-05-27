@@ -17,38 +17,44 @@ export const metadata: Metadata = {
   },
 };
 
+// Unified color treatment across all 4 programs. Per-program icon + badge
+// still differentiates the offerings; color is consistent.
+const PROGRAM_GRADIENT = "from-[#78350F] to-[#D97706]";
+const PROGRAM_ACCENT_COLOR = "text-[#92400E]";
+const PROGRAM_ACCENT_BG = "bg-[#92400E]/8";
+
 const programMeta = [
   {
     slug: "catalyst-for-founders",
     icon: Lightbulb,
     badge: "For Founders",
-    gradient: "from-[#2E5F8A] to-[#3A7BD5]",
-    accentColor: "text-[#2E5F8A]",
-    accentBg: "bg-[#2E5F8A]/8",
+    gradient: PROGRAM_GRADIENT,
+    accentColor: PROGRAM_ACCENT_COLOR,
+    accentBg: PROGRAM_ACCENT_BG,
   },
   {
     slug: "enterprise-innovation-program",
     icon: Building2,
     badge: "For Enterprise",
-    gradient: "from-[#1A1A2E] to-[#2E5F8A]",
-    accentColor: "text-[#1A1A2E]",
-    accentBg: "bg-[#1A1A2E]/8",
+    gradient: PROGRAM_GRADIENT,
+    accentColor: PROGRAM_ACCENT_COLOR,
+    accentBg: PROGRAM_ACCENT_BG,
   },
   {
     slug: "ai-implementation",
     icon: BrainCircuit,
     badge: "AI Program",
-    gradient: "from-[#065F46] to-[#059669]",
-    accentColor: "text-[#065F46]",
-    accentBg: "bg-[#065F46]/8",
+    gradient: PROGRAM_GRADIENT,
+    accentColor: PROGRAM_ACCENT_COLOR,
+    accentBg: PROGRAM_ACCENT_BG,
   },
   {
     slug: "founder-prototype-program",
     icon: Zap,
     badge: "For Founders",
-    gradient: "from-[#78350F] to-[#D97706]",
-    accentColor: "text-[#92400E]",
-    accentBg: "bg-[#92400E]/8",
+    gradient: PROGRAM_GRADIENT,
+    accentColor: PROGRAM_ACCENT_COLOR,
+    accentBg: PROGRAM_ACCENT_BG,
   },
 ];
 

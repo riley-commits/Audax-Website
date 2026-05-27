@@ -54,6 +54,10 @@ const otherServices = [
   { label: "Digital Marketing",           href: "/services/digital-marketing",           icon: "📈" },
 ];
 
+// Unified accent color across all 4 programs — per-program icon + label
+// still differentiates the offerings.
+const PROGRAM_ACCENT = "#D97706";
+
 const programs = [
   {
     label: "Catalyst for Founders",
@@ -61,7 +65,7 @@ const programs = [
     desc: "From raw idea to revenue-generating product.",
     num: "01", icon: "🚀",
     phases: ["Validate", "Launch", "Scale"],
-    color: "#3A7BD5",
+    color: PROGRAM_ACCENT,
   },
   {
     label: "Enterprise Innovation Program",
@@ -69,7 +73,7 @@ const programs = [
     desc: "From internal whiteboard to shipped product.",
     num: "02", icon: "🏗️",
     phases: ["Audit", "Build", "Scale"],
-    color: "#60A5FA",
+    color: PROGRAM_ACCENT,
   },
   {
     label: "AI Implementation",
@@ -77,7 +81,7 @@ const programs = [
     desc: "From AI audit to deployed solution — structured and bespoke.",
     num: "03", icon: "🤖",
     phases: ["Discover", "Build", "Evolve"],
-    color: "#34D399",
+    color: PROGRAM_ACCENT,
   },
   {
     label: "Founder Prototype Program",
@@ -85,7 +89,7 @@ const programs = [
     desc: "Idea to working prototype fast — validate before you build.",
     num: "04", icon: "⚡",
     phases: ["Define", "Build", "Validate"],
-    color: "#D97706",
+    color: PROGRAM_ACCENT,
     external: true,
   },
 ];

@@ -13,8 +13,8 @@ const programs = [
     description:
       "A technical partner, not just a vendor — from raw idea to revenue-generating product.",
     href: "/programs/catalyst-for-founders",
-    gradient: "from-[#1A3A5C] via-[#2E5F8A] to-[#1A3A5C]",
-    accentColor: "#3A7BD5",
+    gradient: "from-[#78350F] via-[#92400E] to-[#78350F]",
+    accentColor: "#D97706",
     phases: [
       {
         name: "Validate",
@@ -41,8 +41,8 @@ const programs = [
     description:
       "Senior-only team, executive-ready reporting, and full IP transfer — from whiteboard to production.",
     href: "/programs/enterprise-innovation-program",
-    gradient: "from-[#0F172A] via-[#1E2D45] to-[#0F172A]",
-    accentColor: "#60A5FA",
+    gradient: "from-[#78350F] via-[#92400E] to-[#78350F]",
+    accentColor: "#D97706",
     phases: [
       {
         name: "Audit",
@@ -69,8 +69,8 @@ const programs = [
     description:
       "A structured engagement that takes your business from assessing where AI can drive value, to building the right solution, to refining it over time.",
     href: "/programs/ai-implementation",
-    gradient: "from-[#052E16] via-[#065F46] to-[#052E16]",
-    accentColor: "#34D399",
+    gradient: "from-[#78350F] via-[#92400E] to-[#78350F]",
+    accentColor: "#D97706",
     phases: [
       {
         name: "Discover",

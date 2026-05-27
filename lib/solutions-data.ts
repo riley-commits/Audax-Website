@@ -103,6 +103,7 @@ export const solutionsData: SolutionData[] = [
       "We'll tell you if your idea needs more validation before we build",
     ],
     faq: [
+      { q: "What's the minimum budget for Catalyst?", a: "The Validate phase starts at $8,000. The Launch phase (MVP build) typically ranges from $25,000 to $80,000. We structure payments by phase so you're never paying for work that hasn't started." },
       { q: "How are Catalyst phases priced?", a: "Each phase is scoped and priced individually before it starts, so you're never paying for work that hasn't begun. Reach out for a free intro call and we'll give you a clear picture of what to expect." },
       { q: "How is Catalyst different from hiring a development agency?", a: "Most agencies take a brief and build what you ask for. We challenge your assumptions, help you scope correctly, and act as a genuine product partner. We've seen what works and we'll tell you when something won't." },
       { q: "Do you take equity?", a: "Our model is fee-based. We don't take equity." },

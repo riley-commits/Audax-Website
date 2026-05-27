@@ -42,7 +42,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Software Built for Healthcare — Where Compliance Meets Clinical Efficiency",
     heroSub:
       "We build PIPEDA-compliant, HL7/FHIR-aware digital health tools for clinics, health networks, and medical device companies — from patient portals to AI-assisted diagnostics.",
-    metaTitle: "Healthcare Software Development Canada | Audax Ventures",
+    metaTitle: "Healthcare Software Development Canada",
     metaDescription:
       "Custom healthcare and medical software development in Canada. PIPEDA-compliant patient portals, EHR integrations, scheduling systems, and clinical decision tools. Book a free call.",
     overview:
@@ -140,7 +140,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Manufacturing Software That Turns Shop Floor Data Into Competitive Advantage",
     heroSub:
       "From MES integrations and production scheduling to quality management and supplier portals, we build the operational software that modern manufacturers need to compete on throughput, quality, and cost.",
-    metaTitle: "Manufacturing Software Development Canada | Audax Ventures",
+    metaTitle: "Manufacturing Software Development Canada",
     metaDescription:
       "Custom manufacturing software — MES, production scheduling, quality management, and supplier portals. Built for Canadian manufacturers. Book a free strategy call.",
     overview:
@@ -237,7 +237,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Real Estate & Construction Software — From Land Acquisition to Certificate of Occupancy",
     heroSub:
       "We build the project tracking, document management, and stakeholder communication tools that keep complex development projects on schedule, on budget, and out of litigation.",
-    metaTitle: "Real Estate & Construction Software Development | Audax Ventures",
+    metaTitle: "Real Estate & Construction Software Development",
     metaDescription:
       "Custom software for real estate developers, general contractors, and property managers. Project tracking, document management, and deal pipelines. Book a free call.",
     overview:
@@ -335,7 +335,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "FinTech Software Development — Regulatory-Grade Builds Without the Big-Bank Timeline",
     heroSub:
       "We build payment platforms, lending tools, wealth management dashboards, and financial data pipelines that meet FINTRAC, PCI DSS, and SOC 2 requirements without sacrificing speed to market.",
-    metaTitle: "FinTech Software Development Canada | Audax Ventures",
+    metaTitle: "FinTech Software Development Canada",
     metaDescription:
       "Custom FinTech and financial software development in Canada. Payment platforms, lending tools, wealth dashboards, and compliance-ready architectures. Book a free call.",
     overview:
@@ -432,7 +432,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Retail & E-Commerce Software — Beyond the Off-the-Shelf Platform",
     heroSub:
       "We build custom storefronts, headless commerce architectures, loyalty programs, and inventory systems for retailers who have outgrown what Shopify or WooCommerce can deliver out of the box.",
-    metaTitle: "E-Commerce & Retail Software Development Canada | Audax Ventures",
+    metaTitle: "E-Commerce & Retail Software Development Canada",
     metaDescription:
       "Custom e-commerce and retail software development. Headless commerce, loyalty platforms, inventory systems, and Shopify extensions. Book a free strategy call.",
     overview:
@@ -529,7 +529,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "EdTech Software Development — Learning Platforms That Actually Get Used",
     heroSub:
       "We build LMS platforms, assessment tools, student information systems, and AI-powered tutoring applications for K–12 institutions, post-secondary schools, and EdTech companies.",
-    metaTitle: "EdTech & Education Software Development Canada | Audax Ventures",
+    metaTitle: "EdTech & Education Software Development Canada",
     metaDescription:
       "Custom EdTech and education software development. LMS platforms, assessment tools, student portals, and AI-powered learning applications. Book a free call.",
     overview:
@@ -626,7 +626,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Hospitality & Tourism Software — Technology That Earns Five-Star Reviews",
     heroSub:
       "We build reservation platforms, guest communication tools, property management integrations, and operator dashboards for hotels, resorts, tour operators, and hospitality groups.",
-    metaTitle: "Hospitality & Tourism Software Development Canada | Audax Ventures",
+    metaTitle: "Hospitality & Tourism Software Development Canada",
     metaDescription:
       "Custom hospitality and tourism software. Reservation systems, guest portals, PMS integrations, and tour booking platforms. Book a free strategy call.",
     overview:
@@ -723,7 +723,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Legal & Professional Services Software — Tools That Bill Hours More Effectively",
     heroSub:
       "We build matter management systems, client portals, document automation tools, and billing platforms for law firms, accounting practices, and management consultancies.",
-    metaTitle: "Legal & Professional Services Software Development | Audax Ventures",
+    metaTitle: "Legal & Professional Services Software Development",
     metaDescription:
       "Custom software for law firms, accounting practices, and professional services firms. Matter management, client portals, document automation, and billing tools. Book a free call.",
     overview:
@@ -820,7 +820,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Transportation & Logistics Software — Visibility Across Every Mile",
     heroSub:
       "We build dispatch management systems, fleet tracking platforms, freight broker tools, and supply chain visibility dashboards for carriers, 3PLs, and shipper operations teams.",
-    metaTitle: "Transportation & Logistics Software Development Canada | Audax Ventures",
+    metaTitle: "Transportation & Logistics Software Development Canada",
     metaDescription:
       "Custom transportation and logistics software. Dispatch systems, fleet tracking, freight broker platforms, and supply chain visibility tools. Book a free strategy call.",
     overview:
@@ -917,7 +917,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Non-Profit & Social Impact Software — Technology That Serves the Mission, Not the Other Way Around",
     heroSub:
       "We build donor management systems, volunteer platforms, program tracking tools, and grant reporting dashboards for charities, social enterprises, and impact-driven organizations.",
-    metaTitle: "Non-Profit Software Development Canada | Audax Ventures",
+    metaTitle: "Non-Profit Software Development Canada",
     metaDescription:
       "Custom software for Canadian non-profits and social enterprises. Donor management, volunteer platforms, program tracking, and grant reporting tools. Book a free call.",
     overview:
@@ -1014,7 +1014,7 @@ export const industriesData: IndustryData[] = [
     heroTitle: "Technology & SaaS — Augment Your Team With Engineers Who've Built at Scale",
     heroSub:
       "We partner with technology companies and SaaS platforms as a senior engineering team — delivering complex features, platform migrations, and greenfield products with the architecture discipline that production-grade software demands.",
-    metaTitle: "SaaS & Technology Software Development Partner | Audax Ventures",
+    metaTitle: "SaaS & Technology Software Development Partner",
     metaDescription:
       "Engineering partner for SaaS companies and technology startups. Platform migrations, feature development, API design, and architectural advisory. Book a free strategy call.",
     overview:

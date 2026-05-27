@@ -26,7 +26,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "MVP Development Services — Launch Faster, Learn Sooner",
     heroSub:
       "We build lean, validated minimum viable products that give your startup the traction you need to raise capital, acquire customers, and grow with confidence.",
-    metaTitle: "MVP Development Company Canada | Audax Ventures",
+    metaTitle: "MVP Development Company Canada",
     metaDescription:
       "Expert MVP development services in Canada. We build lean, validated products for founders and enterprises. Most MVPs launch in 8–16 weeks. Book a free call.",
     description:
@@ -73,7 +73,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "SaaS Development Services — Build Products That Scale to Thousands of Users",
     heroSub:
       "From architecture to deployment, we build multi-tenant SaaS platforms with the billing, auth, and infrastructure to grow from 10 to 10,000 customers.",
-    metaTitle: "SaaS Development Company | Custom SaaS Product Development | Audax Ventures",
+    metaTitle: "SaaS Development Company | Custom SaaS Product Development",
     metaDescription:
       "Custom SaaS product development by Audax Ventures. Multi-tenancy, subscription billing, role-based auth, CI/CD, and scalable cloud infrastructure. Book a free call.",
     description:
@@ -117,7 +117,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Internal Tool Development — Automate the Work That's Slowing Your Team Down",
     heroSub:
       "We build custom internal tools, dashboards, and workflow automations that replace spreadsheets, manual processes, and off-the-shelf software that doesn't quite fit.",
-    metaTitle: "Internal Tool Development | Custom Internal Software | Audax Ventures",
+    metaTitle: "Internal Tool Development | Custom Internal Software",
     metaDescription:
       "Custom internal tools, dashboards, and business process automation. Replace spreadsheets and manual workflows with software built exactly for your team.",
     description:
@@ -160,7 +160,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Website Development — Fast, Beautiful, Built to Convert",
     heroSub:
       "We design and develop marketing websites, landing pages, and corporate sites that load in milliseconds, rank on Google, and turn visitors into customers.",
-    metaTitle: "Website Development Agency Canada | High-Performance Web Design | Audax Ventures",
+    metaTitle: "Website Development Agency Canada | High-Performance Web Design",
     metaDescription:
       "Professional website development services in Canada. SEO-optimized, mobile-first, and conversion-focused websites built on modern frameworks. Get a free quote.",
     description:
@@ -202,7 +202,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "E-Commerce Development — Sell More With a Store Built to Perform",
     heroSub:
       "Custom e-commerce platforms and hosted-commerce builds that convert browsers into buyers with fast load times, great UX, and seamless checkout experiences.",
-    metaTitle: "E-Commerce Development Company Canada | Hosted & Headless Commerce | Audax Ventures",
+    metaTitle: "E-Commerce Development Company Canada | Hosted & Headless Commerce",
     metaDescription:
       "Expert e-commerce development in Canada. Hosted commerce, headless commerce, and bespoke online stores built for performance and conversion. Get a free quote.",
     description:
@@ -244,7 +244,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "iOS App Development — Native Performance, Beautiful Design",
     heroSub:
       "We build native and cross-platform iOS applications that feel fast, look premium, and get featured on the App Store.",
-    metaTitle: "iOS App Development Canada | iPhone & iPad App Developers | Audax Ventures",
+    metaTitle: "iOS App Development Canada | iPhone & iPad App Developers",
     metaDescription:
       "Professional iOS app development in Canada. Native and cross-platform iOS apps for iPhone and iPad. From concept to App Store submission. Get a free quote.",
     description:
@@ -288,7 +288,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Android App Development — Reach the World's Largest Mobile Audience",
     heroSub:
       "Native and cross-platform Android apps designed for performance, accessibility, and Google Play success.",
-    metaTitle: "Android App Development Canada | Native & Cross-Platform | Audax Ventures",
+    metaTitle: "Android App Development Canada | Native & Cross-Platform",
     metaDescription:
       "Professional Android app development in Canada. Native and cross-platform Android apps for smartphones and tablets. From concept to Google Play launch.",
     description:
@@ -332,7 +332,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Front End Development — Pixel-Perfect Interfaces, Built for Speed",
     heroSub:
       "We build high-performance modern frontends that look stunning, load instantly, and give users an experience worth coming back for.",
-    metaTitle: "Front End Development Services Canada | Modern Frontend Experts | Audax Ventures",
+    metaTitle: "Front End Development Services Canada | Modern Frontend Experts",
     metaDescription:
       "Expert modern front end development in Canada. Fast, accessible, and beautifully designed web interfaces. Book a free discovery call.",
     description:
@@ -374,7 +374,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Back End Development — Reliable APIs and Infrastructure That Scale",
     heroSub:
       "We design and build the server-side systems, APIs, and databases that power your product — engineered for reliability, security, and performance at scale.",
-    metaTitle: "Back End Development Services Canada | Scalable APIs & Services | Audax Ventures",
+    metaTitle: "Back End Development Services Canada | Scalable APIs & Services",
     metaDescription:
       "Expert backend development: REST APIs, GraphQL, type-safe runtimes, databases, and cloud infrastructure. Built to scale and maintained for the long term.",
     description:
@@ -416,7 +416,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Web Development — From Simple Sites to Complex Web Applications",
     heroSub:
       "Full-spectrum web development: marketing sites, web apps, portals, and platforms built by a team that cares about code quality and user experience.",
-    metaTitle: "Web Development Company Canada | Full-Stack Web Developers | Audax Ventures",
+    metaTitle: "Web Development Company Canada | Full-Stack Web Developers",
     metaDescription:
       "Full-stack web development in Canada. Marketing websites, web applications, and complex platforms built on modern frameworks. Get a free quote.",
     description:
@@ -458,7 +458,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Custom Software Development — Software Built Around Your Business, Not the Other Way Around",
     heroSub:
       "When off-the-shelf software creates workarounds instead of solutions, it's time for custom. We build exactly what your business needs — no more, no less.",
-    metaTitle: "Custom Software Development Company Canada | Bespoke Software Solutions | Audax Ventures",
+    metaTitle: "Custom Software Development Company Canada | Bespoke Software Solutions",
     metaDescription:
       "Custom software development in Canada. Bespoke web applications, platforms, and tools built to fit your exact business needs. Book a free discovery call.",
     description:
@@ -500,7 +500,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "QA & Testing Services — Ship With Confidence, Not Anxiety",
     heroSub:
       "Comprehensive quality assurance and testing services that catch bugs before your users do — from manual exploratory testing to full automated test suites.",
-    metaTitle: "QA Testing Services Canada | Software Quality Assurance | Audax Ventures",
+    metaTitle: "QA Testing Services Canada | Software Quality Assurance",
     metaDescription:
       "Professional QA and software testing services. Manual testing, automated test suites, performance testing, and CI/CD integration. Book a free quote.",
     description:
@@ -542,7 +542,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Process Automation — Let Software Do the Repetitive Work",
     heroSub:
       "We automate the manual, time-consuming workflows that slow your team down — from data entry and approvals to reporting and system sync.",
-    metaTitle: "Business Process Automation Canada | Workflow Automation Services | Audax Ventures",
+    metaTitle: "Business Process Automation Canada | Workflow Automation Services",
     metaDescription:
       "Custom business process automation services. Replace manual workflows with intelligent automations. Integrate your tools and eliminate repetitive tasks.",
     description:
@@ -584,7 +584,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Customer Service Automation — Resolve More Tickets, Faster",
     heroSub:
       "AI-powered chatbots, automated ticket routing, and self-service portals that let your support team focus on complex issues while automation handles the rest.",
-    metaTitle: "Customer Service Automation | AI Chatbots & Support Automation | Audax Ventures",
+    metaTitle: "Customer Service Automation | AI Chatbots & Support Automation",
     metaDescription:
       "Custom customer service automation: AI chatbots, ticket routing, knowledge bases, and self-service portals. Reduce support costs and improve CSAT.",
     description:
@@ -626,7 +626,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "AI Consulting — Implement AI That Actually Moves the Needle",
     heroSub:
       "Practical AI strategy and implementation for businesses that want to capture the competitive advantages of AI without the hype, wasted budget, or failed pilots.",
-    metaTitle: "AI Consulting Services Canada | Practical AI Strategy & Implementation | Audax Ventures",
+    metaTitle: "AI Consulting Services Canada | Practical AI Strategy & Implementation",
     metaDescription:
       "AI consulting and implementation services. LLM integration, AI product development, ML pipelines, and AI strategy for SMEs and enterprises. Book a free call.",
     description:
@@ -668,7 +668,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "CRM Development — A System That Fits Your Sales Process, Not the Other Way Around",
     heroSub:
       "Custom CRM development and platform configuration that gives your sales, marketing, and success teams exactly the visibility and workflow they need.",
-    metaTitle: "CRM System Development Canada | Custom CRM & Platform Implementation | Audax Ventures",
+    metaTitle: "CRM System Development Canada | Custom CRM & Platform Implementation",
     metaDescription:
       "Custom CRM development and SaaS CRM implementation. Build a CRM that fits your exact sales process. Get a free consultation.",
     description:
@@ -710,7 +710,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "CTO-as-a-Service — Senior Technical Leadership Without the Full-Time Salary",
     heroSub:
       "Fractional CTO services for startups and scale-ups that need experienced technical leadership to make the right architecture decisions, hire the right team, and build the right product.",
-    metaTitle: "CTO as a Service for Startups Canada | Fractional CTO | Audax Ventures",
+    metaTitle: "CTO as a Service for Startups Canada | Fractional CTO",
     metaDescription:
       "Fractional CTO-as-a-Service for startups and scale-ups. Technical strategy, architecture review, team building, and vendor management. Book a free intro call.",
     description:
@@ -751,7 +751,7 @@ export const servicesData: ServiceData[] = [
     heroTitle: "Digital Marketing — Acquire Customers, Not Just Traffic",
     heroSub:
       "Performance marketing, SEO, and content strategy for software companies and startups that want customers — not vanity metrics.",
-    metaTitle: "Digital Marketing Agency Canada | SEO, Paid Ads & Content for SaaS | Audax Ventures",
+    metaTitle: "Digital Marketing Agency Canada | SEO, Paid Ads & Content for SaaS",
     metaDescription:
       "Digital marketing services for SaaS and software companies. SEO, paid search, paid social, content marketing, and conversion optimization. Book a free call.",
     description:

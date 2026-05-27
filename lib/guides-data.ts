@@ -16,7 +16,7 @@ export const guidesData: GuideData[] = [
   {
     slug: "what-is-an-mvp",
     title: "What Is an MVP? The Complete Guide for Founders and Entrepreneurs",
-    metaTitle: "What Is an MVP? Complete Guide for Founders | Audax Ventures",
+    metaTitle: "What Is an MVP? Complete Guide for Founders",
     metaDescription: "Everything founders need to know about Minimum Viable Products: definition, examples, how to scope one, and when to build. A complete guide by Audax Ventures.",
     publishDate: "January 15, 2025",
     author: "Audax Ventures Team",
@@ -180,7 +180,7 @@ Build the smallest thing that can teach you the most important thing. Then build
   {
     slug: "how-to-hire-a-software-development-agency",
     title: "How to Hire a Software Development Agency: A Step-by-Step Guide for SMEs",
-    metaTitle: "How to Hire a Software Development Agency | Step-by-Step Guide | Audax Ventures",
+    metaTitle: "How to Hire a Software Development Agency | Step-by-Step Guide",
     metaDescription: "A practical guide to finding, evaluating, and hiring a software development agency. Includes red flags, contract advice, and questions to ask before signing.",
     publishDate: "January 28, 2025",
     author: "Audax Ventures Team",
@@ -354,7 +354,7 @@ At Audax Ventures, we've designed our engagement model around the principles in 
   {
     slug: "saas-pricing-guide",
     title: "SaaS Development Cost & Pricing Guide for 2025",
-    metaTitle: "SaaS Development Cost & Pricing Guide 2025 | Audax Ventures",
+    metaTitle: "SaaS Development Cost & Pricing Guide 2025",
     metaDescription: "How much does it cost to build a SaaS product in 2025? A detailed pricing guide covering development, infrastructure, team, and total cost of ownership.",
     publishDate: "February 5, 2025",
     author: "Audax Ventures Team",
@@ -527,7 +527,7 @@ At Audax Ventures, our discovery sprint costs $6,000–$9,000 and produces a det
   {
     slug: "mvp-vs-prototype",
     title: "MVP vs Prototype: What's the Difference and Which Do You Need?",
-    metaTitle: "MVP vs Prototype: Key Differences Explained | Audax Ventures",
+    metaTitle: "MVP vs Prototype: Key Differences Explained",
     metaDescription: "What's the difference between an MVP and a prototype? Learn when to build each, what they cost, and which one your startup needs right now.",
     publishDate: "February 18, 2025",
     author: "Audax Ventures Team",
@@ -652,7 +652,7 @@ This prevents the costly mistake of building the wrong thing at the wrong time.
   {
     slug: "how-to-validate-a-startup-idea",
     title: "How to Validate a Startup Idea Before Writing a Line of Code",
-    metaTitle: "How to Validate a Startup Idea Before Building | Audax Ventures",
+    metaTitle: "How to Validate a Startup Idea Before Building",
     metaDescription: "Step-by-step guide to validating a startup idea before spending on development. Customer interviews, demand tests, and the validation framework used by top accelerators.",
     publishDate: "March 3, 2025",
     author: "Audax Ventures Team",
@@ -818,7 +818,7 @@ That's where the Audax Ventures [Catalyst for Founders program](/solutions/catal
   {
     slug: "what-is-custom-software-development",
     title: "What Is Custom Software Development? A Plain-English Guide for Business Owners",
-    metaTitle: "What Is Custom Software Development? Plain-English Guide | Audax Ventures",
+    metaTitle: "What Is Custom Software Development? Plain-English Guide",
     metaDescription: "A clear explanation of custom software development: what it is, when you need it, how it differs from off-the-shelf software, and what it costs.",
     publishDate: "March 12, 2025",
     author: "Audax Ventures Team",
@@ -939,7 +939,7 @@ But when custom software is right — when your process is unique, your complian
   {
     slug: "how-to-build-a-saas-product",
     title: "How to Build a SaaS Product: From Idea to Launch",
-    metaTitle: "How to Build a SaaS Product: From Idea to Launch | Audax Ventures",
+    metaTitle: "How to Build a SaaS Product: From Idea to Launch",
     metaDescription: "A complete guide to building a SaaS product: validation, architecture, development, billing, and launch. For first-time SaaS founders by Audax Ventures.",
     publishDate: "March 25, 2025",
     author: "Audax Ventures Team",
@@ -1133,7 +1133,7 @@ Our SaaS engagements start with a 2-week discovery sprint where we design your a
   {
     slug: "cto-as-a-service-guide",
     title: "CTO-as-a-Service: What It Is and When Your Startup Needs One",
-    metaTitle: "CTO-as-a-Service: Complete Guide for Startups | Audax Ventures",
+    metaTitle: "CTO-as-a-Service: Complete Guide for Startups",
     metaDescription: "What is CTO-as-a-Service? When does a startup need a fractional CTO? Costs, responsibilities, and how to find the right one. A guide by Audax Ventures.",
     publishDate: "April 8, 2025",
     author: "Audax Ventures Team",
@@ -1279,7 +1279,7 @@ We've served as fractional CTO for a dozen companies across SaaS, fintech, healt
   {
     slug: "ai-in-business-guide",
     title: "How Businesses Are Using AI in 2025: Practical Applications for SMEs",
-    metaTitle: "How Businesses Are Using AI in 2025 | Practical Guide for SMEs | Audax Ventures",
+    metaTitle: "How Businesses Are Using AI in 2025 | Practical Guide for SMEs",
     metaDescription: "A practical guide to AI applications for small and medium businesses in 2025. Real use cases, implementation advice, and ROI expectations. By Audax Ventures.",
     publishDate: "April 22, 2025",
     author: "Audax Ventures Team",
@@ -1451,7 +1451,7 @@ At Audax Ventures, our AI practice focuses on practical, high-ROI implementation
   {
     slug: "software-development-process",
     title: "The Software Development Process Explained: A Guide for Non-Technical Founders",
-    metaTitle: "Software Development Process Explained for Non-Technical Founders | Audax Ventures",
+    metaTitle: "Software Development Process Explained for Non-Technical Founders",
     metaDescription: "A plain-English explanation of how software development works: from discovery to deployment. For founders who want to understand what their team is doing.",
     publishDate: "May 5, 2025",
     author: "Audax Ventures Team",

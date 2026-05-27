@@ -3,7 +3,7 @@ import CTABanner from "@/components/layout/CTABanner";
 import AboutContent from "@/components/sections/AboutContent";
 
 export const metadata: Metadata = {
-  title: "About Us — Audax Ventures",
+  title: "About Us",
   description:
     "Learn about Audax Ventures — our mission, story, values, and the team behind Canada's most founder-aligned software development company.",
   alternates: { canonical: "https://audaxventures.ca/about" },

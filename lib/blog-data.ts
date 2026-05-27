@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     author: "Riley Peterson",
     authorRole: "CEO, Audax Ventures",
-    metaTitle: "What Is an MVP? Why Startups Need It Before Raising Capital | Audax Ventures",
+    metaTitle: "What Is an MVP? Why Startups Need It Before Raising Capital",
     metaDescription:
       "Learn what a minimum viable product is, why investors expect to see one before writing a check, and how to scope your MVP correctly to maximize learning with minimal spend.",
     thumbnail: "https://picsum.photos/800/450?random=10",
@@ -154,7 +154,7 @@ Ready to scope your MVP? [Book a free strategy call](/contact) and let's walk th
     readTime: "9 min read",
     author: "Marcus Chen",
     authorRole: "CTO, Audax Ventures",
-    metaTitle: "SaaS vs Custom Software: Which Is Right for Your Business? | Audax Ventures",
+    metaTitle: "SaaS vs Custom Software: Which Is Right for Your Business?",
     metaDescription:
       "Trying to decide between buying SaaS or building custom software? This guide walks through the cost, tradeoffs, and decision framework you need to make the right call.",
     thumbnail: "https://picsum.photos/800/450?random=11",
@@ -283,7 +283,7 @@ If you're on the fence, [book a free strategy call](/contact). We'll walk throug
     readTime: "10 min read",
     author: "Riley Peterson",
     authorRole: "CEO, Audax Ventures",
-    metaTitle: "How to Choose a Software Development Partner | Avoid Bad Agencies | Audax Ventures",
+    metaTitle: "How to Choose a Software Development Partner | Avoid Bad Agencies",
     metaDescription:
       "A practical guide to evaluating software development agencies, red flags to avoid, questions to ask, and contract terms that protect you as a founder.",
     thumbnail: "https://picsum.photos/800/450?random=12",
@@ -421,7 +421,7 @@ If you're evaluating your options, [book a free call with us](/contact). Even if
     readTime: "9 min read",
     author: "Marcus Chen",
     authorRole: "CTO, Audax Ventures",
-    metaTitle: "The Real Cost of Building an MVP in 2025 | Pricing Guide | Audax Ventures",
+    metaTitle: "The Real Cost of Building an MVP in 2025 | Pricing Guide",
     metaDescription:
       "What does it actually cost to build an MVP in 2025? A detailed breakdown by product type, team type, and hidden costs most founders don't know about.",
     thumbnail: "https://picsum.photos/800/450?random=13",
@@ -565,7 +565,7 @@ If that range doesn't fit your budget, we'll tell you that honestly and suggest 
     readTime: "8 min read",
     author: "Priya Nair",
     authorRole: "Head of AI Practice, Audax Ventures",
-    metaTitle: "AI-Powered Internal Tools: How Enterprises Are Automating Operations | Audax Ventures",
+    metaTitle: "AI-Powered Internal Tools: How Enterprises Are Automating Operations",
     metaDescription:
       "Discover how enterprises are using AI to automate internal operations — from document processing to decision support. Real use cases and implementation advice.",
     thumbnail: "https://picsum.photos/800/450?random=14",
@@ -695,7 +695,7 @@ Ready to explore what AI-powered internal tools could mean for your team? [Book 
     readTime: "9 min read",
     author: "Riley Peterson",
     authorRole: "CEO, Audax Ventures",
-    metaTitle: "Catalyst for Founders: From Idea to Launch Case Study | Audax Ventures",
+    metaTitle: "Catalyst for Founders: From Idea to Launch Case Study",
     metaDescription:
       "How the Catalyst for Founders program helped a non-technical founder go from raw idea to 40 paying customers and a seed round in 12 months.",
     thumbnail: "https://picsum.photos/800/450?random=15",
@@ -833,7 +833,7 @@ If you're a founder with a clear problem, a defined market, and the drive to bui
     readTime: "4 min read",
     author: "Riley Peterson",
     authorRole: "CEO, Audax Ventures",
-    metaTitle: "How to Validate a Startup Idea Before You Build Anything | Audax Ventures",
+    metaTitle: "How to Validate a Startup Idea Before You Build Anything",
     metaDescription:
       "Learn how to validate a startup idea step by step — from defining the problem and talking to real customers to running cheap experiments and knowing when to build.",
     thumbnail: "https://picsum.photos/800/450?random=16",
@@ -941,7 +941,7 @@ If you have a startup idea and want help figuring out if it is worth building, A
     readTime: "3 min read",
     author: "Riley Peterson",
     authorRole: "CEO, Audax Ventures",
-    metaTitle: "5 Signs Your Business Is Ready for Automation | Audax Ventures",
+    metaTitle: "5 Signs Your Business Is Ready for Automation",
     metaDescription:
       "Discover the five key signs that your business processes are ready for automation — and learn how to take action before inefficiencies slow your growth.",
     thumbnail: "https://picsum.photos/800/450?random=17",
@@ -1033,7 +1033,7 @@ If you are not sure where to start, Audax Ventures can help. We specialize in he
     readTime: "5 min read",
     author: "Riley Peterson",
     authorRole: "CEO, Audax Ventures",
-    metaTitle: "The Importance of Protecting Intellectual Property for Businesses | Audax Ventures",
+    metaTitle: "The Importance of Protecting Intellectual Property for Businesses",
     metaDescription:
       "Learn how Canadian businesses can protect their intellectual property — from trademarks and patents to trade secrets — and why IP protection is a strategic investment.",
     thumbnail: "https://picsum.photos/800/450?random=18",
@@ -1148,7 +1148,7 @@ Your intellectual property is one of your most valuable resources. Don't wait un
     readTime: "4 min read",
     author: "Marcus Chen",
     authorRole: "CTO, Audax Ventures",
-    metaTitle: "How to Choose the Right Tech Stack for Your Startup | Audax Ventures",
+    metaTitle: "How to Choose the Right Tech Stack for Your Startup",
     metaDescription:
       "A practical guide to selecting the right tech stack for your startup — key factors to consider, common mistakes to avoid, and how to set your product up for long-term success.",
     thumbnail: "https://picsum.photos/800/450?random=19",
@@ -1265,7 +1265,7 @@ If you're unsure where to start — or want expert support to validate your choi
     readTime: "5 min read",
     author: "Riley Peterson",
     authorRole: "CEO, Audax Ventures",
-    metaTitle: "How Much Does It Cost to Start a Tech Startup in 2025? | Audax Ventures",
+    metaTitle: "How Much Does It Cost to Start a Tech Startup in 2025?",
     metaDescription:
       "A realistic breakdown of tech startup costs in 2025 — product development, marketing, team, and operations — plus smart tips to launch lean without cutting corners.",
     thumbnail: "https://picsum.photos/800/450?random=20",

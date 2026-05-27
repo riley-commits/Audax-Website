@@ -17,7 +17,8 @@ const services = [
 const solutions = [
   { label: "Catalyst for Founders", href: "/programs/catalyst-for-founders" },
   { label: "Enterprise Innovation Program", href: "/programs/enterprise-innovation-program" },
-  { label: "AI Implementation", href: "/programs/ai-implementation" },
+  { label: "AI Implementation Program", href: "/programs/ai-implementation" },
+  { label: "Founder Prototype Program", href: "https://www.audaxventures.io" },
   { label: "Our Process", href: "/process" },
   { label: "Success Stories", href: "/success-stories" },
 ];
@@ -64,7 +65,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {solutions.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href={s.href}
+                    target={s.href.startsWith("http") ? "_blank" : undefined}
+                    rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="text-sm text-gray-400 hover:text-white transition-colors"
+                  >
                     {s.label}
                   </Link>
                 </li>

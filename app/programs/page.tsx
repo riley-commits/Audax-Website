@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Clock, Lightbulb, Building2, BrainCircuit } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Lightbulb, Building2, BrainCircuit, Zap } from "lucide-react";
 import CTABanner from "@/components/layout/CTABanner";
 import { solutionsData } from "@/lib/solutions-data";
 
 export const metadata: Metadata = {
   title: "Programs | Audax Ventures",
   description:
-    "Three structured programs built for where you are in your journey — Catalyst for Founders, Enterprise Innovation Program, and AI Implementation.",
+    "Four structured programs built for where you are in your journey — Catalyst for Founders, Enterprise Innovation Program, AI Implementation Program, and Founder Prototype Program.",
   alternates: { canonical: "https://audaxventures.ca/programs" },
   openGraph: {
     title: "Programs | Audax Ventures",
     description:
-      "Three structured, phased programs — for founders, enterprise teams, and businesses ready to implement AI. Beyond a typical development agency.",
+      "Four structured, phased programs — for founders, enterprise teams, and businesses ready to put AI to work. Beyond a typical development agency.",
     url: "https://audaxventures.ca/programs",
   },
 };
@@ -42,6 +42,14 @@ const programMeta = [
     accentColor: "text-[#065F46]",
     accentBg: "bg-[#065F46]/8",
   },
+  {
+    slug: "founder-prototype-program",
+    icon: Zap,
+    badge: "For Founders",
+    gradient: "from-[#78350F] to-[#D97706]",
+    accentColor: "text-[#92400E]",
+    accentBg: "bg-[#92400E]/8",
+  },
 ];
 
 export default function ProgramsPage() {
@@ -63,7 +71,7 @@ export default function ProgramsPage() {
             <span className="text-[#2E5F8A]">A Program Partner</span>
           </h1>
           <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            Three structured, phased programs designed for where you are in your journey — whether you&apos;re a founder, an enterprise innovation team, or an SME ready to put AI to work.
+            Four structured, phased programs designed for where you are in your journey — whether you&apos;re a founder, an enterprise innovation team, or a business ready to put AI to work.
           </p>
 
           {/* Jump buttons */}
@@ -101,7 +109,9 @@ export default function ProgramsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
-                  href={`/programs/${program.slug}`}
+                  href={program.externalUrl ?? `/programs/${program.slug}`}
+                  target={program.externalUrl ? "_blank" : undefined}
+                  rel={program.externalUrl ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#2E5F8A] font-bold hover:bg-blue-50 transition-colors"
                 >
                   Full Program Details <ArrowRight size={15} />
@@ -179,7 +189,9 @@ export default function ProgramsPage() {
               </div>
               <div className="text-center mt-8">
                 <Link
-                  href={`/programs/${program.slug}`}
+                  href={program.externalUrl ?? `/programs/${program.slug}`}
+                  target={program.externalUrl ? "_blank" : undefined}
+                  rel={program.externalUrl ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E5F8A] hover:text-[#3A7BD5] transition-colors"
                 >
                   See full program details <ArrowRight size={14} />

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Lightbulb, Building2, BrainCircuit } from "lucide-react";
+import { ArrowRight, Lightbulb, Building2, BrainCircuit, Zap } from "lucide-react";
 
 const programs = [
   {
@@ -89,6 +89,35 @@ const programs = [
       },
     ],
     stat: { value: "100%", label: "IP ownership" },
+  },
+  {
+    icon: Zap,
+    badge: "For Founders",
+    title: "Founder Prototype Program",
+    description:
+      "Idea to working prototype fast — validate before you commit to a full build.",
+    href: "https://www.audaxventures.io",
+    external: true,
+    gradient: "from-[#78350F] via-[#92400E] to-[#78350F]",
+    accentColor: "#D97706",
+    phases: [
+      {
+        name: "Define",
+        duration: "1 wk",
+        deliverables: ["Core hypothesis", "Prototype scope", "Tech recommendation"],
+      },
+      {
+        name: "Build",
+        duration: "2–4 wks",
+        deliverables: ["Working prototype", "Live URL", "Source code handover"],
+      },
+      {
+        name: "Validate",
+        duration: "1–2 wks",
+        deliverables: ["User testing sessions", "Feedback synthesis", "Next steps plan"],
+      },
+    ],
+    stat: { value: "4 wks", label: "idea to prototype" },
   },
 ];
 
@@ -206,6 +235,8 @@ function ProgramCard({ program, delay }: { program: typeof programs[0]; delay: n
       <div className="relative mt-auto pt-2 border-t border-white/10">
         <Link
           href={program.href}
+          target={"external" in program && program.external ? "_blank" : undefined}
+          rel={"external" in program && program.external ? "noopener noreferrer" : undefined}
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white font-semibold text-sm hover:bg-white/90 transition-colors"
           style={{ color: program.accentColor }}
         >

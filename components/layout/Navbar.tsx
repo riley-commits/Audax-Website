@@ -76,8 +76,17 @@ const programs = [
     href: "/programs/ai-implementation",
     desc: "From AI audit to deployed solution — structured and bespoke.",
     num: "03", icon: "🤖",
-    phases: ["Assess", "Implement", "Optimise"],
+    phases: ["Discover", "Build", "Evolve"],
     color: "#34D399",
+  },
+  {
+    label: "Founder Prototype Program",
+    href: "https://www.audaxventures.io",
+    desc: "Idea to working prototype fast — validate before you build.",
+    num: "04", icon: "⚡",
+    phases: ["Define", "Build", "Validate"],
+    color: "#D97706",
+    external: true,
   },
 ];
 
@@ -529,6 +538,8 @@ export default function Navbar() {
                           <Link
                             key={p.href}
                             href={p.href}
+                            target={"external" in p && p.external ? "_blank" : undefined}
+                            rel={"external" in p && p.external ? "noopener noreferrer" : undefined}
                             onClick={() => setProgramsOpen(false)}
                             className="group flex items-start gap-4 px-4 py-4 rounded-xl border border-gray-100 hover:border-transparent hover:shadow-md transition-all duration-200 relative overflow-hidden"
                             style={{ borderLeftWidth: 3, borderLeftColor: p.color }}
@@ -713,7 +724,10 @@ export default function Navbar() {
               <div className="border-t border-gray-100 pt-4 mb-4">
                 <p className="text-[10px] font-bold tracking-widest uppercase text-[#2E5F8A] px-3 mb-2">Programs</p>
                 {programs.map((p) => (
-                  <Link key={p.href} href={p.href} onClick={() => setMobileOpen(false)}
+                  <Link key={p.href} href={p.href}
+                    target={"external" in p && p.external ? "_blank" : undefined}
+                    rel={"external" in p && p.external ? "noopener noreferrer" : undefined}
+                    onClick={() => setMobileOpen(false)}
                     className="flex items-center gap-2 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#2E5F8A] hover:bg-[#F8F9FA] transition-colors font-medium">
                     <span className="text-base">{p.icon}</span>
                     {p.label}

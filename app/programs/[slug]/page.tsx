@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Clock } from "lucide-react";
 import CTABanner from "@/components/layout/CTABanner";
@@ -33,6 +33,10 @@ export default async function ProgramPage({ params }: Props) {
   const { slug } = await params;
   const program = getSolutionBySlug(slug);
   if (!program) notFound();
+  // External programs live on their own domain — redirect rather than
+  // rendering a duplicate detail page. generateStaticParams already skips
+  // these at build time; this catches the dev-mode dynamic render.
+  if (program.externalUrl) redirect(program.externalUrl);
 
   const faqSchema = {
     "@context": "https://schema.org",

@@ -362,5 +362,8 @@ export function getSolutionBySlug(slug: string): SolutionData | undefined {
 }
 
 export function getAllSolutionSlugs(): string[] {
-  return solutionsData.map((s) => s.slug);
+  // Exclude external entries — they live on their own domains, so we don't
+  // want Next.js generating a duplicate /programs/<slug> detail page that
+  // would compete with the canonical page off-site.
+  return solutionsData.filter((s) => !s.externalUrl).map((s) => s.slug);
 }

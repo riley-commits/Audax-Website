@@ -168,6 +168,9 @@ export const solutionSchema = z.object({
   whoItsFor: z.array(z.string().min(1)),
   differentiators: z.array(z.string().min(1)),
   faq: z.array(faqEntrySchema),
+  // External entries (e.g. partner programs hosted on a different domain)
+  // set this so the hub page links off-site and the detail route is skipped.
+  externalUrl: z.string().url().optional(),
 });
 
 export const solutionsSchema = z.array(solutionSchema);

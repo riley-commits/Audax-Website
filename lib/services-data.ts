@@ -104,7 +104,7 @@ export const servicesData: ServiceData[] = [
     techStack: ["Modern web frameworks", "Type-safe backend", "Relational databases", "Caching layers", "Subscription billing", "Cloud infrastructure", "Containerization", "Infrastructure as code"],
     faq: [
       { q: "What's the difference between an MVP and a SaaS product build?", a: "An MVP focuses on the minimum to validate your core hypothesis. A SaaS build includes all the infrastructure needed for a commercial product: multi-tenancy, billing, admin tooling, security, and scalability." },
-      { q: "How much does a SaaS product cost to build?", a: "Most SaaS platforms we build range from $75,000 to $250,000+ depending on complexity. We break this down in a detailed estimate after our discovery session." },
+      { q: "How much does a SaaS product cost to build?", a: "SaaS platforms vary significantly in complexity and scope. Reach out for a free discovery call and we'll give you a detailed estimate based on your specific requirements." },
       { q: "Can you integrate with our existing tools?", a: "Yes. We have experience integrating with hundreds of third-party tools via REST APIs, webhooks, and SDKs." },
       { q: "Do you handle GDPR and data privacy?", a: "Yes. We build GDPR-compliant data handling, consent management, and data deletion flows as part of our standard SaaS builds." },
       { q: "Can you take over an existing SaaS codebase?", a: "Yes. We do a technical audit first, then transition into the project. We're experienced in inheriting messy codebases." },
@@ -232,7 +232,7 @@ export const servicesData: ServiceData[] = [
     faq: [
       { q: "Should I use a hosted-commerce platform or a custom build?", a: "Hosted commerce is excellent for most DTC and SME retailers. A custom build makes sense when you have complex B2B workflows, unique checkout requirements, or need deep integration with existing systems." },
       { q: "Can you migrate my existing store?", a: "Yes. We migrate products, customer data, and order history from any major e-commerce platform." },
-      { q: "How do you handle mobile optimization?", a: "We design and build mobile-first. Our e-commerce sites typically convert 20-30% better on mobile than the industry average." },
+      { q: "How do you handle mobile optimization?", a: "We design and build mobile-first. Every checkout flow is tested extensively on iOS and Android to minimize drop-off at the most critical point in the funnel." },
       { q: "Can you integrate with our ERP or WMS?", a: "Yes. We've built integrations with major ERPs and warehouse management systems." },
       { q: "What ongoing support do you offer?", a: "We offer monthly retainer packages for ongoing development, feature additions, and platform updates." },
     ],
@@ -276,7 +276,7 @@ export const servicesData: ServiceData[] = [
     faq: [
       { q: "Should I build native iOS or cross-platform?", a: "If you're only targeting iOS and need maximum performance or deep platform integration, a native build is ideal. If you also need Android, a cross-platform build gives you a shared codebase at lower cost." },
       { q: "How long does an iOS app take to build?", a: "A simple iOS app (3–5 screens) takes 6–10 weeks. A complex app with a backend takes 12–24 weeks." },
-      { q: "How do you handle App Store rejection?", a: "We've navigated hundreds of App Store reviews. We pre-screen for common rejection reasons and handle any re-submissions at no additional cost." },
+      { q: "How do you handle App Store rejection?", a: "We've navigated many App Store reviews. We pre-screen for common rejection reasons and handle any re-submissions at no additional cost." },
       { q: "Can you add iOS to our existing web platform?", a: "Yes. We build against your existing API or design one in parallel. The iOS app and web app share the same backend." },
       { q: "Do you sign Apple Developer agreements on our behalf?", a: "No. You need your own Apple Developer account. We'll guide you through enrollment and handle all technical submissions." },
     ],
@@ -531,7 +531,7 @@ export const servicesData: ServiceData[] = [
       { q: "At what stage should we bring in QA?", a: "Ideally from day one. QA embedded in development costs 5–10x less than QA at the end. But even a pre-launch QA engagement catches critical issues that save your reputation." },
       { q: "Can you work within our existing CI/CD pipeline?", a: "Yes. We integrate automated tests into any major CI/CD platform — whatever your team is already using." },
       { q: "Do you provide a test coverage report?", a: "Yes. We report on coverage metrics, test results, and open issues in a structured sign-off document." },
-      { q: "How much does QA testing cost?", a: "A pre-launch QA engagement typically costs $5,000–$20,000 depending on scope. Ongoing embedded QA retainers start at $3,000/month." },
+      { q: "How much does QA testing cost?", a: "Cost depends on the scope, complexity, and duration of the engagement. Book a free call and we'll scope it out and give you a clear estimate." },
       { q: "Can you do performance testing?", a: "Yes. We use industry-standard load testing tools to simulate concurrent users and identify performance bottlenecks before they affect production." },
     ],
     relatedServices: ["custom-software-development", "saas-development", "mvp-development"],
@@ -601,7 +601,7 @@ export const servicesData: ServiceData[] = [
       "SaaS companies with growing support volume",
       "E-commerce brands receiving high volumes of order and shipping inquiries",
       "Financial services firms with complex compliance-driven support needs",
-      "Any business spending more than $20K/month on customer support",
+      "Any business spending more than $1,000/month on customer support",
     ],
     process: [
       { step: 1, title: "Support Audit", description: "We analyze your ticket volume, common inquiries, and current resolution workflows.", duration: "1 week" },
@@ -646,7 +646,7 @@ export const servicesData: ServiceData[] = [
       "CTOs who need guidance on AI architecture decisions",
     ],
     process: [
-      { step: 1, title: "AI Opportunity Workshop", description: "Workshop mapping your business processes to AI capabilities and identifying quick wins and strategic bets.", duration: "1 week" },
+      { step: 1, title: "AI Opportunity Workshop", description: "30-minute call to map out your business processes and AI capabilities to identify quick wins and strategic bets.", duration: "1 week" },
       { step: 2, title: "Use Case Prioritization", description: "Scoring framework to prioritize by ROI, feasibility, and strategic value.", duration: "2–3 days" },
       { step: 3, title: "Proof of Concept", description: "Build a working PoC for the highest-priority use case to validate feasibility and ROI.", duration: "2–4 weeks" },
       { step: 4, title: "Production Implementation", description: "Full implementation with robust evaluation, monitoring, and feedback loops.", duration: "4–16 weeks" },
@@ -656,7 +656,7 @@ export const servicesData: ServiceData[] = [
     faq: [
       { q: "We've tried AI before and it didn't work. Why would it work now?", a: "Most failed AI projects suffer from unclear problem definition, wrong tool selection, or inadequate data. We start with a clear ROI hypothesis and build incrementally, so you see validated results before committing to a full build." },
       { q: "How do we keep our data private when using LLMs?", a: "We use enterprise LLM providers with strict data-handling guarantees (training-data isolation, regional hosting) or self-hosted open-source models for sensitive data. We configure data handling to meet your compliance requirements." },
-      { q: "What's the cost of an AI consulting engagement?", a: "An AI Opportunity Assessment and PoC typically costs $15,000–$40,000. Full production implementation varies by scope but we provide detailed estimates after the assessment." },
+      { q: "What's the cost of an AI consulting engagement?", a: "Cost depends on the scope of the assessment and the use cases we're tackling. Book a free call and we'll walk you through what to expect before any commitment." },
       { q: "How do you evaluate AI quality?", a: "We define explicit evaluation metrics before building: accuracy, latency, cost per call, and user satisfaction. We build automated evaluation pipelines and human review processes." },
       { q: "Can you help us fine-tune our own model?", a: "Yes. For use cases with sufficient proprietary data, fine-tuning can significantly outperform prompt engineering alone. We've done this for legal, healthcare, and financial services clients." },
     ],
@@ -737,7 +737,7 @@ export const servicesData: ServiceData[] = [
     ],
     techStack: ["All modern stacks", "Multi-cloud infrastructure", "Version control platforms", "Project management tools", "Documentation platforms", "Design tools"],
     faq: [
-      { q: "What's the commitment?", a: "We offer flexible engagements: 10 hours/month ($3,500), 20 hours/month ($6,500), or 40 hours/month ($12,000). Minimum 3-month commitment." },
+      { q: "What's the commitment?", a: "We offer flexible monthly engagements based on the hours of leadership your stage requires. Book a free intro call and we'll recommend the right level for where you are." },
       { q: "Can a fractional CTO actually understand our product well enough?", a: "Yes — because we specialize in B2B SaaS and tech startups. We've seen most of the common challenges before and can get up to speed quickly. We also work with multiple companies simultaneously, which means we bring cross-company pattern matching you won't get from a single-company CTO." },
       { q: "Can you help us hire a full-time CTO eventually?", a: "Absolutely. That's often the goal. We help you define the role, vet candidates, and ensure a clean handoff when you're ready." },
       { q: "Do you work alongside existing technical leads?", a: "Yes. We position ourselves as the senior advisor to your technical leads, not a replacement for them." },
@@ -779,7 +779,7 @@ export const servicesData: ServiceData[] = [
     ],
     techStack: ["Paid advertising platforms", "Marketing automation", "SEO tooling", "Analytics platforms", "Session-recording tools", "Email marketing platforms"],
     faq: [
-      { q: "What budget do we need for paid advertising?", a: "We recommend a minimum $5,000/month ad spend for paid search and $3,000/month for paid social to generate statistically meaningful data. Below this, results are too variable to optimize effectively." },
+      { q: "What budget do we need for paid advertising?", a: "Ad spend requirements vary by channel, industry, and competitive landscape. We'll recommend a realistic budget during our strategy session — one that can generate statistically meaningful data without wasting your money." },
       { q: "How long before we see results?", a: "Paid ads show results in 30–60 days. SEO typically shows meaningful traffic growth in 4–6 months. We focus on quick wins in the first 90 days while building sustainable long-term channels." },
       { q: "Do you work with early-stage startups?", a: "Yes, but we're honest: if you haven't found product/market fit yet, marketing spend is premature. We'll tell you this upfront rather than take your money." },
       { q: "Do you create the content?", a: "Yes. Our team includes experienced content writers who specialize in SaaS, software, and technical topics." },

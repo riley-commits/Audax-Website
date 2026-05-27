@@ -44,30 +44,6 @@ const metrics = [
   { value: 98,   display: "98%",  suffix: "%",  label: "On-time delivery" },
 ];
 
-// Testimonial quotes are placeholders. Replace with real, attributed
-// quotes (with permission) before launch. Each quote should reference a
-// specific outcome with numbers.
-const testimonials = [
-  {
-    quote:
-      "[Placeholder quote — founder voice. Specific outcome. Numbers. ~20 words.]",
-    name: "[Real name]",
-    role: "[Title], [Company]",
-  },
-  {
-    quote:
-      "[Placeholder quote — SME operator voice. Mentions AI specifically. ~20 words.]",
-    name: "[Real name]",
-    role: "[Title], [Company]",
-  },
-  {
-    quote:
-      "[Placeholder quote — different angle (fractional exec, on-time delivery, IP transfer). ~20 words.]",
-    name: "[Real name]",
-    role: "[Title], [Company]",
-  },
-];
-
 // Headline word chunks. Colored spans stay self-contained so the
 // AnimatedHero wrapper animates each chunk as one unit.
 const headlineChunks = [
@@ -188,49 +164,9 @@ export default function HomePage() {
       {/* FEATURED WORK — outcome-led project cards. */}
       <FeaturedWork />
 
-      {/* TESTIMONIALS — dark section for visual contrast. */}
-      <section className="relative py-32 overflow-hidden" style={{ background: "#0E0E1A" }}>
-        {/* Subtle accent glow */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(800px 500px at 100% 0%, rgba(58,123,213,0.10), transparent 60%), radial-gradient(700px 500px at 0% 100%, rgba(6,95,70,0.06), transparent 55%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-12">
-          <FadeIn>
-            <div className="font-[family-name:var(--font-jetbrains-mono),ui-monospace,SFMono-Regular,Menlo,monospace] text-xs font-medium tracking-[0.12em] uppercase text-white/40 text-center mb-4">
-              In their words
-            </div>
-            <h2 className="font-[family-name:var(--font-outfit)] text-3xl md:text-4xl font-semibold leading-tight tracking-tight text-white max-w-[24ch] mx-auto text-center mb-24">
-              The work speaks for itself. But sometimes, so do they.
-            </h2>
-          </FadeIn>
-          {testimonials.map((t, i) => (
-            <FadeIn key={i} delay={i * 0.06}>
-              <div
-                className={`max-w-[800px] mx-auto ${i < testimonials.length - 1 ? "mb-20 pb-20 border-b border-white/10" : ""}`}
-              >
-                <span
-                  aria-hidden="true"
-                  className="block font-[family-name:var(--font-outfit)] text-7xl md:text-8xl font-bold leading-none text-[var(--color-accent-bright)] mb-4 select-none"
-                >
-                  &ldquo;
-                </span>
-                <p className="text-2xl md:text-3xl italic leading-snug text-white mb-8">
-                  {t.quote}
-                </p>
-                <p className="text-sm text-white/90">
-                  <strong className="font-semibold">{t.name}</strong>{" "}
-                  <span className="text-white/50">— {t.role}</span>
-                </p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </section>
+      {/* Testimonials section intentionally omitted — Riley removed it
+          from the homepage on 2026-05-15 (commit 3be6045 on the OLD
+          repo). Bring back when real attributed quotes are ready. */}
 
       {/* FINAL CTA — magnetic button + glow. */}
       <section className="relative border-t border-[var(--color-border)] py-32 md:py-40 bg-[var(--color-bg)] overflow-hidden">

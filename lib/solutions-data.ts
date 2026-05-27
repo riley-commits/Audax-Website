@@ -101,11 +101,11 @@ export const solutionsData: SolutionData[] = [
       "You own all IP, code, and assets from day one",
       "We have domain experience in SaaS, marketplace, fintech, and healthtech",
       "We'll tell you if your idea needs more validation before we build",
-      "Founder alumni network connects you with other Catalyst graduates",
     ],
     faq: [
+      { q: "How are Catalyst phases priced?", a: "Each phase is scoped and priced individually before it starts, so you're never paying for work that hasn't begun. Reach out for a free intro call and we'll give you a clear picture of what to expect." },
       { q: "How is Catalyst different from hiring a development agency?", a: "Most agencies take a brief and build what you ask for. We challenge your assumptions, help you scope correctly, and act as a genuine product partner. We've seen what works and we'll tell you when something won't." },
-      { q: "Do you take equity?", a: "Our primary model is fee-based. In select cases, we'll discuss a reduced-fee + equity arrangement with early-stage founders, but this is evaluated case by case." },
+      { q: "Do you take equity?", a: "Our model is fee-based. We don't take equity." },
       { q: "What if I'm still in the idea stage?", a: "Perfect — that's exactly when to start. The Validate phase is designed for founders who have an idea but haven't built anything yet." },
       { q: "Can I do just the Validate phase?", a: "Yes. Phases are sold independently. Many founders do the Validate phase and then take the deliverables to raise a pre-seed round before commissioning the build." },
     ],
@@ -188,8 +188,8 @@ export const solutionsData: SolutionData[] = [
       { q: "How does Audax differ from a Big 4 consulting firm?", a: "Big 4 firms excel at strategy documents. We actually build the software. Our teams are practitioners: engineers, designers, and architects who write code every day." },
       { q: "Can you work within our procurement process?", a: "Yes. We're set up for enterprise procurement including MSAs, SOWs, insurance certificates, security questionnaires, and PO-based billing." },
       { q: "How do you handle data security for enterprise clients?", a: "We sign a comprehensive DPA, work within your security framework, and can complete security questionnaires. We have experience with SOC 2, HIPAA, and ISO 27001 environments." },
-      { q: "Do you resource the project with your team or subcontractors?", a: "We use our own team. We do not offshore or subcontract without disclosure. The team you meet in the discovery is the team that builds your product." },
-      { q: "How do we get started?", a: "The Audit phase begins with a 2-hour stakeholder alignment workshop followed by a 2-week deep-dive. We can typically begin within 2 weeks of agreement." },
+      { q: "Do you resource the project with your team or subcontractors?", a: "We use our own team. The team you meet in the discovery is the team that builds your product." },
+      { q: "How do we get started?", a: "We kick off with a 30-minute discovery call to align on goals and prepare for a 2-week audit. We can typically begin within 2 weeks of agreement." },
     ],
   },
   {
@@ -276,6 +276,8 @@ export const solutionsData: SolutionData[] = [
       { q: "How is this different from just using ChatGPT?", a: "Generic AI tools are general-purpose. We build solutions that know your business: your products, your customers, your tone, and your workflows. The result behaves like a trained team member, not a generic assistant." },
       { q: "How much does the program cost?", a: "Each phase is scoped and priced individually before it starts — no surprises. Book a free intro call and we'll give you a clear picture of what to expect." },
       { q: "Will our staff lose jobs to AI?", a: "Our goal is to remove the drudgery from your team's workload — not their roles. The businesses we work with use AI to handle volume that was previously impossible, freeing their people for higher-value, relationship-driven work." },
+      { q: "How long before we see results?", a: "Most clients see measurable results — reduced ticket response time, faster document processing, or time saved per week — within 4–6 weeks of the Implementation phase kicking off." },
+      { q: "Do you work with specific industries?", a: "Yes. We have particular depth in healthcare, professional services, retail, logistics, and manufacturing — industries with high-volume, repeatable processes that are well-suited to AI augmentation." },
     ],
   },
   {

@@ -803,7 +803,7 @@ But a validated bet is dramatically better than an unvalidated one. And validate
 
 Once you've validated your idea, the next question is: what do I build, and how do I build it right?
 
-That's where the Audax Ventures [Catalyst for Founders program](/solutions/catalyst-for-founders) begins. We work with founders who have completed their validation and are ready to scope and build their MVP.
+That's where the Audax Ventures [Founder Prototype Program](https://www.audaxventures.io) begins. We work with founders who have completed their validation and are ready to turn the idea into a working prototype.
 
 [Book a free strategy call](/contact) to discuss your validation results and determine your next step.
     `,

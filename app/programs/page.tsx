@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Clock, Lightbulb, Building2, BrainCircuit, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Building2, BrainCircuit, Zap } from "lucide-react";
 import CTABanner from "@/components/layout/CTABanner";
 import { solutionsData } from "@/lib/solutions-data";
 
 export const metadata: Metadata = {
   title: "Programs | Audax Ventures",
   description:
-    "Four structured programs built for where you are in your journey — Catalyst for Founders, Enterprise Innovation Program, AI Implementation Program, and Founder Prototype Program.",
+    "Three structured programs built for where you are in your journey — Enterprise Innovation Program, AI Implementation, and Founder Prototype Program.",
   alternates: { canonical: "https://audaxventures.ca/programs" },
   openGraph: {
     title: "Programs | Audax Ventures",
     description:
-      "Four structured, phased programs — for founders, enterprise teams, and businesses ready to put AI to work. Beyond a typical development agency.",
+      "Three structured, phased programs — for enterprise teams, businesses ready to put AI to work, and founders building prototypes. Beyond a typical development agency.",
     url: "https://audaxventures.ca/programs",
   },
 };
@@ -24,14 +24,6 @@ const PROGRAM_ACCENT_COLOR = "text-[#92400E]";
 const PROGRAM_ACCENT_BG = "bg-[#92400E]/8";
 
 const programMeta = [
-  {
-    slug: "catalyst-for-founders",
-    icon: Lightbulb,
-    badge: "For Founders",
-    gradient: PROGRAM_GRADIENT,
-    accentColor: PROGRAM_ACCENT_COLOR,
-    accentBg: PROGRAM_ACCENT_BG,
-  },
   {
     slug: "enterprise-innovation-program",
     icon: Building2,

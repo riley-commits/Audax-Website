@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
       { source: "/solutions/:slug", destination: "/programs/:slug", permanent: true },
       // Renamed from "SME AI Implementation" → "AI Implementation"
       { source: "/programs/sme-ai-implementation", destination: "/programs/ai-implementation", permanent: true },
+      // Catalyst for Founders program removed 2026-05-28 — send old links to the programs hub
+      { source: "/programs/catalyst-for-founders", destination: "/programs", permanent: true },
+      { source: "/solutions/catalyst-for-founders", destination: "/programs", permanent: true },
     ];
   },
 };

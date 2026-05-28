@@ -45,7 +45,7 @@ const projects: FeaturedProject[] = [
     client: "H2MB",
     description:
       "Operations platform for a Manitoba renewable-energy venture. We built the technology stack from scratch alongside fractional COO advisory.",
-    href: "/programs/catalyst-for-founders",
+    href: "/programs",
     accentVar: "--color-accent-secondary",
     logo: { src: "/logos/h2mb.avif", width: 200, height: 56 },
   },

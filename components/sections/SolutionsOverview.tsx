@@ -3,37 +3,9 @@
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Lightbulb, Building2, BrainCircuit, Zap } from "lucide-react";
+import { ArrowRight, Building2, BrainCircuit, Zap } from "lucide-react";
 
 const programs = [
-  {
-    icon: Lightbulb,
-    badge: "For Founders",
-    title: "Catalyst for Founders",
-    description:
-      "A technical partner, not just a vendor — from raw idea to revenue-generating product.",
-    href: "/programs/catalyst-for-founders",
-    gradient: "from-[#78350F] via-[#92400E] to-[#78350F]",
-    accentColor: "#D97706",
-    phases: [
-      {
-        name: "Validate",
-        duration: "2–3 wks",
-        deliverables: ["Customer discovery", "MVP scope doc", "Lean experiment"],
-      },
-      {
-        name: "Launch",
-        duration: "8–16 wks",
-        deliverables: ["UI/UX in Figma", "Production MVP", "Cloud deployment"],
-      },
-      {
-        name: "Scale",
-        duration: "6–18 mo",
-        deliverables: ["Sprint roadmap", "A/B testing", "Fundraising support"],
-      },
-    ],
-    stat: { value: "50+", label: "founders launched" },
-  },
   {
     icon: Building2,
     badge: "For Enterprise",

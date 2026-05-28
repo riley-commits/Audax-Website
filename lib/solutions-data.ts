@@ -32,86 +32,6 @@ export interface SolutionData {
 
 export const solutionsData: SolutionData[] = [
   {
-    slug: "catalyst-for-founders",
-    title: "Catalyst for Founders",
-    heroTitle: "Catalyst for Founders — Your Venture & Product Partner From Idea to Traction",
-    heroSub:
-      "A structured three-phase program that takes you from raw idea to a live, revenue-generating product — with the team, process, and accountability you need.",
-    metaTitle: "Catalyst for Founders Program | MVP to Traction",
-    metaDescription:
-      "Catalyst for Founders: our structured Validate → Launch → Scale program for pre-seed and seed-stage founders. Book a free intro call with Audax Ventures.",
-    description:
-      "Most founders are smart, motivated, and full of ideas. What they often lack is a reliable technical partner who understands the startup journey — the need to move fast, stay lean, and make every dollar count. Catalyst for Founders is our answer: a program designed specifically for pre-seed and seed-stage founders who need more than an agency.",
-    phases: [
-      {
-        number: 1,
-        name: "Validate",
-        icon: "🔍",
-        description:
-          "Before writing a line of code, we help you validate your core assumptions with real users. We run a Discovery Sprint: customer interviews, competitive analysis, and a lean experiment to test your riskiest hypothesis. You'll leave with evidence-based confidence in your idea, a defined MVP scope, and a user persona document you can use to raise capital.",
-        duration: "2–3 weeks",
-        deliverables: [
-          "5–10 customer discovery interviews",
-          "Competitive landscape analysis",
-          "MVP feature scope document",
-          "Validated user personas",
-          "Lean experiment results (landing page test, prototype test, or pre-order campaign)",
-        ],
-      },
-      {
-        number: 2,
-        name: "Launch",
-        icon: "🚀",
-        description:
-          "With a validated scope, we move into design and development. We apply our MVP development process: fast, focused sprints, weekly demos, and a bias toward shipping over perfecting. You'll have a production-ready product in the hands of your first users within 8–16 weeks.",
-        duration: "8–16 weeks",
-        deliverables: [
-          "Complete UI/UX in Figma",
-          "Production-ready MVP (mobile or web)",
-          "Authentication, core features, and basic analytics",
-          "Cloud deployment with CI/CD pipeline",
-          "Launch checklist and GTM support",
-        ],
-      },
-      {
-        number: 3,
-        name: "Scale",
-        icon: "📈",
-        description:
-          "Once you have users and early revenue, we help you build the systems for scale: better onboarding, new features guided by user data, and infrastructure that grows with you. Many Catalyst clients raise their seed round with us in the Scale phase, using their traction as proof of product-market fit.",
-        duration: "Ongoing — typically 6–18 months",
-        deliverables: [
-          "Feature roadmap based on user feedback and analytics",
-          "Ongoing 2-week sprint cycles",
-          "A/B testing infrastructure",
-          "Investor-ready metrics dashboard",
-          "Technical due diligence support for fundraising",
-        ],
-      },
-    ],
-    whoItsFor: [
-      "Pre-seed founders with a validated idea who need a technical co-founder equivalent",
-      "Solo entrepreneurs launching a digital product or SaaS",
-      "Seed-stage companies that need to move faster than their internal team allows",
-      "Non-technical founders who need a trusted partner, not just a vendor",
-    ],
-    differentiators: [
-      "We act as a partner, not just a contractor — we care about your outcomes",
-      "Fixed-scope, time-boxed phases prevent scope creep and budget surprises",
-      "You own all IP, code, and assets from day one",
-      "We have domain experience in SaaS, marketplace, fintech, and healthtech",
-      "We'll tell you if your idea needs more validation before we build",
-    ],
-    faq: [
-      { q: "What's the minimum budget for Catalyst?", a: "The Validate phase starts at $8,000. The Launch phase (MVP build) typically ranges from $25,000 to $80,000. We structure payments by phase so you're never paying for work that hasn't started." },
-      { q: "How are Catalyst phases priced?", a: "Each phase is scoped and priced individually before it starts, so you're never paying for work that hasn't begun. Reach out for a free intro call and we'll give you a clear picture of what to expect." },
-      { q: "How is Catalyst different from hiring a development agency?", a: "Most agencies take a brief and build what you ask for. We challenge your assumptions, help you scope correctly, and act as a genuine product partner. We've seen what works and we'll tell you when something won't." },
-      { q: "Do you take equity?", a: "Our model is fee-based. We don't take equity." },
-      { q: "What if I'm still in the idea stage?", a: "Perfect — that's exactly when to start. The Validate phase is designed for founders who have an idea but haven't built anything yet." },
-      { q: "Can I do just the Validate phase?", a: "Yes. Phases are sold independently. Many founders do the Validate phase and then take the deliverables to raise a pre-seed round before commissioning the build." },
-    ],
-  },
-  {
     slug: "enterprise-innovation-program",
     title: "Enterprise Innovation Program",
     heroTitle: "Enterprise Innovation Program — From Internal Idea to Shipped Product",
@@ -352,7 +272,7 @@ export const solutionsData: SolutionData[] = [
     ],
     faq: [
       { q: "What's the difference between this and an MVP?", a: "An MVP is a production-ready product with the minimum features to acquire real customers. A prototype is faster and cheaper — it's built to learn and validate, not to scale. The Founder Prototype Program is the right starting point before you commit to an MVP build." },
-      { q: "Can I move from the prototype to a full build with Audax?", a: "Absolutely. Many founders use this program as the first phase of a longer engagement. If the prototype validates your idea, we can transition directly into our Catalyst for Founders program to take it to launch." },
+      { q: "Can I move from the prototype to a full build with Audax?", a: "Absolutely. Many founders use this program as the first phase of a longer engagement. If the prototype validates your idea, we can transition directly into a full MVP build to take it to launch." },
       { q: "Will investors take a prototype seriously?", a: "Yes — a working prototype demonstrates far more than a slide deck. Investors want to see that you can execute, that users engage with your product, and that you understand the problem you're solving. A real prototype does all three." },
       { q: "How much does it cost?", a: "The program is fixed-price and scoped before it starts. Visit the program page for full details and pricing." },
     ],

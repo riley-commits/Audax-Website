@@ -50,7 +50,7 @@ const otherServices = [
   { label: "Process Automation",          href: "/services/process-automation",          icon: "🔄" },
   { label: "Customer Service Automation", href: "/services/customer-service-automation", icon: "💬" },
   { label: "CRM Systems",                 href: "/services/crm-systems",                 icon: "👥" },
-  { label: "CTO-as-a-Service",            href: "/services/cto-as-a-service",            icon: "📐" },
+  { label: "Fractional CAIO",             href: "/services/fractional-caio",             icon: "🤖" },
   { label: "Digital Marketing",           href: "/services/digital-marketing",           icon: "📈" },
 ];
 

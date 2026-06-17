@@ -44,6 +44,23 @@ const serviceIncludedItemSchema = z.object({
   description: z.string().min(1),
 });
 
+// Package tier (used by Fractional CAIO and any future tiered/retainer service).
+const packageMonthlyPhaseSchema = z.object({
+  month: z.number().int().positive(),
+  title: z.string().min(1),
+  activities: z.array(z.string().min(1)),
+  deliverables: z.array(z.string().min(1)),
+});
+
+const servicePackageSchema = z.object({
+  name: z.string().min(1),
+  price: z.string().min(1),       // e.g. "$2,500"
+  priceUnit: z.string().min(1),   // e.g. "/month"
+  tagline: z.string().min(1),     // e.g. "AI Foundation & Governance Package"
+  bestFor: z.string().min(1),
+  monthlyPhases: z.array(packageMonthlyPhaseSchema),
+});
+
 export const serviceSchema = z.object({
   slug: slugSchema,
   title: z.string().min(1),
@@ -54,8 +71,11 @@ export const serviceSchema = z.object({
   description: z.string().min(1),
   whatsIncluded: z.array(serviceIncludedItemSchema),
   whoItsFor: z.array(z.string().min(1)),
-  process: z.array(serviceProcessStepSchema),
-  techStack: z.array(z.string().min(1)),
+  // Optional — tiered/retainer services (Fractional CAIO) describe their
+  // engagement structure via `packages` instead of a single `process` arc.
+  process: z.array(serviceProcessStepSchema).optional(),
+  techStack: z.array(z.string().min(1)).optional(),
+  packages: z.array(servicePackageSchema).optional(),
   faq: z.array(faqEntrySchema),
   relatedServices: z.array(slugSchema),
 });

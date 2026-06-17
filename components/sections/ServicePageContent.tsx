@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, ChevronDown, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ServiceData } from "@/lib/services-data";
+import PricingTiers from "@/components/sections/PricingTiers";
 
 // ── Per-service outcome stats shown in the hero ───────────────────────────────
 
@@ -89,10 +90,10 @@ const serviceStats: Record<string, { value: string; label: string }[]> = {
     { value: "6–12 wks", label: "typical timeline" },
     { value: "100%", label: "fits your process" },
   ],
-  "cto-as-a-service": [
-    { value: "⅓", label: "cost of a full-time CTO" },
-    { value: "Week 1", label: "fully onboarded" },
-    { value: "Sr.", label: "engineers only" },
+  "fractional-caio": [
+    { value: "$2,500", label: "/month starting tier" },
+    { value: "3 mo", label: "structured onboarding" },
+    { value: "1/10", label: "the cost of a full-time CAIO" },
   ],
   "digital-marketing": [
     { value: "3×", label: "avg. organic traffic lift" },
@@ -120,7 +121,7 @@ const midCTAHeadlines: Record<string, { headline: string; sub: string }> = {
   "customer-service-automation": { headline: "Ready to Deflect 70% of Your Tickets?", sub: "AI-powered support that runs 24/7 without adding headcount. Book a free discovery call." },
   "ai-consulting":           { headline: "Ready to Add Real AI to Your Product?", sub: "LLMs, RAG, and automation — without the hype. Let's build something that actually works." },
   "crm-systems":             { headline: "Ready for a CRM That Fits Your Process?", sub: "Stop forcing your team into generic software. Let's design a CRM around how you actually sell." },
-  "cto-as-a-service":        { headline: "Ready for Senior Technical Leadership?", sub: "Get a CTO-level perspective on your stack, team, and roadmap — starting this week." },
+  "fractional-caio":         { headline: "Ready for Senior AI Leadership?", sub: "Get an executive-level perspective on AI strategy, governance, and ROI — starting this month." },
   "digital-marketing":       { headline: "Ready to Grow Your Organic Reach?", sub: "SEO and content that compounds month over month. Book a free marketing strategy call." },
 };
 
@@ -177,7 +178,7 @@ function FAQAccordion({ faq }: { faq: ServiceData["faq"] }) {
 
 // ── Process Stepper ────────────────────────────────────────────────────────────
 
-function ProcessStepper({ process }: { process: ServiceData["process"] }) {
+function ProcessStepper({ process }: { process: NonNullable<ServiceData["process"]> }) {
   const [activeStep, setActiveStep] = useState(0);
   const [mobileOpen, setMobileOpen] = useState<number | null>(0);
   const step = process[activeStep];
@@ -329,13 +330,23 @@ interface Props {
   related: (ServiceData | undefined)[];
 }
 
-const sectionLinks = [
-  { id: "whats-included", label: "What's Included" },
-  { id: "who-its-for",    label: "Who It's For" },
-  { id: "process",        label: "Our Process" },
-  { id: "tech-stack",     label: "Tech Stack" },
-  { id: "faq",            label: "FAQs" },
-];
+function buildSectionLinks(service: ServiceData) {
+  const links: { id: string; label: string }[] = [
+    { id: "whats-included", label: "What's Included" },
+    { id: "who-its-for",    label: "Who It's For" },
+  ];
+  if (service.packages && service.packages.length > 0) {
+    links.push({ id: "packages", label: "Packages & Pricing" });
+  }
+  if (service.process && service.process.length > 0) {
+    links.push({ id: "process", label: "Our Process" });
+  }
+  if (service.techStack && service.techStack.length > 0) {
+    links.push({ id: "tech-stack", label: "Tech Stack" });
+  }
+  links.push({ id: "faq", label: "FAQs" });
+  return links;
+}
 
 export default function ServicePageContent({ service, related }: Props) {
   const stats = serviceStats[service.slug] ?? [
@@ -347,6 +358,7 @@ export default function ServicePageContent({ service, related }: Props) {
     headline: "Ready to Get Started?",
     sub: "Book a free 30-minute strategy call. No pitch, no pressure — just clarity.",
   };
+  const sectionLinks = buildSectionLinks(service);
 
   return (
     <>
@@ -448,13 +460,28 @@ export default function ServicePageContent({ service, related }: Props) {
               </div>
             </section>
 
+            {/* Packages & Pricing (tiered services only) */}
+            {service.packages && service.packages.length > 0 && (
+              <section id="packages" className="py-16 border-t border-gray-100 scroll-mt-24">
+                <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-3">
+                  Packages & Pricing
+                </h2>
+                <p className="text-[#6B7280] text-base mb-10 max-w-2xl">
+                  Three structured monthly engagements. Pick the tier that matches where you are — switch up as your AI maturity grows.
+                </p>
+                <PricingTiers packages={service.packages} />
+              </section>
+            )}
+
             {/* Option 3: Process Stepper */}
-            <section id="process" className="py-16 border-t border-gray-100 scroll-mt-24">
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
-                Our Process
-              </h2>
-              <ProcessStepper process={service.process} />
-            </section>
+            {service.process && service.process.length > 0 && (
+              <section id="process" className="py-16 border-t border-gray-100 scroll-mt-24">
+                <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
+                  Our Process
+                </h2>
+                <ProcessStepper process={service.process} />
+              </section>
+            )}
 
             {/* Option 5: Mid-page dark CTA break */}
             <div className="rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#1A3A5C] to-[#0F172A] p-10 text-center my-8 relative overflow-hidden">
@@ -476,16 +503,18 @@ export default function ServicePageContent({ service, related }: Props) {
             </div>
 
             {/* Tech Stack */}
-            <section id="tech-stack" className="py-16 border-t border-gray-100 scroll-mt-24">
-              <h2 className="font-[var(--font-outfit)] font-bold text-2xl text-[#1A1A2E] mb-6">Technologies We Use</h2>
-              <div className="flex flex-wrap gap-3">
-                {service.techStack.map((t) => (
-                  <span key={t} className="px-4 py-1.5 rounded-full bg-[#F8F9FA] border border-gray-200 text-sm text-[#6B7280] font-medium hover:border-[#2E5F8A]/30 transition-colors">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </section>
+            {service.techStack && service.techStack.length > 0 && (
+              <section id="tech-stack" className="py-16 border-t border-gray-100 scroll-mt-24">
+                <h2 className="font-[var(--font-outfit)] font-bold text-2xl text-[#1A1A2E] mb-6">Technologies We Use</h2>
+                <div className="flex flex-wrap gap-3">
+                  {service.techStack.map((t) => (
+                    <span key={t} className="px-4 py-1.5 rounded-full bg-[#F8F9FA] border border-gray-200 text-sm text-[#6B7280] font-medium hover:border-[#2E5F8A]/30 transition-colors">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Option 2: FAQ Accordion */}
             <section id="faq" className="py-16 border-t border-gray-100 scroll-mt-24">

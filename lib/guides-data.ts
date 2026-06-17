@@ -1138,7 +1138,7 @@ Our SaaS engagements start with a 2-week discovery sprint where we design your a
     publishDate: "April 8, 2025",
     author: "Audax Ventures Team",
     readTime: "10 min read",
-    relatedServices: ["cto-as-a-service", "saas-development"],
+    relatedServices: ["fractional-caio", "saas-development"],
     relatedPosts: ["how-to-choose-a-software-development-partner"],
     content: `
 ## The Technical Leadership Gap

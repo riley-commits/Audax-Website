@@ -89,7 +89,7 @@ const categories = [
     description: "Technical leadership and quality assurance to de-risk every build.",
     services: [
       { icon: "🔍", title: "QA & Testing",          tagline: "Exploratory, automated, and load testing before launch", href: "/services/qa-testing" },
-      { icon: "📐", title: "CTO-as-a-Service",      tagline: "Fractional technical leadership for growing teams",      href: "/services/cto-as-a-service" },
+      { icon: "🤖", title: "Fractional CAIO",       tagline: "Fractional Chief AI Officer for AI strategy, governance, and ROI",      href: "/services/fractional-caio" },
       { icon: "📈", title: "Digital Marketing",     tagline: "SEO, content, and paid acquisition that compounds",      href: "/services/digital-marketing" },
     ],
   },

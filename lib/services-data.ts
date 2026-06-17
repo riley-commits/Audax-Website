@@ -3,6 +3,24 @@ export interface ServiceFAQ {
   a: string;
 }
 
+/**
+ * Tiered package for retainer/advisory services (e.g. Fractional CAIO).
+ * Each package has a price, an audience, and a sequence of monthly phases.
+ */
+export interface ServicePackage {
+  name: string;
+  price: string;          // e.g. "$2,500"
+  priceUnit: string;      // e.g. "/month"
+  tagline: string;        // e.g. "AI Foundation & Governance Package"
+  bestFor: string;
+  monthlyPhases: {
+    month: number;
+    title: string;
+    activities: string[];
+    deliverables: string[];
+  }[];
+}
+
 export interface ServiceData {
   slug: string;
   title: string;
@@ -13,8 +31,11 @@ export interface ServiceData {
   description: string;
   whatsIncluded: { icon: string; label: string; description: string }[];
   whoItsFor: string[];
-  process: { step: number; title: string; description: string; duration: string }[];
-  techStack: string[];
+  // Optional — tiered/retainer services describe their engagement via
+  // `packages` instead of a single process arc.
+  process?: { step: number; title: string; description: string; duration: string }[];
+  techStack?: string[];
+  packages?: ServicePackage[];
   faq: ServiceFAQ[];
   relatedServices: string[];
 }
@@ -109,7 +130,7 @@ export const servicesData: ServiceData[] = [
       { q: "Do you handle GDPR and data privacy?", a: "Yes. We build GDPR-compliant data handling, consent management, and data deletion flows as part of our standard SaaS builds." },
       { q: "Can you take over an existing SaaS codebase?", a: "Yes. We do a technical audit first, then transition into the project. We're experienced in inheriting messy codebases." },
     ],
-    relatedServices: ["mvp-development", "backend-development", "cto-as-a-service"],
+    relatedServices: ["mvp-development", "backend-development", "fractional-caio"],
   },
   {
     slug: "internal-tools",
@@ -705,45 +726,189 @@ export const servicesData: ServiceData[] = [
     relatedServices: ["internal-tools", "process-automation", "customer-service-automation"],
   },
   {
-    slug: "cto-as-a-service",
-    title: "CTO-as-a-Service",
-    heroTitle: "CTO-as-a-Service — Senior Technical Leadership Without the Full-Time Salary",
+    slug: "fractional-caio",
+    title: "Fractional Chief AI Officer",
+    heroTitle: "Fractional Chief AI Officer Services — AI Leadership Without the Full-Time Hire",
     heroSub:
-      "Fractional CTO services for startups and scale-ups that need experienced technical leadership to make the right architecture decisions, hire the right team, and build the right product.",
-    metaTitle: "CTO as a Service for Startups Canada | Fractional CTO",
+      "Three structured monthly engagements that bring senior AI leadership to your business — from initial governance and policy through full implementation and innovation. Choose the tier that matches where you are.",
+    metaTitle: "Fractional Chief AI Officer Canada | CAIO Services",
     metaDescription:
-      "Fractional CTO-as-a-Service for startups and scale-ups. Technical strategy, architecture review, team building, and vendor management. Book a free intro call.",
+      "Fractional Chief AI Officer (CAIO) services for Canadian businesses. Three monthly packages from $2,500 — AI governance, operations, and full AI leadership.",
     description:
-      "A great CTO is one of the highest-leverage people in your company — but hiring a full-time senior CTO costs $200K–$350K per year before you factor in equity. Our CTO-as-a-Service program gives you experienced technical leadership on a fractional basis, at the stage when you need it most.",
+      "Most businesses know they need AI leadership but aren't ready for a full-time hire. A Fractional Chief AI Officer engagement gives you senior AI strategy, governance, and implementation expertise on a monthly retainer — at a fraction of the cost. Our three packages match the stage you're at: from setting up the basic governance every business needs, through running operational improvements with AI, to acting as your ongoing AI leader across strategy, training, ROI, and innovation.",
     whatsIncluded: [
-      { icon: "🎯", label: "Technical Strategy", description: "Define your technology roadmap aligned to your business goals and funding stage." },
-      { icon: "🏗️", label: "Architecture Review", description: "Audit your existing architecture and define the path to scalability." },
-      { icon: "👥", label: "Team Building", description: "Define hiring criteria, vet candidates, and structure your engineering team." },
-      { icon: "🤝", label: "Vendor Management", description: "Evaluate and manage development agencies, infrastructure vendors, and tooling." },
-      { icon: "💡", label: "Investor Relations Support", description: "Technical due diligence prep, pitch deck tech slides, and investor Q&A support." },
-      { icon: "🔒", label: "Security & Compliance", description: "Security posture review and compliance roadmap (SOC 2, HIPAA, GDPR)." },
+      { icon: "🤝", label: "Monthly leadership engagement", description: "Direct work with your leadership team on AI strategy, governance, and execution." },
+      { icon: "📋", label: "AI governance & risk frameworks", description: "Clear ownership, approval processes, risk register, and company-wide usage rules." },
+      { icon: "📚", label: "SOPs & employee training", description: "AI usage SOPs, department playbooks, prompt libraries, and live training sessions." },
+      { icon: "🎯", label: "Practical AI roadmap", description: "Prioritized AI opportunities with effort, cost, risk, and ROI estimates for your business." },
+      { icon: "🔐", label: "Privacy & data handling", description: "Guidance on AI-safe use of client data, internal documents, and confidential information." },
+      { icon: "📊", label: "ROI tracking & reporting", description: "Estimated time savings, financial impact, and a leadership-facing AI scorecard." },
     ],
     whoItsFor: [
-      "Pre-seed and seed founders who are non-technical",
-      "Startups with a junior dev team that needs senior guidance",
-      "Scale-ups between CTOs looking for bridge leadership",
-      "Founders preparing for technical due diligence in a fundraising round",
+      "Mid-market businesses that want senior AI guidance without hiring a full-time CAIO",
+      "Leadership teams that need clear AI governance, SOPs, and employee usage rules in place",
+      "Operations leaders looking to ship AI pilots and measure ROI rigorously",
+      "Founders or executives who want a sparring partner on AI strategy",
+      "Businesses preparing for AI-related compliance, audit, or governance requirements",
+      "Organizations that have tried AI tools before but haven't seen meaningful results",
     ],
-    process: [
-      { step: 1, title: "Intro Call & Assessment", description: "Initial call to understand your stage, team, product, and challenges.", duration: "Week 1" },
-      { step: 2, title: "Technical Audit", description: "Review of your existing codebase, infrastructure, and team structure.", duration: "Week 2" },
-      { step: 3, title: "Roadmap & Recommendations", description: "Delivery of a technical roadmap and prioritized action plan.", duration: "Week 3" },
-      { step: 4, title: "Ongoing Engagement", description: "Weekly calls, async chat support, and regular strategy sessions.", duration: "Monthly" },
+    packages: [
+      {
+        name: "AI Foundation & Governance Package",
+        price: "$2,500",
+        priceUnit: "/month",
+        tagline: "Structure, rules, and a practical starting point.",
+        bestFor: "Businesses starting with AI — want structure, basic rules, and a practical adoption starting point.",
+        monthlyPhases: [
+          {
+            month: 1,
+            title: "AI Discovery & Governance Setup",
+            activities: [
+              "Conduct AI discovery session with leadership team",
+              "Review current AI usage across the business",
+              "Identify key operational areas where AI could improve efficiency",
+              "Create an initial AI governance structure, including who is responsible for AI decisions",
+              "Draft basic AI usage rules for employees",
+              "Identify risks around privacy, data security, accuracy, and employee misuse",
+            ],
+            deliverables: ["AI Opportunity & Risk Summary"],
+          },
+          {
+            month: 2,
+            title: "SOPs & Employee Enablement",
+            activities: [
+              "Create a company-wide AI Usage SOP",
+              "Define approved and unapproved AI use cases",
+              "Create rules for using AI with client data, internal documents, and confidential information",
+              "Develop simple prompt templates for common business tasks",
+              "Run one employee AI training session",
+              "Identify 3–5 practical AI tools the company can begin using",
+            ],
+            deliverables: ["AI Policy & SOP Package"],
+          },
+          {
+            month: 3,
+            title: "AI Roadmap & ROI Review",
+            activities: [
+              "Identify 5–10 AI opportunities across operations, admin, sales, marketing, HR, or customer service",
+              "Prioritize opportunities based on effort, risk, cost, and potential ROI",
+              "Estimate time savings and financial impact for top AI opportunities",
+              "Recommend quick-win AI implementations",
+              "Create a 90-day follow-up roadmap",
+            ],
+            deliverables: ["Practical AI Adoption Roadmap"],
+          },
+        ],
+      },
+      {
+        name: "AI Operations & Implementation Package",
+        price: "$5,000",
+        priceUnit: "/month",
+        tagline: "Strategy, training, workflow design, and pilots.",
+        bestFor: "Businesses ready for Audax to lead AI strategy, improve operations, train staff, and start implementing AI workflows.",
+        monthlyPhases: [
+          {
+            month: 1,
+            title: "AI Strategy, Governance & Operational Audit",
+            activities: [
+              "Conduct leadership AI strategy workshop",
+              "Review business operations, workflows, tools, and bottlenecks",
+              "Identify AI opportunities across departments",
+              "Establish an AI governance model with clear ownership and approval processes",
+              "Create an AI risk register",
+              "Define company-wide AI usage principles",
+            ],
+            deliverables: ["AI Strategy & Operations Audit"],
+          },
+          {
+            month: 2,
+            title: "SOPs, Training & Workflow Design",
+            activities: [
+              "Create detailed AI SOPs for employee usage",
+              "Create department-specific AI guidelines",
+              "Build prompt libraries for sales, marketing, admin, operations, HR, and leadership",
+              "Run up to two employee training sessions",
+              "Design 2–3 AI-powered workflow improvements",
+              "Recommend tools, automations, or custom AI solutions",
+            ],
+            deliverables: ["AI SOP, Training & Workflow Playbook"],
+          },
+          {
+            month: 3,
+            title: "Pilot Implementation & ROI Reporting",
+            activities: [
+              "Support implementation of 1–2 AI workflow pilots",
+              "Track adoption, time savings, quality improvements, and cost reduction",
+              "Estimate financial ROI from implemented or proposed AI initiatives",
+              "Provide recommendations for scaling successful pilots",
+              "Introduce relevant emerging AI tools or technologies for competitive advantage",
+            ],
+            deliverables: ["Pilot Results & AI ROI Report", "6-Month AI Implementation Roadmap"],
+          },
+        ],
+      },
+      {
+        name: "Fractional Chief AI Officer Package",
+        price: "$7,500",
+        priceUnit: "/month",
+        tagline: "Ongoing AI leadership across the whole company.",
+        bestFor: "Businesses wanting Audax to act as their ongoing AI leader — managing strategy, governance, implementation, training, ROI, and innovation.",
+        monthlyPhases: [
+          {
+            month: 1,
+            title: "AI Leadership, Governance & Company-Wide Audit",
+            activities: [
+              "Audax acts as the company's fractional Chief AI Officer",
+              "Lead AI strategy and decision-making with the leadership team",
+              "Conduct a company-wide AI readiness assessment",
+              "Review operations, software tools, data, employee workflows, and current AI usage",
+              "Establish an AI governance committee or leadership cadence",
+              "Define AI ownership, approval processes, and risk controls",
+              "Create an AI opportunity backlog across all major departments",
+            ],
+            deliverables: ["AI Governance, Readiness & Opportunity Report"],
+          },
+          {
+            month: 2,
+            title: "SOPs, Department Enablement & Implementation Planning",
+            activities: [
+              "Create full company AI policy and SOP framework",
+              "Create department-specific AI playbooks",
+              "Run up to three employee or leadership training sessions",
+              "Build custom prompt libraries and workflow templates",
+              "Select 2–4 priority AI initiatives for implementation",
+              "Create implementation plans for each selected initiative",
+              "Evaluate AI tools, vendors, automation platforms, or custom development options",
+            ],
+            deliverables: ["AI Operating System Playbook"],
+          },
+          {
+            month: 3,
+            title: "AI Implementation, ROI & Innovation Roadmap",
+            activities: [
+              "Lead implementation of 2–3 AI pilots or workflow improvements",
+              "Monitor employee adoption and provide guidance as needed",
+              "Track operational efficiency gains and estimated financial ROI",
+              "Create a leadership-facing AI scorecard",
+              "Recommend emerging technologies that could improve competitiveness",
+              "Identify opportunities for custom AI tools, AI agents, automations, or software integrations",
+            ],
+            deliverables: ["90-Day AI Impact Report", "12-Month AI Transformation Roadmap"],
+          },
+        ],
+      },
     ],
-    techStack: ["All modern stacks", "Multi-cloud infrastructure", "Version control platforms", "Project management tools", "Documentation platforms", "Design tools"],
     faq: [
-      { q: "What's the commitment?", a: "We offer flexible monthly engagements based on the hours of leadership your stage requires. Book a free intro call and we'll recommend the right level for where you are." },
-      { q: "Can a fractional CTO actually understand our product well enough?", a: "Yes — because we specialize in B2B SaaS and tech startups. We've seen most of the common challenges before and can get up to speed quickly. We also work with multiple companies simultaneously, which means we bring cross-company pattern matching you won't get from a single-company CTO." },
-      { q: "Can you help us hire a full-time CTO eventually?", a: "Absolutely. That's often the goal. We help you define the role, vet candidates, and ensure a clean handoff when you're ready." },
-      { q: "Do you work alongside existing technical leads?", a: "Yes. We position ourselves as the senior advisor to your technical leads, not a replacement for them." },
-      { q: "Do you sign NDAs?", a: "Yes, always. We work with multiple clients in overlapping spaces and take confidentiality extremely seriously." },
+      { q: "What's the difference between a Fractional CAIO and an AI consultant?", a: "A CAIO operates AS an executive in your business with ongoing strategic responsibility — sitting at the leadership table, owning governance, and driving adoption. A consultant typically delivers a defined project and leaves. Our monthly engagements give you that ongoing leadership cadence at a fraction of a full-time hire's cost." },
+      { q: "How does this compare to hiring a full-time Chief AI Officer?", a: "A full-time CAIO typically costs $250K–$400K+ annually, plus equity. Our packages range from $30K to $90K annually with no long-term commitment. Good fit for businesses where the AI workload doesn't yet justify a full-time hire — which is most mid-market companies right now." },
+      { q: "Can I switch between packages?", a: "Yes — many businesses start with the Foundation package and move up as their AI maturity grows. We can adjust the engagement on 30 days' notice." },
+      { q: "What's the minimum commitment?", a: "Three months. That's the time required to deliver the structured Month 1–3 outputs in each package. After that, monthly with 30-day notice." },
+      { q: "Do you sign NDAs and data-handling agreements?", a: "Always, before any substantive work begins. We work with multiple clients in overlapping spaces and take confidentiality extremely seriously." },
+      { q: "Will my data ever be used to train AI models?", a: "No. We use enterprise AI providers with strict data-handling guarantees (training-data isolation, regional hosting), or self-hosted open-source models for sensitive data. We configure data handling to meet your compliance requirements." },
+      { q: "What does Month 4 onward look like?", a: "Once the structured Month 1–3 deliverables land, the engagement becomes an ongoing leadership cadence: regular strategy sessions, AI initiative oversight, training as new tools emerge, and quarterly ROI reporting." },
+      { q: "Do you offer custom packages?", a: "For most businesses, one of the three packages fits well. For larger engagements or enterprise needs, contact us to discuss a custom scope." },
     ],
-    relatedServices: ["custom-software-development", "saas-development", "ai-consulting"],
+    relatedServices: ["ai-consulting", "process-automation", "customer-service-automation"],
   },
   {
     slug: "digital-marketing",

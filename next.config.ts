@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
       // Catalyst for Founders program removed 2026-05-28 — send old links to the programs hub
       { source: "/programs/catalyst-for-founders", destination: "/programs", permanent: true },
       { source: "/solutions/catalyst-for-founders", destination: "/programs", permanent: true },
+      // CTO-as-a-Service renamed to Fractional Chief AI Officer 2026-06-17
+      { source: "/services/cto-as-a-service", destination: "/services/fractional-caio", permanent: true },
     ];
   },
 };

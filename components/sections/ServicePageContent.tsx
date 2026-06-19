@@ -517,8 +517,8 @@ export default function ServicePageContent({ service, related }: Props) {
             )}
 
             {/* Option 2: FAQ Accordion */}
-            <section id="faq" className={`py-16 border-t border-gray-100 scroll-mt-24${service.slug === "fractional-caio" ? " text-center" : ""}`}>
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
+            <section id="faq" className="py-16 border-t border-gray-100 scroll-mt-24">
+              <h2 className={`font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10${service.slug === "fractional-caio" ? " text-center" : ""}`}>
                 Frequently Asked Questions
               </h2>
               <div className={service.slug === "fractional-caio" ? "max-w-2xl mx-auto text-left" : ""}>

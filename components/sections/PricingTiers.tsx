@@ -59,63 +59,80 @@ export default function PricingTiers({ packages }: { packages: ServicePackage[] 
               {pkg.bestFor}
             </div>
 
-            <div className="space-y-5 mb-7 flex-1">
-              {pkg.monthlyPhases.map((phase) => (
-                <div key={phase.month}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span
-                      className={`inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold ${
-                        highlighted
-                          ? "bg-white/15 text-white"
-                          : "bg-[#2E5F8A]/10 text-[#2E5F8A]"
+            <div className="space-y-2 mb-7 flex-1">
+              {pkg.features && pkg.features.length > 0
+                ? pkg.features.map((feature) => (
+                    <div
+                      key={feature}
+                      className={`flex gap-2.5 text-sm leading-relaxed ${
+                        highlighted ? "text-white/80" : "text-[#4B5563]"
                       }`}
                     >
-                      {phase.month}
-                    </span>
-                    <h4
-                      className={`font-[var(--font-outfit)] font-bold text-sm ${
-                        highlighted ? "text-white" : "text-[#1A1A2E]"
-                      }`}
-                    >
-                      Month {phase.month}: {phase.title}
-                    </h4>
-                  </div>
-                  <ul className="space-y-1.5 ml-9">
-                    {phase.activities.map((a) => (
-                      <li
-                        key={a}
-                        className={`flex gap-2 text-xs leading-relaxed ${
-                          highlighted ? "text-white/75" : "text-[#6B7280]"
+                      <CheckCircle2
+                        size={15}
+                        className={`mt-0.5 flex-shrink-0 ${
+                          highlighted ? "text-white/60" : "text-[#2E5F8A]"
                         }`}
-                      >
-                        <CheckCircle2
-                          size={12}
-                          className={`mt-0.5 flex-shrink-0 ${
-                            highlighted ? "text-white/50" : "text-[#2E5F8A]"
-                          }`}
-                        />
-                        <span>{a}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {phase.deliverables.length > 0 && (
-                    <div className="ml-9 mt-2 space-y-1">
-                      {phase.deliverables.map((d) => (
-                        <div
-                          key={d}
-                          className={`inline-block mr-2 rounded-md px-2 py-1 text-[11px] font-semibold ${
+                      />
+                      <span>{feature}</span>
+                    </div>
+                  ))
+                : pkg.monthlyPhases.map((phase) => (
+                    <div key={phase.month}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span
+                          className={`inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold ${
                             highlighted
                               ? "bg-white/15 text-white"
                               : "bg-[#2E5F8A]/10 text-[#2E5F8A]"
                           }`}
                         >
-                          📄 {d}
+                          {phase.month}
+                        </span>
+                        <h4
+                          className={`font-[var(--font-outfit)] font-bold text-sm ${
+                            highlighted ? "text-white" : "text-[#1A1A2E]"
+                          }`}
+                        >
+                          Month {phase.month}: {phase.title}
+                        </h4>
+                      </div>
+                      <ul className="space-y-1.5 ml-9">
+                        {phase.activities.map((a) => (
+                          <li
+                            key={a}
+                            className={`flex gap-2 text-xs leading-relaxed ${
+                              highlighted ? "text-white/75" : "text-[#6B7280]"
+                            }`}
+                          >
+                            <CheckCircle2
+                              size={12}
+                              className={`mt-0.5 flex-shrink-0 ${
+                                highlighted ? "text-white/50" : "text-[#2E5F8A]"
+                              }`}
+                            />
+                            <span>{a}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {phase.deliverables.length > 0 && (
+                        <div className="ml-9 mt-2 space-y-1">
+                          {phase.deliverables.map((d) => (
+                            <div
+                              key={d}
+                              className={`inline-block mr-2 rounded-md px-2 py-1 text-[11px] font-semibold ${
+                                highlighted
+                                  ? "bg-white/15 text-white"
+                                  : "bg-[#2E5F8A]/10 text-[#2E5F8A]"
+                              }`}
+                            >
+                              📄 {d}
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
+                  ))}
             </div>
 
             <Link

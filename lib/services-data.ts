@@ -9,10 +9,11 @@ export interface ServiceFAQ {
  */
 export interface ServicePackage {
   name: string;
-  price: string;          // e.g. "$2,500"
+  price: string;          // e.g. "$3,000"
   priceUnit: string;      // e.g. "/month"
-  tagline: string;        // e.g. "AI Foundation & Governance Package"
+  tagline: string;
   bestFor: string;
+  features?: string[];    // simple feature list (used instead of monthlyPhases when present)
   monthlyPhases: {
     month: number;
     title: string;
@@ -728,180 +729,87 @@ export const servicesData: ServiceData[] = [
   {
     slug: "fractional-caio",
     title: "Fractional Chief AI Officer",
-    heroTitle: "Fractional Chief AI Officer Services — AI Leadership Without the Full-Time Hire",
+    heroTitle: "Fractional Chief AI Officer — AI Leadership Without the Full-Time Hire",
     heroSub:
-      "Three structured monthly engagements that bring senior AI leadership to your business — from initial governance and policy through full implementation and innovation. Choose the tier that matches where you are.",
+      "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer.",
     metaTitle: "Fractional Chief AI Officer Canada | CAIO Services",
     metaDescription:
-      "Fractional Chief AI Officer (CAIO) services for Canadian businesses. Three monthly packages from $2,500 — AI governance, operations, and full AI leadership.",
+      "Fractional Chief AI Officer (CAIO) services for Canadian businesses. Three monthly packages from $3,000 — AI strategy, implementation, and transformation.",
     description:
-      "Most businesses know they need AI leadership but aren't ready for a full-time hire. A Fractional Chief AI Officer engagement gives you senior AI strategy, governance, and implementation expertise on a monthly retainer — at a fraction of the cost. Our three packages match the stage you're at: from setting up the basic governance every business needs, through running operational improvements with AI, to acting as your ongoing AI leader across strategy, training, ROI, and innovation.",
+      "We help organizations identify, prioritize, build, implement, and manage custom AI initiatives that drive measurable business results. As your Fractional Chief AI Officer, Audax provides executive-level AI leadership, strategic direction, and hands-on implementation support to help your business stay competitive in an AI-driven world.",
     whatsIncluded: [
-      { icon: "🤝", label: "Monthly leadership engagement", description: "Direct work with your leadership team on AI strategy, governance, and execution." },
-      { icon: "📋", label: "AI governance & risk frameworks", description: "Clear ownership, approval processes, risk register, and company-wide usage rules." },
-      { icon: "📚", label: "SOPs & employee training", description: "AI usage SOPs, department playbooks, prompt libraries, and live training sessions." },
-      { icon: "🎯", label: "Practical AI roadmap", description: "Prioritized AI opportunities with effort, cost, risk, and ROI estimates for your business." },
-      { icon: "🔐", label: "Privacy & data handling", description: "Guidance on AI-safe use of client data, internal documents, and confidential information." },
-      { icon: "📊", label: "ROI tracking & reporting", description: "Estimated time savings, financial impact, and a leadership-facing AI scorecard." },
+      { icon: "🎯", label: "AI Opportunity Assessment", description: "Identify the highest-ROI AI use cases specific to your business and industry." },
+      { icon: "🗺️", label: "12-Month AI Roadmap", description: "A prioritized, actionable plan for AI adoption across your organization." },
+      { icon: "👔", label: "Executive Strategy Sessions", description: "Regular leadership sessions to align AI strategy with business goals." },
+      { icon: "📚", label: "Leadership AI Training", description: "Equip your leadership team to make confident, informed AI decisions." },
+      { icon: "📊", label: "ROI Tracking & Reporting", description: "Measure time savings, cost reduction, and productivity gains from every AI initiative." },
+      { icon: "🏗️", label: "Custom AI & Software Build", description: "We don't just advise — we build and deploy real AI tools and software for your business." },
     ],
     whoItsFor: [
-      "Mid-market businesses that want senior AI guidance without hiring a full-time CAIO",
-      "Leadership teams that need clear AI governance, SOPs, and employee usage rules in place",
-      "Operations leaders looking to ship AI pilots and measure ROI rigorously",
-      "Founders or executives who want a sparring partner on AI strategy",
-      "Businesses preparing for AI-related compliance, audit, or governance requirements",
-      "Organizations that have tried AI tools before but haven't seen meaningful results",
+      "Organizations beginning their AI journey and looking for strategic guidance and a clear roadmap",
+      "Growing companies ready to move beyond strategy and implement AI across departments",
+      "Organizations making AI a core strategic priority and seeking ongoing executive leadership",
+      "Leadership teams that want measurable business results — not just advice",
+      "Businesses that have tried AI tools before but haven't seen meaningful ROI",
+      "Companies that want a partner who can both strategize and build",
     ],
     packages: [
       {
-        name: "AI Foundation & Governance Package",
-        price: "$2,500",
+        name: "Foundations",
+        price: "$3,000",
         priceUnit: "/month",
-        tagline: "Structure, rules, and a practical starting point.",
-        bestFor: "Businesses starting with AI — want structure, basic rules, and a practical adoption starting point.",
-        monthlyPhases: [
-          {
-            month: 1,
-            title: "AI Discovery & Governance Setup",
-            activities: [
-              "Conduct AI discovery session with leadership team",
-              "Review current AI usage across the business",
-              "Identify key operational areas where AI could improve efficiency",
-              "Create an initial AI governance structure, including who is responsible for AI decisions",
-              "Draft basic AI usage rules for employees",
-              "Identify risks around privacy, data security, accuracy, and employee misuse",
-            ],
-            deliverables: ["AI Opportunity & Risk Summary"],
-          },
-          {
-            month: 2,
-            title: "SOPs & Employee Enablement",
-            activities: [
-              "Create a company-wide AI Usage SOP",
-              "Define approved and unapproved AI use cases",
-              "Create rules for using AI with client data, internal documents, and confidential information",
-              "Develop simple prompt templates for common business tasks",
-              "Run one employee AI training session",
-              "Identify 3–5 practical AI tools the company can begin using",
-            ],
-            deliverables: ["AI Policy & SOP Package"],
-          },
-          {
-            month: 3,
-            title: "AI Roadmap & ROI Review",
-            activities: [
-              "Identify 5–10 AI opportunities across operations, admin, sales, marketing, HR, or customer service",
-              "Prioritize opportunities based on effort, risk, cost, and potential ROI",
-              "Estimate time savings and financial impact for top AI opportunities",
-              "Recommend quick-win AI implementations",
-              "Create a 90-day follow-up roadmap",
-            ],
-            deliverables: ["Practical AI Adoption Roadmap"],
-          },
+        tagline: "Strategic guidance, education, and a clear roadmap.",
+        bestFor: "Organizations looking to understand how AI can create value and establish a clear path forward.",
+        features: [
+          "AI Opportunity Assessment",
+          "12-Month AI Roadmap",
+          "Monthly Executive Strategy Session",
+          "Leadership AI Training",
+          "AI Tool & Technology Recommendations",
+          "Monthly Progress Reporting",
+          "Build and installation of a custom AI chatbot for your business",
         ],
+        monthlyPhases: [],
       },
       {
-        name: "AI Operations & Implementation Package",
-        price: "$5,000",
+        name: "Growth",
+        price: "$5,500",
         priceUnit: "/month",
-        tagline: "Strategy, training, workflow design, and pilots.",
-        bestFor: "Businesses ready for Audax to lead AI strategy, improve operations, train staff, and start implementing AI workflows.",
-        monthlyPhases: [
-          {
-            month: 1,
-            title: "AI Strategy, Governance & Operational Audit",
-            activities: [
-              "Conduct leadership AI strategy workshop",
-              "Review business operations, workflows, tools, and bottlenecks",
-              "Identify AI opportunities across departments",
-              "Establish an AI governance model with clear ownership and approval processes",
-              "Create an AI risk register",
-              "Define company-wide AI usage principles",
-            ],
-            deliverables: ["AI Strategy & Operations Audit"],
-          },
-          {
-            month: 2,
-            title: "SOPs, Training & Workflow Design",
-            activities: [
-              "Create detailed AI SOPs for employee usage",
-              "Create department-specific AI guidelines",
-              "Build prompt libraries for sales, marketing, admin, operations, HR, and leadership",
-              "Run up to two employee training sessions",
-              "Design 2–3 AI-powered workflow improvements",
-              "Recommend tools, automations, or custom AI solutions",
-            ],
-            deliverables: ["AI SOP, Training & Workflow Playbook"],
-          },
-          {
-            month: 3,
-            title: "Pilot Implementation & ROI Reporting",
-            activities: [
-              "Support implementation of 1–2 AI workflow pilots",
-              "Track adoption, time savings, quality improvements, and cost reduction",
-              "Estimate financial ROI from implemented or proposed AI initiatives",
-              "Provide recommendations for scaling successful pilots",
-              "Introduce relevant emerging AI tools or technologies for competitive advantage",
-            ],
-            deliverables: ["Pilot Results & AI ROI Report", "6-Month AI Implementation Roadmap"],
-          },
+        tagline: "Strategy plus hands-on AI implementation across departments.",
+        bestFor: "Growing companies seeking a strategic AI leader to guide implementation and drive measurable business improvements.",
+        features: [
+          "Everything in Foundations",
+          "Bi-Weekly Executive Strategy Sessions",
+          "AI Implementation Oversight",
+          "Process & Automation Optimization",
+          "Department AI Planning",
+          "ROI Tracking & Performance Reporting",
+          "Evaluation of current SaaS subscriptions & replacement with custom software",
         ],
+        monthlyPhases: [],
       },
       {
-        name: "Fractional Chief AI Officer Package",
-        price: "$7,500",
+        name: "Transformation",
+        price: "$8,500",
         priceUnit: "/month",
-        tagline: "Ongoing AI leadership across the whole company.",
-        bestFor: "Businesses wanting Audax to act as their ongoing AI leader — managing strategy, governance, implementation, training, ROI, and innovation.",
-        monthlyPhases: [
-          {
-            month: 1,
-            title: "AI Leadership, Governance & Company-Wide Audit",
-            activities: [
-              "Audax acts as the company's fractional Chief AI Officer",
-              "Lead AI strategy and decision-making with the leadership team",
-              "Conduct a company-wide AI readiness assessment",
-              "Review operations, software tools, data, employee workflows, and current AI usage",
-              "Establish an AI governance committee or leadership cadence",
-              "Define AI ownership, approval processes, and risk controls",
-              "Create an AI opportunity backlog across all major departments",
-            ],
-            deliverables: ["AI Governance, Readiness & Opportunity Report"],
-          },
-          {
-            month: 2,
-            title: "SOPs, Department Enablement & Implementation Planning",
-            activities: [
-              "Create full company AI policy and SOP framework",
-              "Create department-specific AI playbooks",
-              "Run up to three employee or leadership training sessions",
-              "Build custom prompt libraries and workflow templates",
-              "Select 2–4 priority AI initiatives for implementation",
-              "Create implementation plans for each selected initiative",
-              "Evaluate AI tools, vendors, automation platforms, or custom development options",
-            ],
-            deliverables: ["AI Operating System Playbook"],
-          },
-          {
-            month: 3,
-            title: "AI Implementation, ROI & Innovation Roadmap",
-            activities: [
-              "Lead implementation of 2–3 AI pilots or workflow improvements",
-              "Monitor employee adoption and provide guidance as needed",
-              "Track operational efficiency gains and estimated financial ROI",
-              "Create a leadership-facing AI scorecard",
-              "Recommend emerging technologies that could improve competitiveness",
-              "Identify opportunities for custom AI tools, AI agents, automations, or software integrations",
-            ],
-            deliverables: ["90-Day AI Impact Report", "12-Month AI Transformation Roadmap"],
-          },
+        tagline: "Ongoing executive AI leadership, governance, and full implementation.",
+        bestFor: "Organizations seeking a dedicated executive partner to lead AI adoption and transformation across the business.",
+        features: [
+          "Everything in Growth",
+          "Weekly Executive Leadership Support",
+          "AI Governance & Risk Management",
+          "Organization-Wide AI Transformation",
+          "Board & Stakeholder Reporting",
+          "Custom AI & Software Strategy",
+          "Fully built & deployed custom software tool for your business",
         ],
+        monthlyPhases: [],
       },
     ],
     faq: [
       { q: "What's the difference between a Fractional CAIO and an AI consultant?", a: "A CAIO operates AS an executive in your business with ongoing strategic responsibility — sitting at the leadership table, owning governance, and driving adoption. A consultant typically delivers a defined project and leaves. Our monthly engagements give you that ongoing leadership cadence at a fraction of a full-time hire's cost." },
-      { q: "How does this compare to hiring a full-time Chief AI Officer?", a: "A full-time CAIO typically costs $250K–$400K+ annually, plus equity. Our packages range from $30K to $90K annually with no long-term commitment. Good fit for businesses where the AI workload doesn't yet justify a full-time hire — which is most mid-market companies right now." },
-      { q: "Can I switch between packages?", a: "Yes — many businesses start with the Foundation package and move up as their AI maturity grows. We can adjust the engagement on 30 days' notice." },
+      { q: "How does this compare to hiring a full-time Chief AI Officer?", a: "A full-time CAIO typically costs $250K–$400K+ annually, plus equity. Our packages range from $36K to $102K annually with no long-term commitment — the right fit for businesses where the AI workload doesn't yet justify a full-time hire." },
+      { q: "Can I switch between packages?", a: "Yes — many businesses start with Foundations and move up as their AI maturity grows. We can adjust the engagement on 30 days' notice." },
       { q: "What's the minimum commitment?", a: "Three months. That's the time required to deliver the structured Month 1–3 outputs in each package. After that, monthly with 30-day notice." },
       { q: "Do you sign NDAs and data-handling agreements?", a: "Always, before any substantive work begins. We work with multiple clients in overlapping spaces and take confidentiality extremely seriously." },
       { q: "Will my data ever be used to train AI models?", a: "No. We use enterprise AI providers with strict data-handling guarantees (training-data isolation, regional hosting), or self-hosted open-source models for sensitive data. We configure data handling to meet your compliance requirements." },

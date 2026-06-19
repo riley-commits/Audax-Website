@@ -54,10 +54,11 @@ const packageMonthlyPhaseSchema = z.object({
 
 const servicePackageSchema = z.object({
   name: z.string().min(1),
-  price: z.string().min(1),       // e.g. "$2,500"
-  priceUnit: z.string().min(1),   // e.g. "/month"
-  tagline: z.string().min(1),     // e.g. "AI Foundation & Governance Package"
+  price: z.string().min(1),
+  priceUnit: z.string().min(1),
+  tagline: z.string().min(1),
   bestFor: z.string().min(1),
+  features: z.array(z.string().min(1)).optional(),
   monthlyPhases: z.array(packageMonthlyPhaseSchema),
 });
 

@@ -360,6 +360,10 @@ export default function ServicePageContent({ service, related }: Props) {
     sub: "Book a free 30-minute strategy call. No pitch, no pressure — just clarity.",
   };
   const sectionLinks = buildSectionLinks(service);
+  const calendlyUrl =
+    service.slug === "fractional-caio"
+      ? "https://calendly.com/audax-ventures/fractional-caio"
+      : "https://calendly.com/audax-ventures/30min";
 
   return (
     <>
@@ -399,7 +403,7 @@ export default function ServicePageContent({ service, related }: Props) {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              href="https://calendly.com/audax-ventures/30min"
+              href={calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#2E5F8A] text-white font-bold hover:bg-[#3A7BD5] transition-colors"
@@ -495,7 +499,7 @@ export default function ServicePageContent({ service, related }: Props) {
                 </h3>
                 <p className="text-white/60 mb-7 max-w-md mx-auto">{midCTA.sub}</p>
                 <Link
-                  href="https://calendly.com/audax-ventures/30min"
+                  href={calendlyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#2E5F8A] text-white font-bold hover:bg-[#3A7BD5] transition-colors"
@@ -548,7 +552,7 @@ export default function ServicePageContent({ service, related }: Props) {
                   ))}
                 </div>
                 <Link
-                  href="https://calendly.com/audax-ventures/30min"
+                  href={calendlyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#2E5F8A] text-white font-bold text-sm hover:bg-[#3A7BD5] transition-colors"

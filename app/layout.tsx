@@ -86,6 +86,18 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-R9L7H4ZR4F" strategy="afterInteractive" />
+        <Script id="google-tag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-R9L7H4ZR4F');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen flex flex-col font-[var(--font-inter)] bg-white text-[#1A1A2E]">
         <script
           type="application/ld+json"

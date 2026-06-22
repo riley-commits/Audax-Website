@@ -27,6 +27,7 @@ export interface ServiceData {
   title: string;
   heroTitle: string;
   heroSub: string;
+  heroSubtext?: string;
   metaTitle: string;
   metaDescription: string;
   description: string;
@@ -729,9 +730,11 @@ export const servicesData: ServiceData[] = [
   {
     slug: "fractional-caio",
     title: "Fractional Chief AI Officer",
-    heroTitle: "Fractional Chief AI Officer — AI Leadership Without the Full-Time Hire",
+    heroTitle: "Your Business Needs an AI Strategy.",
     heroSub:
       "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer.",
+    heroSubtext:
+      "Audax helps businesses identify practical AI opportunities, implement high-impact solutions, and build a roadmap for long-term competitive advantage.",
     metaTitle: "Fractional Chief AI Officer Canada | CAIO Services",
     metaDescription:
       "Fractional Chief AI Officer (CAIO) services for Canadian businesses. Three monthly packages from $3,000 — AI strategy, implementation, and transformation.",

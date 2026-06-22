@@ -67,6 +67,7 @@ export const serviceSchema = z.object({
   title: z.string().min(1),
   heroTitle: z.string().min(1),
   heroSub: z.string().min(1),
+  heroSubtext: z.string().min(1).optional(),
   metaTitle: z.string().min(1),
   metaDescription: z.string().min(1),
   description: z.string().min(1),

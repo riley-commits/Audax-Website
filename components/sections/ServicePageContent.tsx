@@ -389,7 +389,12 @@ export default function ServicePageContent({ service, related }: Props) {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-white mb-5 leading-tight max-w-3xl">
             {service.heroTitle}
           </h1>
-          <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl">{service.heroSub}</p>
+          <p className={`text-white/60 text-lg leading-relaxed max-w-2xl ${service.heroSubtext ? "mb-5" : "mb-10"}`}>
+            {service.heroSub}
+          </p>
+          {service.heroSubtext && (
+            <p className="text-white/45 text-base leading-relaxed mb-10 max-w-2xl">{service.heroSubtext}</p>
+          )}
 
           {/* Stats row */}
           <div className="flex flex-wrap gap-4 mb-10">
@@ -408,7 +413,7 @@ export default function ServicePageContent({ service, related }: Props) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#2E5F8A] text-white font-bold hover:bg-[#3A7BD5] transition-colors"
             >
-              Book a Free Strategy Call <ArrowRight size={16} />
+              {service.slug === "fractional-caio" ? "Book a Complimentary AI Strategy Session" : "Book a Free Strategy Call"} <ArrowRight size={16} />
             </Link>
             <Link
               href="/contact"

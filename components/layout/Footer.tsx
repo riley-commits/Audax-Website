@@ -11,6 +11,7 @@ const services = [
   { label: "iOS Development", href: "/services/ios-development" },
   { label: "Android Development", href: "/services/android-development" },
   { label: "AI Consulting", href: "/services/ai-consulting" },
+  { label: "AI Transformation & Advisory", href: "/services/ai-transformation-advisory" },
   { label: "Fractional CAIO", href: "/services/fractional-caio" },
 ];
 

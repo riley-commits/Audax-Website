@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Crown, Compass, Code2, ArrowRight, Check, ChevronRight } from "lucide-react";
+import { Crown, Code2, ArrowRight, Check, ChevronRight } from "lucide-react";
 
 // ── Shared right-panel visual ───────────────────────────────────────────────
 
@@ -87,38 +87,6 @@ const services = [
   },
   {
     num: "02",
-    icon: Compass,
-    title: "AI Transformation & Advisory",
-    tagline: "Assessments, roadmaps, governance & training",
-    description:
-      "AI assessments, roadmaps, governance, training, and implementation planning that turn AI ambition into a structured, de-risked plan your leadership team can execute.",
-    href: "/services/ai-transformation-advisory",
-    badge: null,
-    tabAccent: "text-indigo-400",
-    tabActiveBg: "bg-indigo-700",
-    panelGradient: "from-indigo-950 via-indigo-800 to-indigo-950",
-    features: [
-      "AI opportunity assessment",
-      "AI roadmap & strategy",
-      "AI governance & risk frameworks",
-      "Leadership & employee training",
-      "Tool & vendor evaluation",
-      "Implementation planning & oversight",
-    ],
-    visualItems: [
-      { label: "AI Assessment",     sub: "Where AI creates real value", icon: "🎯" },
-      { label: "Roadmap & Strategy", sub: "Prioritized, sequenced plan", icon: "🗺️" },
-      { label: "Governance",        sub: "Policy & risk frameworks",     icon: "📋" },
-      { label: "Implementation Planning", sub: "From strategy to execution", icon: "📐" },
-    ],
-    visualStats: [
-      { stat: "4–8 wks", label: "typical engagement" },
-      { stat: "100%",    label: "business-first approach" },
-      { stat: "0",       label: "hype, just outcomes" },
-    ],
-  },
-  {
-    num: "03",
     icon: Code2,
     title: "Custom AI & Software Development",
     tagline: "Custom software, automation & AI-powered apps",
@@ -188,7 +156,7 @@ export default function ServicesGrid() {
             Core Service Areas
           </h2>
           <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
-            Fractional AI leadership, AI transformation, and custom software development — the full path from strategy to shipped software.
+            Fractional AI leadership and custom AI & software development — the full path from strategy to shipped software.
           </p>
         </motion.div>
 
@@ -347,7 +315,7 @@ export default function ServicesGrid() {
                       <Link
                         href={active.href}
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-sm font-bold hover:bg-white/90 transition-colors"
-                        style={{ color: activeIdx === 0 ? "#2E5F8A" : activeIdx === 1 ? "#4F46E5" : "#0F766E" }}
+                        style={{ color: activeIdx === 0 ? "#2E5F8A" : "#7C3AED" }}
                       >
                         Full Service Details <ArrowRight size={14} />
                       </Link>

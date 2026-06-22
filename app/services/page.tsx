@@ -33,19 +33,6 @@ const featured = [
   },
   {
     num: "02",
-    icon: "🧭",
-    title: "AI Transformation & Advisory",
-    badge: null,
-    tagline: "Assessments, roadmaps, governance & training",
-    description:
-      "AI assessments, roadmaps, governance, training, and implementation planning that turn AI ambition into a structured, de-risked plan your leadership team can execute.",
-    href: "/services/ai-transformation-advisory",
-    highlights: ["AI opportunity assessment", "AI roadmap & strategy", "Governance & risk frameworks", "Leadership & employee training"],
-    gradient: "from-indigo-950 via-indigo-800 to-indigo-950",
-    stat: { value: "4–8 wks", label: "typical engagement" },
-  },
-  {
-    num: "03",
     icon: "💻",
     title: "Custom AI & Software Development",
     badge: null,
@@ -61,7 +48,7 @@ const featured = [
 
 const categories = [
   {
-    label: "AI Transformation & Advisory",
+    label: "AI Advisory & Automation",
     description: "AI assessments, roadmaps, governance, training, and implementation planning.",
     services: [
       { icon: "🧭", title: "AI Transformation & Advisory",  tagline: "AI assessments, roadmaps, governance & training",          href: "/services/ai-transformation-advisory" },
@@ -122,7 +109,7 @@ export default function ServicesPage() {
             <span className="text-[#2E5F8A]">Businesses Navigating AI</span>
           </h1>
           <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            Fractional AI leadership, AI transformation & advisory, and custom AI & software development — three core service areas built to move you from strategy to shipped software.
+            Fractional AI leadership and custom AI & software development — two core service areas built to move you from strategy to shipped software.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
@@ -147,13 +134,13 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[10px] font-bold tracking-widest uppercase text-[#2E5F8A] mb-3">Our 3 Core Service Areas</p>
+            <p className="text-[10px] font-bold tracking-widest uppercase text-[#2E5F8A] mb-3">Our 2 Core Service Areas</p>
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">
               Core Services
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {featured.map((s) => (
               <Link
                 key={s.href}

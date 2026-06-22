@@ -422,17 +422,17 @@ export default function AboutContent() {
           >
             <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-4">Who We Are</p>
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-6">
-              Canadian Software Development &amp; Fractional Services Experts
+              AI Strategy &amp; Innovation Experts, Based in Canada
             </h2>
             <div className="space-y-4 text-[#6B7280] text-base leading-relaxed">
               <p>
-                Audax Ventures is built around a simple conviction: ambitious companies deserve a partner that can move with them at every stage. We are not just a development shop — we are a venture studio that combines hands-on software delivery with the strategic and operational support that founders and growing businesses actually need.
+                Audax Ventures is an AI strategy and innovation firm that helps organizations identify, implement, and scale technology solutions that create measurable business value. Through Fractional Chief AI Officer services, AI transformation initiatives, and custom software development, we work alongside leadership teams to turn emerging technology into practical business outcomes.
               </p>
               <p>
                 We work with three kinds of clients. Early-stage founders who need to validate, build, and launch their first product. Scaling businesses that need the right systems, team, and leadership to grow without breaking. And exit-focused owners who want to maximize value and find the right path forward.
               </p>
               <p>
-                Across all three, our approach is the same: a tailored mix of software innovation, capital strategy, and operational excellence — delivered by a team that fosters creativity, takes calculated risks, and treats your business as seriously as our own.
+                Across all three, our approach is the same: a tailored mix of AI strategy, software innovation, and operational excellence — delivered by a team that fosters creativity, takes calculated risks, and treats your business as seriously as our own.
               </p>
             </div>
           </motion.div>

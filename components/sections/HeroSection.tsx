@@ -1,11 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp } from "lucide-react";
-import { useState, useEffect } from "react";
-
-const rotatingWords = ["Founders", "Enterprises", "Startups", "Scale-Ups"];
 
 const bars = [38, 52, 45, 70, 58, 76, 65, 82, 72, 90, 78, 95];
 
@@ -186,15 +183,6 @@ function DashboardMockup() {
 }
 
 export default function HeroSection() {
-  const [wordIndex, setWordIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((i) => (i + 1) % rotatingWords.length);
-    }, 2400);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#FAFAF8] pt-20">
       {/* Animated gradient mesh background */}
@@ -243,37 +231,20 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-sm font-medium mb-6"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#2E5F8A] animate-pulse" />
-              Canada&apos;s Most Founder-Aligned Software Studio
+              AI Strategy, Leadership &amp; Innovation
             </motion.div>
 
-            {/* Headline with rotating word */}
+            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] text-[#1A1A2E] leading-[1.1] mb-6"
             >
-              Building Expert
+              Helping Businesses
               <br />
-              Software for{" "}
-              {/* Fixed-width container so layout doesn't shift */}
-              <span className="relative inline-block" style={{ minWidth: "9rem" }}>
-                <span className="invisible select-none">Enterprises</span>
-                <span className="absolute inset-0 flex items-center overflow-hidden">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={wordIndex}
-                      initial={{ y: "100%", opacity: 0 }}
-                      animate={{ y: "0%", opacity: 1 }}
-                      exit={{ y: "-100%", opacity: 0 }}
-                      transition={{ duration: 0.38, ease: [0.33, 1, 0.68, 1] }}
-                      className="gradient-text whitespace-nowrap"
-                    >
-                      {rotatingWords[wordIndex]}
-                    </motion.span>
-                  </AnimatePresence>
-                </span>
-              </span>
+              Navigate the{" "}
+              <span className="gradient-text">Future of AI.</span>
             </motion.h1>
 
             {/* Subtext */}
@@ -283,8 +254,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-lg"
             >
-              From validated idea to scalable product — Audax Ventures is your trusted development partner.
-              We help teams build MVPs, SaaS platforms, and internal tools that actually ship.
+              Audax Ventures provides Fractional AI leadership, AI transformation services, and custom software development to help organizations improve efficiency, accelerate growth, and stay competitive in an AI-driven world.
             </motion.p>
 
             {/* CTAs */}

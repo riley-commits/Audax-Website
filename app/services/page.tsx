@@ -3,14 +3,14 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Software Development Services | Audax Ventures",
+  title: "AI Strategy & Software Development Services | Audax Ventures",
   description:
-    "18 software development services for startups and enterprises — MVP development, SaaS platforms, internal tools, mobile apps, AI consulting, and more. Based in Canada.",
+    "Fractional Chief AI Officer services, AI transformation & advisory, and custom AI & software development for businesses navigating the future of AI. Based in Canada.",
   alternates: { canonical: "https://audaxventures.ca/services" },
   openGraph: {
-    title: "Software Development Services | Audax Ventures",
+    title: "AI Strategy & Software Development Services | Audax Ventures",
     description:
-      "18 software development services for startups and enterprises. MVP, SaaS, internal tools, mobile, AI, automation, and more.",
+      "Fractional AI leadership, AI transformation services, and custom software development — 3 core service areas, 20 services total.",
     url: "https://audaxventures.ca/services",
   },
 };
@@ -20,77 +20,81 @@ export const metadata: Metadata = {
 const featured = [
   {
     num: "01",
-    icon: "🚀",
-    title: "MVP Development",
+    icon: "👔",
+    title: "Fractional Chief AI Officer",
     badge: "Most Popular",
-    tagline: "8–16 weeks from idea to launch",
+    tagline: "Executive-level AI leadership & strategic guidance",
     description:
-      "We scope, design, and build the fastest defensible path to market validation — without cutting corners on architecture or user experience.",
-    href: "/services/mvp-development",
-    highlights: ["Scope definition & wireframes", "Full-stack development", "Production deployment", "Post-launch support"],
+      "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer — strategy, governance, training, and ROI tracking on a monthly retainer.",
+    href: "/services/fractional-caio",
+    highlights: ["AI opportunity assessment", "Executive strategy sessions", "AI governance & risk management", "ROI tracking & reporting"],
     gradient: "from-[#1A3A5C] via-[#2E5F8A] to-[#1A3A5C]",
-    stat: { value: "50+", label: "MVPs shipped" },
+    stat: { value: "Exec", label: "level AI leadership" },
   },
   {
     num: "02",
-    icon: "☁️",
-    title: "SaaS Development",
+    icon: "🧭",
+    title: "AI Transformation & Advisory",
     badge: null,
-    tagline: "End-to-end platform builds",
+    tagline: "Assessments, roadmaps, governance & training",
     description:
-      "Multi-tenancy, Stripe billing, role-based auth, and scalable cloud infrastructure — built to grow from 10 customers to 10,000 without a rewrite.",
-    href: "/services/saas-development",
-    highlights: ["Multi-tenant architecture", "Stripe billing integration", "CI/CD pipeline & DevOps", "99.9% uptime SLA"],
+      "AI assessments, roadmaps, governance, training, and implementation planning that turn AI ambition into a structured, de-risked plan your leadership team can execute.",
+    href: "/services/ai-transformation-advisory",
+    highlights: ["AI opportunity assessment", "AI roadmap & strategy", "Governance & risk frameworks", "Leadership & employee training"],
     gradient: "from-indigo-950 via-indigo-800 to-indigo-950",
-    stat: { value: "99.9%", label: "uptime delivered" },
+    stat: { value: "4–8 wks", label: "typical engagement" },
   },
   {
     num: "03",
-    icon: "🎯",
-    title: "AI Consulting",
+    icon: "💻",
+    title: "Custom AI & Software Development",
     badge: null,
-    tagline: "LLM integration, RAG pipelines & AI features",
+    tagline: "Custom software, automation & AI-powered apps",
     description:
-      "We integrate large language models, build RAG pipelines, and ship custom AI features into your product or internal stack — practical AI that goes to production.",
-    href: "/services/ai-consulting",
-    highlights: ["AI opportunity assessment", "LLM selection & integration", "RAG pipeline architecture", "Prompt engineering & evals"],
+      "Custom software, automation solutions, AI-powered applications, and digital products built around your business — not the other way around.",
+    href: "/services/custom-ai-software-development",
+    highlights: ["Custom software development", "AI-powered applications", "Process automation", "Integrations & APIs"],
     gradient: "from-purple-950 via-purple-800 to-purple-950",
-    stat: { value: "10×", label: "faster workflows" },
+    stat: { value: "100%", label: "IP ownership" },
   },
 ];
 
 const categories = [
   {
-    label: "Web & Mobile",
-    description: "Frontend, backend, and cross-platform development across every surface.",
+    label: "AI Transformation & Advisory",
+    description: "AI assessments, roadmaps, governance, training, and implementation planning.",
     services: [
-      { icon: "🌐", title: "Website Development",    tagline: "Marketing sites that load fast and rank higher",             href: "/services/website-development" },
-      { icon: "🛍️", title: "E-Commerce Development", tagline: "Custom storefronts and headless commerce platforms",          href: "/services/ecommerce-development" },
-      { icon: "📱", title: "iOS App Development",    tagline: "Swift & SwiftUI apps built for the App Store",               href: "/services/ios-development" },
-      { icon: "🤖", title: "Android Development",    tagline: "Kotlin & React Native apps for Google Play",                 href: "/services/android-development" },
-      { icon: "⚛️", title: "Front End Development",  tagline: "React & Next.js interfaces that feel instant",               href: "/services/frontend-development" },
-      { icon: "🗄️", title: "Back End Development",   tagline: "APIs, databases, and server infrastructure at scale",        href: "/services/backend-development" },
-      { icon: "💻", title: "Web Development",         tagline: "Full-spectrum web apps, portals, and platforms",             href: "/services/web-development" },
-      { icon: "🛠️", title: "Custom Software",        tagline: "Purpose-built when off-the-shelf software falls short",      href: "/services/custom-software-development" },
+      { icon: "🧭", title: "AI Transformation & Advisory",  tagline: "AI assessments, roadmaps, governance & training",          href: "/services/ai-transformation-advisory" },
+      { icon: "🎯", title: "AI Consulting",                 tagline: "LLM integration, RAG pipelines, and AI feature builds",    href: "/services/ai-consulting" },
+      { icon: "🔄", title: "Process Automation",            tagline: "Automated approvals, routing, and system sync",            href: "/services/process-automation" },
+      { icon: "💬", title: "Customer Service Automation",   tagline: "AI chatbots and self-service support portals",             href: "/services/customer-service-automation" },
     ],
   },
   {
-    label: "Automation & AI",
-    description: "Eliminate manual work and add intelligence to your existing workflows.",
+    label: "Custom AI & Software Development",
+    description: "Custom software, automation solutions, AI-powered applications, and digital products.",
     services: [
-      { icon: "🔄", title: "Process Automation",           tagline: "Automated approvals, routing, and system sync",            href: "/services/process-automation" },
-      { icon: "💬", title: "Customer Service Automation",  tagline: "AI chatbots and self-service support portals",             href: "/services/customer-service-automation" },
-      { icon: "🎯", title: "AI Consulting",                tagline: "LLM integration, RAG pipelines, and AI feature builds",    href: "/services/ai-consulting" },
-      { icon: "👥", title: "CRM Systems",                  tagline: "Custom CRMs built around your actual sales process",       href: "/services/crm-systems" },
+      { icon: "💻", title: "Custom AI & Software Dev", tagline: "Custom software, automation & AI-powered apps",              href: "/services/custom-ai-software-development" },
+      { icon: "🚀", title: "MVP Development",          tagline: "8–16 weeks from idea to launch",                              href: "/services/mvp-development" },
+      { icon: "☁️", title: "SaaS Development",         tagline: "End-to-end platform builds",                                  href: "/services/saas-development" },
+      { icon: "🌐", title: "Website Development",      tagline: "Marketing sites that load fast and rank higher",             href: "/services/website-development" },
+      { icon: "🛍️", title: "E-Commerce Development",  tagline: "Custom storefronts and headless commerce platforms",          href: "/services/ecommerce-development" },
+      { icon: "📱", title: "iOS App Development",      tagline: "Swift & SwiftUI apps built for the App Store",               href: "/services/ios-development" },
+      { icon: "🤖", title: "Android Development",      tagline: "Kotlin & React Native apps for Google Play",                 href: "/services/android-development" },
+      { icon: "⚛️", title: "Front End Development",    tagline: "React & Next.js interfaces that feel instant",               href: "/services/frontend-development" },
+      { icon: "🗄️", title: "Back End Development",     tagline: "APIs, databases, and server infrastructure at scale",        href: "/services/backend-development" },
+      { icon: "🖥️", title: "Web Development",          tagline: "Full-spectrum web apps, portals, and platforms",             href: "/services/web-development" },
+      { icon: "🛠️", title: "Custom Software",          tagline: "Purpose-built when off-the-shelf software falls short",      href: "/services/custom-software-development" },
+      { icon: "⚙️", title: "Internal Tools",            tagline: "Replace spreadsheets with software that fits",               href: "/services/internal-tools" },
+      { icon: "👥", title: "CRM Systems",               tagline: "Custom CRMs built around your actual sales process",         href: "/services/crm-systems" },
+      { icon: "🔍", title: "QA & Testing",              tagline: "Exploratory, automated, and load testing before launch",     href: "/services/qa-testing" },
     ],
   },
   {
-    label: "Quality & Strategy",
-    description: "Technical leadership and quality assurance to de-risk every build.",
+    label: "Additional Services",
+    description: "Growth support alongside your AI strategy and software development.",
     services: [
-      { icon: "🔍", title: "QA & Testing",          tagline: "Exploratory, automated, and load testing before launch", href: "/services/qa-testing" },
-      { icon: "🤖", title: "Fractional CAIO",       tagline: "Fractional Chief AI Officer for AI strategy, governance, and ROI",      href: "/services/fractional-caio" },
-      { icon: "📈", title: "Digital Marketing",     tagline: "SEO, content, and paid acquisition that compounds",      href: "/services/digital-marketing" },
+      { icon: "📈", title: "Digital Marketing", tagline: "SEO, content, and paid acquisition that compounds", href: "/services/digital-marketing" },
     ],
   },
 ];
@@ -111,14 +115,14 @@ export default function ServicesPage() {
       <section className="pt-32 pb-20 bg-gradient-to-b from-[#F8F9FA] to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-semibold mb-6 uppercase tracking-widest">
-            18 Services
+            20 Services
           </div>
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#1A1A2E] mb-6 leading-tight">
-            Software Development Services for{" "}
-            <span className="text-[#2E5F8A]">Startups & Enterprises</span>
+            AI Leadership &amp; Software Development for{" "}
+            <span className="text-[#2E5F8A]">Businesses Navigating AI</span>
           </h1>
           <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            From your first MVP to a production-grade SaaS platform — we build, automate, and scale the software your business runs on.
+            Fractional AI leadership, AI transformation & advisory, and custom AI & software development — three core service areas built to move you from strategy to shipped software.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
@@ -143,7 +147,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[10px] font-bold tracking-widest uppercase text-[#2E5F8A] mb-3">Where Most Projects Start</p>
+            <p className="text-[10px] font-bold tracking-widest uppercase text-[#2E5F8A] mb-3">Our 3 Core Service Areas</p>
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">
               Core Services
             </h2>

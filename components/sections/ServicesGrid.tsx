@@ -3,153 +3,43 @@
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Rocket, Cloud, BrainCircuit, ArrowRight, Check, ChevronRight } from "lucide-react";
+import { Crown, Compass, Code2, ArrowRight, Check, ChevronRight } from "lucide-react";
 
-// ── Per-service right-panel visuals ─────────────────────────────────────────
+// ── Shared right-panel visual ───────────────────────────────────────────────
 
-function MVPVisual() {
-  const phases = [
-    { label: "Validate",  weeks: "Wks 1–2",  color: "bg-blue-400" },
-    { label: "Design",    weeks: "Wks 3–5",  color: "bg-blue-500" },
-    { label: "Build",     weeks: "Wks 6–13", color: "bg-blue-600" },
-    { label: "Launch",    weeks: "Wks 14–16", color: "bg-blue-700" },
-  ];
-  const widths = ["w-[15%]", "w-[22%]", "w-[45%]", "w-[18%]"];
-
-  return (
-    <div className="space-y-5">
-      <p className="text-xs font-bold uppercase tracking-widest text-blue-300 mb-4">
-        Delivery Timeline
-      </p>
-      {phases.map((p, i) => (
-        <motion.div
-          key={p.label}
-          initial={{ opacity: 0, x: -16 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: i * 0.08, duration: 0.35 }}
-          className="flex items-center gap-4"
-        >
-          <div className="w-20 text-right text-xs text-white/50 font-medium shrink-0">
-            {p.weeks}
-          </div>
-          <div className="flex-1 h-8 bg-white/10 rounded-full overflow-hidden">
-            <motion.div
-              className={`h-full ${p.color} rounded-full flex items-center pl-3`}
-              initial={{ width: 0 }}
-              animate={{ width: widths[i].replace("w-[", "").replace("]", "") }}
-              transition={{ delay: 0.1 + i * 0.1, duration: 0.5, ease: "easeOut" }}
-              style={{ width: widths[i].replace("w-[", "").replace("]", "") }}
-            >
-              <span className="text-xs font-semibold text-white whitespace-nowrap">
-                {p.label}
-              </span>
-            </motion.div>
-          </div>
-        </motion.div>
-      ))}
-      <div className="mt-6 pt-5 border-t border-white/10 grid grid-cols-3 gap-4 text-center">
-        {[
-          { stat: "50+", label: "MVPs launched" },
-          { stat: "8 wks", label: "Median to launch" },
-          { stat: "98%", label: "On-time delivery" },
-        ].map((s) => (
-          <div key={s.label}>
-            <div className="font-[var(--font-outfit)] font-extrabold text-2xl text-white">{s.stat}</div>
-            <div className="text-xs text-white/50 mt-0.5">{s.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function SaaSVisual() {
-  const layers = [
-    { label: "Your Application",       sub: "Next.js · React · TypeScript",      icon: "🖥️", delay: 0 },
-    { label: "Auth & Billing",          sub: "Auth.js · Stripe · Multi-tenancy",  icon: "🔐", delay: 0.08 },
-    { label: "API & Business Logic",    sub: "Node.js · REST / GraphQL · Queues", icon: "⚙️", delay: 0.16 },
-    { label: "Database & Storage",      sub: "PostgreSQL · Redis · S3",           icon: "🗄️", delay: 0.24 },
-    { label: "Cloud Infrastructure",    sub: "AWS / GCP · CI/CD · Monitoring",   icon: "☁️", delay: 0.32 },
-  ];
-
+function PillarVisual({
+  items,
+  statLabel,
+  stats,
+}: {
+  items: { label: string; sub: string; icon: string }[];
+  statLabel: string;
+  stats: { stat: string; label: string }[];
+}) {
   return (
     <div>
-      <p className="text-xs font-bold uppercase tracking-widest text-indigo-300 mb-5">
-        Platform Architecture
+      <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-5">
+        {statLabel}
       </p>
       <div className="space-y-2">
-        {layers.map((layer, i) => (
+        {items.map((item, i) => (
           <motion.div
-            key={layer.label}
+            key={item.label}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: layer.delay, duration: 0.35 }}
+            transition={{ delay: i * 0.08, duration: 0.35 }}
             className="flex items-center gap-3 bg-white/8 hover:bg-white/12 transition-colors rounded-xl px-4 py-3 border border-white/10"
           >
-            <span className="text-xl w-7 text-center">{layer.icon}</span>
+            <span className="text-xl w-7 text-center">{item.icon}</span>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-white leading-none mb-0.5">{layer.label}</p>
-              <p className="text-xs text-white/45 truncate">{layer.sub}</p>
-            </div>
-            {i < layers.length - 1 && (
-              <div className="text-white/20 text-xs">↓</div>
-            )}
-          </motion.div>
-        ))}
-      </div>
-      <div className="mt-5 pt-5 border-t border-white/10 grid grid-cols-3 gap-4 text-center">
-        {[
-          { stat: "99.9%", label: "Uptime SLA" },
-          { stat: "∞",     label: "Scalability" },
-          { stat: "0",     label: "Vendor lock-in" },
-        ].map((s) => (
-          <div key={s.label}>
-            <div className="font-[var(--font-outfit)] font-extrabold text-2xl text-white">{s.stat}</div>
-            <div className="text-xs text-white/50 mt-0.5">{s.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function AIConsultingVisual() {
-  const useCases = [
-    { label: "LLM Integration",       sub: "GPT-4o · Claude · Gemini",          icon: "🤖", delay: 0 },
-    { label: "RAG Pipelines",          sub: "Embeddings · Vector DB · Retrieval", icon: "🔍", delay: 0.08 },
-    { label: "AI Feature Builds",      sub: "Custom models · Fine-tuning",        icon: "⚡", delay: 0.16 },
-    { label: "Workflow Automation",    sub: "Agents · Tool use · Orchestration",  icon: "🔄", delay: 0.24 },
-    { label: "AI Evaluation & Safety", sub: "Evals · Guardrails · Monitoring",    icon: "🛡️", delay: 0.32 },
-  ];
-
-  return (
-    <div>
-      <p className="text-xs font-bold uppercase tracking-widest text-purple-300 mb-5">
-        What We Build
-      </p>
-      <div className="space-y-2">
-        {useCases.map((uc) => (
-          <motion.div
-            key={uc.label}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: uc.delay, duration: 0.35 }}
-            className="flex items-center gap-3 bg-white/8 hover:bg-white/12 transition-colors rounded-xl px-4 py-3 border border-white/10"
-          >
-            <span className="text-xl w-7 text-center">{uc.icon}</span>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-white leading-none mb-0.5">{uc.label}</p>
-              <p className="text-xs text-white/45 truncate">{uc.sub}</p>
+              <p className="text-sm font-semibold text-white leading-none mb-0.5">{item.label}</p>
+              <p className="text-xs text-white/45 truncate">{item.sub}</p>
             </div>
           </motion.div>
         ))}
       </div>
       <div className="mt-5 pt-5 border-t border-white/10 grid grid-cols-3 gap-4 text-center">
-        {[
-          { stat: "10×",  label: "Faster workflows" },
-          { stat: "6 wks", label: "Avg. time to deploy" },
-          { stat: "100%", label: "Production-ready" },
-        ].map((s) => (
+        {stats.map((s) => (
           <div key={s.label}>
             <div className="font-[var(--font-outfit)] font-extrabold text-2xl text-white">{s.stat}</div>
             <div className="text-xs text-white/50 mt-0.5">{s.label}</div>
@@ -165,69 +55,99 @@ function AIConsultingVisual() {
 const services = [
   {
     num: "01",
-    icon: Rocket,
-    title: "MVP Development",
-    tagline: "8–16 weeks from idea to launch",
+    icon: Crown,
+    title: "Fractional Chief AI Officer",
+    tagline: "Executive-level AI leadership & strategic guidance",
     description:
-      "Scope, design, and build the fastest defensible path to market validation — without cutting corners on architecture or user experience.",
-    href: "/services/mvp-development",
+      "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer — strategy, governance, training, and ROI tracking on a monthly retainer.",
+    href: "/services/fractional-caio",
     badge: "Most Popular",
     tabAccent: "text-blue-400",
     tabActiveBg: "bg-[#2E5F8A]",
     panelGradient: "from-[#1A3A5C] via-[#2E5F8A] to-[#1A3A5C]",
     features: [
-      "Discovery & scope definition",
-      "UI/UX design in Figma",
-      "Full-stack development",
-      "User testing & iteration",
-      "Production deployment",
-      "Post-launch support plan",
+      "AI opportunity assessment",
+      "12-month AI roadmap",
+      "Executive strategy sessions",
+      "Leadership & employee training",
+      "AI governance & risk management",
+      "ROI tracking & reporting",
     ],
-    Visual: MVPVisual,
+    visualItems: [
+      { label: "Executive Strategy", sub: "Regular leadership sessions", icon: "👔" },
+      { label: "AI Governance",      sub: "Ownership, risk, and policy", icon: "📋" },
+      { label: "Team Training",      sub: "Leadership & employee enablement", icon: "📚" },
+      { label: "ROI Reporting",      sub: "Measured business outcomes", icon: "📊" },
+    ],
+    visualStats: [
+      { stat: "Strategy", label: "+ implementation" },
+      { stat: "Exec",     label: "level leadership" },
+      { stat: "Built",    label: "real AI tools" },
+    ],
   },
   {
     num: "02",
-    icon: Cloud,
-    title: "SaaS Development",
-    tagline: "End-to-end platform builds",
+    icon: Compass,
+    title: "AI Transformation & Advisory",
+    tagline: "Assessments, roadmaps, governance & training",
     description:
-      "Multi-tenancy, Stripe billing, role-based auth, and scalable cloud infrastructure — built to grow from 10 customers to 10,000 without a rewrite.",
-    href: "/services/saas-development",
+      "AI assessments, roadmaps, governance, training, and implementation planning that turn AI ambition into a structured, de-risked plan your leadership team can execute.",
+    href: "/services/ai-transformation-advisory",
     badge: null,
     tabAccent: "text-indigo-400",
     tabActiveBg: "bg-indigo-700",
     panelGradient: "from-indigo-950 via-indigo-800 to-indigo-950",
     features: [
-      "Multi-tenant data architecture",
-      "Stripe billing & subscriptions",
-      "Auth & role management",
-      "REST / GraphQL API design",
-      "CI/CD pipeline & DevOps",
-      "99.9% uptime infrastructure",
+      "AI opportunity assessment",
+      "AI roadmap & strategy",
+      "AI governance & risk frameworks",
+      "Leadership & employee training",
+      "Tool & vendor evaluation",
+      "Implementation planning & oversight",
     ],
-    Visual: SaaSVisual,
+    visualItems: [
+      { label: "AI Assessment",     sub: "Where AI creates real value", icon: "🎯" },
+      { label: "Roadmap & Strategy", sub: "Prioritized, sequenced plan", icon: "🗺️" },
+      { label: "Governance",        sub: "Policy & risk frameworks",     icon: "📋" },
+      { label: "Implementation Planning", sub: "From strategy to execution", icon: "📐" },
+    ],
+    visualStats: [
+      { stat: "4–8 wks", label: "typical engagement" },
+      { stat: "100%",    label: "business-first approach" },
+      { stat: "0",       label: "hype, just outcomes" },
+    ],
   },
   {
     num: "03",
-    icon: BrainCircuit,
-    title: "AI Consulting",
-    tagline: "LLM integration, RAG pipelines & AI features",
+    icon: Code2,
+    title: "Custom AI & Software Development",
+    tagline: "Custom software, automation & AI-powered apps",
     description:
-      "We integrate large language models, build RAG pipelines, and ship custom AI features directly into your product or internal stack — practical AI, not proof-of-concept theatre.",
-    href: "/services/ai-consulting",
+      "Custom software, automation solutions, AI-powered applications, and digital products built around your business — not the other way around.",
+    href: "/services/custom-ai-software-development",
     badge: null,
     tabAccent: "text-purple-400",
     tabActiveBg: "bg-purple-800",
     panelGradient: "from-purple-950 via-purple-800 to-purple-950",
     features: [
-      "AI opportunity assessment",
-      "LLM selection & integration",
-      "RAG pipeline architecture",
-      "Custom AI feature development",
-      "Prompt engineering & evals",
-      "Ongoing optimisation & monitoring",
+      "Custom software development",
+      "AI-powered applications",
+      "Process automation",
+      "Internal tools & dashboards",
+      "Integrations & APIs",
+      "Ongoing support & iteration",
     ],
-    Visual: AIConsultingVisual,
+    visualItems: [
+      { label: "Custom Software",     sub: "Built around your workflows", icon: "🛠️" },
+      { label: "AI-Powered Apps",     sub: "LLM features, shipped",       icon: "🤖" },
+      { label: "Process Automation",  sub: "Less manual work",            icon: "🔄" },
+      { label: "Integrations & APIs", sub: "Connect your existing stack", icon: "🔗" },
+    ],
+    visualStats: [
+      { stat: "6–16 wks", label: "typical build" },
+      { stat: "100%",     label: "IP ownership" },
+      { stat: "0",        label: "vendor lock-in" },
+    ],
   },
 ];
 
@@ -262,13 +182,13 @@ export default function ServicesGrid() {
           className="text-center mb-14"
         >
           <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">
-            What We Build
+            How We Help
           </p>
           <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E] mb-4">
-            Core Services
+            Core Service Areas
           </h2>
           <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
-            From idea to launch, we cover the full spectrum of software development for startups and enterprises.
+            Fractional AI leadership, AI transformation, and custom software development — the full path from strategy to shipped software.
           </p>
         </motion.div>
 
@@ -357,7 +277,7 @@ export default function ServicesGrid() {
               href="/services"
               className="mt-1 flex items-center justify-center gap-2 px-5 py-3 rounded-2xl border border-dashed border-[#2E5F8A]/30 text-sm font-semibold text-[#2E5F8A] hover:border-[#2E5F8A] hover:bg-[#2E5F8A]/5 transition-all"
             >
-              View all 18 services <ArrowRight size={14} />
+              View all 20 services <ArrowRight size={14} />
             </Link>
           </div>
 
@@ -436,7 +356,7 @@ export default function ServicesGrid() {
 
                   {/* Dynamic visual */}
                   <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                    <active.Visual />
+                    <PillarVisual items={active.visualItems} statLabel="What's Included" stats={active.visualStats} />
                   </div>
                 </div>
               </motion.div>

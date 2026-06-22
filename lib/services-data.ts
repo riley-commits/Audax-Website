@@ -822,6 +822,93 @@ export const servicesData: ServiceData[] = [
     relatedServices: ["ai-consulting", "process-automation", "customer-service-automation"],
   },
   {
+    slug: "ai-transformation-advisory",
+    title: "AI Transformation & Advisory",
+    heroTitle: "AI Transformation & Advisory — From AI Curious to AI Capable",
+    heroSub:
+      "AI assessments, roadmaps, governance, training, and implementation planning that turn AI ambition into a structured, de-risked plan your leadership team can actually execute.",
+    metaTitle: "AI Transformation & Advisory Canada | AI Strategy, Roadmaps & Governance",
+    metaDescription:
+      "AI transformation and advisory services for Canadian businesses. AI opportunity assessments, roadmaps, governance frameworks, training, and implementation planning. Book a free call.",
+    description:
+      "Most businesses know AI matters but don't know where to start, what to prioritize, or how to govern it responsibly. We help you cut through the noise — assessing where AI creates real value in your business, building a practical roadmap, putting governance and training in place, and planning the implementation work so it actually gets done.",
+    whatsIncluded: [
+      { icon: "🎯", label: "AI Opportunity Assessment", description: "Identify where AI can realistically reduce costs, save time, or grow revenue in your business." },
+      { icon: "🗺️", label: "AI Roadmap & Strategy", description: "A prioritized, sequenced plan for AI adoption aligned to your business goals and budget." },
+      { icon: "📋", label: "AI Governance & Risk Frameworks", description: "Clear ownership, approval processes, and usage policies that keep AI adoption safe and compliant." },
+      { icon: "📚", label: "Leadership & Employee Training", description: "Practical training so your team can use AI tools confidently and responsibly." },
+      { icon: "🔍", label: "Tool & Vendor Evaluation", description: "Independent assessment of AI tools and vendors so you invest in the right ones." },
+      { icon: "📐", label: "Implementation Planning & Oversight", description: "A clear plan — and oversight — for turning strategy into shipped initiatives." },
+    ],
+    whoItsFor: [
+      "Businesses exploring AI but unsure where to start or what to prioritize",
+      "Leadership teams that need AI governance, policy, and risk frameworks in place",
+      "Operations leaders who want a structured AI roadmap instead of ad-hoc experiments",
+      "Organizations that have tried AI tools before but haven't seen meaningful ROI",
+      "Companies preparing for AI-related compliance, audit, or governance requirements",
+      "Businesses that want outside expertise before committing budget to AI initiatives",
+    ],
+    process: [
+      { step: 1, title: "Discovery & Assessment", description: "Review your operations, tools, data, and current AI usage to identify realistic opportunities.", duration: "1–2 weeks" },
+      { step: 2, title: "Opportunity Mapping & Prioritization", description: "Score AI opportunities by effort, cost, risk, and potential ROI.", duration: "1 week" },
+      { step: 3, title: "Governance & Policy Design", description: "Establish ownership, approval processes, and AI usage rules for the business.", duration: "1–2 weeks" },
+      { step: 4, title: "Roadmap Development", description: "Build a sequenced, prioritized roadmap for AI adoption across the business.", duration: "1–2 weeks" },
+      { step: 5, title: "Training & Handoff", description: "Train leadership and staff, and hand off a clear plan for implementation.", duration: "1–2 weeks" },
+    ],
+    faq: [
+      { q: "We don't know anything about AI yet — is this still useful for us?", a: "Yes — this is the most common starting point. We meet you where you are and translate AI capabilities into plain business terms before any technical work begins." },
+      { q: "How is this different from your Fractional CAIO service?", a: "AI Transformation & Advisory is a defined engagement that produces a roadmap, governance framework, and training. Fractional CAIO is ongoing executive leadership with ongoing strategy sessions, implementation oversight, and reporting. Many clients start here and move into Fractional CAIO." },
+      { q: "Will you also build the AI solutions you recommend?", a: "We can. Many clients move directly from this engagement into our Custom AI & Software Development service to implement the highest-priority initiatives." },
+      { q: "How long does a typical engagement take?", a: "Most assessments and roadmaps are delivered in 4–8 weeks, depending on the size of the business and number of departments involved." },
+      { q: "Do you work with regulated industries?", a: "Yes. We've built AI governance frameworks for clients in legal, healthcare, and financial services, with compliance requirements factored into every recommendation." },
+    ],
+    relatedServices: ["fractional-caio", "ai-consulting", "custom-ai-software-development"],
+  },
+  {
+    slug: "custom-ai-software-development",
+    title: "Custom AI & Software Development",
+    heroTitle: "Custom AI & Software Development — Build the Tools Your Business Actually Needs",
+    heroSub:
+      "Custom software, automation solutions, AI-powered applications, and digital products built around your business — not the other way around.",
+    metaTitle: "Custom AI & Software Development Canada | AI-Powered Applications & Automation",
+    metaDescription:
+      "Custom AI and software development for Canadian businesses. AI-powered applications, automation solutions, and digital products built and shipped by Audax Ventures.",
+    description:
+      "Strategy without execution doesn't move the needle. We design and build custom software, AI-powered applications, and automation solutions tailored to your exact workflows — whether that's a customer-facing product, an internal tool, or an AI feature embedded directly into how your team already works.",
+    whatsIncluded: [
+      { icon: "🛠️", label: "Custom Software Development", description: "Purpose-built applications when off-the-shelf software doesn't fit your business." },
+      { icon: "🤖", label: "AI-Powered Applications", description: "LLM integrations, AI features, and intelligent automation built into your product." },
+      { icon: "🔄", label: "Process Automation", description: "Automate manual, repetitive work across operations, sales, and admin." },
+      { icon: "📊", label: "Internal Tools & Dashboards", description: "Custom dashboards and internal tools that replace spreadsheets and disconnected systems." },
+      { icon: "🔗", label: "Integrations & APIs", description: "Connect your existing systems and data sources into one coherent workflow." },
+      { icon: "🚀", label: "Ongoing Support & Iteration", description: "Continued development, monitoring, and improvement after launch." },
+    ],
+    whoItsFor: [
+      "Businesses whose workflows have outgrown spreadsheets and off-the-shelf tools",
+      "Companies that want AI features built directly into their product or internal stack",
+      "Founders building an MVP or scalable SaaS platform",
+      "Operations teams looking to automate manual, repetitive processes",
+      "Businesses needing custom integrations between existing systems",
+      "Organizations that have already completed AI strategy work and are ready to build",
+    ],
+    process: [
+      { step: 1, title: "Discovery & Scoping", description: "Define the problem, users, and minimal feature set that delivers real value.", duration: "1–2 weeks" },
+      { step: 2, title: "Architecture & Design", description: "Design the technical architecture and user experience before writing code.", duration: "1–2 weeks" },
+      { step: 3, title: "Iterative Development", description: "Build in focused iterations with regular working demos.", duration: "4–12 weeks" },
+      { step: 4, title: "AI & Automation Integration", description: "Integrate AI features, models, or automation workflows where they create the most value.", duration: "2–6 weeks" },
+      { step: 5, title: "QA & Launch", description: "Rigorous testing, deployment, and handoff with full documentation.", duration: "1–2 weeks" },
+    ],
+    techStack: ["Next.js / React", "Node.js", "Python", "Commercial & open-source LLMs", "PostgreSQL", "Cloud infrastructure (AWS / GCP)"],
+    faq: [
+      { q: "How is this different from your AI Transformation & Advisory service?", a: "Advisory produces the strategy, roadmap, and governance. This service is where we actually build and ship the software and AI solutions — many clients move from one into the other." },
+      { q: "Do we own the code and IP?", a: "Yes, always. Full source code and IP transfer on every engagement — no exceptions." },
+      { q: "Can you integrate AI into our existing product?", a: "Yes. We regularly add LLM-powered features, RAG systems, and automation directly into existing codebases without requiring a rebuild." },
+      { q: "What if we just need a custom internal tool, not a customer-facing product?", a: "That's a common engagement for us. Internal tools and dashboards that replace spreadsheets or manual processes are often the fastest path to measurable ROI." },
+      { q: "How long does a typical build take?", a: "Most custom builds take 6–16 weeks depending on scope. We'll give you a clear timeline and fixed-price phases before any work begins." },
+    ],
+    relatedServices: ["mvp-development", "saas-development", "ai-consulting", "process-automation"],
+  },
+  {
     slug: "digital-marketing",
     title: "Digital Marketing",
     heroTitle: "Digital Marketing — Acquire Customers, Not Just Traffic",

@@ -11,46 +11,48 @@ import { Menu, X, ChevronDown, ArrowRight, Phone } from "lucide-react";
 
 const mainServices = [
   {
-    label: "MVP Development",
-    href: "/services/mvp-development",
-    desc: "Validate and ship your idea fast",
-    num: "01", icon: "🚀",
-    stat: "50+ MVPs shipped",
-    preview: "From validated idea to production-ready product in 8–16 weeks — without cutting corners on architecture.",
+    label: "Fractional Chief AI Officer",
+    href: "/services/fractional-caio",
+    desc: "Executive-level AI leadership & strategic guidance",
+    num: "01", icon: "👔",
+    stat: "Exec-level AI leadership",
+    preview: "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer — strategy, governance, training, and ROI tracking on a monthly retainer.",
   },
   {
-    label: "SaaS Development",
-    href: "/services/saas-development",
-    desc: "Scalable, multi-tenant platforms",
-    num: "02", icon: "☁️",
-    stat: "99.9% uptime delivered",
-    preview: "Multi-tenant platforms with Stripe billing, role-based auth, and infrastructure built to grow from 10 to 10,000 customers.",
+    label: "AI Transformation & Advisory",
+    href: "/services/ai-transformation-advisory",
+    desc: "Assessments, roadmaps, governance & training",
+    num: "02", icon: "🧭",
+    stat: "4–8 wk typical engagement",
+    preview: "AI assessments, roadmaps, governance, training, and implementation planning that turn AI ambition into a structured, de-risked plan.",
   },
   {
-    label: "AI Consulting",
-    href: "/services/ai-consulting",
-    desc: "LLM integration, RAG pipelines & AI features",
-    num: "03", icon: "🎯",
-    stat: "10× faster workflows",
-    preview: "LLM integrations, RAG pipelines, and custom AI features built into your product or internal stack.",
+    label: "Custom AI & Software Development",
+    href: "/services/custom-ai-software-development",
+    desc: "Custom software, automation & AI-powered apps",
+    num: "03", icon: "💻",
+    stat: "100% IP ownership",
+    preview: "Custom software, automation solutions, AI-powered applications, and digital products built around your business.",
   },
 ];
 
 const otherServices = [
+  { label: "AI Consulting",               href: "/services/ai-consulting",               icon: "🎯" },
+  { label: "MVP Development",             href: "/services/mvp-development",             icon: "🚀" },
+  { label: "SaaS Development",            href: "/services/saas-development",            icon: "☁️" },
   { label: "Website Development",         href: "/services/website-development",         icon: "🌐" },
   { label: "E-Commerce Development",      href: "/services/ecommerce-development",       icon: "🛍️" },
   { label: "iOS Development",             href: "/services/ios-development",             icon: "📱" },
   { label: "Android Development",         href: "/services/android-development",         icon: "🤖" },
   { label: "Front End Development",       href: "/services/frontend-development",        icon: "⚛️" },
   { label: "Back End Development",        href: "/services/backend-development",         icon: "🗄️" },
-  { label: "Web Development",             href: "/services/web-development",             icon: "💻" },
+  { label: "Web Development",             href: "/services/web-development",             icon: "🖥️" },
   { label: "Custom Software",             href: "/services/custom-software-development", icon: "🛠️" },
   { label: "QA & Testing",               href: "/services/qa-testing",                  icon: "🔍" },
   { label: "Internal Tools",              href: "/services/internal-tools",             icon: "⚙️" },
   { label: "Process Automation",          href: "/services/process-automation",          icon: "🔄" },
   { label: "Customer Service Automation", href: "/services/customer-service-automation", icon: "💬" },
   { label: "CRM Systems",                 href: "/services/crm-systems",                 icon: "👥" },
-  { label: "Fractional CAIO",             href: "/services/fractional-caio",             icon: "🤖" },
   { label: "Digital Marketing",           href: "/services/digital-marketing",           icon: "📈" },
 ];
 
@@ -331,7 +333,7 @@ export default function Navbar() {
                             onClick={() => setServicesOpen(false)}
                             className="mt-auto flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-white/40 hover:text-white transition-colors"
                           >
-                            View all 18 services <ArrowRight size={10} />
+                            View all 20 services <ArrowRight size={10} />
                           </Link>
                         </div>
 

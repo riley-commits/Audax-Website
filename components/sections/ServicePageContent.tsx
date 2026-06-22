@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ChevronDown, Plus, Minus } from "lucide-react";
+import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ServiceData } from "@/lib/services-data";
 import PricingTiers from "@/components/sections/PricingTiers";
@@ -454,14 +454,20 @@ export default function ServicePageContent({ service, related }: Props) {
 
             {/* Who It's For */}
             <section id="who-its-for" className={`py-16 scroll-mt-24 ${service.slug === "fractional-caio" ? "" : "border-t border-gray-100"}`}>
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-8">
+              <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-2">
                 Who This Is For
               </h2>
-              <div className="space-y-3">
-                {service.whoItsFor.map((w) => (
-                  <div key={w} className="flex items-center gap-3 bg-[#F8F9FA] rounded-xl px-5 py-3.5">
-                    <CheckCircle2 size={18} className="text-[#2E5F8A] flex-shrink-0" />
-                    <span className="text-[#1A1A2E] text-sm">{w}</span>
+              <p className="text-[#6B7280] text-sm mb-8">Does this sound like you?</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {service.whoItsFor.map((w, i) => (
+                  <div
+                    key={w}
+                    className="group relative flex items-start gap-4 rounded-2xl border border-gray-100 bg-white px-5 py-4.5 transition-all duration-200 hover:border-[#2E5F8A]/30 hover:shadow-md hover:-translate-y-0.5"
+                  >
+                    <span className="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] font-[var(--font-outfit)] font-bold text-sm transition-colors group-hover:bg-[#2E5F8A] group-hover:text-white">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[#1A1A2E] text-sm leading-relaxed pt-1.5">{w}</span>
                   </div>
                 ))}
               </div>

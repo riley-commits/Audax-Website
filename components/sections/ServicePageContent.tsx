@@ -91,9 +91,9 @@ const serviceStats: Record<string, { value: string; label: string }[]> = {
     { value: "100%", label: "fits your process" },
   ],
   "fractional-caio": [
-    { value: "$2,500", label: "/month starting tier" },
-    { value: "3 mo", label: "structured onboarding" },
-    { value: "1/10", label: "the cost of a full-time CAIO" },
+    { value: "Strategy", label: "+ hands-on implementation" },
+    { value: "Exec-level", label: "AI leadership & governance" },
+    { value: "Built", label: "real AI tools, not just advice" },
   ],
   "digital-marketing": [
     { value: "3×", label: "avg. organic traffic lift" },
@@ -331,11 +331,12 @@ interface Props {
 }
 
 function buildSectionLinks(service: ServiceData) {
-  const links: { id: string; label: string }[] = [
-    { id: "whats-included", label: "What's Included" },
-    { id: "who-its-for",    label: "Who It's For" },
-  ];
-  if (service.packages && service.packages.length > 0) {
+  const links: { id: string; label: string }[] = [];
+  if (service.slug !== "fractional-caio") {
+    links.push({ id: "whats-included", label: "What's Included" });
+  }
+  links.push({ id: "who-its-for", label: "Who It's For" });
+  if (service.packages && service.packages.length > 0 && service.slug !== "fractional-caio") {
     links.push({ id: "packages", label: "Packages & Pricing" });
   }
   if (service.process && service.process.length > 0) {
@@ -430,23 +431,25 @@ export default function ServicePageContent({ service, related }: Props) {
           <div className="space-y-0">
 
             {/* What's Included */}
-            <section id="whats-included" className="py-16 scroll-mt-24">
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
-                What&apos;s Included
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {service.whatsIncluded.map((item) => (
-                  <div key={item.label} className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100 hover:border-[#2E5F8A]/30 hover:shadow-sm transition-all">
-                    <div className="text-2xl mb-3">{item.icon}</div>
-                    <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-2">{item.label}</h3>
-                    <p className="text-[#6B7280] text-xs leading-relaxed">{item.description}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
+            {service.slug !== "fractional-caio" && (
+              <section id="whats-included" className="py-16 scroll-mt-24">
+                <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
+                  What&apos;s Included
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {service.whatsIncluded.map((item) => (
+                    <div key={item.label} className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100 hover:border-[#2E5F8A]/30 hover:shadow-sm transition-all">
+                      <div className="text-2xl mb-3">{item.icon}</div>
+                      <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-2">{item.label}</h3>
+                      <p className="text-[#6B7280] text-xs leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Who It's For */}
-            <section id="who-its-for" className="py-16 border-t border-gray-100 scroll-mt-24">
+            <section id="who-its-for" className={`py-16 scroll-mt-24 ${service.slug === "fractional-caio" ? "" : "border-t border-gray-100"}`}>
               <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-8">
                 Who This Is For
               </h2>
@@ -461,7 +464,7 @@ export default function ServicePageContent({ service, related }: Props) {
             </section>
 
             {/* Packages & Pricing (tiered services only) */}
-            {service.packages && service.packages.length > 0 && (
+            {service.packages && service.packages.length > 0 && service.slug !== "fractional-caio" && (
               <section id="packages" className="py-16 border-t border-gray-100 scroll-mt-24">
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-3">
                   Packages & Pricing

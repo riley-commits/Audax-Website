@@ -3,7 +3,6 @@ import CTABanner from "@/components/layout/CTABanner";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutAudaxSection from "@/components/sections/AboutAudaxSection";
 import ServicesGrid from "@/components/sections/ServicesGrid";
-import ProcessSteps from "@/components/sections/ProcessSteps";
 import SolutionsOverview from "@/components/sections/SolutionsOverview";
 import StatsBar from "@/components/sections/StatsBar";
 
@@ -51,7 +50,6 @@ export default function HomePage() {
       <StatsBar />
       <ServicesGrid />
       <SolutionsOverview />
-      <ProcessSteps />
       <CTABanner />
     </>
   );

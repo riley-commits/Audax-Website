@@ -892,11 +892,11 @@ export const servicesData: ServiceData[] = [
       "Organizations that have already completed AI strategy work and are ready to build",
     ],
     process: [
-      { step: 1, title: "Discovery & Scoping", description: "Define the problem, users, and minimal feature set that delivers real value.", duration: "1–2 weeks" },
-      { step: 2, title: "Architecture & Design", description: "Design the technical architecture and user experience before writing code.", duration: "1–2 weeks" },
-      { step: 3, title: "Iterative Development", description: "Build in focused iterations with regular working demos.", duration: "4–12 weeks" },
-      { step: 4, title: "AI & Automation Integration", description: "Integrate AI features, models, or automation workflows where they create the most value.", duration: "2–6 weeks" },
-      { step: 5, title: "QA & Launch", description: "Rigorous testing, deployment, and handoff with full documentation.", duration: "1–2 weeks" },
+      { step: 1, title: "Discovery", description: "Requirements, user research, scope, and technical feasibility — we align on what to build and why before writing a line of code.", duration: "1–2 weeks" },
+      { step: 2, title: "UI/UX Design", description: "Wireframes, prototypes, and pixel-perfect Figma designs reviewed with your team before development starts.", duration: "1–2 weeks" },
+      { step: 3, title: "Core Development", description: "Agile 2-week sprints with a working demo at the end of each. You see progress and provide feedback throughout.", duration: "4–12 weeks" },
+      { step: 4, title: "DevOps & Infrastructure", description: "CI/CD pipeline, cloud deployment, monitoring, and security hardening — production-ready from day one.", duration: "1–2 weeks" },
+      { step: 5, title: "Ongoing Support", description: "Post-launch retainers for bug fixes, performance optimization, and new feature development as you grow.", duration: "Ongoing" },
     ],
     techStack: ["Next.js / React", "Node.js", "Python", "Commercial & open-source LLMs", "PostgreSQL", "Cloud infrastructure (AWS / GCP)"],
     faq: [

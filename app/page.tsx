@@ -3,7 +3,6 @@ import CTABanner from "@/components/layout/CTABanner";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutAudaxSection from "@/components/sections/AboutAudaxSection";
 import ServicesGrid from "@/components/sections/ServicesGrid";
-import SolutionsOverview from "@/components/sections/SolutionsOverview";
 import StatsBar from "@/components/sections/StatsBar";
 
 export const metadata: Metadata = {
@@ -49,7 +48,6 @@ export default function HomePage() {
       <AboutAudaxSection />
       <StatsBar />
       <ServicesGrid />
-      <SolutionsOverview />
       <CTABanner />
     </>
   );

@@ -4,7 +4,15 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import type { ServicePackage } from "@/lib/services-data";
 
-export default function PricingTiers({ packages }: { packages: ServicePackage[] }) {
+export default function PricingTiers({
+  packages,
+  hidePrice = false,
+  ctaHref = "https://calendly.com/audax-ventures/30min",
+}: {
+  packages: ServicePackage[];
+  hidePrice?: boolean;
+  ctaHref?: string;
+}) {
   return (
     <div className="grid gap-6 md:grid-cols-3">
       {packages.map((pkg, i) => {
@@ -35,18 +43,20 @@ export default function PricingTiers({ packages }: { packages: ServicePackage[] 
               {pkg.tagline}
             </p>
 
-            <div className="flex items-baseline gap-1 mb-5">
-              <span
-                className={`font-[var(--font-outfit)] font-extrabold text-4xl ${
-                  highlighted ? "text-white" : "text-[#1A1A2E]"
-                }`}
-              >
-                {pkg.price}
-              </span>
-              <span className={`text-sm ${highlighted ? "text-white/60" : "text-[#6B7280]"}`}>
-                {pkg.priceUnit}
-              </span>
-            </div>
+            {!hidePrice && (
+              <div className="flex items-baseline gap-1 mb-5">
+                <span
+                  className={`font-[var(--font-outfit)] font-extrabold text-4xl ${
+                    highlighted ? "text-white" : "text-[#1A1A2E]"
+                  }`}
+                >
+                  {pkg.price}
+                </span>
+                <span className={`text-sm ${highlighted ? "text-white/60" : "text-[#6B7280]"}`}>
+                  {pkg.priceUnit}
+                </span>
+              </div>
+            )}
 
             <div
               className={`rounded-xl px-4 py-3 mb-6 text-xs leading-relaxed ${
@@ -136,7 +146,7 @@ export default function PricingTiers({ packages }: { packages: ServicePackage[] 
             </div>
 
             <Link
-              href="https://calendly.com/audax-ventures/30min"
+              href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full font-bold text-sm transition-colors ${

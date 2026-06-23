@@ -336,8 +336,8 @@ function buildSectionLinks(service: ServiceData) {
     links.push({ id: "whats-included", label: "What's Included" });
   }
   links.push({ id: "who-its-for", label: "Who It's For" });
-  if (service.packages && service.packages.length > 0 && service.slug !== "fractional-caio") {
-    links.push({ id: "packages", label: "Packages & Pricing" });
+  if (service.packages && service.packages.length > 0) {
+    links.push({ id: "packages", label: service.slug === "fractional-caio" ? "Packages" : "Packages & Pricing" });
   }
   if (service.process && service.process.length > 0) {
     links.push({ id: "process", label: "Our Process" });
@@ -479,15 +479,21 @@ export default function ServicePageContent({ service, related }: Props) {
             </section>
 
             {/* Packages & Pricing (tiered services only) */}
-            {service.packages && service.packages.length > 0 && service.slug !== "fractional-caio" && (
+            {service.packages && service.packages.length > 0 && (
               <section id="packages" className="py-16 border-t border-gray-100 scroll-mt-24">
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-3">
-                  Packages & Pricing
+                  {service.slug === "fractional-caio" ? "Packages" : "Packages & Pricing"}
                 </h2>
                 <p className="text-[#6B7280] text-base mb-10 max-w-2xl">
-                  Three structured monthly engagements. Pick the tier that matches where you are — switch up as your AI maturity grows.
+                  {service.slug === "fractional-caio"
+                    ? "Three structured engagement tiers — pick the level of AI leadership that matches where your business is today, and grow into the next tier as your AI maturity increases."
+                    : "Three structured monthly engagements. Pick the tier that matches where you are — switch up as your AI maturity grows."}
                 </p>
-                <PricingTiers packages={service.packages} />
+                <PricingTiers
+                  packages={service.packages}
+                  hidePrice={service.slug === "fractional-caio"}
+                  ctaHref={calendlyUrl}
+                />
               </section>
             )}
 

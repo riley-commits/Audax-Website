@@ -28,26 +28,6 @@ const mainServices = [
   },
 ];
 
-const otherServices = [
-  { label: "AI Consulting",               href: "/services/ai-consulting",               icon: "🎯" },
-  { label: "MVP Development",             href: "/services/mvp-development",             icon: "🚀" },
-  { label: "SaaS Development",            href: "/services/saas-development",            icon: "☁️" },
-  { label: "Website Development",         href: "/services/website-development",         icon: "🌐" },
-  { label: "E-Commerce Development",      href: "/services/ecommerce-development",       icon: "🛍️" },
-  { label: "iOS Development",             href: "/services/ios-development",             icon: "📱" },
-  { label: "Android Development",         href: "/services/android-development",         icon: "🤖" },
-  { label: "Front End Development",       href: "/services/frontend-development",        icon: "⚛️" },
-  { label: "Back End Development",        href: "/services/backend-development",         icon: "🗄️" },
-  { label: "Web Development",             href: "/services/web-development",             icon: "🖥️" },
-  { label: "Custom Software",             href: "/services/custom-software-development", icon: "🛠️" },
-  { label: "QA & Testing",               href: "/services/qa-testing",                  icon: "🔍" },
-  { label: "Internal Tools",              href: "/services/internal-tools",             icon: "⚙️" },
-  { label: "Process Automation",          href: "/services/process-automation",          icon: "🔄" },
-  { label: "Customer Service Automation", href: "/services/customer-service-automation", icon: "💬" },
-  { label: "CRM Systems",                 href: "/services/crm-systems",                 icon: "👥" },
-  { label: "Digital Marketing",           href: "/services/digital-marketing",           icon: "📈" },
-];
-
 const PROGRAM_ACCENT = "#D97706";
 
 const programs = [
@@ -87,17 +67,6 @@ const mainIndustries = [
     stat: "Real-time project visibility",
     preview: "Property management platforms, construction project portals, and CRM tools built for the pace of real estate.",
   },
-];
-
-const otherIndustries = [
-  { label: "FinTech & Finance",             href: "/industries/fintech-finance",                icon: "💳" },
-  { label: "Retail & E-Commerce",           href: "/industries/retail-ecommerce",               icon: "🛍️" },
-  { label: "Education & EdTech",            href: "/industries/education-edtech",               icon: "🎓" },
-  { label: "Hospitality & Tourism",         href: "/industries/hospitality-tourism",            icon: "🏨" },
-  { label: "Manufacturing",                 href: "/industries/manufacturing",                  icon: "🏭" },
-  { label: "Transportation & Logistics",    href: "/industries/transportation-logistics",       icon: "🚚" },
-  { label: "Non-Profit & Social Impact",    href: "/industries/non-profit",                     icon: "🤝" },
-  { label: "Technology & SaaS",             href: "/industries/technology-saas",                icon: "💡" },
 ];
 
 const navLinks = [
@@ -327,24 +296,18 @@ export default function Navbar() {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.15 }}
-                                className="p-5"
+                                className="h-full flex flex-col items-center justify-center gap-3 p-8 text-center"
                               >
-                                <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] mb-4">
-                                  All Services
+                                <p className="text-sm text-[#6B7280] max-w-[280px]">
+                                  Explore the full range of services we offer.
                                 </p>
-                                {/* Option 3: icons on grid items */}
-                                <div className="grid grid-cols-3 gap-x-1 gap-y-0.5">
-                                  {otherServices.map((s) => (
-                                    <Link
-                                      key={s.href}
-                                      href={s.href}
-                                      onClick={() => setServicesOpen(false)}
-                                      className="flex items-center px-2.5 py-2 rounded-lg text-sm text-[#374151] hover:bg-[#F8F9FA] hover:text-[#2E5F8A] transition-all duration-150 font-medium"
-                                    >
-                                      <span className="truncate">{s.label}</span>
-                                    </Link>
-                                  ))}
-                                </div>
+                                <Link
+                                  href="/services"
+                                  onClick={() => setServicesOpen(false)}
+                                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2E5F8A] text-white font-bold text-sm hover:bg-[#3A7BD5] transition-colors"
+                                >
+                                  View all services <ArrowRight size={14} />
+                                </Link>
                               </motion.div>
                             )}
                           </AnimatePresence>
@@ -436,24 +399,18 @@ export default function Navbar() {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.15 }}
-                                className="p-5"
+                                className="h-full flex flex-col items-center justify-center gap-3 p-8 text-center"
                               >
-                                <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] mb-4">
-                                  All Industries
+                                <p className="text-sm text-[#6B7280] max-w-[280px]">
+                                  Explore the full range of industries we serve.
                                 </p>
-                                {/* Option 3: icons on grid items */}
-                                <div className="grid grid-cols-2 gap-x-1 gap-y-0.5">
-                                  {otherIndustries.map((ind) => (
-                                    <Link
-                                      key={ind.href}
-                                      href={ind.href}
-                                      onClick={() => setIndustriesOpen(false)}
-                                      className="flex items-center px-2.5 py-2 rounded-lg text-sm text-[#374151] hover:bg-[#F8F9FA] hover:text-[#2E5F8A] transition-all duration-150 font-medium"
-                                    >
-                                      {ind.label}
-                                    </Link>
-                                  ))}
-                                </div>
+                                <Link
+                                  href="/industries"
+                                  onClick={() => setIndustriesOpen(false)}
+                                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2E5F8A] text-white font-bold text-sm hover:bg-[#3A7BD5] transition-colors"
+                                >
+                                  View all industries <ArrowRight size={14} />
+                                </Link>
                               </motion.div>
                             )}
                           </AnimatePresence>
@@ -660,15 +617,10 @@ export default function Navbar() {
                     {s.label}
                   </Link>
                 ))}
-                <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] px-3 mt-4 mb-2">Other Services</p>
-                <div className="grid grid-cols-2 gap-x-2">
-                  {otherServices.map((s) => (
-                    <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-1.5 pl-3 pr-2 py-1.5 rounded-lg text-xs text-[#6B7280] hover:text-[#2E5F8A] hover:bg-[#F8F9FA] transition-colors">
-                      <span>{s.icon}</span>{s.label}
-                    </Link>
-                  ))}
-                </div>
+                <Link href="/services" onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-1.5 pl-3 pr-3 py-2 mt-1 rounded-lg text-sm font-semibold text-[#2E5F8A] hover:bg-[#F8F9FA] transition-colors">
+                  View all services <ArrowRight size={12} />
+                </Link>
               </div>
 
               {/* Industries sub-section */}
@@ -681,15 +633,10 @@ export default function Navbar() {
                     {ind.label}
                   </Link>
                 ))}
-                <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] px-3 mt-4 mb-2">All Industries</p>
-                <div className="grid grid-cols-2 gap-x-2">
-                  {otherIndustries.map((ind) => (
-                    <Link key={ind.href} href={ind.href} onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-1.5 pl-3 pr-2 py-1.5 rounded-lg text-xs text-[#6B7280] hover:text-[#2E5F8A] hover:bg-[#F8F9FA] transition-colors">
-                      <span>{ind.icon}</span>{ind.label}
-                    </Link>
-                  ))}
-                </div>
+                <Link href="/industries" onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-1.5 pl-3 pr-3 py-2 mt-1 rounded-lg text-sm font-semibold text-[#2E5F8A] hover:bg-[#F8F9FA] transition-colors">
+                  View all industries <ArrowRight size={12} />
+                </Link>
               </div>
 
               {/* Programs sub-section */}

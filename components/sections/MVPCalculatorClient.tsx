@@ -81,8 +81,6 @@ export default function MVPCalculatorClient() {
   }
 
   function getRecommendation() {
-    if (selections.productType === "internal") return "Enterprise Innovation Program";
-    if (selections.features.includes("ai") || selections.features.length >= 6) return "Enterprise Innovation Program";
     return "Founder Prototype Program";
   }
 
@@ -306,9 +304,9 @@ export default function MVPCalculatorClient() {
                     <p className="text-sm font-semibold text-[#1A1A2E] mb-1">Recommended Program:</p>
                     <p className="text-[#2E5F8A] font-[var(--font-outfit)] font-bold text-lg">{recommendation}</p>
                     <Link
-                      href={recommendation === "Founder Prototype Program" ? "https://www.audaxventures.io" : "/programs/enterprise-innovation-program"}
-                      target={recommendation === "Founder Prototype Program" ? "_blank" : undefined}
-                      rel={recommendation === "Founder Prototype Program" ? "noopener noreferrer" : undefined}
+                      href="https://www.audaxventures.io"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-xs text-[#2E5F8A] hover:underline"
                     >
                       Learn about this program →

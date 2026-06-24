@@ -48,32 +48,14 @@ const otherServices = [
   { label: "Digital Marketing",           href: "/services/digital-marketing",           icon: "📈" },
 ];
 
-// Unified accent color across all 4 programs — per-program icon + label
-// still differentiates the offerings.
 const PROGRAM_ACCENT = "#D97706";
 
 const programs = [
   {
-    label: "Enterprise Innovation Program",
-    href: "/programs/enterprise-innovation-program",
-    desc: "From internal whiteboard to shipped product.",
-    num: "01", icon: "🏗️",
-    phases: ["Audit", "Build", "Scale"],
-    color: PROGRAM_ACCENT,
-  },
-  {
-    label: "AI Implementation",
-    href: "/programs/ai-implementation",
-    desc: "From AI audit to deployed solution — structured and bespoke.",
-    num: "02", icon: "🤖",
-    phases: ["Discover", "Build", "Evolve"],
-    color: PROGRAM_ACCENT,
-  },
-  {
     label: "Founder Prototype Program",
     href: "https://www.audaxventures.io",
     desc: "Idea to working prototype fast — validate before you build.",
-    num: "03", icon: "⚡",
+    num: "01", icon: "⚡",
     phases: ["Define", "Build", "Validate"],
     color: PROGRAM_ACCENT,
     external: true,

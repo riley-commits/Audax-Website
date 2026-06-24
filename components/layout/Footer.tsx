@@ -16,8 +16,6 @@ const services = [
 ];
 
 const solutions = [
-  { label: "Enterprise Innovation Program", href: "/programs/enterprise-innovation-program" },
-  { label: "AI Implementation Program", href: "/programs/ai-implementation" },
   { label: "Founder Prototype Program", href: "https://www.audaxventures.io" },
   { label: "Our Process", href: "/process" },
   { label: "Success Stories", href: "/success-stories" },

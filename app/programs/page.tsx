@@ -1,45 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Clock, Building2, BrainCircuit, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Zap } from "lucide-react";
 import CTABanner from "@/components/layout/CTABanner";
 import { solutionsData } from "@/lib/solutions-data";
 
 export const metadata: Metadata = {
   title: "Programs | Audax Ventures",
   description:
-    "Three structured programs built for where you are in your journey — Enterprise Innovation Program, AI Implementation, and Founder Prototype Program.",
+    "The Founder Prototype Program — a structured program built for early-stage founders who need to validate before they build.",
   alternates: { canonical: "https://audaxventures.ca/programs" },
   openGraph: {
     title: "Programs | Audax Ventures",
     description:
-      "Three structured, phased programs — for enterprise teams, businesses ready to put AI to work, and founders building prototypes. Beyond a typical development agency.",
+      "A structured, phased program for founders building prototypes. Beyond a typical development agency.",
     url: "https://audaxventures.ca/programs",
   },
 };
 
-// Unified color treatment across all 4 programs. Per-program icon + badge
-// still differentiates the offerings; color is consistent.
 const PROGRAM_GRADIENT = "from-[#78350F] to-[#D97706]";
 const PROGRAM_ACCENT_COLOR = "text-[#92400E]";
 const PROGRAM_ACCENT_BG = "bg-[#92400E]/8";
 
 const programMeta = [
-  {
-    slug: "enterprise-innovation-program",
-    icon: Building2,
-    badge: "For Enterprise",
-    gradient: PROGRAM_GRADIENT,
-    accentColor: PROGRAM_ACCENT_COLOR,
-    accentBg: PROGRAM_ACCENT_BG,
-  },
-  {
-    slug: "ai-implementation",
-    icon: BrainCircuit,
-    badge: "AI Program",
-    gradient: PROGRAM_GRADIENT,
-    accentColor: PROGRAM_ACCENT_COLOR,
-    accentBg: PROGRAM_ACCENT_BG,
-  },
   {
     slug: "founder-prototype-program",
     icon: Zap,
@@ -69,7 +51,7 @@ export default function ProgramsPage() {
             <span className="text-[#2E5F8A]">A Program Partner</span>
           </h1>
           <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            Four structured, phased programs designed for where you are in your journey — whether you&apos;re a founder, an enterprise innovation team, or a business ready to put AI to work.
+            A structured, phased program for founders who need to validate before they build.
           </p>
 
           {/* Jump buttons */}

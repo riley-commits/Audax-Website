@@ -147,10 +147,11 @@ export const industriesData: IndustryData[] = [
       "Professional services firms face a distinctive technology challenge: the work product is knowledge delivered by people, which means software must enhance practitioner productivity without interfering with the professional judgment that clients are actually paying for. Tools that add friction, require constant data entry, or produce unreliable outputs are worse than no tools at all — they erode the confidence of the practitioners who need to adopt them.\n\nAudax Ventures has built technology for law firms, accounting practices, and management consultancies that takes this seriously. Our matter management systems are designed around how lawyers and paralegals actually work, not around how a product manager imagined they should work. Our document automation tools handle the genuinely complex precedent logic that legal documents require. Our client portals provide the transparency and communication channels that clients expect without creating professional obligation ambiguity for the firm.\n\nWe also understand the specific data sensitivity and conflict-of-interest management requirements that professional services firms face. Solicitor-client privilege, CPA confidentiality obligations, and consulting engagement confidentiality all impose constraints on how data is stored, who can access it, and how it is transmitted. Every platform we build for professional services clients includes the access controls, audit logging, and data architecture that these obligations require.",
     challenges: [
       "Time capture is inconsistent and after-the-fact, meaning billable hours are routinely lost between when work is performed and when it is recorded",
-      "Matter files are distributed across email, document management systems, and shared drives — making it difficult to find what you need or to onboard a new team member to an active file",
-      "Document production relies on manual precedent assembly that is slow, error-prone, and inconsistent across practitioners at the same firm",
-      "Client communication happens through email with no central record, creating risk when key communications are in an individual's inbox rather than the matter file",
+      "Matter and engagement files are distributed across email, document management systems, and shared drives — making it difficult to find what you need or to onboard a new team member to an active file",
+      "Document production relies on manual precedent or template assembly that is slow, error-prone, and inconsistent across practitioners at the same firm",
+      "Client communication happens through email with no central record, creating risk when key communications are in an individual's inbox rather than the matter or client file",
       "Business development and client relationship management is informal and undocumented, meaning firm relationships live with individuals rather than with the firm",
+      "Tax season and year-end engagement cycles create extreme workload spikes that manual document collection and spreadsheet tracking cannot absorb without errors or burnout",
     ],
     solutions: [
       {
@@ -185,14 +186,20 @@ export const industriesData: IndustryData[] = [
       },
       {
         icon: "🤖",
-        title: "AI-Assisted Legal Research & Drafting",
+        title: "AI-Assisted Research & Drafting",
         description:
-          "Retrieval-augmented AI tools trained on your firm's precedents and knowledge base — accelerating research, first-draft generation, and contract review without replacing practitioner judgment.",
+          "Retrieval-augmented AI tools trained on your firm's precedents, workpapers, and knowledge base — accelerating legal research, tax research, first-draft generation, and contract or return review without replacing practitioner judgment.",
+      },
+      {
+        icon: "🧾",
+        title: "Tax Workflow & Client Document Collection",
+        description:
+          "Secure client document upload portals, automated checklist and engagement letter tracking, and status dashboards built for accounting and CPA firms managing high-volume tax season and year-end workloads.",
       },
     ],
     caseHighlights: [
-      { stat: "8 weeks", label: "Time to launch a full client portal and matter management system" },
-      { stat: "Privilege-safe", label: "Matter-level data isolation and access control built into every platform" },
+      { stat: "8 weeks", label: "Time to launch a full client portal and matter or engagement management system" },
+      { stat: "Privilege-safe", label: "Matter and engagement-level data isolation and access control built into every platform" },
       { stat: "e-Sign ready", label: "DocuSign and HelloSign integration built into every client portal" },
       { stat: "100%", label: "IP and source code owned by your firm at project completion" },
     ],
@@ -215,16 +222,16 @@ export const industriesData: IndustryData[] = [
         a: "All platforms we build for legal clients enforce strict role-based access control — staff see only the matters they are assigned to, and client data is isolated at the database level. We also implement comprehensive access audit logs, encrypted storage, and can support on-premise or private cloud deployments where clients require data residency control.",
       },
       {
-        q: "Can you integrate with our existing practice management software?",
-        a: "It depends on what you're running. We have integrated with Clio, PCLaw, and Actionstep via their APIs. For systems without APIs, we can build file-based integration via exports. We assess integration feasibility in discovery.",
+        q: "Can you integrate with our existing practice or firm management software?",
+        a: "It depends on what you're running. On the legal side, we have integrated with Clio, PCLaw, and Actionstep via their APIs. On the accounting side, we have integrated with QuickBooks, Xero, and CCH via their APIs. For systems without APIs, we can build file-based integration via exports. We assess integration feasibility in discovery.",
       },
       {
         q: "Is your document automation sophisticated enough for complex legal precedents?",
         a: "Yes. We build document automation that handles conditional clauses, nested logic, multi-party signature routing, and jurisdiction-specific variations. We work with your precedents as they exist — not generic templates — so the output reflects your firm's actual drafting standards.",
       },
       {
-        q: "How do you handle the AI tools in a professional liability context?",
-        a: "Every AI feature we build for legal or professional services includes practitioner review steps — AI drafts are clearly marked as drafts requiring review, citations are provided for any legal or factual assertions, and all AI output is logged for audit purposes. We do not build systems that present AI output as authoritative without practitioner sign-off.",
+        q: "How do you handle AI tools in a professional liability context?",
+        a: "Every AI feature we build for legal or accounting clients includes practitioner review steps — AI drafts are clearly marked as drafts requiring review, citations or source documents are provided for any legal, factual, or financial assertions, and all AI output is logged for audit purposes. We do not build systems that present AI output as authoritative without practitioner or preparer sign-off.",
       },
     ],
   },

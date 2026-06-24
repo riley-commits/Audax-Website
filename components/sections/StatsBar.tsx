@@ -136,7 +136,7 @@ export default function StatsBar() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             <AnimatedStat end={50}  suffix="+"     label="Projects Delivered"  delay={0}    />
             <AnimatedStat end={98}  suffix="%"     label="Client Satisfaction" delay={0.1}  />
-            <AnimatedStat staticText="8–16 wks"   label="Time to MVP Launch"  delay={0.2}  />
+            <AnimatedStat staticText="Exec-level"  label="AI Leadership"      delay={0.2}  />
             <AnimatedStat staticText="100%"        label="Code Ownership"      delay={0.3}  />
           </div>
         </div>

@@ -133,98 +133,98 @@ export const industriesData: IndustryData[] = [
   },
 
   {
-    slug: "manufacturing",
-    title: "Manufacturing",
-    icon: "🏭",
-    tagline: "Operations software that connects the shop floor to the boardroom — in real time.",
-    heroTitle: "Manufacturing Software That Turns Shop Floor Data Into Competitive Advantage",
+    slug: "legal-professional-services",
+    title: "Legal & Professional Services",
+    icon: "⚖️",
+    tagline: "Practice management and client delivery software built for the billing model and risk profile of professional firms.",
+    heroTitle: "Legal & Professional Services Software — Tools That Bill Hours More Effectively",
     heroSub:
-      "From MES integrations and production scheduling to quality management and supplier portals, we build the operational software that modern manufacturers need to compete on throughput, quality, and cost.",
-    metaTitle: "Manufacturing Software Development Canada",
+      "We build matter management systems, client portals, document automation tools, and billing platforms for law firms, accounting practices, and management consultancies.",
+    metaTitle: "Legal & Professional Services Software Development",
     metaDescription:
-      "Custom manufacturing software — MES, production scheduling, quality management, and supplier portals. Built for Canadian manufacturers. Book a free strategy call.",
+      "Custom software for law firms, accounting practices, and professional services firms. Matter management, client portals, document automation, and billing tools. Book a free call.",
     overview:
-      "Modern manufacturing runs on real-time data, but most mid-market manufacturers still rely on ERP systems that were designed for batch reporting, spreadsheet-based production scheduling, and manual quality inspections. The gap between what the shop floor produces and what decision-makers see is measured in days — and in that gap lives waste, rework, missed delivery windows, and margin erosion.\n\nAudax Ventures builds the operational software layer that sits between your machines, your workforce, and your leadership team. We have delivered production scheduling tools, manufacturing execution systems, quality management platforms, and supplier collaboration portals for clients in precision machining, food processing, plastics, and industrial assembly. In each case, our starting point is the same: understand the actual workflow before writing a line of code.\n\nOur manufacturing clients typically come to us after a failed ERP customization, an off-the-shelf tool that doesn't match their process, or a growth phase that has outpaced their current systems. We build pragmatic, maintainable software that integrates with what you already have — including legacy PLCs, ERP systems, and SCADA infrastructure — rather than demanding a rip-and-replace approach your operations cannot absorb.",
+      "Professional services firms face a distinctive technology challenge: the work product is knowledge delivered by people, which means software must enhance practitioner productivity without interfering with the professional judgment that clients are actually paying for. Tools that add friction, require constant data entry, or produce unreliable outputs are worse than no tools at all — they erode the confidence of the practitioners who need to adopt them.\n\nAudax Ventures has built technology for law firms, accounting practices, and management consultancies that takes this seriously. Our matter management systems are designed around how lawyers and paralegals actually work, not around how a product manager imagined they should work. Our document automation tools handle the genuinely complex precedent logic that legal documents require. Our client portals provide the transparency and communication channels that clients expect without creating professional obligation ambiguity for the firm.\n\nWe also understand the specific data sensitivity and conflict-of-interest management requirements that professional services firms face. Solicitor-client privilege, CPA confidentiality obligations, and consulting engagement confidentiality all impose constraints on how data is stored, who can access it, and how it is transmitted. Every platform we build for professional services clients includes the access controls, audit logging, and data architecture that these obligations require.",
     challenges: [
-      "Production scheduling is done in spreadsheets, creating version conflicts, missed updates, and no real-time visibility into capacity or machine utilization",
-      "Quality defects are caught late in the process — or by customers — because inspection data is recorded on paper and never analyzed for patterns",
-      "Supplier lead times and inventory levels are tracked manually, making it impossible to anticipate shortages before they stop the line",
-      "Maintenance is reactive rather than predictive, meaning unplanned downtime hits throughput targets at the worst possible moments",
-      "Disconnected ERP, MES, and quality systems force supervisors to manually reconcile data from three places to answer one management question",
+      "Time capture is inconsistent and after-the-fact, meaning billable hours are routinely lost between when work is performed and when it is recorded",
+      "Matter files are distributed across email, document management systems, and shared drives — making it difficult to find what you need or to onboard a new team member to an active file",
+      "Document production relies on manual precedent assembly that is slow, error-prone, and inconsistent across practitioners at the same firm",
+      "Client communication happens through email with no central record, creating risk when key communications are in an individual's inbox rather than the matter file",
+      "Business development and client relationship management is informal and undocumented, meaning firm relationships live with individuals rather than with the firm",
     ],
     solutions: [
       {
-        icon: "📅",
-        title: "Production Scheduling & Dispatch",
+        icon: "📂",
+        title: "Matter & Case Management",
         description:
-          "Drag-and-drop scheduling boards with real-time capacity constraints, machine availability, and job priority logic — replacing spreadsheets with a system your team will actually use.",
+          "Centralized matter files with task management, deadline tracking, team assignment, document linking, and matter-level communication history — accessible from any device.",
       },
       {
-        icon: "🔧",
-        title: "Preventive Maintenance Tracker",
+        icon: "⏱️",
+        title: "Time Tracking & Billing",
         description:
-          "Work order management, maintenance history logging, OEM schedule tracking, and IoT sensor integration for condition-based maintenance triggers.",
+          "One-click time capture with matter and task code assignment, automated timesheet reminders, draft bill review workflows, and integration with accounting systems for AR management.",
       },
       {
-        icon: "✅",
-        title: "Quality Management System (QMS)",
+        icon: "📄",
+        title: "Document Automation",
         description:
-          "Digital inspection forms, non-conformance reporting, corrective action workflows, and SPC charting — with traceability from raw material to finished good.",
+          "Precedent-based document assembly with conditional logic, data field population, version control, and e-signature integration — reducing document drafting time by 60–80%.",
+      },
+      {
+        icon: "🏢",
+        title: "Client Portal & Extranet",
+        description:
+          "Branded client-facing portal for document sharing, matter status updates, invoice review, secure messaging, and e-signature completion — reducing inbound client calls.",
       },
       {
         icon: "🤝",
-        title: "Supplier Collaboration Portal",
+        title: "Business Development CRM",
         description:
-          "Secure web portal for purchase order acknowledgment, delivery confirmations, quality document submission, and two-way communication with your supplier base.",
+          "Relationship tracking, opportunity pipeline management, proposal version control, and client contact history — giving firm leadership visibility into the business development funnel.",
       },
       {
-        icon: "📊",
-        title: "OEE & Production Analytics",
+        icon: "🤖",
+        title: "AI-Assisted Legal Research & Drafting",
         description:
-          "Overall Equipment Effectiveness dashboards pulling data from your MES, PLCs, or manual entry — giving supervisors and executives a shared view of throughput, downtime, and yield.",
-      },
-      {
-        icon: "🏭",
-        title: "MES & ERP Integration",
-        description:
-          "Middleware and API layers connecting shop floor systems (Ignition, FactoryTalk, custom PLCs) to your ERP (SAP, Oracle, Epicor) — eliminating the manual data entry that corrupts both systems.",
+          "Retrieval-augmented AI tools trained on your firm's precedents and knowledge base — accelerating research, first-draft generation, and contract review without replacing practitioner judgment.",
       },
     ],
     caseHighlights: [
-      { stat: "10 weeks", label: "Typical delivery timeline for a production scheduling system" },
-      { stat: "2-wk sprints", label: "Agile delivery with working demos at every milestone" },
-      { stat: "ERP + MES", label: "Typical integration scope: shop floor systems connected to back office" },
-      { stat: "100%", label: "IP and source code transferred to you at project close" },
+      { stat: "8 weeks", label: "Time to launch a full client portal and matter management system" },
+      { stat: "Privilege-safe", label: "Matter-level data isolation and access control built into every platform" },
+      { stat: "e-Sign ready", label: "DocuSign and HelloSign integration built into every client portal" },
+      { stat: "100%", label: "IP and source code owned by your firm at project completion" },
     ],
     whoWeServe: [
-      "Precision machining and metalworking shops scaling beyond spreadsheet-based scheduling",
-      "Food and beverage manufacturers requiring lot traceability and SQF/HACCP documentation",
-      "Plastics and composites manufacturers managing complex multi-press production schedules",
-      "Industrial assembly operations seeking to reduce WIP inventory and improve on-time delivery",
-      "Contract manufacturers needing customer-facing portals for order status and quality records",
+      "Boutique and mid-size law firms seeking to modernize practice management without enterprise software costs",
+      "Accounting and CPA practices automating client onboarding, engagement letters, and reporting",
+      "Management consultancies building client delivery and engagement management platforms",
+      "In-house legal teams building matter tracking and outside counsel management tools",
+      "Legal tech startups building B2B or B2C products for the legal market",
     ],
     relatedServices: [
       "internal-tools",
-      "process-automation",
       "crm-systems",
-      "saas-development",
+      "process-automation",
+      "ai-consulting",
     ],
     faq: [
       {
-        q: "Can you integrate with our existing ERP or PLC systems?",
-        a: "Yes. We have integrated with SAP, Oracle, Epicor, and custom ERP systems via REST APIs, ODBC connections, and file-based interchange. For PLCs and SCADA systems, we work with OPC-UA, MQTT, and Modbus depending on what your hardware supports. We assess integration feasibility during discovery before committing to a scope.",
+        q: "How do you handle solicitor-client privilege and data confidentiality requirements?",
+        a: "All platforms we build for legal clients enforce strict role-based access control — staff see only the matters they are assigned to, and client data is isolated at the database level. We also implement comprehensive access audit logs, encrypted storage, and can support on-premise or private cloud deployments where clients require data residency control.",
       },
       {
-        q: "Do we need to replace our current ERP to use your software?",
-        a: "No. We build the operational layer that fills the gaps your ERP was not designed for — scheduling boards, QMS, maintenance management — and integrate bidirectionally so your ERP remains the system of record for costing, invoicing, and inventory.",
+        q: "Can you integrate with our existing practice management software?",
+        a: "It depends on what you're running. We have integrated with Clio, PCLaw, and Actionstep via their APIs. For systems without APIs, we can build file-based integration via exports. We assess integration feasibility in discovery.",
       },
       {
-        q: "How do you handle the reality that shop floor workers are not software users?",
-        a: "We design for the shop floor context specifically: large touch targets for gloved hands, minimal data entry, barcode and QR scanning, and tablet-first UIs that work in noisy, high-traffic environments. We also conduct on-site observation sessions before design to understand the actual workflow.",
+        q: "Is your document automation sophisticated enough for complex legal precedents?",
+        a: "Yes. We build document automation that handles conditional clauses, nested logic, multi-party signature routing, and jurisdiction-specific variations. We work with your precedents as they exist — not generic templates — so the output reflects your firm's actual drafting standards.",
       },
       {
-        q: "What does a typical manufacturing software engagement cost?",
-        a: "Cost depends on the scope, number of integrations, and whether we're building from scratch or extending existing systems. Book a free scoping call and we'll give you a detailed estimate.",
+        q: "How do you handle the AI tools in a professional liability context?",
+        a: "Every AI feature we build for legal or professional services includes practitioner review steps — AI drafts are clearly marked as drafts requiring review, citations are provided for any legal or factual assertions, and all AI output is logged for audit purposes. We do not build systems that present AI output as authoritative without practitioner sign-off.",
       },
     ],
   },
@@ -716,98 +716,98 @@ export const industriesData: IndustryData[] = [
   },
 
   {
-    slug: "legal-professional-services",
-    title: "Legal & Professional Services",
-    icon: "⚖️",
-    tagline: "Practice management and client delivery software built for the billing model and risk profile of professional firms.",
-    heroTitle: "Legal & Professional Services Software — Tools That Bill Hours More Effectively",
+    slug: "manufacturing",
+    title: "Manufacturing",
+    icon: "🏭",
+    tagline: "Operations software that connects the shop floor to the boardroom — in real time.",
+    heroTitle: "Manufacturing Software That Turns Shop Floor Data Into Competitive Advantage",
     heroSub:
-      "We build matter management systems, client portals, document automation tools, and billing platforms for law firms, accounting practices, and management consultancies.",
-    metaTitle: "Legal & Professional Services Software Development",
+      "From MES integrations and production scheduling to quality management and supplier portals, we build the operational software that modern manufacturers need to compete on throughput, quality, and cost.",
+    metaTitle: "Manufacturing Software Development Canada",
     metaDescription:
-      "Custom software for law firms, accounting practices, and professional services firms. Matter management, client portals, document automation, and billing tools. Book a free call.",
+      "Custom manufacturing software — MES, production scheduling, quality management, and supplier portals. Built for Canadian manufacturers. Book a free strategy call.",
     overview:
-      "Professional services firms face a distinctive technology challenge: the work product is knowledge delivered by people, which means software must enhance practitioner productivity without interfering with the professional judgment that clients are actually paying for. Tools that add friction, require constant data entry, or produce unreliable outputs are worse than no tools at all — they erode the confidence of the practitioners who need to adopt them.\n\nAudax Ventures has built technology for law firms, accounting practices, and management consultancies that takes this seriously. Our matter management systems are designed around how lawyers and paralegals actually work, not around how a product manager imagined they should work. Our document automation tools handle the genuinely complex precedent logic that legal documents require. Our client portals provide the transparency and communication channels that clients expect without creating professional obligation ambiguity for the firm.\n\nWe also understand the specific data sensitivity and conflict-of-interest management requirements that professional services firms face. Solicitor-client privilege, CPA confidentiality obligations, and consulting engagement confidentiality all impose constraints on how data is stored, who can access it, and how it is transmitted. Every platform we build for professional services clients includes the access controls, audit logging, and data architecture that these obligations require.",
+      "Modern manufacturing runs on real-time data, but most mid-market manufacturers still rely on ERP systems that were designed for batch reporting, spreadsheet-based production scheduling, and manual quality inspections. The gap between what the shop floor produces and what decision-makers see is measured in days — and in that gap lives waste, rework, missed delivery windows, and margin erosion.\n\nAudax Ventures builds the operational software layer that sits between your machines, your workforce, and your leadership team. We have delivered production scheduling tools, manufacturing execution systems, quality management platforms, and supplier collaboration portals for clients in precision machining, food processing, plastics, and industrial assembly. In each case, our starting point is the same: understand the actual workflow before writing a line of code.\n\nOur manufacturing clients typically come to us after a failed ERP customization, an off-the-shelf tool that doesn't match their process, or a growth phase that has outpaced their current systems. We build pragmatic, maintainable software that integrates with what you already have — including legacy PLCs, ERP systems, and SCADA infrastructure — rather than demanding a rip-and-replace approach your operations cannot absorb.",
     challenges: [
-      "Time capture is inconsistent and after-the-fact, meaning billable hours are routinely lost between when work is performed and when it is recorded",
-      "Matter files are distributed across email, document management systems, and shared drives — making it difficult to find what you need or to onboard a new team member to an active file",
-      "Document production relies on manual precedent assembly that is slow, error-prone, and inconsistent across practitioners at the same firm",
-      "Client communication happens through email with no central record, creating risk when key communications are in an individual's inbox rather than the matter file",
-      "Business development and client relationship management is informal and undocumented, meaning firm relationships live with individuals rather than with the firm",
+      "Production scheduling is done in spreadsheets, creating version conflicts, missed updates, and no real-time visibility into capacity or machine utilization",
+      "Quality defects are caught late in the process — or by customers — because inspection data is recorded on paper and never analyzed for patterns",
+      "Supplier lead times and inventory levels are tracked manually, making it impossible to anticipate shortages before they stop the line",
+      "Maintenance is reactive rather than predictive, meaning unplanned downtime hits throughput targets at the worst possible moments",
+      "Disconnected ERP, MES, and quality systems force supervisors to manually reconcile data from three places to answer one management question",
     ],
     solutions: [
       {
-        icon: "📂",
-        title: "Matter & Case Management",
+        icon: "📅",
+        title: "Production Scheduling & Dispatch",
         description:
-          "Centralized matter files with task management, deadline tracking, team assignment, document linking, and matter-level communication history — accessible from any device.",
+          "Drag-and-drop scheduling boards with real-time capacity constraints, machine availability, and job priority logic — replacing spreadsheets with a system your team will actually use.",
       },
       {
-        icon: "⏱️",
-        title: "Time Tracking & Billing",
+        icon: "🔧",
+        title: "Preventive Maintenance Tracker",
         description:
-          "One-click time capture with matter and task code assignment, automated timesheet reminders, draft bill review workflows, and integration with accounting systems for AR management.",
+          "Work order management, maintenance history logging, OEM schedule tracking, and IoT sensor integration for condition-based maintenance triggers.",
       },
       {
-        icon: "📄",
-        title: "Document Automation",
+        icon: "✅",
+        title: "Quality Management System (QMS)",
         description:
-          "Precedent-based document assembly with conditional logic, data field population, version control, and e-signature integration — reducing document drafting time by 60–80%.",
-      },
-      {
-        icon: "🏢",
-        title: "Client Portal & Extranet",
-        description:
-          "Branded client-facing portal for document sharing, matter status updates, invoice review, secure messaging, and e-signature completion — reducing inbound client calls.",
+          "Digital inspection forms, non-conformance reporting, corrective action workflows, and SPC charting — with traceability from raw material to finished good.",
       },
       {
         icon: "🤝",
-        title: "Business Development CRM",
+        title: "Supplier Collaboration Portal",
         description:
-          "Relationship tracking, opportunity pipeline management, proposal version control, and client contact history — giving firm leadership visibility into the business development funnel.",
+          "Secure web portal for purchase order acknowledgment, delivery confirmations, quality document submission, and two-way communication with your supplier base.",
       },
       {
-        icon: "🤖",
-        title: "AI-Assisted Legal Research & Drafting",
+        icon: "📊",
+        title: "OEE & Production Analytics",
         description:
-          "Retrieval-augmented AI tools trained on your firm's precedents and knowledge base — accelerating research, first-draft generation, and contract review without replacing practitioner judgment.",
+          "Overall Equipment Effectiveness dashboards pulling data from your MES, PLCs, or manual entry — giving supervisors and executives a shared view of throughput, downtime, and yield.",
+      },
+      {
+        icon: "🏭",
+        title: "MES & ERP Integration",
+        description:
+          "Middleware and API layers connecting shop floor systems (Ignition, FactoryTalk, custom PLCs) to your ERP (SAP, Oracle, Epicor) — eliminating the manual data entry that corrupts both systems.",
       },
     ],
     caseHighlights: [
-      { stat: "8 weeks", label: "Time to launch a full client portal and matter management system" },
-      { stat: "Privilege-safe", label: "Matter-level data isolation and access control built into every platform" },
-      { stat: "e-Sign ready", label: "DocuSign and HelloSign integration built into every client portal" },
-      { stat: "100%", label: "IP and source code owned by your firm at project completion" },
+      { stat: "10 weeks", label: "Typical delivery timeline for a production scheduling system" },
+      { stat: "2-wk sprints", label: "Agile delivery with working demos at every milestone" },
+      { stat: "ERP + MES", label: "Typical integration scope: shop floor systems connected to back office" },
+      { stat: "100%", label: "IP and source code transferred to you at project close" },
     ],
     whoWeServe: [
-      "Boutique and mid-size law firms seeking to modernize practice management without enterprise software costs",
-      "Accounting and CPA practices automating client onboarding, engagement letters, and reporting",
-      "Management consultancies building client delivery and engagement management platforms",
-      "In-house legal teams building matter tracking and outside counsel management tools",
-      "Legal tech startups building B2B or B2C products for the legal market",
+      "Precision machining and metalworking shops scaling beyond spreadsheet-based scheduling",
+      "Food and beverage manufacturers requiring lot traceability and SQF/HACCP documentation",
+      "Plastics and composites manufacturers managing complex multi-press production schedules",
+      "Industrial assembly operations seeking to reduce WIP inventory and improve on-time delivery",
+      "Contract manufacturers needing customer-facing portals for order status and quality records",
     ],
     relatedServices: [
       "internal-tools",
-      "crm-systems",
       "process-automation",
-      "ai-consulting",
+      "crm-systems",
+      "saas-development",
     ],
     faq: [
       {
-        q: "How do you handle solicitor-client privilege and data confidentiality requirements?",
-        a: "All platforms we build for legal clients enforce strict role-based access control — staff see only the matters they are assigned to, and client data is isolated at the database level. We also implement comprehensive access audit logs, encrypted storage, and can support on-premise or private cloud deployments where clients require data residency control.",
+        q: "Can you integrate with our existing ERP or PLC systems?",
+        a: "Yes. We have integrated with SAP, Oracle, Epicor, and custom ERP systems via REST APIs, ODBC connections, and file-based interchange. For PLCs and SCADA systems, we work with OPC-UA, MQTT, and Modbus depending on what your hardware supports. We assess integration feasibility during discovery before committing to a scope.",
       },
       {
-        q: "Can you integrate with our existing practice management software?",
-        a: "It depends on what you're running. We have integrated with Clio, PCLaw, and Actionstep via their APIs. For systems without APIs, we can build file-based integration via exports. We assess integration feasibility in discovery.",
+        q: "Do we need to replace our current ERP to use your software?",
+        a: "No. We build the operational layer that fills the gaps your ERP was not designed for — scheduling boards, QMS, maintenance management — and integrate bidirectionally so your ERP remains the system of record for costing, invoicing, and inventory.",
       },
       {
-        q: "Is your document automation sophisticated enough for complex legal precedents?",
-        a: "Yes. We build document automation that handles conditional clauses, nested logic, multi-party signature routing, and jurisdiction-specific variations. We work with your precedents as they exist — not generic templates — so the output reflects your firm's actual drafting standards.",
+        q: "How do you handle the reality that shop floor workers are not software users?",
+        a: "We design for the shop floor context specifically: large touch targets for gloved hands, minimal data entry, barcode and QR scanning, and tablet-first UIs that work in noisy, high-traffic environments. We also conduct on-site observation sessions before design to understand the actual workflow.",
       },
       {
-        q: "How do you handle the AI tools in a professional liability context?",
-        a: "Every AI feature we build for legal or professional services includes practitioner review steps — AI drafts are clearly marked as drafts requiring review, citations are provided for any legal or factual assertions, and all AI output is logged for audit purposes. We do not build systems that present AI output as authoritative without practitioner sign-off.",
+        q: "What does a typical manufacturing software engagement cost?",
+        a: "Cost depends on the scope, number of integrations, and whether we're building from scratch or extending existing systems. Book a free scoping call and we'll give you a detailed estimate.",
       },
     ],
   },

@@ -80,63 +80,31 @@ const navLinks = [
 // ── Shared sub-components ─────────────────────────────────────────────────────
 
 /** Dark left rail item shared by Services and Industries dropdowns */
-function RailItem({
-  href, icon, label, desc, active, onClose, onEnter, onLeave,
+/** Large, prominent card for a main service/industry shown directly in the dropdown */
+function BigCard({
+  href, icon, label, desc, stat, onClose,
 }: {
-  href: string; icon: string; label: string; desc: string;
-  active: boolean;
+  href: string; icon: string; label: string; desc: string; stat: string;
   onClose: () => void;
-  onEnter: () => void;
-  onLeave: () => void;
 }) {
   return (
     <Link
       href={href}
-      onMouseEnter={onEnter}
-      onMouseLeave={onLeave}
       onClick={onClose}
-      className={`flex items-start gap-3 px-4 py-3.5 rounded-xl transition-all duration-200 group ${
-        active ? "bg-white/12" : "hover:bg-white/8"
-      }`}
+      className="group flex flex-col gap-3 p-5 rounded-2xl border border-gray-100 hover:border-[#2E5F8A]/30 hover:bg-[#F8F9FA] hover:shadow-md transition-all duration-200"
     >
-      <span className="text-xl flex-shrink-0 mt-0.5">{icon}</span>
-      <div className="flex-1 min-w-0">
-        <p className={`text-sm font-semibold leading-tight transition-colors ${active ? "text-white" : "text-white/80 group-hover:text-white"}`}>
-          {label}
-        </p>
-        <p className="text-white/40 text-xs mt-0.5 leading-snug">{desc}</p>
+      <div className="flex items-center justify-between">
+        <span className="text-3xl">{icon}</span>
+        <ArrowRight size={14} className="text-[#9CA3AF] group-hover:text-[#2E5F8A] group-hover:translate-x-0.5 transition-all" />
       </div>
-      {active && <ArrowRight size={12} className="text-white/50 flex-shrink-0 mt-1" />}
-    </Link>
-  );
-}
-
-/** Hover preview card shown in the right panel */
-function PreviewCard({ item, href }: { item: { icon: string; label: string; stat: string; preview: string }; href: string }) {
-  return (
-    <motion.div
-      key={item.label}
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -6 }}
-      transition={{ duration: 0.18 }}
-      className="h-full flex flex-col justify-between p-6"
-    >
       <div>
-        <div className="text-4xl mb-4">{item.icon}</div>
-        <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-bold mb-3">
-          {item.stat}
-        </div>
-        <h4 className="font-[var(--font-outfit)] font-extrabold text-[#1A1A2E] text-lg mb-2 leading-snug">{item.label}</h4>
-        <p className="text-[#6B7280] text-sm leading-relaxed">{item.preview}</p>
+        <p className="font-[var(--font-outfit)] font-extrabold text-[#1A1A2E] text-base mb-1 leading-snug">{label}</p>
+        <p className="text-[#6B7280] text-sm leading-snug">{desc}</p>
       </div>
-      <Link
-        href={href}
-        className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-[#2E5F8A] hover:text-[#3A7BD5] transition-colors group"
-      >
-        Explore {item.label} <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
-      </Link>
-    </motion.div>
+      <div className="inline-flex items-center self-start px-2.5 py-1 rounded-full bg-[#2E5F8A]/8 text-[#2E5F8A] text-xs font-bold mt-1">
+        {stat}
+      </div>
+    </Link>
   );
 }
 
@@ -168,8 +136,6 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen]     = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
   const [programsOpen, setProgramsOpen]     = useState(false);
-  const [hoveredService, setHoveredService]   = useState<number | null>(null);
-  const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -229,7 +195,7 @@ export default function Navbar() {
                 key={link.label}
                 className="relative"
                 onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => { setServicesOpen(false); setHoveredService(null); }}
+                onMouseLeave={() => setServicesOpen(false)}
               >
                 <button
                   className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
@@ -249,72 +215,32 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.98 }}
                       transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[860px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[600px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
                     >
-                      <div className="flex min-h-[260px]">
-
-                        {/* Option 1: Dark left rail */}
-                        <div
-                          className="w-64 shrink-0 p-4 flex flex-col gap-1"
-                          style={{ background: "linear-gradient(160deg, #0F172A 0%, #1A3A5C 100%)" }}
-                        >
-                          <p className="text-[10px] font-bold tracking-widest uppercase text-white/30 px-2 mb-2 mt-1">
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280]">
                             Core Services
                           </p>
-                          {mainServices.map((s, i) => (
-                            <RailItem
-                              key={s.href}
-                              href={s.href} icon={s.icon} label={s.label} desc={s.desc}
-                              active={hoveredService === i}
-                              onEnter={() => setHoveredService(i)}
-                              onLeave={() => setHoveredService(null)}
-                              onClose={() => setServicesOpen(false)}
-                            />
-                          ))}
                           <Link
                             href="/services"
                             onClick={() => setServicesOpen(false)}
-                            className="mt-auto flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-white/40 hover:text-white transition-colors"
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E5F8A] hover:text-[#3A7BD5] transition-colors"
                           >
                             View all 20 services <ArrowRight size={10} />
                           </Link>
                         </div>
-
-                        {/* Right panel: Option 2 preview OR Option 3 icon grid */}
-                        <div className="flex-1 relative overflow-hidden">
-                          <AnimatePresence mode="wait">
-                            {hoveredService !== null ? (
-                              <PreviewCard
-                                key={`preview-${hoveredService}`}
-                                item={mainServices[hoveredService]}
-                                href={mainServices[hoveredService].href}
-                              />
-                            ) : (
-                              <motion.div
-                                key="grid"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.15 }}
-                                className="h-full flex flex-col items-center justify-center gap-3 p-8 text-center"
-                              >
-                                <p className="text-sm text-[#6B7280] max-w-[280px]">
-                                  Explore the full range of services we offer.
-                                </p>
-                                <Link
-                                  href="/services"
-                                  onClick={() => setServicesOpen(false)}
-                                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2E5F8A] text-white font-bold text-sm hover:bg-[#3A7BD5] transition-colors"
-                                >
-                                  View all services <ArrowRight size={14} />
-                                </Link>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
+                        <div className="grid grid-cols-2 gap-4">
+                          {mainServices.map((s) => (
+                            <BigCard
+                              key={s.href}
+                              href={s.href} icon={s.icon} label={s.label} desc={s.desc} stat={s.stat}
+                              onClose={() => setServicesOpen(false)}
+                            />
+                          ))}
                         </div>
                       </div>
 
-                      {/* Option 4: Full-width CTA strip */}
                       <CTAStrip
                         prompt="Not sure which service fits? Tell us what you're building."
                         linkLabel="Book a free strategy call"
@@ -332,7 +258,7 @@ export default function Navbar() {
                 key={link.label}
                 className="relative"
                 onMouseEnter={() => setIndustriesOpen(true)}
-                onMouseLeave={() => { setIndustriesOpen(false); setHoveredIndustry(null); }}
+                onMouseLeave={() => setIndustriesOpen(false)}
               >
                 <button
                   className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
@@ -352,72 +278,32 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.98 }}
                       transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[780px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[760px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
                     >
-                      <div className="flex min-h-[240px]">
-
-                        {/* Option 1: Dark left rail */}
-                        <div
-                          className="w-64 shrink-0 p-4 flex flex-col gap-1"
-                          style={{ background: "linear-gradient(160deg, #0F172A 0%, #1A3A5C 100%)" }}
-                        >
-                          <p className="text-[10px] font-bold tracking-widest uppercase text-white/30 px-2 mb-2 mt-1">
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280]">
                             Main Industries
                           </p>
-                          {mainIndustries.map((ind, i) => (
-                            <RailItem
-                              key={ind.href}
-                              href={ind.href} icon={ind.icon} label={ind.label} desc={ind.desc}
-                              active={hoveredIndustry === i}
-                              onEnter={() => setHoveredIndustry(i)}
-                              onLeave={() => setHoveredIndustry(null)}
-                              onClose={() => setIndustriesOpen(false)}
-                            />
-                          ))}
                           <Link
                             href="/industries"
                             onClick={() => setIndustriesOpen(false)}
-                            className="mt-auto flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-white/40 hover:text-white transition-colors"
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E5F8A] hover:text-[#3A7BD5] transition-colors"
                           >
                             View all industries <ArrowRight size={10} />
                           </Link>
                         </div>
-
-                        {/* Right panel: Option 2 preview OR Option 3 icon grid */}
-                        <div className="flex-1 relative overflow-hidden">
-                          <AnimatePresence mode="wait">
-                            {hoveredIndustry !== null ? (
-                              <PreviewCard
-                                key={`ind-preview-${hoveredIndustry}`}
-                                item={mainIndustries[hoveredIndustry]}
-                                href={mainIndustries[hoveredIndustry].href}
-                              />
-                            ) : (
-                              <motion.div
-                                key="ind-grid"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.15 }}
-                                className="h-full flex flex-col items-center justify-center gap-3 p-8 text-center"
-                              >
-                                <p className="text-sm text-[#6B7280] max-w-[280px]">
-                                  Explore the full range of industries we serve.
-                                </p>
-                                <Link
-                                  href="/industries"
-                                  onClick={() => setIndustriesOpen(false)}
-                                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2E5F8A] text-white font-bold text-sm hover:bg-[#3A7BD5] transition-colors"
-                                >
-                                  View all industries <ArrowRight size={14} />
-                                </Link>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
+                        <div className="grid grid-cols-3 gap-4">
+                          {mainIndustries.map((ind) => (
+                            <BigCard
+                              key={ind.href}
+                              href={ind.href} icon={ind.icon} label={ind.label} desc={ind.desc} stat={ind.stat}
+                              onClose={() => setIndustriesOpen(false)}
+                            />
+                          ))}
                         </div>
                       </div>
 
-                      {/* Option 4: Full-width CTA strip */}
                       <CTAStrip
                         prompt="Building for a specific industry? Let's talk requirements."
                         linkLabel="Book a free strategy call"

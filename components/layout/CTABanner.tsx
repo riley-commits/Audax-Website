@@ -4,7 +4,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-export default function CTABanner() {
+export default function CTABanner({
+  heading = "Ready to Build Something Extraordinary?",
+  subtext = "Book a free strategy call and let's get started today.",
+}: {
+  heading?: string;
+  subtext?: string;
+}) {
   return (
     <section className="bg-[#2E5F8A] py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
@@ -15,7 +21,7 @@ export default function CTABanner() {
           transition={{ duration: 0.5 }}
           className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl md:text-5xl text-white mb-4"
         >
-          Ready to Build Something Extraordinary?
+          {heading}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +30,7 @@ export default function CTABanner() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-blue-100 text-lg mb-8"
         >
-          Book a free strategy call and let&apos;s get started today.
+          {subtext}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

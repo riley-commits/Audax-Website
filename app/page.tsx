@@ -48,7 +48,7 @@ export default function HomePage() {
       <AboutAudaxSection />
       <StatsBar />
       <ServicesGrid />
-      <CTABanner />
+      <CTABanner heading="Ready to Put AI to Work in Your Business?" />
     </>
   );
 }

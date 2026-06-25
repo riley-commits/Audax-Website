@@ -104,21 +104,21 @@ const team = [
 ];
 
 const segments = [
-  { badge: "Early-Stage Founders",  num: "01", description: "MVP development, market positioning, and fundraising support — from raw idea to a product your investors can actually see." },
-  { badge: "Scaling Businesses",    num: "02", description: "Operations optimization, internal tooling, and fractional C-suite leadership — building the systems and team your growth demands." },
-  { badge: "Exit-Focused Owners",   num: "03", description: "Transition planning, technology due diligence support, and investor matchmaking — positioning your business for the outcome you've worked toward." },
+  { badge: "AI-Curious SMEs",        num: "01", description: "Fractional AI leadership, opportunity audits, and workflow automation — for businesses that know AI matters but don't know where to start." },
+  { badge: "Funded Founders & Scale-Ups", num: "02", description: "Custom AI-powered products and internal tools, built and shipped fast — without the overhead of a full in-house engineering team." },
+  { badge: "Established & Regulated Firms", num: "03", description: "AI governance, risk management, and custom integrations for healthcare, legal, financial, and other firms that can't afford to get AI adoption wrong." },
 ];
 
 const whyStatements = [
-  "We tell you when your idea isn't ready to build.",
-  "You own 100% of the code. No lock-in, ever.",
+  "We tell you when AI isn't the right answer for your problem.",
+  "You own 100% of the code and IP. No lock-in, ever.",
   "We won't offshore your project without telling you.",
   "Fixed-price phases. No runaway invoices.",
-  "We've said no to projects we couldn't deliver on time.",
+  "We've turned down AI projects we didn't believe would work.",
 ];
 
 const approach = [
-  { num: "01", title: "Honest Scoping",        body: "We define what you actually need — not everything you might want. Scope discipline is how we keep budgets real and timelines honest." },
+  { num: "01", title: "Honest AI Assessment",  body: "We tell you where AI will actually create value for your business — and where it won't. No hype, no vendor pitch, just a grounded audit." },
   { num: "02", title: "Transparent Delivery",  body: "Weekly live demos, clear status, and no surprises. You see progress every fortnight — not just at the end." },
   { num: "03", title: "Full IP Transfer",       body: "Source code, documentation, and all assets are yours from day one. No retainer required to keep the lights on." },
   { num: "04", title: "Partnership Mentality", body: "We measure our success by your outcomes — not our billable hours. Our best relationships last years." },
@@ -345,7 +345,7 @@ export default function AboutContent() {
             transition={{ duration: 0.55, delay: 0.1 }}
             className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight max-w-3xl"
           >
-            Your Canadian Software Development Partner
+            Your AI Strategy &amp; Software Development Partner
           </motion.h1>
 
           <motion.p
@@ -354,7 +354,7 @@ export default function AboutContent() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-white/55 text-lg leading-relaxed max-w-2xl mb-16"
           >
-            Audax Ventures is a software development company and venture studio that combines software innovation, capital strategy, and operational excellence — built to help ambitious founders and growing companies launch, scale, and thrive.
+            Audax Ventures is an AI strategy and innovation firm based in Canada. Through Fractional Chief AI Officer services and custom AI &amp; software development, we help organizations identify, implement, and scale technology solutions that create measurable business value.
           </motion.p>
 
           {/* Count-up stats */}
@@ -385,10 +385,10 @@ export default function AboutContent() {
               <Target className="mb-5 text-blue-200" size={32} />
               <p className="text-xs tracking-widest uppercase text-blue-300 font-semibold mb-3">Our Mission</p>
               <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl mb-4 leading-snug">
-                &ldquo;To equip ambitious founders and growing companies with the software, strategy, and capital they need to launch, scale, and thrive.&rdquo;
+                &ldquo;To give organizations executive-level AI leadership and the custom software they need to turn emerging technology into measurable business outcomes.&rdquo;
               </h2>
               <p className="text-blue-100 leading-relaxed text-sm">
-                We go beyond building software — we bring the strategy, capital connections, and operational expertise that turn a great idea into a real, growing business.
+                We go beyond AI hype — we bring the strategy, governance, and engineering expertise that turn AI from a buzzword into a real driver of efficiency and growth.
               </p>
             </motion.div>
             <motion.div
@@ -401,10 +401,10 @@ export default function AboutContent() {
               <Eye className="mb-5 text-blue-300" size={32} />
               <p className="text-xs tracking-widest uppercase text-blue-400 font-semibold mb-3">Our Vision</p>
               <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl mb-4 leading-snug">
-                &ldquo;To ignite a world where technology-driven ventures reshape industries and propel sustainable economic growth.&rdquo;
+                &ldquo;To ignite a world where AI-driven strategy and software reshape how organizations operate, compete, and grow.&rdquo;
               </h2>
               <p className="text-gray-400 leading-relaxed text-sm">
-                We believe in the power of technology to change the world — and we are committed to making that change positive, impactful, and enduring.
+                We believe in the power of AI to change how businesses work — and we are committed to making that change practical, responsible, and enduring.
               </p>
             </motion.div>
           </div>
@@ -429,10 +429,10 @@ export default function AboutContent() {
                 Audax Ventures is an AI strategy and innovation firm that helps organizations identify, implement, and scale technology solutions that create measurable business value. Through Fractional Chief AI Officer services, AI transformation initiatives, and custom software development, we work alongside leadership teams to turn emerging technology into practical business outcomes.
               </p>
               <p>
-                We work with three kinds of clients. Early-stage founders who need to validate, build, and launch their first product. Scaling businesses that need the right systems, team, and leadership to grow without breaking. And exit-focused owners who want to maximize value and find the right path forward.
+                We work with businesses that know AI matters but don&apos;t have the in-house leadership or engineering capacity to act on it — from funded founders building their first AI-powered product, to growing SMEs automating repetitive work, to established firms in regulated industries that need AI governance done right.
               </p>
               <p>
-                Across all three, our approach is the same: a tailored mix of AI strategy, software innovation, and operational excellence — delivered by a team that fosters creativity, takes calculated risks, and treats your business as seriously as our own.
+                Across every engagement, our approach is the same: a tailored mix of AI strategy, software innovation, and operational excellence — delivered by a team that fosters creativity, takes calculated risks, and treats your business as seriously as our own.
               </p>
             </div>
           </motion.div>
@@ -449,7 +449,7 @@ export default function AboutContent() {
             className="text-center mb-12"
           >
             <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">Who We Work With</p>
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E]">Built for Every Stage of Growth</h2>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E]">Built for Every Stage of AI Adoption</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {segments.map((s, i) => (

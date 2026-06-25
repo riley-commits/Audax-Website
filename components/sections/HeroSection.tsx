@@ -4,19 +4,24 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp } from "lucide-react";
 
-const bars = [38, 52, 45, 70, 58, 76, 65, 82, 72, 90, 78, 95];
+const roadmapPhases = [
+  { label: "Discover",   value: 100 },
+  { label: "Strategize", value: 100 },
+  { label: "Build",      value: 65  },
+  { label: "Scale",      value: 20  },
+];
 
 const kpis = [
-  { label: "MRR", value: "$48.2K", change: "+12.4%", color: "text-green-400" },
-  { label: "Active Users", value: "2,847", change: "+8.1%", color: "text-blue-400" },
-  { label: "Conversion", value: "3.6%", change: "+0.4%", color: "text-purple-400" },
-  { label: "Uptime", value: "99.98%", change: "30 days", color: "text-emerald-400" },
+  { label: "AI Maturity Score",  value: "7.8/10",  change: "+2.3 pts",      color: "text-green-400" },
+  { label: "Opportunities Found", value: "14",      change: "+5 this qtr",   color: "text-blue-400" },
+  { label: "Projected ROI",       value: "3.4x",     change: "12-mo horizon", color: "text-purple-400" },
+  { label: "Governance Status",   value: "On Track", change: "Reviewed weekly", color: "text-emerald-400" },
 ];
 
 const activity = [
-  { name: "Acme Corp", action: "upgraded to Pro", time: "2m ago", dot: "bg-green-400" },
-  { name: "BuildFast Inc.", action: "signed up", time: "14m ago", dot: "bg-blue-400" },
-  { name: "NorthBridge", action: "new deployment", time: "1h ago", dot: "bg-purple-400" },
+  { name: "Customer Support", action: "AI triage automated",         time: "Phase 2", dot: "bg-green-400" },
+  { name: "Sales Ops",        action: "lead scoring model live",     time: "Phase 2", dot: "bg-blue-400" },
+  { name: "Finance Team",     action: "AI governance policy drafted", time: "Phase 1", dot: "bg-purple-400" },
 ];
 
 const sidebarIcons = [
@@ -30,7 +35,7 @@ const sidebarIcons = [
   <svg key="settings" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>,
 ];
 
-function DashboardMockup() {
+function AIStrategyMockup() {
   return (
     <motion.div
       animate={{ y: [0, -10, 0] }}
@@ -51,7 +56,7 @@ function DashboardMockup() {
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
           </div>
           <div className="flex-1 bg-white/5 rounded-md py-1 px-3 text-[10px] text-white/25 text-center max-w-xs mx-auto">
-            app.client-dashboard.ca/overview
+            app.audaxventures.ca/ai-roadmap
           </div>
           <div className="w-6 h-6 rounded-full bg-[#2E5F8A] flex items-center justify-center text-[9px] font-bold">AV</div>
         </div>
@@ -78,14 +83,14 @@ function DashboardMockup() {
             {/* Header row */}
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-white text-xs font-semibold">Product Dashboard</p>
-                <p className="text-white/30 text-[9px]">Last updated: just now</p>
+                <p className="text-white text-xs font-semibold">AI Strategy Roadmap</p>
+                <p className="text-white/30 text-[9px]">Last reviewed: this week</p>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="px-2 py-0.5 bg-green-500/10 rounded text-green-400 text-[9px] font-medium flex items-center gap-1">
-                  <span className="w-1 h-1 rounded-full bg-green-400 inline-block" /> Live
+                  <span className="w-1 h-1 rounded-full bg-green-400 inline-block" /> Active
                 </span>
-                <span className="px-2 py-0.5 bg-white/5 rounded text-white/30 text-[9px]">30 days</span>
+                <span className="px-2 py-0.5 bg-white/5 rounded text-white/30 text-[9px]">12-mo plan</span>
               </div>
             </div>
 
@@ -100,39 +105,34 @@ function DashboardMockup() {
               ))}
             </div>
 
-            {/* Bar chart */}
+            {/* Roadmap phase progress */}
             <div className="bg-white/5 rounded-xl p-3">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-white/50 text-[9px] font-medium">Revenue Overview</p>
-                <p className="text-white/20 text-[8px]">Jan – Dec 2024</p>
+              <div className="flex items-center justify-between mb-2.5">
+                <p className="text-white/50 text-[9px] font-medium">Implementation Roadmap</p>
+                <p className="text-white/20 text-[8px]">4 phases</p>
               </div>
-              <div className="flex items-end gap-[3px] h-14">
-                {bars.map((h, i) => (
-                  <div
-                    key={i}
-                    className="flex-1 rounded-sm transition-all"
-                    style={{
-                      height: `${h}%`,
-                      background:
-                        i === bars.length - 1
-                          ? "#3A7BD5"
-                          : i === bars.length - 2
-                          ? "#2E5F8A"
-                          : "rgba(255,255,255,0.08)",
-                    }}
-                  />
-                ))}
-              </div>
-              <div className="flex justify-between mt-1.5">
-                {["Jan", "Mar", "May", "Jul", "Sep", "Nov"].map((m) => (
-                  <p key={m} className="text-white/20 text-[7px]">{m}</p>
+              <div className="space-y-2">
+                {roadmapPhases.map((p, i) => (
+                  <div key={p.label} className="flex items-center gap-2">
+                    <p className="text-white/40 text-[8px] w-16 flex-shrink-0">{p.label}</p>
+                    <div className="flex-1 h-1.5 rounded-full bg-white/10 overflow-hidden">
+                      <div
+                        className="h-full rounded-full"
+                        style={{
+                          width: `${p.value}%`,
+                          background: i < 2 ? "#3A7BD5" : "#2E5F8A",
+                        }}
+                      />
+                    </div>
+                    <p className="text-white/30 text-[8px] w-8 text-right">{p.value}%</p>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Activity feed */}
             <div className="space-y-1.5">
-              <p className="text-white/30 text-[9px] font-medium uppercase tracking-wider">Recent Activity</p>
+              <p className="text-white/30 text-[9px] font-medium uppercase tracking-wider">Strategic Recommendations</p>
               {activity.map((a) => (
                 <div key={a.name} className="flex items-center gap-2 bg-white/[0.03] rounded-lg px-2.5 py-1.5">
                   <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${a.dot}`} />
@@ -155,11 +155,11 @@ function DashboardMockup() {
         className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl border border-gray-100 px-3 py-2 flex items-center gap-2"
       >
         <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-base leading-none">
-          🚀
+          🎯
         </div>
         <div>
-          <p className="text-[11px] font-bold text-[#1A1A2E]">MVP Launched</p>
-          <p className="text-[9px] text-[#6B7280]">8 weeks from kickoff</p>
+          <p className="text-[11px] font-bold text-[#1A1A2E]">Roadmap Delivered</p>
+          <p className="text-[9px] text-[#6B7280]">2 weeks from kickoff</p>
         </div>
       </motion.div>
 
@@ -174,8 +174,8 @@ function DashboardMockup() {
           <TrendingUp size={14} />
         </div>
         <div>
-          <p className="text-[11px] font-bold text-[#1A1A2E]">+127% Growth</p>
-          <p className="text-[9px] text-[#6B7280]">Since launch</p>
+          <p className="text-[11px] font-bold text-[#1A1A2E]">3.4x Projected ROI</p>
+          <p className="text-[9px] text-[#6B7280]">12-month horizon</p>
         </div>
       </motion.div>
     </motion.div>
@@ -328,7 +328,7 @@ export default function HeroSection() {
             transition={{ duration: 0.75, delay: 0.35, ease: [0.33, 1, 0.68, 1] }}
             className="hidden lg:block px-6"
           >
-            <DashboardMockup />
+            <AIStrategyMockup />
           </motion.div>
         </div>
       </div>

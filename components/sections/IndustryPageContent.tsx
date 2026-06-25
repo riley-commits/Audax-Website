@@ -358,7 +358,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
           </div>
 
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-white mb-5 leading-tight max-w-3xl">
-            {industry.heroTitle}
+            {industry.title}
           </h1>
           <p className="text-white/55 text-lg leading-relaxed mb-10 max-w-2xl">{industry.heroSub}</p>
 

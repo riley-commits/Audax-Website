@@ -387,7 +387,7 @@ export default function ServicePageContent({ service, related }: Props) {
             Service
           </div>
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-white mb-5 leading-tight max-w-3xl">
-            {service.heroTitle}
+            {service.title}
           </h1>
           <p className={`text-white/60 text-lg leading-relaxed max-w-2xl ${service.heroSubtext ? "mb-5" : "mb-10"}`}>
             {service.heroSub}

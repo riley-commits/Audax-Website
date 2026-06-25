@@ -243,7 +243,7 @@ export default function Navbar() {
 
                       <CTAStrip
                         prompt="Not sure which service fits? Tell us what you're building."
-                        linkLabel="Book a free strategy call"
+                        linkLabel="Book a Free AI Strategy Call"
                         href="https://calendly.com/audax-ventures/30min"
                       />
                     </motion.div>
@@ -306,7 +306,7 @@ export default function Navbar() {
 
                       <CTAStrip
                         prompt="Building for a specific industry? Let's talk requirements."
-                        linkLabel="Book a free strategy call"
+                        linkLabel="Book a Free AI Strategy Call"
                         href="https://calendly.com/audax-ventures/30min"
                       />
                     </motion.div>
@@ -399,7 +399,7 @@ export default function Navbar() {
                       {/* Option 4: Full-width CTA strip */}
                       <CTAStrip
                         prompt="Not sure which program fits your stage?"
-                        linkLabel="Book a free intro call"
+                        linkLabel="Book a Free AI Strategy Call"
                         href="https://calendly.com/audax-ventures/30min"
                       />
                     </motion.div>

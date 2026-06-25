@@ -7,9 +7,11 @@ import { ArrowRight } from "lucide-react";
 export default function CTABanner({
   heading = "Ready to Build Something Extraordinary?",
   subtext = "Book a free strategy call and let's get started today.",
+  buttonText = "Book a Free Strategy Call",
 }: {
   heading?: string;
   subtext?: string;
+  buttonText?: string;
 }) {
   return (
     <section className="bg-[#2E5F8A] py-20 px-4">
@@ -45,7 +47,7 @@ export default function CTABanner({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#2E5F8A] font-bold text-base hover:bg-blue-50 transition-colors shadow-lg"
           >
-            Book a Free Strategy Call
+            {buttonText}
             <ArrowRight size={18} />
           </Link>
         </motion.div>

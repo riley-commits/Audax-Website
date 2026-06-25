@@ -133,11 +133,10 @@ export default function StatsBar() {
       {/* ── Count-Up Stats Bar ── */}
       <section className="bg-[#2E5F8A] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-3 gap-10">
             <AnimatedStat end={50}  suffix="+"     label="Projects Delivered"  delay={0}    />
             <AnimatedStat end={98}  suffix="%"     label="Client Satisfaction" delay={0.1}  />
-            <AnimatedStat staticText="Exec-level"  label="AI Leadership"      delay={0.2}  />
-            <AnimatedStat staticText="100%"        label="Code Ownership"      delay={0.3}  />
+            <AnimatedStat staticText="100%"        label="Code Ownership"      delay={0.2}  />
           </div>
         </div>
       </section>

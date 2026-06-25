@@ -8,9 +8,9 @@ import { Target, Eye, Heart, Zap, Users, Shield, TrendingUp, MapPin, ArrowRight,
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const stats = [
-  { prefix: "+", value: 1000, suffix: "",  display: "+1,000", label: "Completed Projects"    },
-  { prefix: "+", value: 350,  suffix: "",  display: "+350",   label: "Happy Customers"       },
-  { prefix: "",  value: 98.9, suffix: "%", display: "98.9%",  label: "Customer Satisfaction" },
+  { prefix: "", value: 50,  suffix: "+", display: "50+",  label: "Projects Delivered"  },
+  { prefix: "", value: 98,  suffix: "%", display: "98%",  label: "Client Satisfaction" },
+  { prefix: "", value: 100, suffix: "%", display: "100%", label: "Code Ownership"      },
 ];
 
 const values = [

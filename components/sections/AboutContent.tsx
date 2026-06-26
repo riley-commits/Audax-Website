@@ -103,6 +103,13 @@ const team = [
   },
 ];
 
+const behindTheScenes = [
+  { src: "/about/whiteboard-strategy.png",     alt: "Audax team mapping an AI strategy on a whiteboard",      caption: "AI strategy sessions" },
+  { src: "/about/winnipeg-office-meeting.png", alt: "Audax team in a client meeting at the Winnipeg office",  caption: "Winnipeg office" },
+  { src: "/about/video-call.png",              alt: "Audax team members on a video call with a client",      caption: "Remote collaboration" },
+  { src: "/about/team-planning.png",           alt: "Audax team planning a project on a whiteboard",         caption: "Team planning" },
+];
+
 const segments = [
   { badge: "AI-Curious SMEs",        num: "01", description: "Fractional AI leadership, opportunity audits, and workflow automation — for businesses that know AI matters but don't know where to start." },
   { badge: "Funded Founders & Scale-Ups", num: "02", description: "Custom AI-powered products and internal tools, built and shipped fast — without the overhead of a full in-house engineering team." },
@@ -436,6 +443,44 @@ export default function AboutContent() {
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── Behind the Scenes ── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">Behind the Scenes</p>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E]">A Real Team, Working Real Problems</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {behindTheScenes.map((photo, i) => (
+              <motion.div
+                key={photo.src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="relative rounded-2xl overflow-hidden aspect-[4/3] group"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3">
+                  <p className="text-white text-xs font-semibold">{photo.caption}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

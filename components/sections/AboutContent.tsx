@@ -433,29 +433,47 @@ export default function AboutContent() {
 
       {/* ── Who We Are ── */}
       <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-4">Who We Are</p>
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-6">
-              AI Strategy &amp; Innovation Experts, Based in Canada
-            </h2>
-            <div className="space-y-4 text-[#6B7280] text-base leading-relaxed">
-              <p>
-                Audax Ventures is an AI strategy and innovation firm that helps organizations identify, implement, and scale technology solutions that create measurable business value. Through Fractional Chief AI Officer services, AI transformation initiatives, and custom software development, we work alongside leadership teams to turn emerging technology into practical business outcomes.
-              </p>
-              <p>
-                We work with businesses that know AI matters but don&apos;t have the in-house leadership or engineering capacity to act on it — from funded founders building their first AI-powered product, to growing SMEs automating repetitive work, to established firms in regulated industries that need AI governance done right.
-              </p>
-              <p>
-                Across every engagement, our approach is the same: a tailored mix of AI strategy, software innovation, and operational excellence — delivered by a team that fosters creativity, takes calculated risks, and treats your business as seriously as our own.
-              </p>
-            </div>
-          </motion.div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-4">Who We Are</p>
+              <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-6">
+                AI Strategy &amp; Innovation Experts, Based in Canada
+              </h2>
+              <div className="space-y-4 text-[#6B7280] text-base leading-relaxed">
+                <p>
+                  Audax Ventures is an AI strategy and innovation firm that helps organizations identify, implement, and scale technology solutions that create measurable business value. Through Fractional Chief AI Officer services, AI transformation initiatives, and custom software development, we work alongside leadership teams to turn emerging technology into practical business outcomes.
+                </p>
+                <p>
+                  We work with businesses that know AI matters but don&apos;t have the in-house leadership or engineering capacity to act on it — from funded founders building their first AI-powered product, to growing SMEs automating repetitive work, to established firms in regulated industries that need AI governance done right.
+                </p>
+                <p>
+                  Across every engagement, our approach is the same: a tailored mix of AI strategy, software innovation, and operational excellence — delivered by a team that fosters creativity, takes calculated risks, and treats your business as seriously as our own.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 24, scale: 0.97 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] hidden sm:block"
+            >
+              <Image
+                src="/about/whiteboard-strategy.png"
+                alt="Audax team mapping an AI strategy on a whiteboard"
+                fill
+                sizes="(max-width: 1024px) 90vw, 420px"
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 

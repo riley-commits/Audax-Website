@@ -45,9 +45,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <HeroSection />
+      <StatsBar />
       <AboutAudaxSection />
       <ServicesGrid />
-      <StatsBar />
       <CTABanner
         heading="Ready to Put AI to Work in Your Business?"
         subtext="Book a free AI strategy call and let's get started today."

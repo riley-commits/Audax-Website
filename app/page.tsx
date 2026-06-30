@@ -18,6 +18,54 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://audaxventures.ca" },
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Audax Ventures",
+  url: "https://audaxventures.ca",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://audaxventures.ca/?s={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const sitelinksSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Audax Ventures — Key Pages",
+  itemListElement: [
+    {
+      "@type": "SiteLinksSearchBox",
+      target: "https://audaxventures.ca",
+    },
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Fractional Chief AI Officer",
+      url: "https://audaxventures.ca/services/fractional-caio",
+      description: "Executive-level AI leadership for your business — strategy, governance, and ROI tracking on a monthly retainer.",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Custom AI & Software Development",
+      url: "https://audaxventures.ca/services/custom-ai-software-development",
+      description: "Custom software, AI-powered applications, and automation solutions built around your business.",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "About Audax Ventures",
+      url: "https://audaxventures.ca/about",
+      description: "Learn about Audax Ventures — Canada's AI strategy and innovation firm.",
+    },
+  ],
+};
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -40,10 +88,9 @@ const organizationSchema = {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sitelinksSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <HeroSection />
       <StatsBar />
       <AboutAudaxSection />

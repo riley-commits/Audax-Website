@@ -107,13 +107,8 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
 
-        {/*
-          Intuitina chatbot widget.
-          Loaded lazily after page is interactive so it doesn't block paint
-          or hurt Lighthouse perf. Idempotent guard prevents double-injection
-          on client-side navigation.
-        */}
-        <Script id="intuitina-chatbot-loader" strategy="lazyOnload">
+        {/* Intuitina chatbot widget — temporarily disabled to diagnose floating rectangle UI bug */}
+        {/* <Script id="intuitina-chatbot-loader" strategy="lazyOnload">
           {`
             if (!document.getElementById('custom-chatbot-iframe')) {
               var s = document.createElement('script');
@@ -125,7 +120,7 @@ export default function RootLayout({
               document.body.appendChild(s);
             }
           `}
-        </Script>
+        </Script> */}
       </body>
     </html>
   );

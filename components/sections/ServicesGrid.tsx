@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Crown, Code2, ArrowRight, Check } from "lucide-react";
 
 // ── Service data ─────────────────────────────────────────────────────────────
@@ -54,8 +55,12 @@ const services = [
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function ServicesGrid() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const orbY = useTransform(scrollYProgress, [0, 1], [-30, 30]);
+
   return (
-    <section className="relative py-24 bg-[#FAFAF8] overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 bg-[#FAFAF8] overflow-hidden">
       {/* Dot grid */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -65,8 +70,11 @@ export default function ServicesGrid() {
           opacity: 0.035,
         }}
       />
-      {/* Corner orb */}
-      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#2E5F8A]/8 blur-3xl pointer-events-none" />
+      {/* Corner orb — drifts gently on scroll */}
+      <motion.div
+        style={{ y: orbY }}
+        className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#2E5F8A]/8 blur-3xl pointer-events-none"
+      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -78,7 +86,7 @@ export default function ServicesGrid() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">
+          <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-4">
             How We Help
           </p>
           <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E] mb-4">
@@ -94,10 +102,10 @@ export default function ServicesGrid() {
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: i === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.33, 1, 0.68, 1] }}
               className="relative flex flex-col bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-8 lg:p-10"
             >
               {/* Header */}

@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, TrendingUp } from "lucide-react";
 
 const roadmapPhases = [
@@ -183,8 +184,13 @@ function AIStrategyMockup() {
 }
 
 export default function HeroSection() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.35]);
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#FAFAF8] pt-20">
+    <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-[#FAFAF8] pt-20">
       {/* Animated gradient mesh background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Orb 1 — top-right, primary blue, drifts slowly */}
@@ -218,7 +224,10 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"
+      >
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
           {/* ── Left: copy ── */}
@@ -331,7 +340,7 @@ export default function HeroSection() {
             <AIStrategyMockup />
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

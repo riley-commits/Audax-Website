@@ -14,7 +14,7 @@ export default function CTABanner({
   buttonText?: string;
 }) {
   return (
-    <section className="bg-[#2E5F8A] py-20 px-4">
+    <section className="bg-[#2E5F8A] py-24 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

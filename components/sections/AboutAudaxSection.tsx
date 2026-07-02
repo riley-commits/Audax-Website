@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function AboutAudaxSection() {
   return (
-    <section className="py-20 bg-[#F8F9FA]">
+    <section className="py-20 bg-[#FAFAF8]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* ── Left: copy ── */}

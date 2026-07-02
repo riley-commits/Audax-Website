@@ -15,15 +15,15 @@ export default function StatsBar() {
   return (
     <>
       {/* ── Trusted By Marquee ── */}
-      <section className="bg-[#F8F9FA] py-10 border-y border-gray-100 overflow-hidden">
+      <section className="bg-[#FAFAF8] py-10 border-y border-gray-100 overflow-hidden">
         <p className="text-center text-[10px] tracking-widest uppercase text-[#6B7280] font-semibold mb-7">
           Trusted by founders and enterprises across North America
         </p>
 
         {/* Fade-edge wrapper */}
         <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#F8F9FA] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#F8F9FA] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#FAFAF8] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#FAFAF8] to-transparent z-10 pointer-events-none" />
 
           {/* Duplicated list for seamless loop */}
           <div className="animate-marquee">

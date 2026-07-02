@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import Image from "next/image";
-import { Target, Eye, Heart, Zap, Users, Shield, TrendingUp, MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Target, Eye, MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
@@ -11,45 +11,6 @@ const stats = [
   { prefix: "", value: 50,  suffix: "+", display: "50+",  label: "Projects Delivered"  },
   { prefix: "", value: 98,  suffix: "%", display: "98%",  label: "Client Satisfaction" },
   { prefix: "", value: 100, suffix: "%", display: "100%", label: "Code Ownership"      },
-];
-
-const values = [
-  {
-    icon: Target,
-    title: "Scope Discipline",
-    description: "We help clients build what they need — nothing more. The right scope, ruthlessly applied, is the difference between a product that ships and one that never does.",
-    example: "We've turned down projects we could have billed because the scope wasn't right. Scoping honestly costs us short-term revenue. It builds long-term trust.",
-  },
-  {
-    icon: Heart,
-    title: "Founder Empathy",
-    description: "We understand the pressure founders face. That understanding drives us to be careful, honest, and genuinely invested in every dollar and decision.",
-    example: "We structure payments by phase. You never pay for work that hasn't started. We've deferred invoices when a client hit a fundraising crunch.",
-  },
-  {
-    icon: Zap,
-    title: "Bias to Ship",
-    description: "A working product in users' hands beats a perfect product on a roadmap. We optimize for learning and momentum, not perfection.",
-    example: "Our sprints end with a live demo, not a status update. If it doesn't run in front of you, we haven't shipped.",
-  },
-  {
-    icon: Users,
-    title: "Radical Transparency",
-    description: "We tell you when something won't work, when a timeline is unrealistic, and when an idea needs more validation — even when it's uncomfortable.",
-    example: "In discovery calls, we tell founders what we'd change about their idea before they become clients. Most appreciate it. Some don't. That's fine.",
-  },
-  {
-    icon: Shield,
-    title: "Quality Without Compromise",
-    description: "Fast doesn't mean fragile. We build on solid foundations — every project includes proper architecture, documentation, and the structure you can grow on for years.",
-    example: "Every codebase we hand over includes documentation, a test suite, and an architecture decision record. We build for the engineer who comes after us.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Long-Term Thinking",
-    description: "We make decisions that serve your product's long-term trajectory. Our best client relationships span years, not sprints — and we build accordingly.",
-    example: "Our longest client relationship is 4+ years. We made decisions in year one that served year four — and we'd make them again.",
-  },
 ];
 
 const team = [
@@ -232,77 +193,6 @@ function TeamCard({ member, delay }: { member: typeof team[0]; delay: number }) 
         )}
       </AnimatePresence>
     </motion.div>
-  );
-}
-
-// ── Option 3: Interactive values grid ────────────────────────────────────────
-
-function ValuesGrid() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const featured = values[activeIndex];
-  const FeaturedIcon = featured.icon;
-
-  return (
-    <div className="grid lg:grid-cols-[1fr_360px] gap-6 items-start">
-      {/* Featured panel */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeIndex}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.25 }}
-          className="rounded-3xl p-10 text-white relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #0F172A 0%, #1A3A5C 100%)" }}
-        >
-          <div className="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-[#2E5F8A]/15 pointer-events-none" />
-          <div className="relative">
-            <div className="w-14 h-14 rounded-2xl bg-[#2E5F8A]/30 flex items-center justify-center mb-6">
-              <FeaturedIcon size={26} className="text-[#60A5FA]" />
-            </div>
-            <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl text-white mb-3">{featured.title}</h3>
-            <p className="text-white/65 leading-relaxed mb-8">{featured.description}</p>
-
-            <div className="border-t border-white/10 pt-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-3">How We Live This</p>
-              <p className="text-white/55 text-sm leading-relaxed italic">&ldquo;{featured.example}&rdquo;</p>
-            </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Value selector list — borderless */}
-      <div className="flex flex-col gap-1">
-        {values.map((v, i) => {
-          const Icon = v.icon;
-          const isActive = activeIndex === i;
-          return (
-            <button
-              key={v.title}
-              onClick={() => setActiveIndex(i)}
-              className={`w-full text-left flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-200 ${
-                isActive ? "bg-[#2E5F8A]/8" : "hover:bg-black/[0.03]"
-              }`}
-            >
-              <div
-                className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${
-                  isActive ? "bg-[#2E5F8A] text-white" : "bg-[#2E5F8A]/8 text-[#6B7280]"
-                }`}
-              >
-                <Icon size={16} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className={`font-[var(--font-outfit)] font-bold text-sm transition-colors ${isActive ? "text-[#2E5F8A]" : "text-[#1A1A2E]"}`}>
-                  {v.title}
-                </p>
-                <p className="text-[#9CA3AF] text-xs truncate mt-0.5">{v.description.slice(0, 55)}…</p>
-              </div>
-              {isActive && <div className="w-1.5 h-1.5 rounded-full bg-[#2E5F8A] flex-shrink-0" />}
-            </button>
-          );
-        })}
-      </div>
-    </div>
   );
 }
 
@@ -530,33 +420,6 @@ export default function AboutContent() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Core Values ── */}
-      <section className="py-20 relative">
-        {/* Thread marker */}
-        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-14"
-          >
-            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">What We Stand For</p>
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">Core Values</h2>
-            <p className="text-[#6B7280] mt-3 text-sm">Click any value to see how we actually live it.</p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <ValuesGrid />
-          </motion.div>
         </div>
       </section>
 

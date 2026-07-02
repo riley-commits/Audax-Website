@@ -399,7 +399,7 @@ export default function AboutContent() {
       </section>
 
       {/* ── Mission & Vision — pull-quote style, no boxes ── */}
-      <section className="pt-16 lg:pt-52 pb-16 relative z-10">
+      <section className="pt-10 lg:pt-28 pb-16 relative z-10">
         {/* Thread marker */}
         <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
 

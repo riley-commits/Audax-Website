@@ -93,8 +93,18 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <HeroSection />
       <StatsBar />
-      <AboutAudaxSection />
-      <ServicesGrid />
+      <div className="relative">
+        {/* Continuous vertical thread (desktop only), matches About page */}
+        <div
+          className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
+          style={{
+            width: "1px",
+            background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 6%, rgba(46,95,138,0.22) 94%, transparent 100%)",
+          }}
+        />
+        <AboutAudaxSection />
+        <ServicesGrid />
+      </div>
       <CTABanner
         heading="Ready to Put AI to Work in Your Business?"
         subtext="Book a free AI strategy call and let's get started today."

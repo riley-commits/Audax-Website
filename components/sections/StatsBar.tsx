@@ -15,7 +15,7 @@ export default function StatsBar() {
   return (
     <>
       {/* ── Trusted By Marquee ── */}
-      <section className="bg-[#FAFAF8] py-10 border-y border-gray-100 overflow-hidden">
+      <section className="bg-[#FAFAF8] py-10 overflow-hidden">
         <p className="text-center text-[10px] tracking-widest uppercase text-[#6B7280] font-semibold mb-7">
           Trusted by founders and enterprises across North America
         </p>

@@ -60,7 +60,10 @@ export default function ServicesGrid() {
   const orbY = useTransform(scrollYProgress, [0, 1], [-30, 30]);
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-[#FAFAF8] overflow-hidden">
+    <section ref={sectionRef} className="relative z-10 pt-0 pb-24 bg-[#FAFAF8] overflow-hidden">
+      {/* Thread marker */}
+      <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
+
       {/* Dot grid */}
       <div
         className="absolute inset-0 pointer-events-none"

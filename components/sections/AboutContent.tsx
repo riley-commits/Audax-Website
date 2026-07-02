@@ -160,10 +160,10 @@ function CountUp({ stat, started }: { stat: typeof stats[0]; started: boolean })
 
   return (
     <div className="text-center">
-      <div className="font-[var(--font-outfit)] font-extrabold text-5xl sm:text-6xl text-white mb-2 tabular-nums">
+      <div className="font-[var(--font-outfit)] font-extrabold text-5xl sm:text-6xl text-[#1A1A2E] mb-2 tabular-nums">
         {displayValue}
       </div>
-      <div className="text-white/50 text-sm font-medium">{stat.label}</div>
+      <div className="text-[#6B7280] text-sm font-medium">{stat.label}</div>
     </div>
   );
 }
@@ -320,14 +320,11 @@ export default function AboutContent() {
 
   return (
     <>
-      {/* ── Option 1: Dark cinematic hero with count-up stats ── */}
-      <section
-        className="pt-32 pb-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0F172A 0%, #1A2E45 50%, #0F172A 100%)" }}
-      >
-        {/* Glow blobs */}
-        <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-[#2E5F8A]/12 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#3A7BD5]/8 blur-[80px] pointer-events-none" />
+      {/* ── Hero with light background ── */}
+      <section className="pt-32 pb-24 relative overflow-hidden bg-[#FAFAF8]">
+        {/* Subtle orbs matching homepage style */}
+        <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.10) 0%, transparent 68%)" }} />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.07) 0%, transparent 68%)" }} />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-center mb-16">
@@ -336,7 +333,7 @@ export default function AboutContent() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-white/50 font-semibold mb-6"
+                className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-[#6B7280] font-semibold mb-6"
               >
                 <MapPin size={13} /> Winnipeg, Manitoba, Canada
               </motion.div>
@@ -345,7 +342,7 @@ export default function AboutContent() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.1 }}
-                className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight"
+                className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#1A1A2E] mb-6 leading-tight"
               >
                 Your AI Strategy &amp; Software Development Partner
               </motion.h1>
@@ -354,7 +351,7 @@ export default function AboutContent() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-white/55 text-lg leading-relaxed max-w-xl"
+                className="text-[#6B7280] text-lg leading-relaxed max-w-xl"
               >
                 Audax Ventures is an AI strategy and innovation firm based in Canada. Through Fractional Chief AI Officer services and custom AI &amp; software development, we help organizations identify, implement, and scale technology solutions that create measurable business value.
               </motion.p>
@@ -382,7 +379,7 @@ export default function AboutContent() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="grid grid-cols-3 gap-8 pt-10 border-t border-white/10"
+            className="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200"
           >
             {stats.map((s) => (
               <CountUp key={s.label} stat={s} started={countStarted} />

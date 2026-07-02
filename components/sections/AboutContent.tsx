@@ -160,7 +160,7 @@ function CountUp({ stat, started }: { stat: typeof stats[0]; started: boolean })
 
   return (
     <div className="text-center">
-      <div className="font-[var(--font-outfit)] font-extrabold text-5xl sm:text-6xl text-[#1A1A2E] mb-2 tabular-nums">
+      <div className="font-[var(--font-outfit)] font-extrabold text-5xl sm:text-6xl text-[#2E5F8A] mb-2 tabular-nums">
         {displayValue}
       </div>
       <div className="text-[#6B7280] text-sm font-medium">{stat.label}</div>

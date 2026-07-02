@@ -319,16 +319,16 @@ export default function AboutContent() {
   }, []);
 
   return (
-    <>
-      {/* ── Hero with light background ── */}
-      <section className="pt-32 pb-24 relative overflow-hidden bg-[#FAFAF8]">
-        {/* Subtle orbs matching homepage style */}
+    <div className="bg-[#FAFAF8]">
+
+      {/* ── Hero ── */}
+      <section className="pt-32 pb-16 relative overflow-visible">
         <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.10) 0%, transparent 68%)" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.07) 0%, transparent 68%)" }} />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-center mb-16">
-            <div>
+          <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-start mb-16">
+            <div className="lg:pt-6">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -357,11 +357,12 @@ export default function AboutContent() {
               </motion.p>
             </div>
 
+            {/* Image extends below hero into Mission section on large screens */}
             <motion.div
               initial={{ opacity: 0, x: 24, scale: 0.97 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] hidden sm:block"
+              className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] hidden sm:block lg:mb-[-160px] z-20"
             >
               <Image
                 src="/about/winnipeg-office-meeting.png"
@@ -374,12 +375,12 @@ export default function AboutContent() {
             </motion.div>
           </div>
 
-          {/* Count-up stats */}
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200"
+            className="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200 relative z-10"
           >
             {stats.map((s) => (
               <CountUp key={s.label} stat={s} started={countStarted} />
@@ -388,17 +389,16 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Mission & Vision ── */}
-      <section className="py-20 bg-white">
+      {/* ── Mission & Vision — extra top padding on lg to clear the overlapping hero image ── */}
+      <section className="pt-16 lg:pt-52 pb-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Mission */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden"
+              className="bg-white rounded-3xl p-10 border border-gray-100 shadow-md relative overflow-hidden"
               style={{ borderLeft: "5px solid #2E5F8A" }}
             >
               <div className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.06) 0%, transparent 70%)" }} />
@@ -414,13 +414,12 @@ export default function AboutContent() {
               </p>
             </motion.div>
 
-            {/* Vision */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden"
+              className="bg-white rounded-3xl p-10 border border-gray-100 shadow-md relative overflow-hidden"
               style={{ borderLeft: "5px solid #3A7BD5" }}
             >
               <div className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.06) 0%, transparent 70%)" }} />
@@ -439,15 +438,16 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Who We Are ── */}
-      <section className="py-20 bg-[#F8F9FA]">
+      {/* ── Who We Are — whiteboard image bleeds into Client Segments below ── */}
+      <section className="py-16 relative overflow-visible">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-center">
+          <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              className="lg:pt-6"
             >
               <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-4">Who We Are</p>
               <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-6">
@@ -471,7 +471,7 @@ export default function AboutContent() {
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] hidden sm:block"
+              className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] hidden sm:block lg:mb-[-100px] z-20"
             >
               <Image
                 src="/about/whiteboard-strategy.png"
@@ -485,8 +485,8 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Client Segments ── */}
-      <section className="py-16 bg-white">
+      {/* ── Client Segments — top padding accommodates overlapping whiteboard image ── */}
+      <section className="pt-12 lg:pt-32 pb-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -505,7 +505,7 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-[#F8F9FA] rounded-2xl p-7 border border-gray-100 hover:border-[#2E5F8A]/30 hover:shadow-md transition-all duration-200"
+                className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:border-[#2E5F8A]/30 hover:shadow-md transition-all duration-200"
               >
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-bold tracking-wide mb-4">
                   {s.num} — {s.badge}
@@ -517,8 +517,8 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Option 3: Interactive values grid ── */}
-      <section className="py-20 bg-white">
+      {/* ── Core Values ── */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -541,8 +541,8 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Option 2: Team with hover-reveal bio ── */}
-      <section className="py-20 bg-[#F8F9FA]">
+      {/* ── Team ── */}
+      <section className="py-20 pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -563,6 +563,7 @@ export default function AboutContent() {
           </div>
         </div>
       </section>
-    </>
+
+    </div>
   );
 }

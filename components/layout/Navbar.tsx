@@ -71,10 +71,10 @@ const mainIndustries = [
 
 const navLinks = [
   { label: "Home",       href: "/",          hasDropdown: false, hasIndustriesDropdown: false, hasProgramsDropdown: false },
+  { label: "About",      href: "/about",     hasDropdown: false, hasIndustriesDropdown: false, hasProgramsDropdown: false },
   { label: "Services",   href: "/services",  hasDropdown: true,  hasIndustriesDropdown: false, hasProgramsDropdown: false },
   { label: "Industries", href: "/industries", hasDropdown: false, hasIndustriesDropdown: true, hasProgramsDropdown: false },
   { label: "Programs",   href: "/programs",  hasDropdown: false, hasIndustriesDropdown: false, hasProgramsDropdown: true  },
-  { label: "About",      href: "/about",     hasDropdown: false, hasIndustriesDropdown: false, hasProgramsDropdown: false },
 ];
 
 // ── Shared sub-components ─────────────────────────────────────────────────────

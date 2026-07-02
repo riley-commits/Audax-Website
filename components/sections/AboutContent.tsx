@@ -499,7 +499,7 @@ export default function AboutContent() {
       </section>
 
       {/* ── Client Segments — no cards, open text ── */}
-      <section className="pt-12 lg:pt-32 pb-16 relative z-10">
+      <section className="pt-12 lg:pt-16 pb-16 relative z-10">
         {/* Thread marker */}
         <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
 

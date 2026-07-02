@@ -392,35 +392,46 @@ export default function AboutContent() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
+            {/* Mission */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-[#2E5F8A] rounded-3xl p-10 text-white"
+              className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden"
+              style={{ borderLeft: "5px solid #2E5F8A" }}
             >
-              <Target className="mb-5 text-blue-200" size={32} />
-              <p className="text-xs tracking-widest uppercase text-blue-300 font-semibold mb-3">Our Mission</p>
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl mb-4 leading-snug">
+              <div className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.06) 0%, transparent 70%)" }} />
+              <div className="w-12 h-12 rounded-2xl bg-[#2E5F8A]/10 flex items-center justify-center mb-5">
+                <Target className="text-[#2E5F8A]" size={24} />
+              </div>
+              <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-bold mb-3">Our Mission</p>
+              <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl text-[#1A1A2E] mb-4 leading-snug">
                 &ldquo;To give organizations executive-level AI leadership and the custom software they need to turn emerging technology into measurable business outcomes.&rdquo;
               </h2>
-              <p className="text-blue-100 leading-relaxed text-sm">
+              <p className="text-[#6B7280] leading-relaxed text-sm">
                 We go beyond AI hype — we bring the strategy, governance, and engineering expertise that turn AI from a buzzword into a real driver of efficiency and growth.
               </p>
             </motion.div>
+
+            {/* Vision */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-[#1A1A2E] rounded-3xl p-10 text-white"
+              className="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden"
+              style={{ borderLeft: "5px solid #3A7BD5" }}
             >
-              <Eye className="mb-5 text-blue-300" size={32} />
-              <p className="text-xs tracking-widest uppercase text-blue-400 font-semibold mb-3">Our Vision</p>
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl mb-4 leading-snug">
+              <div className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.06) 0%, transparent 70%)" }} />
+              <div className="w-12 h-12 rounded-2xl bg-[#3A7BD5]/10 flex items-center justify-center mb-5">
+                <Eye className="text-[#3A7BD5]" size={24} />
+              </div>
+              <p className="text-xs tracking-widest uppercase text-[#3A7BD5] font-bold mb-3">Our Vision</p>
+              <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl text-[#1A1A2E] mb-4 leading-snug">
                 &ldquo;To ignite a world where AI-driven strategy and software reshape how organizations operate, compete, and grow.&rdquo;
               </h2>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <p className="text-[#6B7280] leading-relaxed text-sm">
                 We believe in the power of AI to change how businesses work — and we are committed to making that change practical, responsible, and enduring.
               </p>
             </motion.div>

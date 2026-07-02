@@ -271,8 +271,8 @@ function ValuesGrid() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Value selector list */}
-      <div className="flex flex-col gap-2.5">
+      {/* Value selector list — borderless */}
+      <div className="flex flex-col gap-1">
         {values.map((v, i) => {
           const Icon = v.icon;
           const isActive = activeIndex === i;
@@ -280,15 +280,13 @@ function ValuesGrid() {
             <button
               key={v.title}
               onClick={() => setActiveIndex(i)}
-              className={`w-full text-left flex items-center gap-4 rounded-2xl px-5 py-4 border transition-all duration-200 ${
-                isActive
-                  ? "border-[#2E5F8A]/40 bg-[#2E5F8A]/6 shadow-sm"
-                  : "border-gray-100 bg-white hover:border-gray-200"
+              className={`w-full text-left flex items-center gap-4 rounded-2xl px-5 py-4 transition-all duration-200 ${
+                isActive ? "bg-[#2E5F8A]/8" : "hover:bg-black/[0.03]"
               }`}
             >
               <div
                 className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${
-                  isActive ? "bg-[#2E5F8A] text-white" : "bg-[#F8F9FA] text-[#6B7280]"
+                  isActive ? "bg-[#2E5F8A] text-white" : "bg-[#2E5F8A]/8 text-[#6B7280]"
                 }`}
               >
                 <Icon size={16} />
@@ -319,7 +317,18 @@ export default function AboutContent() {
   }, []);
 
   return (
-    <div className="bg-[#FAFAF8]">
+    <div className="bg-[#FAFAF8] relative">
+
+      {/* ── Continuous vertical thread (desktop only) ── */}
+      <div
+        className="hidden lg:block absolute left-8 pointer-events-none z-0"
+        style={{
+          top: "520px",
+          bottom: "140px",
+          width: "1px",
+          background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 6%, rgba(46,95,138,0.22) 94%, transparent 100%)",
+        }}
+      />
 
       {/* ── Hero ── */}
       <section className="pt-32 pb-16 relative overflow-visible">
@@ -357,7 +366,7 @@ export default function AboutContent() {
               </motion.p>
             </div>
 
-            {/* Image extends below hero into Mission section on large screens */}
+            {/* Hero image bleeds into Mission section */}
             <motion.div
               initial={{ opacity: 0, x: 24, scale: 0.97 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -389,21 +398,23 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Mission & Vision — extra top padding on lg to clear the overlapping hero image ── */}
+      {/* ── Mission & Vision — pull-quote style, no boxes ── */}
       <section className="pt-16 lg:pt-52 pb-16 relative z-10">
+        {/* Thread marker */}
+        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+            {/* Mission */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-3xl p-10 border border-gray-100 shadow-md relative overflow-hidden"
-              style={{ borderLeft: "5px solid #2E5F8A" }}
+              className="border-l-4 border-[#2E5F8A] pl-8"
             >
-              <div className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.06) 0%, transparent 70%)" }} />
-              <div className="w-12 h-12 rounded-2xl bg-[#2E5F8A]/10 flex items-center justify-center mb-5">
-                <Target className="text-[#2E5F8A]" size={24} />
+              <div className="w-10 h-10 rounded-xl bg-[#2E5F8A]/10 flex items-center justify-center mb-5">
+                <Target className="text-[#2E5F8A]" size={20} />
               </div>
               <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-bold mb-3">Our Mission</p>
               <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl text-[#1A1A2E] mb-4 leading-snug">
@@ -414,17 +425,16 @@ export default function AboutContent() {
               </p>
             </motion.div>
 
+            {/* Vision */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-3xl p-10 border border-gray-100 shadow-md relative overflow-hidden"
-              style={{ borderLeft: "5px solid #3A7BD5" }}
+              className="border-l-4 border-[#3A7BD5] pl-8"
             >
-              <div className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.06) 0%, transparent 70%)" }} />
-              <div className="w-12 h-12 rounded-2xl bg-[#3A7BD5]/10 flex items-center justify-center mb-5">
-                <Eye className="text-[#3A7BD5]" size={24} />
+              <div className="w-10 h-10 rounded-xl bg-[#3A7BD5]/10 flex items-center justify-center mb-5">
+                <Eye className="text-[#3A7BD5]" size={20} />
               </div>
               <p className="text-xs tracking-widest uppercase text-[#3A7BD5] font-bold mb-3">Our Vision</p>
               <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl text-[#1A1A2E] mb-4 leading-snug">
@@ -438,8 +448,11 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Who We Are — whiteboard image bleeds into Client Segments below ── */}
+      {/* ── Who We Are — whiteboard image bleeds into Client Segments ── */}
       <section className="py-16 relative overflow-visible">
+        {/* Thread marker */}
+        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-start">
             <motion.div
@@ -485,19 +498,22 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ── Client Segments — top padding accommodates overlapping whiteboard image ── */}
+      {/* ── Client Segments — no cards, open text ── */}
       <section className="pt-12 lg:pt-32 pb-16 relative z-10">
+        {/* Thread marker */}
+        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
             <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">Who We Work With</p>
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E]">Built for Every Stage of AI Adoption</h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-10 lg:gap-16">
             {segments.map((s, i) => (
               <motion.div
                 key={s.badge}
@@ -505,8 +521,8 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:border-[#2E5F8A]/30 hover:shadow-md transition-all duration-200"
               >
+                <div className="w-8 h-0.5 bg-[#2E5F8A]/40 mb-5" />
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-bold tracking-wide mb-4">
                   {s.num} — {s.badge}
                 </div>
@@ -518,13 +534,16 @@ export default function AboutContent() {
       </section>
 
       {/* ── Core Values ── */}
-      <section className="py-20">
+      <section className="py-20 relative">
+        {/* Thread marker */}
+        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="mb-14"
           >
             <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">What We Stand For</p>
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">Core Values</h2>
@@ -542,17 +561,20 @@ export default function AboutContent() {
       </section>
 
       {/* ── Team ── */}
-      <section className="py-20 pb-32">
+      <section className="py-20 pb-32 relative">
+        {/* Thread marker */}
+        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="mb-14"
           >
             <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">The People</p>
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">Our Team</h2>
-            <p className="text-[#6B7280] mt-4 max-w-xl mx-auto text-sm">
+            <p className="text-[#6B7280] mt-4 max-w-xl text-sm">
               Hover (or tap) any card to meet the person behind the role.
             </p>
           </motion.div>

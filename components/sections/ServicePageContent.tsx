@@ -367,41 +367,41 @@ export default function ServicePageContent({ service, related }: Props) {
 
   return (
     <>
-      {/* ── Option 1: Dark gradient hero with stats ── */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#0F172A] via-[#1A3A5C] to-[#0F172A] relative overflow-hidden">
+      {/* ── Light hero with stats ── */}
+      <section className="pt-32 pb-20 bg-[#FAFAF8] relative overflow-hidden">
         {/* Decorative orbs */}
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#2E5F8A]/10 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#3A7BD5]/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.10) 0%, transparent 68%)" }} />
+        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.08) 0%, transparent 68%)" }} />
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-xs text-white/40 mb-8">
-            <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-8">
+            <Link href="/" className="hover:text-[#2E5F8A] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/services" className="hover:text-white/70 transition-colors">Services</Link>
+            <Link href="/services" className="hover:text-[#2E5F8A] transition-colors">Services</Link>
             <span>/</span>
-            <span className="text-white/70">{service.title}</span>
+            <span className="text-[#1A1A2E] font-medium">{service.title}</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white/70 text-xs font-semibold mb-6 uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-semibold mb-6 uppercase tracking-widest">
             Service
           </div>
-          <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-white mb-5 leading-tight max-w-3xl">
+          <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#2E5F8A] mb-5 leading-tight max-w-3xl">
             {service.title}
           </h1>
-          <p className={`text-white/60 text-lg leading-relaxed max-w-2xl ${service.heroSubtext ? "mb-5" : "mb-10"}`}>
+          <p className={`text-[#6B7280] text-lg leading-relaxed max-w-2xl ${service.heroSubtext ? "mb-5" : "mb-10"}`}>
             {service.heroSub}
           </p>
           {service.heroSubtext && (
-            <p className="text-white/45 text-base leading-relaxed mb-10 max-w-2xl">{service.heroSubtext}</p>
+            <p className="text-[#6B7280]/80 text-base leading-relaxed mb-10 max-w-2xl">{service.heroSubtext}</p>
           )}
 
           {/* Stats row */}
           <div className="flex flex-wrap gap-4 mb-10">
             {stats.map((s) => (
-              <div key={s.label} className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4 text-center min-w-[120px]">
-                <p className="font-[var(--font-outfit)] font-extrabold text-2xl text-white leading-none mb-1">{s.value}</p>
-                <p className="text-white/45 text-xs">{s.label}</p>
+              <div key={s.label} className="bg-white border border-gray-100 shadow-sm rounded-2xl px-6 py-4 text-center min-w-[120px]">
+                <p className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E] leading-none mb-1">{s.value}</p>
+                <p className="text-[#6B7280] text-xs">{s.label}</p>
               </div>
             ))}
           </div>
@@ -417,7 +417,7 @@ export default function ServicePageContent({ service, related }: Props) {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white/80 font-bold hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-[#2E5F8A] text-[#2E5F8A] font-bold hover:bg-[#2E5F8A] hover:text-white transition-colors"
             >
               Tell Us About Your Project
             </Link>
@@ -507,14 +507,14 @@ export default function ServicePageContent({ service, related }: Props) {
               </section>
             )}
 
-            {/* Option 5: Mid-page dark CTA break */}
-            <div className="rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#1A3A5C] to-[#0F172A] p-10 text-center my-8 relative overflow-hidden">
-              <div className="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-white/4 pointer-events-none" />
+            {/* Mid-page CTA break */}
+            <div className="rounded-3xl bg-[#F8F9FA] border border-[#2E5F8A]/15 p-10 text-center my-8 relative overflow-hidden">
+              <div className="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-[#2E5F8A]/8 pointer-events-none" />
               <div className="relative">
-                <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-white mb-3">
+                <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E] mb-3">
                   {midCTA.headline}
                 </h3>
-                <p className="text-white/60 mb-7 max-w-md mx-auto">{midCTA.sub}</p>
+                <p className="text-[#6B7280] mb-7 max-w-md mx-auto">{midCTA.sub}</p>
                 <Link
                   href={calendlyUrl}
                   target="_blank"
@@ -557,14 +557,14 @@ export default function ServicePageContent({ service, related }: Props) {
             <div className="sticky top-28 space-y-4">
 
               {/* Service name + stats card */}
-              <div className="rounded-2xl bg-gradient-to-br from-[#1A3A5C] to-[#0F172A] p-6 text-white">
-                <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-1">Service</p>
-                <h3 className="font-[var(--font-outfit)] font-extrabold text-lg mb-5 leading-snug">{service.title}</h3>
+              <div className="rounded-2xl bg-[#F8F9FA] border border-gray-100 p-6">
+                <p className="text-[#6B7280] text-xs font-semibold uppercase tracking-widest mb-1">Service</p>
+                <h3 className="font-[var(--font-outfit)] font-extrabold text-[#1A1A2E] text-lg mb-5 leading-snug">{service.title}</h3>
                 <div className="space-y-3 mb-6">
                   {stats.map((s) => (
                     <div key={s.label} className="flex items-center justify-between">
-                      <span className="text-white/50 text-xs">{s.label}</span>
-                      <span className="font-[var(--font-outfit)] font-bold text-sm text-white">{s.value}</span>
+                      <span className="text-[#6B7280] text-xs">{s.label}</span>
+                      <span className="font-[var(--font-outfit)] font-bold text-sm text-[#1A1A2E]">{s.value}</span>
                     </div>
                   ))}
                 </div>

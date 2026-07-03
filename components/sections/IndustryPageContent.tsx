@@ -72,7 +72,7 @@ function CountUpStat({ stat, label, accentHex }: { stat: string; label: string; 
       >
         {displayed}
       </div>
-      <div className="text-white/50 text-xs leading-snug max-w-[140px] mx-auto">{label}</div>
+      <div className="text-[#6B7280] text-xs leading-snug max-w-[140px] mx-auto">{label}</div>
     </div>
   );
 }
@@ -178,22 +178,20 @@ function SolutionsExplorer({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25 }}
-          className="relative rounded-3xl p-8 text-white flex flex-col overflow-hidden"
-          style={{
-            background: `linear-gradient(135deg, #0F172A 0%, #1A2E4A 50%, #0F172A 100%)`,
-          }}
+          className="relative rounded-3xl p-8 flex flex-col overflow-hidden border border-gray-100"
+          style={{ backgroundColor: "#F8F9FA" }}
         >
           {/* Accent glow */}
           <div
-            className="absolute -right-16 -top-16 w-64 h-64 rounded-full blur-3xl opacity-20 pointer-events-none"
+            className="absolute -right-16 -top-16 w-64 h-64 rounded-full blur-3xl opacity-15 pointer-events-none"
             style={{ backgroundColor: accentHex }}
           />
           <div className="relative">
             <div className="text-4xl mb-5">{featured.icon}</div>
-            <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl mb-3 leading-snug">
+            <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl mb-3 leading-snug text-[#1A1A2E]">
               {featured.title}
             </h3>
-            <p className="text-white/65 leading-relaxed text-sm mb-8">{featured.description}</p>
+            <p className="text-[#6B7280] leading-relaxed text-sm mb-8">{featured.description}</p>
             <Link
               href="https://calendly.com/audax-ventures/30min"
               target="_blank"
@@ -321,18 +319,15 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
 
   return (
     <>
-      {/* ── Option 1: Dark hero with per-industry accent + animated stats ── */}
-      <section
-        className="pt-32 pb-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0F172A 0%, #1A2A3A 50%, #0F172A 100%)" }}
-      >
+      {/* ── Light hero with per-industry accent + animated stats ── */}
+      <section className="pt-32 pb-24 relative overflow-hidden bg-[#FAFAF8]">
         {/* Accent glow blobs */}
         <div
-          className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] opacity-15 pointer-events-none"
+          className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] opacity-10 pointer-events-none"
           style={{ backgroundColor: accentHex }}
         />
         <div
-          className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[80px] opacity-10 pointer-events-none"
+          className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[80px] opacity-8 pointer-events-none"
           style={{ backgroundColor: accentHex }}
         />
         {/* Giant faded icon backdrop */}
@@ -342,25 +337,25 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-xs text-white/40 mb-8">
-            <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-8">
+            <Link href="/" className="hover:text-[#2E5F8A] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/industries" className="hover:text-white/70 transition-colors">Industries</Link>
+            <Link href="/industries" className="hover:text-[#2E5F8A] transition-colors">Industries</Link>
             <span>/</span>
-            <span className="text-white/70">{industry.title}</span>
+            <span className="text-[#1A1A2E] font-medium">{industry.title}</span>
           </nav>
 
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 uppercase tracking-widest"
-            style={{ backgroundColor: `${accentHex}20`, color: accentHex }}
+            style={{ backgroundColor: `${accentHex}15`, color: accentHex }}
           >
             {industry.icon} {industry.title}
           </div>
 
-          <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-white mb-5 leading-tight max-w-3xl">
+          <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl mb-5 leading-tight max-w-3xl" style={{ color: accentHex }}>
             {industry.title}
           </h1>
-          <p className="text-white/55 text-lg leading-relaxed mb-10 max-w-2xl">{industry.heroSub}</p>
+          <p className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-2xl">{industry.heroSub}</p>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-14">
             <Link
@@ -374,14 +369,15 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 text-white/80 font-bold hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 font-bold transition-opacity hover:opacity-70"
+              style={{ borderColor: accentHex, color: accentHex }}
             >
               Tell Us About Your Project
             </Link>
           </div>
 
           {/* Animated stats strip */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-gray-200">
             {industry.caseHighlights.map((h) => (
               <CountUpStat key={h.label} stat={h.stat} label={h.label} accentHex={accentHex} />
             ))}
@@ -394,18 +390,18 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
         <section className="py-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
-              className="rounded-3xl overflow-hidden grid md:grid-cols-[1fr_auto_1fr] my-10 shadow-xl"
-              style={{ backgroundColor: "#0F172A" }}
+              className="rounded-3xl overflow-hidden grid md:grid-cols-[1fr_auto_1fr] my-10 shadow-xl border border-gray-100"
+              style={{ backgroundColor: "#FAFAF8" }}
             >
               {/* Before */}
-              <div className="flex flex-col items-center justify-center gap-2 px-8 py-10 text-center bg-white/5">
-                <p className="text-white/35 text-[10px] font-bold uppercase tracking-widest mb-1">Before</p>
+              <div className="flex flex-col items-center justify-center gap-2 px-8 py-10 text-center bg-white">
+                <p className="text-[#9CA3AF] text-[10px] font-bold uppercase tracking-widest mb-1">Before</p>
                 <p
-                  className="font-[var(--font-outfit)] font-extrabold text-5xl sm:text-6xl text-white/40"
+                  className="font-[var(--font-outfit)] font-extrabold text-5xl sm:text-6xl text-[#9CA3AF]"
                 >
                   {beforeAfter.before}
                 </p>
-                <p className="text-white/35 text-xs font-medium">{beforeAfter.metric}</p>
+                <p className="text-[#9CA3AF] text-xs font-medium">{beforeAfter.metric}</p>
               </div>
 
               {/* Arrow + context */}
@@ -419,7 +415,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 >
                   →
                 </div>
-                <p className="text-white/50 text-xs leading-relaxed max-w-[160px]">
+                <p className="text-[#6B7280] text-xs leading-relaxed max-w-[160px]">
                   {beforeAfter.context}
                 </p>
               </div>
@@ -441,7 +437,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 >
                   {beforeAfter.after}
                 </p>
-                <p className="text-white/50 text-xs font-medium">{beforeAfter.metric}</p>
+                <p className="text-[#6B7280] text-xs font-medium">{beforeAfter.metric}</p>
               </div>
             </div>
           </div>
@@ -530,21 +526,21 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
               </div>
             </section>
 
-            {/* Mid-page dark CTA */}
+            {/* Mid-page CTA */}
             <div
-              className="rounded-3xl p-10 text-center my-4 relative overflow-hidden"
-              style={{ background: "linear-gradient(135deg, #0F172A 0%, #1A2A3A 100%)" }}
+              className="rounded-3xl p-10 text-center my-4 relative overflow-hidden border border-gray-100"
+              style={{ backgroundColor: "#F8F9FA" }}
             >
               <div
-                className="absolute -right-12 -top-12 w-48 h-48 rounded-full blur-2xl opacity-20 pointer-events-none"
+                className="absolute -right-12 -top-12 w-48 h-48 rounded-full blur-2xl opacity-15 pointer-events-none"
                 style={{ backgroundColor: accentHex }}
               />
               <div className="relative">
                 <div className="text-4xl mb-4">{industry.icon}</div>
-                <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-white mb-3">
+                <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E] mb-3">
                   Ready to Build for {industry.title}?
                 </h3>
-                <p className="text-white/55 mb-7 max-w-md mx-auto text-sm leading-relaxed">
+                <p className="text-[#6B7280] mb-7 max-w-md mx-auto text-sm leading-relaxed">
                   {industry.tagline} Book a free 30-minute strategy call — we&apos;ll walk through your specific requirements, timeline, and budget.
                 </p>
                 <Link
@@ -577,14 +573,14 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
 
               {/* Industry card + stats */}
               <div
-                className="rounded-2xl p-6 text-white"
-                style={{ background: "linear-gradient(135deg, #0F172A 0%, #1A2A3A 100%)" }}
+                className="rounded-2xl p-6 border border-gray-100"
+                style={{ backgroundColor: "#F8F9FA" }}
               >
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-2xl">{industry.icon}</span>
                   <div>
-                    <p className="text-white/40 text-[10px] uppercase tracking-widest font-semibold">Industry</p>
-                    <h3 className="font-[var(--font-outfit)] font-extrabold text-base leading-snug text-white">
+                    <p className="text-[#6B7280] text-[10px] uppercase tracking-widest font-semibold">Industry</p>
+                    <h3 className="font-[var(--font-outfit)] font-extrabold text-base leading-snug text-[#1A1A2E]">
                       {industry.title}
                     </h3>
                   </div>
@@ -592,7 +588,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 <div className="space-y-3 mb-6">
                   {industry.caseHighlights.map((h) => (
                     <div key={h.label} className="flex items-start justify-between gap-3">
-                      <span className="text-white/45 text-xs leading-tight flex-1">{h.label}</span>
+                      <span className="text-[#6B7280] text-xs leading-tight flex-1">{h.label}</span>
                       <span
                         className="font-[var(--font-outfit)] font-bold text-sm flex-shrink-0"
                         style={{ color: accentHex }}

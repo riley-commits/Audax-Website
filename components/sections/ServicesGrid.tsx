@@ -60,7 +60,7 @@ export default function ServicesGrid() {
   const orbY = useTransform(scrollYProgress, [0, 1], [-30, 30]);
 
   return (
-    <section ref={sectionRef} className="relative z-10 pt-0 pb-24 bg-[#FAFAF8] overflow-hidden">
+    <section ref={sectionRef} className="relative z-10 pt-8 pb-24 overflow-hidden">
       {/* Thread marker */}
       <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
 
@@ -78,6 +78,8 @@ export default function ServicesGrid() {
         style={{ y: orbY }}
         className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#2E5F8A]/8 blur-3xl pointer-events-none"
       />
+      {/* Top fade — hides orb bleed for a clean handoff from the previous section */}
+      <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#FAFAF8] to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

@@ -93,7 +93,7 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <HeroSection />
       <StatsBar />
-      <div className="relative">
+      <div className="relative bg-[#FAFAF8]">
         {/* Continuous vertical thread (desktop only), matches About page */}
         <div
           className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"

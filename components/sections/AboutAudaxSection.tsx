@@ -10,7 +10,7 @@ export default function AboutAudaxSection() {
   const photoY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section ref={sectionRef} className="relative z-10 pt-24 pb-0 bg-[#FAFAF8]">
+    <section ref={sectionRef} className="relative z-10 pt-24 pb-0">
       {/* Thread marker */}
       <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
 

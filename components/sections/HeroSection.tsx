@@ -222,6 +222,8 @@ export default function HeroSection() {
             backgroundSize: "30px 30px",
           }}
         />
+        {/* Bottom fade — hides orb bleed for a clean handoff to the next section */}
+        <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent to-[#FAFAF8]" />
       </div>
 
       <motion.div

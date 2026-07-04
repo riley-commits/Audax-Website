@@ -28,7 +28,9 @@ const featured = [
       "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer — strategy, governance, training, and ROI tracking on a monthly retainer.",
     href: "/services/fractional-caio",
     highlights: ["AI opportunity assessment", "Executive strategy sessions", "AI governance & risk management", "ROI tracking & reporting"],
-    gradient: "from-[#1A3A5C] via-[#2E5F8A] to-[#1A3A5C]",
+    accentColor: "#2E5F8A",
+    accentBg: "bg-[#2E5F8A]/10",
+    accentText: "text-[#2E5F8A]",
     stat: { value: "Exec", label: "level AI leadership" },
   },
   {
@@ -41,7 +43,9 @@ const featured = [
       "Custom software, automation solutions, AI-powered applications, and digital products built around your business — not the other way around.",
     href: "/services/custom-ai-software-development",
     highlights: ["Custom software development", "AI-powered applications", "Process automation", "Integrations & APIs"],
-    gradient: "from-purple-950 via-purple-800 to-purple-950",
+    accentColor: "#7C3AED",
+    accentBg: "bg-purple-100",
+    accentText: "text-purple-700",
     stat: { value: "100%", label: "IP ownership" },
   },
 ];
@@ -145,44 +149,44 @@ export default function ServicesPage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br ${s.gradient} p-8 text-white flex flex-col hover:scale-[1.02] transition-transform duration-300`}
+                className="group relative overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-sm p-8 flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Decorative orb */}
-                <div className="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-white/5 pointer-events-none" />
+                <div className={`absolute -right-10 -top-10 w-44 h-44 rounded-full ${s.accentBg} blur-2xl pointer-events-none`} />
 
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <span className="text-3xl mb-3 block">{s.icon}</span>
                     {s.badge && (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/20 text-white uppercase tracking-wider mb-2">
+                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold ${s.accentBg} ${s.accentText} uppercase tracking-wider mb-2`}>
                         {s.badge}
                       </span>
                     )}
                   </div>
-                  <span className="font-[var(--font-outfit)] font-extrabold text-4xl text-white/10 tabular-nums">
+                  <span className="font-[var(--font-outfit)] font-extrabold text-4xl text-[#D1D5DB] tabular-nums">
                     {s.num}
                   </span>
                 </div>
 
-                <h3 className="font-[var(--font-outfit)] font-extrabold text-xl mb-1">{s.title}</h3>
-                <p className="text-white/50 text-xs font-semibold uppercase tracking-wide mb-3">{s.tagline}</p>
-                <p className="text-white/70 text-sm leading-relaxed mb-6">{s.description}</p>
+                <h3 className="font-[var(--font-outfit)] font-extrabold text-xl text-[#1A1A2E] mb-1">{s.title}</h3>
+                <p className={`text-xs font-semibold uppercase tracking-wide mb-3 ${s.accentText}`}>{s.tagline}</p>
+                <p className="text-[#6B7280] text-sm leading-relaxed mb-6">{s.description}</p>
 
                 <div className="space-y-2 mb-6">
                   {s.highlights.map((h) => (
-                    <div key={h} className="flex items-center gap-2 text-sm text-white/75">
-                      <CheckCircle2 size={13} className="text-white/50 flex-shrink-0" />
+                    <div key={h} className="flex items-center gap-2 text-sm text-[#374151]">
+                      <CheckCircle2 size={13} className={`${s.accentText} flex-shrink-0`} />
                       {h}
                     </div>
                   ))}
                 </div>
 
                 <div className="mt-auto flex items-center justify-between">
-                  <div className="bg-white/10 rounded-xl px-4 py-2.5 text-center">
-                    <p className="font-[var(--font-outfit)] font-extrabold text-lg text-white leading-none">{s.stat.value}</p>
-                    <p className="text-white/45 text-[10px] mt-0.5">{s.stat.label}</p>
+                  <div className={`${s.accentBg} rounded-xl px-4 py-2.5 text-center`}>
+                    <p className="font-[var(--font-outfit)] font-extrabold text-lg text-[#1A1A2E] leading-none">{s.stat.value}</p>
+                    <p className="text-[#6B7280] text-[10px] mt-0.5">{s.stat.label}</p>
                   </div>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-white/80 group-hover:text-white group-hover:gap-3 transition-all">
+                  <div className={`flex items-center gap-2 text-sm font-semibold ${s.accentText} group-hover:gap-3 transition-all`}>
                     Full details <ArrowRight size={14} />
                   </div>
                 </div>
@@ -248,12 +252,12 @@ export default function ServicesPage() {
       ))}
 
       {/* ── Not sure? CTA ── */}
-      <section className="py-20 bg-[#1A1A2E]">
+      <section className="py-20 bg-[#F8F9FA] border-t border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-white mb-4">
+          <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E] mb-4">
             Not Sure Which Service You Need?
           </h2>
-          <p className="text-gray-400 leading-relaxed mb-8">
+          <p className="text-[#6B7280] leading-relaxed mb-8">
             Book a free 30-minute call. We&apos;ll listen to what you&apos;re building, ask the right questions, and tell you exactly where to start — no pitch, no pressure.
           </p>
           <Link

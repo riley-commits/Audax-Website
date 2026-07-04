@@ -425,15 +425,25 @@ export default function ServicePageContent({ service, related }: Props) {
         </div>
       </section>
 
-      {/* ── Description ── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#6B7280] text-lg leading-relaxed">{service.description}</p>
-        </div>
-      </section>
+      <div className="relative">
+        {/* Continuous vertical thread (desktop only), matches About/Home pages */}
+        <div
+          className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
+          style={{
+            width: "1px",
+            background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 4%, rgba(46,95,138,0.22) 96%, transparent 100%)",
+          }}
+        />
 
-      {/* ── Two-column layout: main content + sticky sidebar ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        {/* ── Description ── */}
+        <section className="py-16 bg-white relative z-10">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-[#6B7280] text-lg leading-relaxed">{service.description}</p>
+          </div>
+        </section>
+
+        {/* ── Two-column layout: main content + sticky sidebar ── */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
         <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12 lg:items-start">
 
           {/* ── Main content column ── */}
@@ -441,7 +451,9 @@ export default function ServicePageContent({ service, related }: Props) {
 
             {/* What's Included */}
             {service.slug !== "fractional-caio" && (
-              <section id="whats-included" className="py-16 scroll-mt-24">
+              <section id="whats-included" className="py-16 scroll-mt-24 relative">
+                {/* Thread marker */}
+                <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
                   What&apos;s Included
                 </h2>
@@ -458,7 +470,9 @@ export default function ServicePageContent({ service, related }: Props) {
             )}
 
             {/* Who It's For */}
-            <section id="who-its-for" className={`py-16 scroll-mt-24 ${service.slug === "fractional-caio" ? "" : "border-t border-gray-100"}`}>
+            <section id="who-its-for" className={`py-16 scroll-mt-24 relative ${service.slug === "fractional-caio" ? "" : "border-t border-gray-100"}`}>
+              {/* Thread marker */}
+              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-2">
                 Who This Is For
               </h2>
@@ -480,7 +494,9 @@ export default function ServicePageContent({ service, related }: Props) {
 
             {/* Packages & Pricing (tiered services only) */}
             {service.packages && service.packages.length > 0 && (
-              <section id="packages" className="py-16 border-t border-gray-100 scroll-mt-24">
+              <section id="packages" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
+                {/* Thread marker */}
+                <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-3">
                   {service.slug === "fractional-caio" ? "Packages" : "Packages & Pricing"}
                 </h2>
@@ -499,7 +515,9 @@ export default function ServicePageContent({ service, related }: Props) {
 
             {/* Option 3: Process Stepper */}
             {service.process && service.process.length > 0 && (
-              <section id="process" className="py-16 border-t border-gray-100 scroll-mt-24">
+              <section id="process" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
+                {/* Thread marker */}
+                <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
                   Our Process
                 </h2>
@@ -528,7 +546,9 @@ export default function ServicePageContent({ service, related }: Props) {
 
             {/* Tech Stack */}
             {service.techStack && service.techStack.length > 0 && (
-              <section id="tech-stack" className="py-16 border-t border-gray-100 scroll-mt-24">
+              <section id="tech-stack" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
+                {/* Thread marker */}
+                <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
                 <h2 className="font-[var(--font-outfit)] font-bold text-2xl text-[#1A1A2E] mb-6">Technologies We Use</h2>
                 <div className="flex flex-wrap gap-3">
                   {service.techStack.map((t) => (
@@ -541,7 +561,9 @@ export default function ServicePageContent({ service, related }: Props) {
             )}
 
             {/* Option 2: FAQ Accordion */}
-            <section id="faq" className="py-16 border-t border-gray-100 scroll-mt-24">
+            <section id="faq" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
+              {/* Thread marker */}
+              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <h2 className={`font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10${service.slug === "fractional-caio" ? " text-center" : ""}`}>
                 Frequently Asked Questions
               </h2>
@@ -608,6 +630,7 @@ export default function ServicePageContent({ service, related }: Props) {
 
             </div>
           </aside>
+        </div>
         </div>
       </div>
 

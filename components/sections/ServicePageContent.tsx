@@ -425,26 +425,25 @@ export default function ServicePageContent({ service, related }: Props) {
         </div>
       </section>
 
-      <div className="relative">
-        {/* Continuous vertical thread (desktop only), matches About/Home pages */}
-        <div
-          className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
-          style={{
-            width: "1px",
-            background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 4%, rgba(46,95,138,0.22) 96%, transparent 100%)",
-          }}
-        />
+      {/* ── Description ── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[#6B7280] text-lg leading-relaxed">{service.description}</p>
+        </div>
+      </section>
 
-        {/* ── Description ── */}
-        <section className="py-16 bg-white relative z-10">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-[#6B7280] text-lg leading-relaxed">{service.description}</p>
-          </div>
-        </section>
-
-        {/* ── Two-column layout: main content + sticky sidebar ── */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
-        <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12 lg:items-start">
+      {/* ── Two-column layout: main content + sticky sidebar ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12 lg:items-start relative">
+          {/* Continuous vertical thread (desktop only), matches About/Home pages — shares
+              the same positioning context as the section markers below, so both align */}
+          <div
+            className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
+            style={{
+              width: "1px",
+              background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 4%, rgba(46,95,138,0.22) 96%, transparent 100%)",
+            }}
+          />
 
           {/* ── Main content column ── */}
           <div className="space-y-0">
@@ -630,7 +629,6 @@ export default function ServicePageContent({ service, related }: Props) {
 
             </div>
           </aside>
-        </div>
         </div>
       </div>
 

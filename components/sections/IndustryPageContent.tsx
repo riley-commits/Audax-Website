@@ -385,19 +385,9 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
         </div>
       </section>
 
-      <div className="relative">
-        {/* Continuous vertical thread (desktop only), matches About/Home pages */}
-        <div
-          className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
-          style={{
-            width: "1px",
-            background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 4%, rgba(46,95,138,0.22) 96%, transparent 100%)",
-          }}
-        />
-
       {/* ── Option 5: Before → After outcome strip ── */}
       {beforeAfter && (
-        <section className="py-0 relative z-10">
+        <section className="py-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
               className="rounded-3xl overflow-hidden grid md:grid-cols-[1fr_auto_1fr] my-10 shadow-xl border border-gray-100"
@@ -455,8 +445,17 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
       )}
 
       {/* ── Two-column layout: main + sticky sidebar ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
-        <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12 lg:items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12 lg:items-start relative">
+          {/* Continuous vertical thread (desktop only), matches About/Home pages — shares
+              the same positioning context as the section markers below, so both align */}
+          <div
+            className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
+            style={{
+              width: "1px",
+              background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 4%, rgba(46,95,138,0.22) 96%, transparent 100%)",
+            }}
+          />
 
           {/* ── Main content ── */}
           <div>
@@ -670,7 +669,6 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
             </div>
           </aside>
         </div>
-      </div>
       </div>
 
       {/* ── Other Industries ── */}

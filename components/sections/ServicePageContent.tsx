@@ -2,10 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ServiceData } from "@/lib/services-data";
 import PricingTiers from "@/components/sections/PricingTiers";
+
+// ── Hero photo for the 2 core services only ───────────────────────────────────
+
+const servicePhotos: Record<string, string> = {
+  "fractional-caio": "/about-audax.png",
+  "custom-ai-software-development": "/about/whiteboard-strategy.png",
+};
 
 // ── Per-service outcome stats shown in the hero ───────────────────────────────
 
@@ -364,6 +372,7 @@ export default function ServicePageContent({ service, related }: Props) {
     service.slug === "fractional-caio"
       ? "https://calendly.com/audax-ventures/fractional-caio"
       : "https://calendly.com/audax-ventures/30min";
+  const heroPhoto = servicePhotos[service.slug];
 
   return (
     <>
@@ -373,7 +382,9 @@ export default function ServicePageContent({ service, related }: Props) {
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.10) 0%, transparent 68%)" }} />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.08) 0%, transparent 68%)" }} />
 
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`relative mx-auto px-4 sm:px-6 lg:px-8 ${heroPhoto ? "max-w-6xl" : "max-w-5xl"}`}>
+          <div className={heroPhoto ? "grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-14 items-center" : ""}>
+          <div>
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-8">
             <Link href="/" className="hover:text-[#2E5F8A] transition-colors">Home</Link>
@@ -421,6 +432,20 @@ export default function ServicePageContent({ service, related }: Props) {
             >
               Tell Us About Your Project
             </Link>
+          </div>
+          </div>
+
+          {heroPhoto && (
+            <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] hidden lg:block">
+              <Image
+                src={heroPhoto}
+                alt={`${service.title} — Audax Ventures`}
+                fill
+                className="object-cover"
+                sizes="400px"
+              />
+            </div>
+          )}
           </div>
         </div>
       </section>

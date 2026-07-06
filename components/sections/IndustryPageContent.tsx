@@ -2,9 +2,18 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2, AlertTriangle, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import type { IndustryData } from "@/lib/industries-data";
+
+// ── Hero photo for the 3 main industries only ─────────────────────────────────
+
+const industryPhotos: Record<string, string> = {
+  "healthcare-medical": "/about/winnipeg-office-meeting.png",
+  "legal-professional-services": "/about-audax.png",
+  "real-estate-construction": "/about/whiteboard-strategy.png",
+};
 
 // ── Option 1: Per-industry accent colors ──────────────────────────────────────
 
@@ -316,6 +325,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
   const accent = industryAccents[industry.slug] ?? { hex: "#2E5F8A", label: "blue" };
   const accentHex = accent.hex;
   const beforeAfter = beforeAfterData[industry.slug];
+  const heroPhoto = industryPhotos[industry.slug];
 
   return (
     <>
@@ -331,11 +341,15 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
           style={{ backgroundColor: accentHex }}
         />
         {/* Giant faded icon backdrop */}
-        <div className="absolute inset-0 flex items-center justify-end pr-16 pointer-events-none select-none">
-          <span className="text-[240px] opacity-[0.04] leading-none">{industry.icon}</span>
-        </div>
+        {!heroPhoto && (
+          <div className="absolute inset-0 flex items-center justify-end pr-16 pointer-events-none select-none">
+            <span className="text-[240px] opacity-[0.04] leading-none">{industry.icon}</span>
+          </div>
+        )}
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={heroPhoto ? "grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-center" : ""}>
+          <div>
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-8">
             <Link href="/" className="hover:text-[#2E5F8A] transition-colors">Home</Link>
@@ -374,6 +388,20 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
             >
               Tell Us About Your Project
             </Link>
+          </div>
+          </div>
+
+          {heroPhoto && (
+            <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] hidden lg:block mb-14">
+              <Image
+                src={heroPhoto}
+                alt={`${industry.title} — Audax Ventures`}
+                fill
+                className="object-cover"
+                sizes="420px"
+              />
+            </div>
+          )}
           </div>
 
           {/* Animated stats strip */}

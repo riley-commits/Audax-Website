@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.metaTitle,
     description: post.metaDescription,
     alternates: { canonical: `https://audaxventures.ca/blog/${slug}` },
+    robots: { index: false, follow: false },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,

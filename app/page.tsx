@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Audax Ventures — AI Strategy, Leadership & Innovation",
     description:
-      "Helping businesses navigate the future of AI — Fractional CAIO services, AI transformation & advisory, and custom AI & software development.",
+      "Helping businesses navigate the future of AI — Fractional Chief AI Officer services, AI transformation & advisory, and custom AI & software development.",
     url: "https://audaxventures.ca",
   },
   alternates: { canonical: "https://audaxventures.ca" },

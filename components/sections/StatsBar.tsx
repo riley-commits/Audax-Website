@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // ── Marquee data ───────────────────────────────────────────────────────────
 const trustedBy: { name: string; logo: string; logoOnly: boolean }[] = [
   { name: "FundEze",                logo: "/logos/fundeze.png",        logoOnly: true  },
@@ -32,12 +34,15 @@ export default function StatsBar() {
                 key={i}
                 className="flex-shrink-0 mx-3 flex items-center gap-2 px-5 py-2.5 bg-white rounded-xl border border-gray-100 shadow-sm text-[#6B7280] font-[var(--font-outfit)] font-bold text-sm tracking-tight select-none"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={co.logo}
-                  alt={co.name}
-                  className="h-7 w-auto object-contain"
-                />
+                <div className="relative h-7 w-24 flex-shrink-0">
+                  <Image
+                    src={co.logo}
+                    alt={co.name}
+                    fill
+                    className="object-contain"
+                    sizes="96px"
+                  />
+                </div>
                 {!co.logoOnly && (
                   <span>{co.name}</span>
                 )}

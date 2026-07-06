@@ -40,7 +40,7 @@ const serviceOptions = [
   "AI Integration or Consulting",
   "Website or E-Commerce",
   "Process Automation",
-  "Fractional CAIO",
+  "Fractional Chief AI Officer",
   "Other / Not sure yet",
 ];
 

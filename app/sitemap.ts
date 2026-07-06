@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllServiceSlugs } from "@/lib/services-data";
 import { getAllSolutionSlugs } from "@/lib/solutions-data"; // slugs reused under /programs
-import { getAllBlogSlugs } from "@/lib/blog-data";
 import { getAllGuideSlugs } from "@/lib/guides-data";
 import { getAllIndustrySlugs } from "@/lib/industries-data";
 
@@ -15,8 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`,           lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/process`,         lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/contact`,         lastModified: new Date(), changeFrequency: "yearly"  as const, priority: 0.9 },
-    { url: `${base}/blog`,            lastModified: new Date(), changeFrequency: "weekly"  as const, priority: 0.7 },
-    { url: `${base}/gallery`,         lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${base}/success-stories`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/mvp-calculator`,  lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/services`,        lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -47,13 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  const blogPages = getAllBlogSlugs().map((slug) => ({
-    url: `${base}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
   const guidePages = getAllGuideSlugs().map((slug) => ({
     url: `${base}/guides/${slug}`,
     lastModified: new Date(),
@@ -66,7 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicePages,
     ...industryPages,
     ...programPages,
-    ...blogPages,
     ...guidePages,
   ];
 }

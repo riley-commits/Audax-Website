@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "UI/UX Gallery — Portfolio | Audax Ventures",
   description: "Browse our UI/UX design gallery: mobile apps, web applications, dashboards, and e-commerce interfaces built by the Audax Ventures design team.",
   alternates: { canonical: "https://audaxventures.ca/gallery" },
+  robots: { index: false, follow: false },
 };
 
 const items = [

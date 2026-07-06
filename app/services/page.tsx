@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Zap, Lock, MapPin, Handshake } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "AI Strategy & Software Development Services | Audax Ventures",
@@ -91,10 +91,10 @@ const categories = [
 ];
 
 const whyUs = [
-  { icon: "⚡", title: "8–16 week delivery", description: "Production-ready software in weeks, not quarters." },
-  { icon: "🔒", title: "You own everything", description: "Full IP transfer and source code on every engagement." },
-  { icon: "🇨🇦", title: "Canadian team", description: "Winnipeg-based, working in your timezone and under Canadian law." },
-  { icon: "🤝", title: "Fixed-price phases", description: "No runaway invoices — we scope honestly and price clearly." },
+  { icon: Zap, title: "8–16 week delivery", description: "Production-ready software in weeks, not quarters." },
+  { icon: Lock, title: "You own everything", description: "Full IP transfer and source code on every engagement." },
+  { icon: MapPin, title: "Canadian team", description: "Winnipeg-based, working in your timezone and under Canadian law." },
+  { icon: Handshake, title: "Fixed-price phases", description: "No runaway invoices — we scope honestly and price clearly." },
 ];
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -202,7 +202,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {whyUs.map((w) => (
               <div key={w.title} className="text-center">
-                <div className="text-2xl mb-2">{w.icon}</div>
+                <w.icon size={26} className="mx-auto mb-2 text-white" strokeWidth={2} />
                 <p className="font-[var(--font-outfit)] font-bold text-white text-sm mb-1">{w.title}</p>
                 <p className="text-blue-200 text-xs leading-snug">{w.description}</p>
               </div>

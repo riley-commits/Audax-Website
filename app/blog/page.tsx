@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Insights on MVP development, SaaS, AI, and startup growth from the Audax Ventures team. Practical advice for founders and enterprise builders.",
   alternates: { canonical: "https://audaxventures.ca/blog" },
+  robots: { index: false, follow: false },
 };
 
 export default function BlogPage() {

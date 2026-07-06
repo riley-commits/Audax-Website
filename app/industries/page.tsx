@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Building2, Zap, ShieldCheck, Link2 } from "lucide-react";
 import CTABanner from "@/components/layout/CTABanner";
 import { mainIndustries, otherIndustries } from "@/lib/industries-data";
 
@@ -28,25 +28,25 @@ const breadcrumb = {
 
 const whyAudax = [
   {
-    icon: "🏗️",
+    icon: Building2,
     title: "Industry context, not just code",
     description:
       "We study the operational realities of each industry we serve — the compliance constraints, workflow patterns, and data structures that shape what good software looks like in that context.",
   },
   {
-    icon: "⚡",
+    icon: Zap,
     title: "8–16 week delivery timelines",
     description:
       "Our production-track process delivers working software in weeks, not quarters — without cutting corners on architecture, security, or compliance.",
   },
   {
-    icon: "🔒",
+    icon: ShieldCheck,
     title: "Compliance-first architecture",
     description:
       "Privacy, security, and regulatory requirements are architecture decisions, not afterthoughts. We build compliant systems before the first line of feature code.",
   },
   {
-    icon: "🔗",
+    icon: Link2,
     title: "Integration over replacement",
     description:
       "We build software that works with your existing systems — EHRs, ERPs, PLCs, payment processors — rather than demanding a disruptive rip-and-replace migration.",
@@ -191,7 +191,7 @@ export default function IndustriesPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyAudax.map((item) => (
               <div key={item.title} className="text-center">
-                <div className="text-4xl mb-4">{item.icon}</div>
+                <item.icon size={32} className="mx-auto mb-4 text-[#2E5F8A]" strokeWidth={1.75} />
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] mb-3 text-base">{item.title}</h3>
                 <p className="text-[#6B7280] text-sm leading-relaxed">{item.description}</p>
               </div>

@@ -450,7 +450,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
           {/* Continuous vertical thread (desktop only), matches About/Home pages — shares
               the same positioning context as the section markers below, so both align */}
           <div
-            className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
+            className="hidden lg:block absolute -left-4 top-0 bottom-0 pointer-events-none z-0"
             style={{
               width: "1px",
               background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 4%, rgba(46,95,138,0.22) 96%, transparent 100%)",
@@ -463,7 +463,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
             {/* Overview */}
             <section id="overview" className="py-16 scroll-mt-24 relative">
               {/* Thread marker */}
-              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+              <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E] mb-8">
                 The {industry.title} Software Challenge
               </h2>
@@ -477,7 +477,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
             {/* Option 2: Challenge → Solution pairs */}
             <section id="challenges" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
               {/* Thread marker */}
-              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+              <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <div className="mb-10">
                 <p className="text-[10px] font-bold tracking-widest uppercase mb-2" style={{ color: accentHex }}>
                   Pain Points We Solve
@@ -499,7 +499,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
             {/* Option 3: Solutions explorer */}
             <section id="solutions" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
               {/* Thread marker */}
-              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+              <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <div className="mb-10">
                 <p className="text-[10px] font-bold tracking-widest uppercase mb-2" style={{ color: accentHex }}>
                   What We Build
@@ -517,7 +517,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
             {/* Who We Serve */}
             <section id="who-we-serve" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
               {/* Thread marker */}
-              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+              <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <div className="mb-8">
                 <p className="text-[10px] font-bold tracking-widest uppercase mb-2" style={{ color: accentHex }}>
                   Our Clients
@@ -575,7 +575,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
             {/* FAQ Accordion */}
             <section id="faq" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
               {/* Thread marker */}
-              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+              <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <div className="mb-10">
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E]">
                   Frequently Asked Questions

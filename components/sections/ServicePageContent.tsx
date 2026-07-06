@@ -438,7 +438,7 @@ export default function ServicePageContent({ service, related }: Props) {
           {/* Continuous vertical thread (desktop only), matches About/Home pages — shares
               the same positioning context as the section markers below, so both align */}
           <div
-            className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
+            className="hidden lg:block absolute -left-4 top-0 bottom-0 pointer-events-none z-0"
             style={{
               width: "1px",
               background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 4%, rgba(46,95,138,0.22) 96%, transparent 100%)",
@@ -452,7 +452,7 @@ export default function ServicePageContent({ service, related }: Props) {
             {service.slug !== "fractional-caio" && (
               <section id="whats-included" className="py-16 scroll-mt-24 relative">
                 {/* Thread marker */}
-                <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+                <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
                   What&apos;s Included
                 </h2>
@@ -471,7 +471,7 @@ export default function ServicePageContent({ service, related }: Props) {
             {/* Who It's For */}
             <section id="who-its-for" className={`py-16 scroll-mt-24 relative ${service.slug === "fractional-caio" ? "" : "border-t border-gray-100"}`}>
               {/* Thread marker */}
-              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+              <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-2">
                 Who This Is For
               </h2>
@@ -495,7 +495,7 @@ export default function ServicePageContent({ service, related }: Props) {
             {service.packages && service.packages.length > 0 && (
               <section id="packages" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
                 {/* Thread marker */}
-                <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+                <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-3">
                   {service.slug === "fractional-caio" ? "Packages" : "Packages & Pricing"}
                 </h2>
@@ -516,7 +516,7 @@ export default function ServicePageContent({ service, related }: Props) {
             {service.process && service.process.length > 0 && (
               <section id="process" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
                 {/* Thread marker */}
-                <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+                <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10">
                   Our Process
                 </h2>
@@ -547,7 +547,7 @@ export default function ServicePageContent({ service, related }: Props) {
             {service.techStack && service.techStack.length > 0 && (
               <section id="tech-stack" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
                 {/* Thread marker */}
-                <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+                <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
                 <h2 className="font-[var(--font-outfit)] font-bold text-2xl text-[#1A1A2E] mb-6">Technologies We Use</h2>
                 <div className="flex flex-wrap gap-3">
                   {service.techStack.map((t) => (
@@ -562,7 +562,7 @@ export default function ServicePageContent({ service, related }: Props) {
             {/* Option 2: FAQ Accordion */}
             <section id="faq" className="py-16 border-t border-gray-100 scroll-mt-24 relative">
               {/* Thread marker */}
-              <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
+              <div className="hidden lg:block absolute -left-4 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-[#2E5F8A]/50 z-10" />
               <h2 className={`font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-10${service.slug === "fractional-caio" ? " text-center" : ""}`}>
                 Frequently Asked Questions
               </h2>

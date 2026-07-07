@@ -53,7 +53,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Expert MVP development services in Canada. We build lean, validated products for founders and enterprises. Most MVPs launch in 8–16 weeks. Book a free call.",
     description:
-      "A minimum viable product (MVP) is the fastest path from idea to real-world validation. At Audax Ventures, we help founders and innovation teams build production-ready MVPs that are scoped correctly, designed beautifully, and built to scale — without burning months on features users won't use.",
+      "Most MVPs don't fail because the idea was wrong — they fail because too much got built before anyone could react to it. We scope ruthlessly, ship in weeks instead of quarters, and build only what you need to find out if this is worth pursuing.",
     whatsIncluded: [
       { icon: "🗺️", label: "Product Scope & Roadmap", description: "We define the exact feature set needed for validation — nothing more, nothing less." },
       { icon: "🎨", label: "UI/UX Design", description: "Wireframes and high-fidelity prototypes your users will love." },
@@ -100,7 +100,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Custom SaaS product development by Audax Ventures. Multi-tenancy, subscription billing, role-based auth, CI/CD, and scalable cloud infrastructure. Book a free call.",
     description:
-      "Building a SaaS product is fundamentally different from building an app. It requires multi-tenant architecture, subscription billing, customer data isolation, usage analytics, and a support infrastructure — all from day one. Audax Ventures has built these systems dozens of times and brings that experience directly to your project.",
+      "We've built multi-tenant SaaS platforms enough times to know where the real complexity hides — subscription billing, customer data isolation, usage analytics — not in the feature list, but in the plumbing underneath it. We bring that experience to your build so you're not relearning it the hard way.",
     whatsIncluded: [
       { icon: "🏗️", label: "Multi-Tenant Architecture", description: "Data isolation and workspace management built for multiple customers on a shared infrastructure." },
       { icon: "💳", label: "Subscription Billing", description: "Subscription billing with plans, trials, seats, usage-based billing, and customer portal." },
@@ -144,7 +144,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Custom internal tools, dashboards, and business process automation. Replace spreadsheets and manual workflows with software built exactly for your team.",
     description:
-      "Every growing company reaches a point where spreadsheets, documentation pages, and off-the-shelf SaaS tools stop being enough. We build custom internal tools that automate repetitive work, centralize data, and give your team exactly the interface they need to operate efficiently.",
+      "Spreadsheets rarely fail loudly — they fail quietly, one workaround at a time, until a whole team's process lives across a dozen tabs and one person's memory. We replace that with a tool built around how your team actually works, not a generic template.",
     whatsIncluded: [
       { icon: "🖥️", label: "Custom Dashboards", description: "Real-time data dashboards built around your KPIs and operational workflows." },
       { icon: "⚙️", label: "Workflow Automation", description: "Automate repetitive tasks: approvals, notifications, data entry, and report generation." },
@@ -187,7 +187,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Professional website development services in Canada. SEO-optimized, mobile-first, and conversion-focused websites built on modern frameworks. Get a free quote.",
     description:
-      "Your website is your most important salesperson. We build websites that load in under 2 seconds, score 95+ on Google PageSpeed, and are designed from the ground up to convert visitors into leads and customers.",
+      "A slow, generic website loses you leads before they've read a word of your copy. We build sites that load in under 2 seconds, score 95+ on Google PageSpeed, and are designed from the ground up to convert visitors into leads and customers.",
     whatsIncluded: [
       { icon: "🎨", label: "Custom Design", description: "Custom-designed interfaces tailored to your brand — no templates." },
       { icon: "⚡", label: "Performance Optimization", description: "Sub-2-second load times, optimized images, and Core Web Vitals scores in the green." },
@@ -229,7 +229,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Expert e-commerce development in Canada. Hosted commerce, headless commerce, and bespoke online stores built for performance and conversion. Get a free quote.",
     description:
-      "Whether you need a custom headless commerce platform or a highly optimized hosted-commerce store, we build e-commerce experiences that look great, load fast, and convert. From product catalogue to checkout to post-purchase — every step of the funnel is designed with revenue in mind.",
+      "Most storefronts are optimized for how they look, not for whether they convert. Whether you need a custom headless commerce platform or a highly optimized hosted store, we design every step of the funnel — catalogue, checkout, post-purchase — with revenue as the actual goal.",
     whatsIncluded: [
       { icon: "🛍️", label: "Product Catalogue & Search", description: "Fast, filterable product listings with advanced search and faceted navigation." },
       { icon: "💳", label: "Checkout & Payments", description: "Optimized checkout with leading payment processors and buy-now-pay-later options." },
@@ -271,7 +271,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Professional iOS app development in Canada. Native and cross-platform iOS apps for iPhone and iPad. From concept to App Store submission. Get a free quote.",
     description:
-      "We build iOS apps that users love — responsive, performant, and designed to Apple's Human Interface Guidelines. Whether you need a native iOS app or a cross-platform build, we deliver an App Store-ready product with full backend integration.",
+      "We build iOS apps people actually keep on their home screen — fast, native-feeling, and designed to Apple's Human Interface Guidelines. Whether that's a fully native build or a cross-platform app, you get an App Store-ready product with full backend integration.",
     whatsIncluded: [
       { icon: "📱", label: "Native iOS Development", description: "Native iOS frameworks for maximum performance and platform-native feel." },
       { icon: "⚛️", label: "Cross-Platform Option", description: "Cross-platform builds that share code with Android, reducing cost and time." },
@@ -315,7 +315,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Professional Android app development in Canada. Native and cross-platform Android apps for smartphones and tablets. From concept to Google Play launch.",
     description:
-      "Android powers 72% of the world's smartphones. We build Android applications that perform flawlessly across the fragmented device landscape — from flagship to mid-range — using native Android frameworks or cross-platform frameworks for shared codebases.",
+      "Android's device fragmentation is where most apps quietly break — great in a demo on a flagship phone, sluggish on a mid-range one in the field. We build and test across that range from day one, using native Android frameworks or cross-platform frameworks for shared codebases.",
     whatsIncluded: [
       { icon: "🤖", label: "Native Android Development", description: "Modern, declarative Android UI frameworks." },
       { icon: "⚛️", label: "Cross-Platform Option", description: "Cross-platform builds that share code with iOS for faster delivery." },
@@ -359,7 +359,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Expert modern front end development in Canada. Fast, accessible, and beautifully designed web interfaces. Book a free discovery call.",
     description:
-      "Great software starts at the interface. Our front end team builds clean, component-driven UIs on modern frameworks — optimized for performance, accessibility, and developer experience. We work from any major design tool or create our own, and we integrate cleanly with any backend.",
+      "The interface is where software actually earns or loses a user's trust. Our front end team builds clean, component-driven UIs on modern frameworks — optimized for performance and accessibility — and integrates cleanly with whatever backend you already have.",
     whatsIncluded: [
       { icon: "⚛️", label: "Component-Driven Development", description: "Component-driven architecture with server components, static generation, and streaming." },
       { icon: "🎨", label: "Design System Implementation", description: "Design to code: pixel-perfect component libraries built with utility-first styling or CSS-in-JS." },
@@ -401,7 +401,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Expert backend development: REST APIs, GraphQL, type-safe runtimes, databases, and cloud infrastructure. Built to scale and maintained for the long term.",
     description:
-      "Every great product is powered by a well-architected backend. We build the APIs, services, and infrastructure that handle your data, business logic, authentication, and third-party integrations — designed to scale from 100 to 1,000,000 users without a rewrite.",
+      "Scaling problems get decided in the backend, long before anyone notices a slow page. We build the APIs, services, and infrastructure that handle your data, logic, and integrations — designed to go from 100 users to 1,000,000 without a rewrite.",
     whatsIncluded: [
       { icon: "🌐", label: "REST & GraphQL APIs", description: "Well-documented APIs with versioning, rate limiting, and authentication." },
       { icon: "🗄️", label: "Database Design", description: "Normalized schemas, query optimization, indexing, and migration management." },
@@ -443,7 +443,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Full-stack web development in Canada. Marketing websites, web applications, and complex platforms built on modern frameworks. Get a free quote.",
     description:
-      "Web development is our core. Whether you need a fast-loading marketing site, a complex web application, or a full-stack platform with a custom admin panel, our team delivers clean, maintainable code that your users will love and your developers won't dread maintaining.",
+      "A lot of 'we do everything' web shops are strong at one thing and average at the rest. Ours is full-stack web — fast marketing sites, complex web applications, and the custom admin panels behind them — built with code your own team could pick up and maintain if you needed them to.",
     whatsIncluded: [
       { icon: "🌐", label: "Full-Stack Development", description: "Frontend, backend, and database — we handle the entire web stack." },
       { icon: "⚡", label: "Performance-First", description: "SSG, SSR, edge functions, and CDN configuration for fast global delivery." },
@@ -527,7 +527,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Professional QA and software testing services. Manual testing, automated test suites, performance testing, and CI/CD integration. Book a free quote.",
     description:
-      "Poor quality software costs more to fix than to prevent. Our QA team embeds quality throughout your development process — not just at the end — with a mix of manual, automated, and performance testing that gives you confidence in every release.",
+      "Most QA happens right before launch, when there's no time left to actually act on what it finds. We embed testing throughout development instead — manual, automated, and performance — so problems surface while there's still room to fix them.",
     whatsIncluded: [
       { icon: "🔍", label: "Manual Exploratory Testing", description: "Experienced QA engineers testing like real users — finding the edge cases automated tests miss." },
       { icon: "🤖", label: "Automated Test Suites", description: "Unit, integration, and E2E tests built with industry-standard testing frameworks." },
@@ -569,7 +569,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Custom business process automation services. Replace manual workflows with intelligent automations. Integrate your tools and eliminate repetitive tasks.",
     description:
-      "Every hour your team spends on repetitive, manual tasks is an hour not spent on strategic work. We analyze your workflows, identify automation opportunities, and build the integrations and bots that get it done — reliably, consistently, and at scale.",
+      "Manual, repetitive work rarely shows up as a line item — it just quietly eats hours your team could spend on higher-value work. We map your workflows, find where automation actually pays off, and build the integrations that get it back.",
     whatsIncluded: [
       { icon: "🔄", label: "Workflow Automation", description: "Automated approval chains, routing rules, and status updates across your systems." },
       { icon: "🔗", label: "System Integration", description: "Connect your CRM, ERP, accounting, HR, and communication tools." },
@@ -611,7 +611,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Custom customer service automation: AI chatbots, ticket routing, knowledge bases, and self-service portals. Reduce support costs and improve CSAT.",
     description:
-      "Up to 60% of support tickets are repetitive questions that can be answered by a well-designed self-service system. We build the AI chatbots, automated routing rules, and knowledge base systems that let your customers help themselves and your agents focus on what matters.",
+      "Most support tickets are the same handful of questions asked over and over — which means most of your team's time is spent answering things a well-built system could handle first. We build the AI chatbots, routing rules, and knowledge base systems that let customers help themselves and free your agents for what actually needs a human.",
     whatsIncluded: [
       { icon: "🤖", label: "AI-Powered Chatbot", description: "LLM-backed chatbots trained on your knowledge base to answer customer questions 24/7." },
       { icon: "🎫", label: "Automated Ticket Routing", description: "AI-based intent classification to route tickets to the right team instantly." },
@@ -695,7 +695,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Custom CRM development and SaaS CRM implementation. Build a CRM that fits your exact sales process. Get a free consultation.",
     description:
-      "Generic SaaS CRMs are powerful but expensive and often over-engineered for growing teams. We build custom CRMs tailored to your sales motion, or implement and configure the right platform for your needs — without the bloat.",
+      "Generic CRMs are built for nobody's exact sales process, which is why teams end up spending more time working around them than working in them. We build CRMs tailored to how your team actually sells, or configure the right platform for your needs — without the bloat you'll never use.",
     whatsIncluded: [
       { icon: "👥", label: "Contact & Deal Management", description: "Centralized contact records, deal pipelines, and activity timelines." },
       { icon: "📊", label: "Sales Analytics", description: "Pipeline health, conversion rates, revenue forecasting, and rep performance." },
@@ -739,7 +739,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Fractional Chief AI Officer (CAIO) services for Canadian businesses. Three monthly packages from $3,000 — AI strategy, implementation, and transformation.",
     description:
-      "We help organizations identify, prioritize, build, implement, and manage custom AI initiatives that drive measurable business results. As your Fractional Chief AI Officer, Audax provides executive-level AI leadership, strategic direction, and hands-on implementation support to help your business stay competitive in an AI-driven world.",
+      "Most businesses don't need more AI advice — they need someone accountable for making it work. As your Fractional Chief AI Officer, we take on that ownership directly: finding where AI actually creates value for your business, building it, and staying accountable for the results.",
     whatsIncluded: [
       { icon: "🎯", label: "AI Opportunity Assessment", description: "Identify the highest-ROI AI use cases specific to your business and industry." },
       { icon: "🗺️", label: "12-Month AI Roadmap", description: "A prioritized, actionable plan for AI adoption across your organization." },
@@ -918,7 +918,7 @@ export const servicesData: ServiceData[] = [
     metaDescription:
       "Digital marketing services for SaaS and software companies. SEO, paid search, paid social, content marketing, and conversion optimization. Book a free call.",
     description:
-      "Marketing for software companies is different from marketing for consumer brands. Buyers are skeptical, sales cycles are longer, and trust is earned through content and evidence — not glossy ads. We specialize in marketing for technical products and work closely with your product team to tell your story in a way that converts.",
+      "Buyers of technical products are skeptical by default — longer sales cycles, no impulse purchases, trust earned through proof rather than polish. We market software the way it actually gets bought: with content and evidence, working closely with your product team to tell a story that converts.",
     whatsIncluded: [
       { icon: "🔍", label: "Technical SEO & Content", description: "Keyword research, content strategy, and long-form articles that rank and convert." },
       { icon: "📢", label: "Paid Search", description: "Intent-based SEM campaigns with proper tracking and conversion optimization." },

@@ -69,7 +69,7 @@ export default function IndustriesPage() {
             <span className="text-[#2E5F8A]">Your Industry</span>
           </h1>
           <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            Generic software solves generic problems. We build for the specific compliance requirements, operational workflows, and data structures of the industries we serve.
+            Off-the-shelf software solves generic problems. We build around the real rules, workflows, and data you actually deal with in your industry — not a one-size-fits-all template.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

@@ -17,6 +17,7 @@ export const productsData: ProductData[] = [
     description:
       "Intuitina deploys trained AI chatbots across websites and customer touchpoints — qualifying leads, answering support questions, and responding in over 120 languages, 24/7. It's built for e-commerce, SaaS, healthcare, and service businesses that want a chatbot people actually get useful answers from, with no code required to set up.",
     url: "https://www.intuitina.com/",
+    screenshot: "/products/intuitina.png",
     accentColor: "#2E5F8A",
     note: "You may have already talked to Intuitina — it powers the chat widget on this site.",
   },

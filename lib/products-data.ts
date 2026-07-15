@@ -6,34 +6,19 @@ export interface ProductData {
   /** Path to a real screenshot in /public once available. Falls back to a placeholder card when unset. */
   screenshot?: string;
   accentColor: string;
+  /** Optional small italic note shown below the description (e.g. a disclosure). */
+  note?: string;
 }
-
-// ── PLACEHOLDER DATA ────────────────────────────────────────────────────────
-// Replace every entry below with a real product name, tagline, description,
-// live URL, and screenshot before this page is considered launch-ready.
-// Nothing here is a real Audax product yet.
 
 export const productsData: ProductData[] = [
   {
-    name: "Placeholder Product One",
-    tagline: "Replace with a real one-line tagline",
-    description: "Replace this with a real, honest description of what this product does and who it's for.",
-    url: "https://example.com",
+    name: "Intuitina",
+    tagline: "The all-in-one AI platform for agents & chatbots",
+    description:
+      "Intuitina deploys trained AI chatbots across websites and customer touchpoints — qualifying leads, answering support questions, and responding in over 120 languages, 24/7. It's built for e-commerce, SaaS, healthcare, and service businesses that want a chatbot people actually get useful answers from, with no code required to set up.",
+    url: "https://www.intuitina.com/",
     accentColor: "#2E5F8A",
-  },
-  {
-    name: "Placeholder Product Two",
-    tagline: "Replace with a real one-line tagline",
-    description: "Replace this with a real, honest description of what this product does and who it's for.",
-    url: "https://example.com",
-    accentColor: "#7C3AED",
-  },
-  {
-    name: "Placeholder Product Three",
-    tagline: "Replace with a real one-line tagline",
-    description: "Replace this with a real, honest description of what this product does and who it's for.",
-    url: "https://example.com",
-    accentColor: "#0D9488",
+    note: "You may have already talked to Intuitina — it powers the chat widget on this site.",
   },
 ];
 

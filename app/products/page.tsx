@@ -9,9 +9,6 @@ export const metadata: Metadata = {
   title: "Products | Audax Ventures",
   description: "Software products built by Audax Ventures — browse what we've shipped and visit each one directly.",
   alternates: { canonical: "https://audaxventures.ca/products" },
-  // TODO: remove once productsData in lib/products-data.ts has real entries,
-  // and add /products to app/sitemap.ts at the same time.
-  robots: { index: false, follow: false },
 };
 
 function ProductScreenshot({ product }: { product: (typeof productsData)[number] }) {
@@ -78,6 +75,9 @@ export default function ProductsPage() {
                   </div>
                   <p className="text-xs font-semibold mb-3" style={{ color: product.accentColor }}>{product.tagline}</p>
                   <p className="text-[#6B7280] text-sm leading-relaxed flex-1">{product.description}</p>
+                  {product.note && (
+                    <p className="text-[#9CA3AF] text-xs italic leading-relaxed mt-4">{product.note}</p>
+                  )}
                 </div>
               </Link>
             ))}

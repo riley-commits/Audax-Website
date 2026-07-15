@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/mvp-calculator`,  lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/services`,        lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/industries`,      lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/products`,        lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   ];
 
   const servicePages = getAllServiceSlugs().map((slug) => ({

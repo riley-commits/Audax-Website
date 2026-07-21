@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function ProductScreenshot({ product }: { product: (typeof productsData)[number] }) {
   if (product.screenshot) {
     return (
-      <div className="relative w-full md:w-[420px] aspect-[16/10] flex-shrink-0 overflow-hidden rounded-2xl border border-gray-100">
+      <div className="relative w-full md:w-[420px] aspect-[16/10] flex-shrink-0 overflow-hidden rounded-2xl border border-white/20 shadow-lg">
         <Image
           src={product.screenshot}
           alt={`${product.name} homepage screenshot`}
@@ -26,7 +26,7 @@ function ProductScreenshot({ product }: { product: (typeof productsData)[number]
     );
   }
   return (
-    <div className="relative w-full md:w-[420px] aspect-[16/10] flex-shrink-0 overflow-hidden rounded-2xl border border-gray-100 bg-[#0D1526]">
+    <div className="relative w-full md:w-[420px] aspect-[16/10] flex-shrink-0 overflow-hidden rounded-2xl border border-white/20 shadow-lg bg-[#0D1526]">
       <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#080F1C] border-b border-white/5">
         <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
         <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
@@ -63,29 +63,48 @@ export default function ProductsPage() {
       <section className="pb-20 bg-[#F8F9FA]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6">
-            {productsData.map((product) => (
-              <Link
-                key={product.name}
-                href={withUtm(product.url, product.name)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 p-5 flex flex-col md:flex-row gap-6 md:items-center"
-              >
-                <ProductScreenshot product={product} />
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="font-[var(--font-outfit)] font-extrabold text-xl text-[#1A1A2E] group-hover:text-[#2E5F8A] transition-colors">
-                      {product.name}
-                    </h3>
-                    <ArrowUpRight size={18} className="flex-shrink-0 text-[#9CA3AF] group-hover:text-[#2E5F8A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+            {productsData.map((product) => {
+              const light = product.textColor === "light";
+              return (
+                <Link
+                  key={product.name}
+                  href={withUtm(product.url, product.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ background: product.gradient }}
+                  className={`group rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 p-5 flex flex-col md:flex-row gap-6 md:items-center ${
+                    light ? "border border-white/10" : "border border-black/5"
+                  }`}
+                >
+                  <ProductScreenshot product={product} />
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3
+                        className={`font-[var(--font-outfit)] font-extrabold text-xl transition-colors ${
+                          light ? "text-white" : "text-[#1A1A2E]"
+                        }`}
+                      >
+                        {product.name}
+                      </h3>
+                      <ArrowUpRight
+                        size={18}
+                        className={`flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all ${
+                          light ? "text-white/50 group-hover:text-white" : "text-[#9CA3AF] group-hover:text-[#1A1A2E]"
+                        }`}
+                      />
+                    </div>
+                    <p className={`text-base leading-relaxed ${light ? "text-white/70" : "text-[#4B5563]"}`}>
+                      {product.description}
+                    </p>
+                    {product.note && (
+                      <p className={`text-xs italic leading-relaxed mt-3 ${light ? "text-white/40" : "text-[#6B7280]"}`}>
+                        {product.note}
+                      </p>
+                    )}
                   </div>
-                  <p className="text-[#6B7280] text-base leading-relaxed">{product.description}</p>
-                  {product.note && (
-                    <p className="text-[#9CA3AF] text-xs italic leading-relaxed mt-3">{product.note}</p>
-                  )}
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="text-center mt-12">

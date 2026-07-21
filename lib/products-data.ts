@@ -6,6 +6,10 @@ export interface ProductData {
   /** Path to a real screenshot in /public once available. Falls back to a placeholder card when unset. */
   screenshot?: string;
   accentColor: string;
+  /** CSS background value for the row, drawn from the product's own brand colors. */
+  gradient: string;
+  /** Whether the row's text should be light or dark, based on the gradient's contrast. */
+  textColor: "light" | "dark";
   /** Optional small italic note shown below the description (e.g. a disclosure). */
   note?: string;
 }
@@ -17,7 +21,9 @@ export const productsData: ProductData[] = [
       "Verclara is a unified business operating system that brings clients, pipeline, revenue, meetings, and tasks into one workspace for fractional executives and service-based business owners.",
     url: "https://www.verclara.io/",
     screenshot: "/products/verclara.webp",
-    accentColor: "#7C3AED",
+    accentColor: "#E08A3E",
+    gradient: "linear-gradient(135deg, #0F1626 0%, #1C2A47 55%, #3C2712 100%)",
+    textColor: "light",
   },
   {
     name: "Intuitina",
@@ -25,7 +31,9 @@ export const productsData: ProductData[] = [
       "Intuitina deploys trained AI chatbots that qualify leads, answer support questions, and respond in over 120 languages, 24/7.",
     url: "https://www.intuitina.com/",
     screenshot: "/products/intuitina.png",
-    accentColor: "#2E5F8A",
+    accentColor: "#2563EB",
+    gradient: "linear-gradient(135deg, #EFF5FF 0%, #DCE9FF 60%, #C7DBFF 100%)",
+    textColor: "dark",
     note: "You may have already talked to Intuitina — it powers the chat widget on this site.",
   },
 ];

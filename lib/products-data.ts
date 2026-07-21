@@ -12,6 +12,14 @@ export interface ProductData {
 
 export const productsData: ProductData[] = [
   {
+    name: "Verclara",
+    description:
+      "Verclara is a unified business operating system that brings clients, pipeline, revenue, meetings, and tasks into one workspace for fractional executives and service-based business owners.",
+    url: "https://www.verclara.io/",
+    screenshot: "/products/verclara.webp",
+    accentColor: "#7C3AED",
+  },
+  {
     name: "Intuitina",
     description:
       "Intuitina deploys trained AI chatbots that qualify leads, answer support questions, and respond in over 120 languages, 24/7.",
@@ -19,14 +27,6 @@ export const productsData: ProductData[] = [
     screenshot: "/products/intuitina.png",
     accentColor: "#2E5F8A",
     note: "You may have already talked to Intuitina — it powers the chat widget on this site.",
-  },
-  {
-    name: "Verclara",
-    description:
-      "Verclara is a unified business operating system that brings clients, pipeline, revenue, meetings, and tasks into one workspace for fractional executives and service-based business owners.",
-    url: "https://www.verclara.io/",
-    screenshot: "/products/verclara.webp",
-    accentColor: "#7C3AED",
   },
 ];
 

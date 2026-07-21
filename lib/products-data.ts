@@ -25,6 +25,7 @@ export const productsData: ProductData[] = [
     description:
       "Verclara is a unified business operating system that brings clients, pipeline, revenue, meetings, and tasks into one workspace for fractional executives and service-based business owners.",
     url: "https://www.verclara.io/",
+    screenshot: "/products/verclara.webp",
     accentColor: "#7C3AED",
   },
 ];

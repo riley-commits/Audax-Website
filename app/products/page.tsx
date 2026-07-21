@@ -14,13 +14,19 @@ export const metadata: Metadata = {
 function ProductScreenshot({ product }: { product: (typeof productsData)[number] }) {
   if (product.screenshot) {
     return (
-      <div className="relative aspect-[16/10] rounded-t-3xl overflow-hidden border-b border-gray-100">
-        <Image src={product.screenshot} alt={`${product.name} screenshot`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 400px" />
+      <div className="relative w-full md:w-[420px] aspect-[16/10] flex-shrink-0 overflow-hidden rounded-2xl border border-gray-100">
+        <Image
+          src={product.screenshot}
+          alt={`${product.name} homepage screenshot`}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, 420px"
+        />
       </div>
     );
   }
   return (
-    <div className="relative aspect-[16/10] rounded-t-3xl overflow-hidden border-b border-gray-100 bg-[#0D1526]">
+    <div className="relative w-full md:w-[420px] aspect-[16/10] flex-shrink-0 overflow-hidden rounded-2xl border border-gray-100 bg-[#0D1526]">
       <div className="flex items-center gap-1.5 px-4 py-2.5 bg-[#080F1C] border-b border-white/5">
         <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
         <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
@@ -55,28 +61,27 @@ export default function ProductsPage() {
       </section>
 
       <section className="pb-20 bg-[#F8F9FA]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-6">
             {productsData.map((product) => (
               <Link
                 key={product.name}
                 href={withUtm(product.url, product.name)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col"
+                className="group bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 p-5 flex flex-col md:flex-row gap-6 md:items-center"
               >
                 <ProductScreenshot product={product} />
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-start justify-between gap-3 mb-1.5">
-                    <h3 className="font-[var(--font-outfit)] font-extrabold text-lg text-[#1A1A2E] group-hover:text-[#2E5F8A] transition-colors">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="font-[var(--font-outfit)] font-extrabold text-xl text-[#1A1A2E] group-hover:text-[#2E5F8A] transition-colors">
                       {product.name}
                     </h3>
                     <ArrowUpRight size={18} className="flex-shrink-0 text-[#9CA3AF] group-hover:text-[#2E5F8A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
-                  <p className="text-xs font-semibold mb-3" style={{ color: product.accentColor }}>{product.tagline}</p>
-                  <p className="text-[#6B7280] text-sm leading-relaxed flex-1">{product.description}</p>
+                  <p className="text-[#6B7280] text-base leading-relaxed">{product.description}</p>
                   {product.note && (
-                    <p className="text-[#9CA3AF] text-xs italic leading-relaxed mt-4">{product.note}</p>
+                    <p className="text-[#9CA3AF] text-xs italic leading-relaxed mt-3">{product.note}</p>
                   )}
                 </div>
               </Link>

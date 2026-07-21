@@ -54,8 +54,10 @@ export default function ProductsPage() {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#1A1A2E] mb-4">
             Software Products You Can Go Use
           </h1>
-          <p className="text-[#6B7280] text-lg">
-            Every product below is live — click through to visit it directly.
+          <p className="text-[#6B7280] text-lg leading-relaxed">
+            Across enough client engagements, we kept hearing the same problems come up again and again — so instead
+            of solving them one project at a time, we built products to solve them for good. The products below are
+            live and available to use or purchase directly — click through to try one out.
           </p>
         </div>
       </section>

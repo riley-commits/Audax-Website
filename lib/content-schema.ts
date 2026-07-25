@@ -122,7 +122,7 @@ export const industriesSchema = z.array(industrySchema);
 export type Industry = z.infer<typeof industrySchema>;
 
 // ------------------------------------------------------------------
-// Blog posts (lib/blog-data.ts)
+// Insights posts (lib/insights-data.ts)
 // ------------------------------------------------------------------
 
 export const blogPostSchema = z.object({
@@ -197,6 +197,34 @@ export const solutionSchema = z.object({
 
 export const solutionsSchema = z.array(solutionSchema);
 export type Solution = z.infer<typeof solutionSchema>;
+
+// ------------------------------------------------------------------
+// Case studies (lib/case-studies-data.ts)
+// ------------------------------------------------------------------
+
+const caseStudyResultSchema = z.object({
+  stat: z.string().min(1),
+  label: z.string().min(1),
+});
+
+export const caseStudySchema = z.object({
+  slug: slugSchema,
+  clientName: z.string().min(1),
+  clientType: z.string().min(1),
+  logo: z.string().min(1).optional(),
+  externalUrl: z.string().url().optional(),
+  tagline: z.string().min(1),
+  metaTitle: z.string().min(1),
+  metaDescription: z.string().min(1),
+  problem: z.string().min(1),
+  whatWeBuilt: z.string().min(1),
+  outcome: z.string().min(1),
+  results: z.array(caseStudyResultSchema).optional(),
+  tags: z.array(z.string().min(1)),
+});
+
+export const caseStudiesSchema = z.array(caseStudySchema);
+export type CaseStudy = z.infer<typeof caseStudySchema>;
 
 // ------------------------------------------------------------------
 // Soft-warning helpers — surfaced as warnings, never block the build.

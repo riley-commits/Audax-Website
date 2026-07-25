@@ -28,54 +28,39 @@ const mainServices = [
   },
 ];
 
-const PROGRAM_ACCENT = "#D97706";
-
-const programs = [
-  {
-    label: "Founder Prototype Program",
-    href: "https://www.audaxventures.io",
-    desc: "Idea to working prototype fast — validate before you build.",
-    num: "01", icon: "⚡",
-    phases: ["Define", "Build", "Validate"],
-    color: PROGRAM_ACCENT,
-    external: true,
-  },
-];
-
 const mainIndustries = [
   {
-    label: "Healthcare & Medical",
-    href: "/industries/healthcare-medical",
-    desc: "PIPEDA-compliant platforms & patient tools",
-    num: "01", icon: "🏥",
-    stat: "42% admin reduction",
-    preview: "PIPEDA-compliant patient portals, EHR integrations, and clinical decision tools for Canadian healthcare teams.",
+    label: "Financial Services",
+    href: "/industries/financial-services",
+    desc: "Compliant, secure fintech & finance platforms",
+    num: "01", icon: "💳",
+    stat: "FINTRAC / PCI DSS / SOC 2 ready",
+    preview: "Payment platforms, lending tools, wealth management dashboards, and financial data pipelines built to regulatory-grade standards.",
   },
   {
     label: "Professional Services",
-    href: "/industries/legal-professional-services",
+    href: "/industries/professional-services",
     desc: "Practice management for law & accounting firms",
     num: "02", icon: "⚖️",
     stat: "Built for billable hours",
     preview: "Matter management systems, client portals, document automation, and billing platforms for law firms, accounting practices, and consultancies.",
   },
   {
-    label: "Real Estate & Construction",
-    href: "/industries/real-estate-construction",
-    desc: "PropTech, CRM & project management",
-    num: "03", icon: "🏗️",
-    stat: "Real-time project visibility",
-    preview: "Property management platforms, construction project portals, and CRM tools built for the pace of real estate.",
+    label: "Hospitality & Tourism",
+    href: "/industries/hospitality-tourism",
+    desc: "Guest experience, booking & operations software",
+    num: "03", icon: "🏨",
+    stat: "Built for peak-season demand",
+    preview: "Booking platforms, guest-facing chatbots, and operations tools for resorts, hotels, and tourism operators.",
   },
 ];
 
 const navLinks = [
-  { label: "Home",       href: "/",          hasDropdown: false, hasIndustriesDropdown: false, hasProgramsDropdown: false },
-  { label: "About",      href: "/about",     hasDropdown: false, hasIndustriesDropdown: false, hasProgramsDropdown: false },
-  { label: "Services",   href: "/services",  hasDropdown: true,  hasIndustriesDropdown: false, hasProgramsDropdown: false },
-  { label: "Products",   href: "/products",  hasDropdown: false, hasIndustriesDropdown: false, hasProgramsDropdown: false },
-  { label: "Industries", href: "/industries", hasDropdown: false, hasIndustriesDropdown: true, hasProgramsDropdown: false },
-  { label: "Programs",   href: "/programs",  hasDropdown: false, hasIndustriesDropdown: false, hasProgramsDropdown: true  },
+  { label: "About",      href: "/about",     hasDropdown: false, hasIndustriesDropdown: false },
+  { label: "Services",   href: "/services",  hasDropdown: true,  hasIndustriesDropdown: false },
+  { label: "Industries", href: "/industries", hasDropdown: false, hasIndustriesDropdown: true },
+  { label: "Work",       href: "/work",      hasDropdown: false, hasIndustriesDropdown: false },
+  { label: "Insights",   href: "/insights",  hasDropdown: false, hasIndustriesDropdown: false },
 ];
 
 // ── Shared sub-components ─────────────────────────────────────────────────────
@@ -136,7 +121,6 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen]         = useState(false);
   const [servicesOpen, setServicesOpen]     = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
-  const [programsOpen, setProgramsOpen]     = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -228,7 +212,7 @@ export default function Navbar() {
                             onClick={() => setServicesOpen(false)}
                             className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E5F8A] hover:text-[#3A7BD5] transition-colors"
                           >
-                            View all 20 services <ArrowRight size={10} />
+                            View all services <ArrowRight size={10} />
                           </Link>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
@@ -307,99 +291,6 @@ export default function Navbar() {
 
                       <CTAStrip
                         prompt="Building for a specific industry? Let's talk requirements."
-                        linkLabel="Book a Free AI Strategy Call"
-                        href="https://calendly.com/audax-ventures/30min"
-                      />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-
-            /* ── Programs Dropdown ── */
-            if (link.hasProgramsDropdown) return (
-              <div
-                key={link.label}
-                className="relative"
-                onMouseEnter={() => setProgramsOpen(true)}
-                onMouseLeave={() => setProgramsOpen(false)}
-              >
-                <Link
-                  href={link.href}
-                  className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
-                    isActive(link.href) || programsOpen
-                      ? "text-[#2E5F8A] bg-[#2E5F8A]/8 font-semibold"
-                      : "text-[#1A1A2E] hover:text-[#2E5F8A] hover:bg-[#2E5F8A]/6"
-                  }`}
-                >
-                  {link.label}
-                  <ChevronDown size={13} className={`transition-transform duration-250 ${programsOpen ? "rotate-180 text-[#2E5F8A]" : ""}`} />
-                </Link>
-
-                <AnimatePresence>
-                  {programsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                      transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[520px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
-                    >
-                      {/* Option 5: Program mini cards with phase pills */}
-                      <div className="p-4 flex flex-col gap-2.5">
-                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] px-2 mb-1">
-                          Our Programs
-                        </p>
-                        {programs.map((p) => (
-                          <Link
-                            key={p.href}
-                            href={p.href}
-                            target={"external" in p && p.external ? "_blank" : undefined}
-                            rel={"external" in p && p.external ? "noopener noreferrer" : undefined}
-                            onClick={() => setProgramsOpen(false)}
-                            className="group flex items-start gap-4 px-4 py-4 rounded-xl border border-gray-100 hover:border-transparent hover:shadow-md transition-all duration-200 relative overflow-hidden"
-                            style={{ borderLeftWidth: 3, borderLeftColor: p.color }}
-                          >
-                            {/* Subtle hover bg */}
-                            <div
-                              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
-                              style={{ background: `linear-gradient(135deg, ${p.color}08 0%, transparent 60%)` }}
-                            />
-                            <span className="text-2xl flex-shrink-0 relative">{p.icon}</span>
-                            <div className="flex-1 min-w-0 relative">
-                              <div className="flex items-center justify-between gap-2 mb-1">
-                                <p className="font-[var(--font-outfit)] font-bold text-sm text-[#1A1A2E] group-hover:text-[#2E5F8A] transition-colors leading-tight">
-                                  {p.label}
-                                </p>
-                                <span className="text-[10px] font-bold text-white/0 group-hover:text-[#2E5F8A] transition-colors">
-                                  <ArrowRight size={13} className="text-gray-300 group-hover:text-[#2E5F8A] transition-colors" />
-                                </span>
-                              </div>
-                              <p className="text-[#6B7280] text-xs mb-2.5 leading-snug">{p.desc}</p>
-                              {/* Phase pills */}
-                              <div className="flex items-center gap-1.5">
-                                {p.phases.map((phase, i) => (
-                                  <span key={phase} className="flex items-center gap-1.5">
-                                    <span
-                                      className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold"
-                                      style={{ backgroundColor: `${p.color}18`, color: p.color }}
-                                    >
-                                      {phase}
-                                    </span>
-                                    {i < p.phases.length - 1 && (
-                                      <span className="text-[#D1D5DB] text-xs">→</span>
-                                    )}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-
-                      {/* Option 4: Full-width CTA strip */}
-                      <CTAStrip
-                        prompt="Not sure which program fits your stage?"
                         linkLabel="Book a Free AI Strategy Call"
                         href="https://calendly.com/audax-ventures/30min"
                       />
@@ -524,21 +415,6 @@ export default function Navbar() {
                   className="flex items-center gap-1.5 pl-3 pr-3 py-2 mt-1 rounded-lg text-sm font-semibold text-[#2E5F8A] hover:bg-[#F8F9FA] transition-colors">
                   View all industries <ArrowRight size={12} />
                 </Link>
-              </div>
-
-              {/* Programs sub-section */}
-              <div className="border-t border-gray-100 pt-4 mb-4">
-                <p className="text-[10px] font-bold tracking-widest uppercase text-[#2E5F8A] px-3 mb-2">Programs</p>
-                {programs.map((p) => (
-                  <Link key={p.href} href={p.href}
-                    target={"external" in p && p.external ? "_blank" : undefined}
-                    rel={"external" in p && p.external ? "noopener noreferrer" : undefined}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#2E5F8A] hover:bg-[#F8F9FA] transition-colors font-medium">
-                    <span className="text-base">{p.icon}</span>
-                    {p.label}
-                  </Link>
-                ))}
               </div>
 
               {/* Mobile CTA */}

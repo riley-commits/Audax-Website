@@ -242,7 +242,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-sm font-medium mb-6"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#2E5F8A] animate-pulse" />
-              AI Strategy, Leadership &amp; Innovation
+              Fractional CAIO &amp; Custom Software, One Team
             </motion.div>
 
             {/* Headline */}
@@ -252,10 +252,10 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] text-[#1A1A2E] leading-[1.1] mb-6"
             >
-              Helping Businesses
+              Executive AI Leadership
               <br />
-              Navigate the{" "}
-              <span className="gradient-text">Future of AI.</span>
+              and the{" "}
+              <span className="gradient-text">Software to Back It Up.</span>
             </motion.h1>
 
             {/* Subtext */}
@@ -265,7 +265,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-lg"
             >
-              Audax Ventures provides Fractional AI leadership, AI transformation services, and custom software development to help organizations improve efficiency, accelerate growth, and stay competitive in an AI-driven world.
+              Audax Ventures pairs Fractional Chief AI Officer leadership with in-house custom software development — one team that sets the AI strategy and builds it, so your roadmap doesn&apos;t stall at the slide deck.
             </motion.p>
 
             {/* CTAs */}
@@ -285,7 +285,7 @@ export default function HeroSection() {
                 <ArrowRight size={18} />
               </Link>
               <Link
-                href="/success-stories"
+                href="/work"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-[#2E5F8A] text-[#2E5F8A] font-semibold text-base hover:bg-[#2E5F8A] hover:text-white transition-colors"
               >
                 See Our Work

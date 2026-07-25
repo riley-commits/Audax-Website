@@ -33,107 +33,105 @@ export interface IndustryData {
 }
 
 export const industriesData: IndustryData[] = [
-  // ─── MAIN INDUSTRIES ───────────────────────────────────────────────────────
   {
-    slug: "healthcare-medical",
-    title: "Healthcare & Medical",
-    icon: "🏥",
-    tagline: "Clinical-grade software that improves patient outcomes and removes administrative drag from care teams.",
-    heroTitle: "Software Built for Healthcare — Where Compliance Meets Clinical Efficiency",
+    slug: "financial-services",
+    title: "FinTech & Finance",
+    icon: "💳",
+    tagline: "Compliant, secure financial software that moves at the speed of modern capital markets.",
+    heroTitle: "FinTech Software Development — Regulatory-Grade Builds Without the Big-Bank Timeline",
     heroSub:
-      "We build PIPEDA-compliant, HL7/FHIR-aware digital health tools for clinics, health networks, and medical device companies — from patient portals to AI-assisted diagnostics.",
-    metaTitle: "Healthcare Software Development Canada",
+      "We build payment platforms, lending tools, wealth management dashboards, and financial data pipelines that meet FINTRAC, PCI DSS, and SOC 2 requirements without sacrificing speed to market.",
+    metaTitle: "FinTech Software Development Canada",
     metaDescription:
-      "Custom healthcare and medical software development in Canada. PIPEDA-compliant patient portals, EHR integrations, scheduling systems, and clinical decision tools. Book a free call.",
+      "Custom FinTech and financial software development in Canada. Payment platforms, lending tools, wealth dashboards, and compliance-ready architectures. Book a free call.",
     overview:
-      "Healthcare runs on some of the most fragmented, outdated software of any industry — even though it's one of the most human-centred. Clinics juggle EHR systems that don't talk to each other, paper referral chains, and manual billing that eats up hours that should go to patients. We build software that untangles that, purpose-built for how Canadian healthcare actually runs, with privacy and compliance built in from day one — not bolted on after.\n\nOur healthcare clients range from single-location family practices to multi-site specialty networks and health-tech startups bringing new diagnostics to market. We know the difference between a patient-facing app that has to meet PIPEDA and a clinical tool that needs to integrate cleanly with a system like Epic or OSCAR — getting that right the first time avoids the costly rebuilds that slow less experienced teams down.\n\nEvery feature we build earns its place by improving something measurable: fewer no-shows through smarter scheduling, less admin work through automated documentation, faster referrals through cleaner data exchange. We build for patient experience and clinical throughput — not because something is technically interesting to us.",
+      "The financial services industry is simultaneously one of the most regulated and one of the most rapidly disrupted sectors in the economy. Incumbents move slowly because compliance risk is real; challengers move fast and sometimes discover that risk the hard way. Audax Ventures occupies the middle ground: we build financial software at startup speed with the architectural discipline that regulated environments demand.\n\nOur FinTech clients include payment processors, alternative lenders, wealth management platforms, accounting automation startups, and financial data aggregators. Across these engagements, we have developed deep familiarity with FINTRAC's AML/KYC obligations, PCI DSS payment card standards, OSC registration and reporting requirements, and the open banking landscape in Canada. We bring this regulatory context to every architecture decision — not as a compliance checkbox, but as a competitive differentiator.\n\nThe financial software we build is also held to a higher standard for reliability and auditability. Every transaction must be traceable. Every access event must be logged. Every integration with a payment processor or bank must be tested against realistic failure scenarios. We enforce these standards through code review, automated testing, and architecture review — not through hope.",
     challenges: [
-      "EHR fragmentation forces staff to re-enter data across multiple disconnected systems, creating errors and consuming hours of administrative time per day",
-      "Manual appointment scheduling and paper-based referral workflows create bottlenecks that delay care and inflate overhead costs",
-      "Compliance requirements (PIPEDA, provincial health privacy acts) make it difficult to move quickly without inadvertently introducing risk",
-      "Patient communication still relies on phone and fax in most practices, generating no-shows, missed follow-ups, and poor engagement",
-      "Reporting and utilization data is locked in siloed systems, making it nearly impossible to identify operational inefficiencies or demonstrate outcomes to funders",
+      "AML/KYC onboarding friction drives customer abandonment before the first transaction, but reducing friction without cutting compliance corners requires careful orchestration",
+      "Payment reconciliation across multiple processors, currencies, and settlement windows is done manually in spreadsheets, creating errors and delays in financial reporting",
+      "Legacy core banking integrations are slow, poorly documented, and fragile — making it expensive to add new products or distribution channels",
+      "Fraud detection relies on static rule sets that generate too many false positives, damaging customer experience without materially improving loss rates",
+      "Regulatory reporting (FINTRAC, OSFI, provincial securities regulators) is manually assembled from multiple data sources, consuming compliance team capacity and introducing risk",
     ],
     solutions: [
       {
-        icon: "📋",
-        title: "Patient Portal & Booking",
+        icon: "🔐",
+        title: "KYC/AML Onboarding Workflows",
         description:
-          "Self-service appointment booking, pre-visit intake forms, secure messaging, and lab result delivery — reducing inbound call volume by 30–50% in most deployments.",
+          "Automated identity verification, document collection, sanctions screening, and risk scoring — integrated with providers like Persona, Jumio, or Flinks to balance compliance with conversion.",
       },
       {
-        icon: "🔗",
-        title: "EHR Integration Middleware",
+        icon: "💳",
+        title: "Payment Processing & Ledger",
         description:
-          "HL7 v2 and FHIR R4 integration layers that connect your existing EHR to labs, pharmacies, referral networks, and internal tools without replacing your core system.",
+          "Multi-processor payment orchestration (Stripe, Moneris, Bambora), immutable double-entry ledger, multi-currency support, and automated reconciliation pipelines.",
+      },
+      {
+        icon: "📈",
+        title: "Wealth & Portfolio Dashboard",
+        description:
+          "Account aggregation, portfolio performance analytics, tax reporting tools, and client-facing portals built for RIAs, robo-advisors, and hybrid wealth platforms.",
       },
       {
         icon: "🤖",
-        title: "Clinical Decision Support",
+        title: "Lending & Underwriting Automation",
         description:
-          "AI-assisted screening flags, risk stratification models, and evidence-based recommendation engines embedded directly into clinical workflows.",
+          "Credit decision engines, bureau integration (Equifax, TransUnion), cash flow underwriting using open banking data, and loan origination system APIs.",
       },
       {
         icon: "📊",
-        title: "Operational Analytics Dashboards",
+        title: "Regulatory Reporting Automation",
         description:
-          "Real-time visibility into utilization, wait times, no-show rates, and revenue cycle performance — giving administrators the data to act, not just observe.",
+          "Automated FINTRAC STR/LCTR generation, OSFI data submission pipelines, and audit-ready transaction logs — replacing manual compliance report assembly.",
       },
       {
-        icon: "💊",
-        title: "Prescription & Medication Management",
+        icon: "🛡️",
+        title: "Fraud Detection & Risk Scoring",
         description:
-          "Digital prescription workflows, drug interaction checks, and refill management systems that reduce prescribing errors and streamline pharmacy communication.",
-      },
-      {
-        icon: "📱",
-        title: "Remote Patient Monitoring",
-        description:
-          "iOS and Android apps with Bluetooth device integration, symptom tracking, and automated alert escalation for chronic disease management programs.",
+          "ML-based transaction risk scoring, device fingerprinting, velocity checks, and configurable rule engines that reduce false positive rates while improving fraud catch rates.",
       },
     ],
     caseHighlights: [
-      { stat: "8–12 wks", label: "Typical timeline to launch a production patient portal" },
-      { stat: "100%", label: "PIPEDA-compliant architecture on every healthcare engagement" },
-      { stat: "HL7 & FHIR", label: "EHR integration standards supported across major platforms" },
-      { stat: "2–3 wks", label: "Discovery sprint covering compliance, EHR audit, and user research" },
+      { stat: "6 weeks", label: "Time to launch a FINTRAC-compliant transaction monitoring module" },
+      { stat: "SOC 2-ready", label: "Architecture built to SOC 2-compatible standards from day one" },
+      { stat: "PCI-scoped", label: "Payment flows designed to minimize PCI DSS scope by default" },
+      { stat: "100%", label: "IP and source code owned by you from the first commit" },
     ],
     whoWeServe: [
-      "Primary care and family medicine practices looking to reduce administrative overhead",
-      "Specialty clinics (orthopedics, dermatology, mental health) digitizing referral and intake workflows",
-      "Digital health startups building consumer or B2B health applications",
-      "Health networks and hospital systems rolling out patient-facing digital services",
-      "Medical device companies building companion software for connected hardware",
+      "FinTech startups building payment, lending, or investment products for Canadian or US markets",
+      "Credit unions and alternative lenders digitizing origination and servicing workflows",
+      "Accounting and bookkeeping SaaS companies building financial automation features",
+      "Wealth management firms building client-facing portals and reporting dashboards",
+      "Financial data companies building aggregation, enrichment, or analytics platforms",
     ],
     relatedServices: [
-      "mvp-development",
       "saas-development",
+      "mvp-development",
       "ai-consulting",
-      "ios-development",
-      "android-development",
+      "process-automation",
     ],
     faq: [
       {
-        q: "How do you handle PIPEDA and provincial health privacy requirements?",
-        a: "Privacy compliance is an architecture decision, not an afterthought. We design data flows, storage, and access controls to meet PIPEDA and applicable provincial acts (PHIPA in Ontario, PIPA in BC/Alberta) from day one. We also document our privacy-by-design decisions so your compliance team has a clear audit trail.",
+        q: "How do you approach PCI DSS compliance for payment processing?",
+        a: "We architect payment flows to minimize PCI scope — typically using tokenization and hosted fields from your payment processor so cardholder data never touches your servers. For clients who need to store or process card data directly, we can design and document a PCI DSS-compliant architecture, though formal QSA certification is outside our scope.",
       },
       {
-        q: "Can you integrate with our existing EHR system?",
-        a: "Yes. We have direct experience integrating with OSCAR, TELUS PS Suite, Epic, and several provincial systems via HL7 v2 and FHIR R4. Integration complexity depends on what APIs or message feeds your EHR vendor exposes — we assess this in discovery before committing to a timeline.",
+        q: "Can you help us meet FINTRAC obligations?",
+        a: "Yes. We build transaction monitoring, suspicious transaction reporting workflows, and large cash transaction logging that align with FINTRAC's current guidance. We work alongside your compliance counsel — we handle the technical implementation, your legal team owns the regulatory interpretation.",
       },
       {
-        q: "Do you build regulated medical device software?",
-        a: "We can build software that accompanies or controls medical devices, but Health Canada's SaMD (Software as a Medical Device) classification requires a specific quality management approach. We are experienced in these requirements and will advise on whether your product needs a Class I–IV regulatory strategy.",
+        q: "Do you have experience with Canadian open banking integrations?",
+        a: "Yes. We have integrated with Flinks, Plaid (for US), and direct institution APIs for cash flow analysis and account verification. As Canada's open banking framework matures, we are tracking the regulatory timeline and building our integration patterns accordingly.",
       },
       {
-        q: "How long does a typical healthcare software project take?",
-        a: "A focused patient portal or scheduling system typically launches in 8–12 weeks. EHR integration middleware with multiple data sources takes 12–20 weeks depending on API maturity. AI-assisted clinical tools require an additional data and model validation phase, typically adding 4–8 weeks.",
+        q: "What security standards do you build to?",
+        a: "We build financial software to SOC 2 Type II-compatible standards: encryption at rest and in transit, comprehensive access logging, role-based access control, penetration testing prior to launch, and documented incident response procedures. For clients pursuing formal SOC 2 certification, we provide the technical documentation their auditors will need.",
       },
     ],
   },
 
   {
-    slug: "legal-professional-services",
+    slug: "professional-services",
     title: "Legal & Professional Services",
     icon: "⚖️",
     tagline: "Practice management and client delivery software built for the billing model and risk profile of professional firms.",
@@ -237,6 +235,202 @@ export const industriesData: IndustryData[] = [
   },
 
   {
+    slug: "hospitality-tourism",
+    title: "Hospitality & Tourism",
+    icon: "🏨",
+    tagline: "Guest experience and operations software that fills rooms, reduces friction, and drives repeat visits.",
+    heroTitle: "Hospitality & Tourism Software — Technology That Earns Five-Star Reviews",
+    heroSub:
+      "We build reservation platforms, guest communication tools, property management integrations, and operator dashboards for hotels, resorts, tour operators, and hospitality groups.",
+    metaTitle: "Hospitality & Tourism Software Development Canada",
+    metaDescription:
+      "Custom hospitality and tourism software. Reservation systems, guest portals, PMS integrations, and tour booking platforms. Book a free strategy call.",
+    overview:
+      "The hospitality industry delivers its product one guest experience at a time. Every friction point in the booking process, every missed housekeeping request, every front desk delay, and every impersonal piece of communication is a review waiting to happen. Technology in hospitality has one job: make the guest experience feel effortless while making the operation run efficiently enough to sustain the margins needed to invest in that experience.\n\nAudax Ventures builds hospitality technology for operators who understand this clearly. We have built direct booking engines for boutique hotels that wanted to reduce OTA commission dependency, mobile check-in and digital key systems for properties trying to eliminate front desk queues, and tour booking platforms for operators selling complex multi-day itineraries with variable capacity and dynamic pricing. We have also built the back-office systems — housekeeping management, maintenance request tracking, staff scheduling — that are invisible to guests but essential to the operation.\n\nThe hospitality sector is also navigating a significant shift in guest expectations. Travellers increasingly expect the same digital fluency from a boutique hotel that they get from a technology company. Contactless check-in, in-stay messaging, personalized recommendations, and digital concierge services are no longer differentiators — they are table stakes for properties competing in the upper-mid and luxury segments. We build these capabilities in a way that feels native to your brand, not like a third-party widget bolted onto your website.",
+    challenges: [
+      "OTA dependency is eroding margins — direct booking conversion is low because the property website and booking engine cannot compete with the OTA user experience",
+      "Guest communication before and during the stay happens through fragmented channels (email, phone, WhatsApp, in-person) with no unified record",
+      "Housekeeping and maintenance coordination is done by radio and paper, creating delays, missed rooms, and no accountability trail",
+      "Revenue management relies on manual rate adjustments or expensive RMS software that doesn't reflect the property's actual competitive set",
+      "Tour and activity booking involves complex capacity rules, guide assignment, equipment allocation, and weather-dependent scheduling that generic booking tools cannot handle",
+    ],
+    solutions: [
+      {
+        icon: "🏨",
+        title: "Direct Booking Engine",
+        description:
+          "High-converting, mobile-optimized booking engine with real-time availability, dynamic pricing, package upsells, and loyalty member rates — integrated directly into your website.",
+      },
+      {
+        icon: "📱",
+        title: "Mobile Check-In & Digital Key",
+        description:
+          "Pre-arrival registration, ID verification, digital key provisioning (ASSA ABLOY, Dormakaba), and post-stay checkout — eliminating front desk queues for enrolled guests.",
+      },
+      {
+        icon: "💬",
+        title: "Unified Guest Messaging",
+        description:
+          "Centralized inbox aggregating SMS, email, WhatsApp, and in-app messages from guests — with automated pre-arrival sequences, in-stay request handling, and post-stay review prompts.",
+      },
+      {
+        icon: "🗓️",
+        title: "Tour & Activity Booking Platform",
+        description:
+          "Complex tour scheduling with capacity management, guide assignment, equipment inventory, pickup logistics, weather policy automation, and B2B agent access.",
+      },
+      {
+        icon: "🧹",
+        title: "Housekeeping & Maintenance Operations",
+        description:
+          "Room assignment and task management for housekeeping teams, maintenance request intake from guests or staff, priority routing, and completion reporting for management.",
+      },
+      {
+        icon: "📊",
+        title: "Revenue & Occupancy Dashboard",
+        description:
+          "Pickup reports, pace-to-budget analytics, competitive rate monitoring, and channel performance breakdowns — giving revenue managers the data to act on every day.",
+      },
+    ],
+    caseHighlights: [
+      { stat: "6 weeks", label: "Time to build and launch a boutique hotel guest portal" },
+      { stat: "PMS-integrated", label: "Works with Opera, Mews, Cloudbeds, and major PMS platforms" },
+      { stat: "Mobile-first", label: "Every guest-facing tool optimized for smartphones from the ground up" },
+      { stat: "100%", label: "Code and IP ownership transferred to you at project completion" },
+    ],
+    whoWeServe: [
+      "Boutique hotels and independent properties seeking to reduce OTA commission dependency",
+      "Resort and lodge operators managing complex activity and amenity booking",
+      "Tour operators offering multi-day itineraries with dynamic capacity and logistics",
+      "Hospitality management groups overseeing multi-property portfolios",
+      "Vacation rental operators and property management companies managing distributed inventory",
+    ],
+    relatedServices: [
+      "website-development",
+      "ecommerce-development",
+      "crm-systems",
+      "process-automation",
+    ],
+    faq: [
+      {
+        q: "Can you integrate with our Property Management System (PMS)?",
+        a: "Yes. We have integrated with Opera, Mews, Cloudbeds, and several smaller PMS platforms via their APIs. Availability, rates, and reservation data flow bidirectionally so your PMS remains the system of record. We assess API maturity during discovery.",
+      },
+      {
+        q: "Can your booking engine compete with OTA conversion rates?",
+        a: "With the right design, price parity policy, and incentives (loyalty points, exclusive packages, complimentary add-ons), direct booking engines can and do outperform OTA conversion for warm traffic. We build conversion-optimized flows based on hospitality-specific UX research.",
+      },
+      {
+        q: "How do you handle multi-language and multi-currency requirements for international guests?",
+        a: "Multi-locale support is a standard feature of our hospitality builds. We implement next-intl for Next.js applications with automatic language detection, and integrate with payment processors that support multi-currency settlement and display.",
+      },
+      {
+        q: "What about integration with channel managers like SiteMinder or Cloudbeds?",
+        a: "Yes. Channel manager integration is a standard requirement for any property with OTA distribution. We connect to SiteMinder, Cloudbeds, and others via their APIs to ensure inventory and rate parity across all channels.",
+      },
+    ],
+  },
+
+  // ─── OTHER INDUSTRIES ───────────────────────────────────────────────────────
+  {
+    slug: "healthcare-medical",
+    title: "Healthcare & Medical",
+    icon: "🏥",
+    tagline: "Clinical-grade software that improves patient outcomes and removes administrative drag from care teams.",
+    heroTitle: "Software Built for Healthcare — Where Compliance Meets Clinical Efficiency",
+    heroSub:
+      "We build PIPEDA-compliant, HL7/FHIR-aware digital health tools for clinics, health networks, and medical device companies — from patient portals to AI-assisted diagnostics.",
+    metaTitle: "Healthcare Software Development Canada",
+    metaDescription:
+      "Custom healthcare and medical software development in Canada. PIPEDA-compliant patient portals, EHR integrations, scheduling systems, and clinical decision tools. Book a free call.",
+    overview:
+      "Healthcare runs on some of the most fragmented, outdated software of any industry — even though it's one of the most human-centred. Clinics juggle EHR systems that don't talk to each other, paper referral chains, and manual billing that eats up hours that should go to patients. We build software that untangles that, purpose-built for how Canadian healthcare actually runs, with privacy and compliance built in from day one — not bolted on after.\n\nOur healthcare clients range from single-location family practices to multi-site specialty networks and health-tech startups bringing new diagnostics to market. We know the difference between a patient-facing app that has to meet PIPEDA and a clinical tool that needs to integrate cleanly with a system like Epic or OSCAR — getting that right the first time avoids the costly rebuilds that slow less experienced teams down.\n\nEvery feature we build earns its place by improving something measurable: fewer no-shows through smarter scheduling, less admin work through automated documentation, faster referrals through cleaner data exchange. We build for patient experience and clinical throughput — not because something is technically interesting to us.",
+    challenges: [
+      "EHR fragmentation forces staff to re-enter data across multiple disconnected systems, creating errors and consuming hours of administrative time per day",
+      "Manual appointment scheduling and paper-based referral workflows create bottlenecks that delay care and inflate overhead costs",
+      "Compliance requirements (PIPEDA, provincial health privacy acts) make it difficult to move quickly without inadvertently introducing risk",
+      "Patient communication still relies on phone and fax in most practices, generating no-shows, missed follow-ups, and poor engagement",
+      "Reporting and utilization data is locked in siloed systems, making it nearly impossible to identify operational inefficiencies or demonstrate outcomes to funders",
+    ],
+    solutions: [
+      {
+        icon: "📋",
+        title: "Patient Portal & Booking",
+        description:
+          "Self-service appointment booking, pre-visit intake forms, secure messaging, and lab result delivery — reducing inbound call volume by 30–50% in most deployments.",
+      },
+      {
+        icon: "🔗",
+        title: "EHR Integration Middleware",
+        description:
+          "HL7 v2 and FHIR R4 integration layers that connect your existing EHR to labs, pharmacies, referral networks, and internal tools without replacing your core system.",
+      },
+      {
+        icon: "🤖",
+        title: "Clinical Decision Support",
+        description:
+          "AI-assisted screening flags, risk stratification models, and evidence-based recommendation engines embedded directly into clinical workflows.",
+      },
+      {
+        icon: "📊",
+        title: "Operational Analytics Dashboards",
+        description:
+          "Real-time visibility into utilization, wait times, no-show rates, and revenue cycle performance — giving administrators the data to act, not just observe.",
+      },
+      {
+        icon: "💊",
+        title: "Prescription & Medication Management",
+        description:
+          "Digital prescription workflows, drug interaction checks, and refill management systems that reduce prescribing errors and streamline pharmacy communication.",
+      },
+      {
+        icon: "📱",
+        title: "Remote Patient Monitoring",
+        description:
+          "iOS and Android apps with Bluetooth device integration, symptom tracking, and automated alert escalation for chronic disease management programs.",
+      },
+    ],
+    caseHighlights: [
+      { stat: "8–12 wks", label: "Typical timeline to launch a production patient portal" },
+      { stat: "100%", label: "PIPEDA-compliant architecture on every healthcare engagement" },
+      { stat: "HL7 & FHIR", label: "EHR integration standards supported across major platforms" },
+      { stat: "2–3 wks", label: "Discovery sprint covering compliance, EHR audit, and user research" },
+    ],
+    whoWeServe: [
+      "Primary care and family medicine practices looking to reduce administrative overhead",
+      "Specialty clinics (orthopedics, dermatology, mental health) digitizing referral and intake workflows",
+      "Digital health startups building consumer or B2B health applications",
+      "Health networks and hospital systems rolling out patient-facing digital services",
+      "Medical device companies building companion software for connected hardware",
+    ],
+    relatedServices: [
+      "mvp-development",
+      "saas-development",
+      "ai-consulting",
+      "ios-development",
+      "android-development",
+    ],
+    faq: [
+      {
+        q: "How do you handle PIPEDA and provincial health privacy requirements?",
+        a: "Privacy compliance is an architecture decision, not an afterthought. We design data flows, storage, and access controls to meet PIPEDA and applicable provincial acts (PHIPA in Ontario, PIPA in BC/Alberta) from day one. We also document our privacy-by-design decisions so your compliance team has a clear audit trail.",
+      },
+      {
+        q: "Can you integrate with our existing EHR system?",
+        a: "Yes. We have direct experience integrating with OSCAR, TELUS PS Suite, Epic, and several provincial systems via HL7 v2 and FHIR R4. Integration complexity depends on what APIs or message feeds your EHR vendor exposes — we assess this in discovery before committing to a timeline.",
+      },
+      {
+        q: "Do you build regulated medical device software?",
+        a: "We can build software that accompanies or controls medical devices, but Health Canada's SaMD (Software as a Medical Device) classification requires a specific quality management approach. We are experienced in these requirements and will advise on whether your product needs a Class I–IV regulatory strategy.",
+      },
+      {
+        q: "How long does a typical healthcare software project take?",
+        a: "A focused patient portal or scheduling system typically launches in 8–12 weeks. EHR integration middleware with multiple data sources takes 12–20 weeks depending on API maturity. AI-assisted clinical tools require an additional data and model validation phase, typically adding 4–8 weeks.",
+      },
+    ],
+  },
+
+  {
     slug: "real-estate-construction",
     title: "Real Estate & Construction",
     icon: "🏗️",
@@ -329,104 +523,6 @@ export const industriesData: IndustryData[] = [
       {
         q: "What about data security given the sensitive financial and legal information involved?",
         a: "All platforms we build use role-based access control so that subcontractors see only their own scopes, lenders see only financial reporting, and internal teams have full access. Data is encrypted at rest and in transit, and we can support SSO integration with your identity provider.",
-      },
-    ],
-  },
-
-  // ─── OTHER INDUSTRIES ───────────────────────────────────────────────────────
-  {
-    slug: "fintech-finance",
-    title: "FinTech & Finance",
-    icon: "💳",
-    tagline: "Compliant, secure financial software that moves at the speed of modern capital markets.",
-    heroTitle: "FinTech Software Development — Regulatory-Grade Builds Without the Big-Bank Timeline",
-    heroSub:
-      "We build payment platforms, lending tools, wealth management dashboards, and financial data pipelines that meet FINTRAC, PCI DSS, and SOC 2 requirements without sacrificing speed to market.",
-    metaTitle: "FinTech Software Development Canada",
-    metaDescription:
-      "Custom FinTech and financial software development in Canada. Payment platforms, lending tools, wealth dashboards, and compliance-ready architectures. Book a free call.",
-    overview:
-      "The financial services industry is simultaneously one of the most regulated and one of the most rapidly disrupted sectors in the economy. Incumbents move slowly because compliance risk is real; challengers move fast and sometimes discover that risk the hard way. Audax Ventures occupies the middle ground: we build financial software at startup speed with the architectural discipline that regulated environments demand.\n\nOur FinTech clients include payment processors, alternative lenders, wealth management platforms, accounting automation startups, and financial data aggregators. Across these engagements, we have developed deep familiarity with FINTRAC's AML/KYC obligations, PCI DSS payment card standards, OSC registration and reporting requirements, and the open banking landscape in Canada. We bring this regulatory context to every architecture decision — not as a compliance checkbox, but as a competitive differentiator.\n\nThe financial software we build is also held to a higher standard for reliability and auditability. Every transaction must be traceable. Every access event must be logged. Every integration with a payment processor or bank must be tested against realistic failure scenarios. We enforce these standards through code review, automated testing, and architecture review — not through hope.",
-    challenges: [
-      "AML/KYC onboarding friction drives customer abandonment before the first transaction, but reducing friction without cutting compliance corners requires careful orchestration",
-      "Payment reconciliation across multiple processors, currencies, and settlement windows is done manually in spreadsheets, creating errors and delays in financial reporting",
-      "Legacy core banking integrations are slow, poorly documented, and fragile — making it expensive to add new products or distribution channels",
-      "Fraud detection relies on static rule sets that generate too many false positives, damaging customer experience without materially improving loss rates",
-      "Regulatory reporting (FINTRAC, OSFI, provincial securities regulators) is manually assembled from multiple data sources, consuming compliance team capacity and introducing risk",
-    ],
-    solutions: [
-      {
-        icon: "🔐",
-        title: "KYC/AML Onboarding Workflows",
-        description:
-          "Automated identity verification, document collection, sanctions screening, and risk scoring — integrated with providers like Persona, Jumio, or Flinks to balance compliance with conversion.",
-      },
-      {
-        icon: "💳",
-        title: "Payment Processing & Ledger",
-        description:
-          "Multi-processor payment orchestration (Stripe, Moneris, Bambora), immutable double-entry ledger, multi-currency support, and automated reconciliation pipelines.",
-      },
-      {
-        icon: "📈",
-        title: "Wealth & Portfolio Dashboard",
-        description:
-          "Account aggregation, portfolio performance analytics, tax reporting tools, and client-facing portals built for RIAs, robo-advisors, and hybrid wealth platforms.",
-      },
-      {
-        icon: "🤖",
-        title: "Lending & Underwriting Automation",
-        description:
-          "Credit decision engines, bureau integration (Equifax, TransUnion), cash flow underwriting using open banking data, and loan origination system APIs.",
-      },
-      {
-        icon: "📊",
-        title: "Regulatory Reporting Automation",
-        description:
-          "Automated FINTRAC STR/LCTR generation, OSFI data submission pipelines, and audit-ready transaction logs — replacing manual compliance report assembly.",
-      },
-      {
-        icon: "🛡️",
-        title: "Fraud Detection & Risk Scoring",
-        description:
-          "ML-based transaction risk scoring, device fingerprinting, velocity checks, and configurable rule engines that reduce false positive rates while improving fraud catch rates.",
-      },
-    ],
-    caseHighlights: [
-      { stat: "6 weeks", label: "Time to launch a FINTRAC-compliant transaction monitoring module" },
-      { stat: "SOC 2-ready", label: "Architecture built to SOC 2-compatible standards from day one" },
-      { stat: "PCI-scoped", label: "Payment flows designed to minimize PCI DSS scope by default" },
-      { stat: "100%", label: "IP and source code owned by you from the first commit" },
-    ],
-    whoWeServe: [
-      "FinTech startups building payment, lending, or investment products for Canadian or US markets",
-      "Credit unions and alternative lenders digitizing origination and servicing workflows",
-      "Accounting and bookkeeping SaaS companies building financial automation features",
-      "Wealth management firms building client-facing portals and reporting dashboards",
-      "Financial data companies building aggregation, enrichment, or analytics platforms",
-    ],
-    relatedServices: [
-      "saas-development",
-      "mvp-development",
-      "ai-consulting",
-      "process-automation",
-    ],
-    faq: [
-      {
-        q: "How do you approach PCI DSS compliance for payment processing?",
-        a: "We architect payment flows to minimize PCI scope — typically using tokenization and hosted fields from your payment processor so cardholder data never touches your servers. For clients who need to store or process card data directly, we can design and document a PCI DSS-compliant architecture, though formal QSA certification is outside our scope.",
-      },
-      {
-        q: "Can you help us meet FINTRAC obligations?",
-        a: "Yes. We build transaction monitoring, suspicious transaction reporting workflows, and large cash transaction logging that align with FINTRAC's current guidance. We work alongside your compliance counsel — we handle the technical implementation, your legal team owns the regulatory interpretation.",
-      },
-      {
-        q: "Do you have experience with Canadian open banking integrations?",
-        a: "Yes. We have integrated with Flinks, Plaid (for US), and direct institution APIs for cash flow analysis and account verification. As Canada's open banking framework matures, we are tracking the regulatory timeline and building our integration patterns accordingly.",
-      },
-      {
-        q: "What security standards do you build to?",
-        a: "We build financial software to SOC 2 Type II-compatible standards: encryption at rest and in transit, comprehensive access logging, role-based access control, penetration testing prior to launch, and documented incident response procedures. For clients pursuing formal SOC 2 certification, we provide the technical documentation their auditors will need.",
       },
     ],
   },
@@ -621,103 +717,6 @@ export const industriesData: IndustryData[] = [
       {
         q: "How scalable are the platforms you build?",
         a: "We build on horizontally scalable cloud infrastructure (AWS, Vercel, GCP) designed to handle synchronous load spikes — the academic equivalent of Black Friday. We load test to expected peak concurrency before launch and provide monitoring dashboards so you see performance in real time.",
-      },
-    ],
-  },
-
-  {
-    slug: "hospitality-tourism",
-    title: "Hospitality & Tourism",
-    icon: "🏨",
-    tagline: "Guest experience and operations software that fills rooms, reduces friction, and drives repeat visits.",
-    heroTitle: "Hospitality & Tourism Software — Technology That Earns Five-Star Reviews",
-    heroSub:
-      "We build reservation platforms, guest communication tools, property management integrations, and operator dashboards for hotels, resorts, tour operators, and hospitality groups.",
-    metaTitle: "Hospitality & Tourism Software Development Canada",
-    metaDescription:
-      "Custom hospitality and tourism software. Reservation systems, guest portals, PMS integrations, and tour booking platforms. Book a free strategy call.",
-    overview:
-      "The hospitality industry delivers its product one guest experience at a time. Every friction point in the booking process, every missed housekeeping request, every front desk delay, and every impersonal piece of communication is a review waiting to happen. Technology in hospitality has one job: make the guest experience feel effortless while making the operation run efficiently enough to sustain the margins needed to invest in that experience.\n\nAudax Ventures builds hospitality technology for operators who understand this clearly. We have built direct booking engines for boutique hotels that wanted to reduce OTA commission dependency, mobile check-in and digital key systems for properties trying to eliminate front desk queues, and tour booking platforms for operators selling complex multi-day itineraries with variable capacity and dynamic pricing. We have also built the back-office systems — housekeeping management, maintenance request tracking, staff scheduling — that are invisible to guests but essential to the operation.\n\nThe hospitality sector is also navigating a significant shift in guest expectations. Travellers increasingly expect the same digital fluency from a boutique hotel that they get from a technology company. Contactless check-in, in-stay messaging, personalized recommendations, and digital concierge services are no longer differentiators — they are table stakes for properties competing in the upper-mid and luxury segments. We build these capabilities in a way that feels native to your brand, not like a third-party widget bolted onto your website.",
-    challenges: [
-      "OTA dependency is eroding margins — direct booking conversion is low because the property website and booking engine cannot compete with the OTA user experience",
-      "Guest communication before and during the stay happens through fragmented channels (email, phone, WhatsApp, in-person) with no unified record",
-      "Housekeeping and maintenance coordination is done by radio and paper, creating delays, missed rooms, and no accountability trail",
-      "Revenue management relies on manual rate adjustments or expensive RMS software that doesn't reflect the property's actual competitive set",
-      "Tour and activity booking involves complex capacity rules, guide assignment, equipment allocation, and weather-dependent scheduling that generic booking tools cannot handle",
-    ],
-    solutions: [
-      {
-        icon: "🏨",
-        title: "Direct Booking Engine",
-        description:
-          "High-converting, mobile-optimized booking engine with real-time availability, dynamic pricing, package upsells, and loyalty member rates — integrated directly into your website.",
-      },
-      {
-        icon: "📱",
-        title: "Mobile Check-In & Digital Key",
-        description:
-          "Pre-arrival registration, ID verification, digital key provisioning (ASSA ABLOY, Dormakaba), and post-stay checkout — eliminating front desk queues for enrolled guests.",
-      },
-      {
-        icon: "💬",
-        title: "Unified Guest Messaging",
-        description:
-          "Centralized inbox aggregating SMS, email, WhatsApp, and in-app messages from guests — with automated pre-arrival sequences, in-stay request handling, and post-stay review prompts.",
-      },
-      {
-        icon: "🗓️",
-        title: "Tour & Activity Booking Platform",
-        description:
-          "Complex tour scheduling with capacity management, guide assignment, equipment inventory, pickup logistics, weather policy automation, and B2B agent access.",
-      },
-      {
-        icon: "🧹",
-        title: "Housekeeping & Maintenance Operations",
-        description:
-          "Room assignment and task management for housekeeping teams, maintenance request intake from guests or staff, priority routing, and completion reporting for management.",
-      },
-      {
-        icon: "📊",
-        title: "Revenue & Occupancy Dashboard",
-        description:
-          "Pickup reports, pace-to-budget analytics, competitive rate monitoring, and channel performance breakdowns — giving revenue managers the data to act on every day.",
-      },
-    ],
-    caseHighlights: [
-      { stat: "6 weeks", label: "Time to build and launch a boutique hotel guest portal" },
-      { stat: "PMS-integrated", label: "Works with Opera, Mews, Cloudbeds, and major PMS platforms" },
-      { stat: "Mobile-first", label: "Every guest-facing tool optimized for smartphones from the ground up" },
-      { stat: "100%", label: "Code and IP ownership transferred to you at project completion" },
-    ],
-    whoWeServe: [
-      "Boutique hotels and independent properties seeking to reduce OTA commission dependency",
-      "Resort and lodge operators managing complex activity and amenity booking",
-      "Tour operators offering multi-day itineraries with dynamic capacity and logistics",
-      "Hospitality management groups overseeing multi-property portfolios",
-      "Vacation rental operators and property management companies managing distributed inventory",
-    ],
-    relatedServices: [
-      "website-development",
-      "ecommerce-development",
-      "crm-systems",
-      "process-automation",
-    ],
-    faq: [
-      {
-        q: "Can you integrate with our Property Management System (PMS)?",
-        a: "Yes. We have integrated with Opera, Mews, Cloudbeds, and several smaller PMS platforms via their APIs. Availability, rates, and reservation data flow bidirectionally so your PMS remains the system of record. We assess API maturity during discovery.",
-      },
-      {
-        q: "Can your booking engine compete with OTA conversion rates?",
-        a: "With the right design, price parity policy, and incentives (loyalty points, exclusive packages, complimentary add-ons), direct booking engines can and do outperform OTA conversion for warm traffic. We build conversion-optimized flows based on hospitality-specific UX research.",
-      },
-      {
-        q: "How do you handle multi-language and multi-currency requirements for international guests?",
-        a: "Multi-locale support is a standard feature of our hospitality builds. We implement next-intl for Next.js applications with automatic language detection, and integrate with payment processors that support multi-currency settlement and display.",
-      },
-      {
-        q: "What about integration with channel managers like SiteMinder or Cloudbeds?",
-        a: "Yes. Channel manager integration is a standard requirement for any property with OTA distribution. We connect to SiteMinder, Cloudbeds, and others via their APIs to ensure inventory and rate parity across all channels.",
       },
     ],
   },

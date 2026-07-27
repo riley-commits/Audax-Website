@@ -3,56 +3,50 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Search, SearchCheck, Box, Rocket, Flag, LineChart,
-  ChevronLeft, ChevronRight, CheckCircle2, Play,
+  Search, ClipboardCheck, Box, Rocket, LineChart, CheckCircle2,
 } from "lucide-react";
 
 const steps = [
   {
     icon: Search,
     title: "Discover",
-    description: "We learn your business, your data, and where AI can create real impact.",
-    checklist: ["Discovery workshops", "Stakeholder interviews", "Data & systems audit", "Opportunity mapping"],
+    accent: "#2563EB",
+    description: "We start by understanding your business, goals, and challenges. Through collaborative discussions, we uncover opportunities where technology, AI, and automation can create measurable business value.",
+    activities: ["Business Discovery", "Stakeholder Interviews", "Goal Alignment", "Opportunity Mapping"],
   },
   {
-    icon: SearchCheck,
+    icon: ClipboardCheck,
     title: "Assess",
-    description: "We assess feasibility, risk, and ROI before committing to a direction.",
-    checklist: ["Feasibility & risk assessment", "ROI modeling", "Technical readiness review", "Prioritization"],
+    accent: "#4F46E5",
+    description: "Next, we evaluate your current processes, systems, and technology to identify inefficiencies, risks, and the highest-impact opportunities for improvement.",
+    activities: ["Process Review", "AI Assessment", "Technology Audit", "Gap Analysis"],
   },
   {
     icon: Box,
     title: "Design & Build",
-    description: "We design the right solution and build secure, scalable software that integrates seamlessly with your operations.",
-    checklist: ["Solution architecture", "Rapid prototyping", "Agile development", "Quality & security"],
+    accent: "#7C3AED",
+    description: "With a clear strategy in place, we design and develop the right solution, whether that's custom software, AI workflows, automation, or digital tools tailored to your business.",
+    activities: ["Solution Design", "Custom Software Development", "AI Integration", "User Testing"],
   },
   {
     icon: Rocket,
-    title: "Deploy",
-    description: "We deploy into production with the infrastructure and monitoring to support real usage.",
-    checklist: ["Production deployment", "Monitoring & alerting", "Security hardening", "Team handoff"],
-  },
-  {
-    icon: Flag,
     title: "Launch",
-    description: "We launch to your team and users, with training and support built in.",
-    checklist: ["User onboarding", "Change management", "Launch communications", "Support readiness"],
+    accent: "#0891B2",
+    description: "We implement the solution with minimal disruption, ensuring your team is prepared, your systems are configured correctly, and everything is ready for successful adoption.",
+    activities: ["System Deployment", "Team Training", "Go-Live Support", "Performance Monitoring"],
   },
   {
     icon: LineChart,
     title: "Optimize",
-    description: "We measure results and continuously improve based on real-world data.",
-    checklist: ["Performance monitoring", "Continuous iteration", "ROI tracking", "Quarterly strategy reviews"],
+    accent: "#10B981",
+    description: "Technology should continuously evolve alongside your business. We provide ongoing improvements, support, and strategic guidance to maximize long-term value and ROI.",
+    activities: ["Performance Review", "Continuous Improvement", "Feature Enhancements", "Strategic Advisory"],
   },
 ];
 
 export default function HomeProcessSection() {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(0);
   const step = steps[active];
-
-  const go = (dir: -1 | 1) => {
-    setActive((prev) => Math.min(steps.length - 1, Math.max(0, prev + dir)));
-  };
 
   return (
     <section className="relative py-24 bg-[#0B1220] overflow-hidden">
@@ -69,126 +63,111 @@ export default function HomeProcessSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[340px_1fr] gap-10 lg:gap-16 items-start mb-14">
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-xs tracking-widest uppercase text-[#60A5FA] font-semibold mb-4">Our Approach</p>
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-white mb-4">
-              A Clear Path From Strategy to Impact
-            </h2>
-            <p className="text-white/50 text-sm leading-relaxed">
-              Scroll or drag to explore how we take you from idea to real-world results.
-            </p>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
+        >
+          <p className="text-xs tracking-widest uppercase text-[#60A5FA] font-semibold mb-4">Our Approach</p>
+          <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-white mb-4">
+            A Clear Path From Strategy to Impact
+          </h2>
+          <p className="text-white/50 text-sm leading-relaxed max-w-xl">
+            Click a stage to see how we take you from idea to real-world results.
+          </p>
+        </motion.div>
 
-          {/* Stepper */}
-          <div className="w-full">
-            <div className="flex items-center justify-between gap-1 mb-6">
-              {steps.map((s, i) => (
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6 lg:gap-10 items-start">
+
+          {/* ── Vertical step list ── */}
+          <div className="flex flex-col gap-3">
+            {steps.map((s, i) => {
+              const isActive = i === active;
+              return (
                 <button
                   key={s.title}
                   onClick={() => setActive(i)}
-                  className="group flex flex-col items-center gap-2 flex-1"
+                  className={`group flex items-center gap-4 rounded-2xl p-4 text-left transition-all duration-250 ${
+                    isActive ? "bg-white/10 border border-white/15" : "border border-transparent hover:bg-white/5"
+                  }`}
                 >
                   <div
-                    className={`w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      i === active
-                        ? "bg-gradient-to-br from-[#7C3AED] to-[#2563EB] text-white scale-110 shadow-lg shadow-purple-900/40"
-                        : i < active
-                        ? "bg-white/15 text-white"
-                        : "bg-white/5 text-white/30 group-hover:bg-white/10"
-                    }`}
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                    style={{
+                      backgroundColor: isActive ? s.accent : "rgba(255,255,255,0.06)",
+                      boxShadow: isActive ? `0 0 24px ${s.accent}55` : "none",
+                    }}
                   >
-                    <s.icon size={17} />
+                    <s.icon size={28} className={isActive ? "text-white" : "text-white/40"} />
                   </div>
-                  <span className={`text-[10px] text-center leading-tight ${i === active ? "text-white font-semibold" : "text-white/35"}`}>
-                    {s.title}
-                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-[11px] font-mono tabular-nums mb-0.5 ${isActive ? "text-white/60" : "text-white/25"}`}>
+                      0{i + 1}
+                    </p>
+                    <p className={`font-[var(--font-outfit)] font-extrabold text-xl transition-colors ${isActive ? "text-white" : "text-white/40 group-hover:text-white/70"}`}>
+                      {s.title}
+                    </p>
+                  </div>
                 </button>
-              ))}
-            </div>
-
-            <div className="flex items-center justify-between">
-              <span className="text-white/40 text-xs font-mono tabular-nums">
-                {String(active + 1).padStart(2, "0")} / {String(steps.length).padStart(2, "0")}
-              </span>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => go(-1)}
-                  disabled={active === 0}
-                  aria-label="Previous step"
-                  className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-                >
-                  <ChevronLeft size={15} />
-                </button>
-                <button
-                  onClick={() => go(1)}
-                  disabled={active === steps.length - 1}
-                  aria-label="Next step"
-                  className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-white/10 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-                >
-                  <ChevronRight size={15} />
-                </button>
-              </div>
-            </div>
+              );
+            })}
           </div>
-        </div>
 
-        {/* Active step detail card */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white rounded-3xl shadow-2xl p-7 sm:p-9 grid md:grid-cols-[1fr_320px] gap-8 items-center"
-          >
-            <div>
-              <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#0F172A] mb-3">
-                {step.title}
-              </h3>
-              <p className="text-[#6B7280] leading-relaxed mb-6">{step.description}</p>
-              <div className="grid sm:grid-cols-2 gap-2.5">
-                {step.checklist.map((c) => (
-                  <div key={c} className="flex items-center gap-2 text-sm text-[#374151]">
-                    <CheckCircle2 size={14} className="text-[#7C3AED] flex-shrink-0" />
-                    {c}
+          {/* ── Detail panel ── */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-3xl shadow-2xl p-7 sm:p-10 grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-10 items-center"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: step.accent }}
+                  >
+                    <step.icon size={22} className="text-white" />
                   </div>
-                ))}
+                  <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A]">
+                    {step.title}
+                  </h3>
+                </div>
+                <p className="text-[#6B7280] leading-relaxed mb-7">{step.description}</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-3">Key Activities</p>
+                <div className="grid sm:grid-cols-2 gap-2.5">
+                  {step.activities.map((a) => (
+                    <div key={a} className="flex items-center gap-2 text-sm text-[#374151]">
+                      <CheckCircle2 size={15} style={{ color: step.accent }} className="flex-shrink-0" />
+                      {a}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Decorative code + chart preview */}
-            <div className="relative hidden md:block">
-              <div className="bg-[#0B1220] rounded-2xl overflow-hidden shadow-xl">
-                <div className="flex items-center gap-1.5 px-3 py-2 bg-[#080D18]">
-                  <span className="w-2 h-2 rounded-full bg-red-500/60" />
-                  <span className="w-2 h-2 rounded-full bg-yellow-400/60" />
-                  <span className="w-2 h-2 rounded-full bg-green-500/60" />
-                </div>
-                <div className="p-3 font-mono text-[9px] leading-relaxed text-white/50">
-                  <p><span className="text-[#7C3AED]">function</span> <span className="text-[#60A5FA]">optimize</span>(data) {"{"}</p>
-                  <p className="pl-3">const result = ai.<span className="text-[#60A5FA]">predict</span>(data)</p>
-                  <p className="pl-3"><span className="text-[#7C3AED]">return</span> {"{"} result, score {"}"}</p>
-                  <p>{"}"}</p>
+              {/* Decorative icon graphic */}
+              <div
+                className="hidden lg:flex items-center justify-center rounded-3xl aspect-square relative overflow-hidden"
+                style={{ background: `linear-gradient(135deg, ${step.accent}22 0%, ${step.accent}08 100%)` }}
+              >
+                <div
+                  className="absolute inset-0 opacity-40"
+                  style={{ background: `radial-gradient(circle at 30% 30%, ${step.accent}33 0%, transparent 60%)` }}
+                />
+                <div
+                  className="relative w-28 h-28 rounded-3xl flex items-center justify-center"
+                  style={{ backgroundColor: step.accent }}
+                >
+                  <step.icon size={56} className="text-white" strokeWidth={1.5} />
                 </div>
               </div>
-              <button
-                aria-label="Play preview"
-                className="absolute inset-0 flex items-center justify-center group"
-              >
-                <span className="w-11 h-11 rounded-full bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <Play size={16} className="text-[#0F172A] ml-0.5" fill="currentColor" />
-                </span>
-              </button>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );

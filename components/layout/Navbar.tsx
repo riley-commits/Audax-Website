@@ -48,13 +48,6 @@ const resourceLinks = [
     stat: "Updated regularly",
   },
   {
-    label: "Case Studies",
-    href: "/work",
-    desc: "Real results from real engagements",
-    icon: "📊",
-    stat: "8+ case studies",
-  },
-  {
     label: "Guides",
     href: "/guides",
     desc: "In-depth guides for builders & buyers",
@@ -71,12 +64,12 @@ const resourceLinks = [
 ];
 
 const navLinks = [
-  { label: "About",     href: "/about",     kind: "link" as const },
-  { label: "Services",  href: "/services",  kind: "services" as const },
-  { label: "Products",  href: "/products",  kind: "link" as const },
-  { label: "Our Work",  href: "/work",      kind: "link" as const },
-  { label: "Resources", href: "/insights",  kind: "resources" as const },
-  { label: "Contact",   href: "/contact",   kind: "link" as const },
+  { label: "About",        href: "/about",     kind: "link" as const },
+  { label: "Services",     href: "/services",  kind: "services" as const },
+  { label: "Products",     href: "/products",  kind: "link" as const },
+  { label: "Resources",    href: "/insights",  kind: "resources" as const },
+  { label: "Case Studies", href: "/work",      kind: "link" as const },
+  { label: "Contact",      href: "/contact",   kind: "link" as const },
 ];
 
 // ── Shared sub-components ─────────────────────────────────────────────────────

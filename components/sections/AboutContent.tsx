@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 import {
   Target, Eye, Gem, Check, X, User, Code2,
   Flag, TrendingUp, Sparkles, Box, Rocket, ArrowRightLeft, Link2, Users, CheckCircle2,
+  Building2, Compass, Layers, RefreshCw, Settings, PackagePlus, Handshake,
 } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const heroStats = [
-  { icon: Users, value: "50+", label: "Organizations Advised" },
-  { icon: TrendingUp, value: "$25M+", label: "Projects Delivered" },
+  { icon: Users, value: "100+", label: "Organizations Worked With" },
   { icon: Box, value: "10+", label: "Industries Served" },
 ];
 
@@ -62,11 +62,34 @@ const timeline = [
 ];
 
 const trustedStats = [
-  { value: "50+", label: "Organizations Advised" },
-  { value: "$25M+", label: "Projects Delivered" },
+  { value: "100+", label: "Organizations Worked With" },
   { value: "10+", label: "Industries Served" },
   { value: "98%", label: "Client Retention Rate" },
   { value: "25+", label: "AI Initiatives Launched" },
+];
+
+const audiences = [
+  { icon: Rocket, title: "Early-Stage Founders", description: "Building an MVP, validating an idea, or bringing a new technology product to market." },
+  { icon: TrendingUp, title: "Growing Businesses", description: "Modernizing operations, replacing disconnected software, and implementing AI to improve efficiency and scale." },
+  { icon: Building2, title: "Established Organizations", description: "Developing enterprise AI strategies, building custom technology, and creating long-term digital transformation roadmaps." },
+];
+
+const engagementTypes = [
+  { icon: Compass, label: "Exploring your first AI initiative" },
+  { icon: Layers, label: "Building a custom software platform" },
+  { icon: RefreshCw, label: "Replacing legacy systems" },
+  { icon: Settings, label: "Modernizing business operations" },
+  { icon: PackagePlus, label: "Launching a new SaaS product" },
+  { icon: Handshake, label: "Looking for a long-term technology partner" },
+];
+
+const leadershipTeam = [
+  { name: "Joshua Zaporzan", title: "President", image: "/team/joshua-zaporzan.avif" },
+  { name: "Manoj Manghnani", title: "Director of Technology & AI", image: "/team/manoj-manghnani.png" },
+  { name: "Denise Zaporzan", title: "Director of Strategy", image: "/team/denise-zaporzan.png" },
+  { name: "Riley Peterson", title: "Business Development & Project Manager", image: "/team/riley-peterson.png" },
+  { name: "Lindsay Friesen", title: "Project Manager", image: "/team/lindsay-friesen.png" },
+  { name: "Lawson Yates", title: "Marketing Manager", image: "/team/lawson-yates.png" },
 ];
 
 // ── Main Component ─────────────────────────────────────────────────────────────
@@ -278,6 +301,79 @@ export default function AboutContent() {
         </div>
       </section>
 
+      {/* ── Who We Work With & Types of Engagements ── */}
+      <section className="py-20 bg-[#F8F9FA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 max-w-2xl"
+          >
+            <p className="text-xs tracking-widest uppercase text-[#2563EB] font-semibold mb-3">Who We Work With</p>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#0F172A] mb-4">
+              Built for Founders, Growing Teams &amp; Established Organizations
+            </h2>
+            <p className="text-[#6B7280] leading-relaxed">
+              We help organizations modernize operations, adopt AI, and build custom technology. We partner with founders, leadership teams, and growing organizations that are ready to improve how they operate through technology. While many of our clients are service-based and product-based businesses, our approach is industry-agnostic and tailored to each organization&apos;s unique goals and challenges.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {audiences.map((a, i) => (
+              <motion.div
+                key={a.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.08 }}
+                className="group bg-white rounded-3xl border border-gray-100 p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#2563EB]/10 flex items-center justify-center mb-5 group-hover:bg-[#2563EB] transition-colors duration-300">
+                  <a.icon size={20} className="text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <h3 className="font-[var(--font-outfit)] font-bold text-lg text-[#0F172A] mb-2">{a.title}</h3>
+                <p className="text-[#6B7280] text-sm leading-relaxed">{a.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative rounded-3xl overflow-hidden bg-[#0B1220] p-8 sm:p-12"
+          >
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: "radial-gradient(circle at 80% 10%, rgba(124,58,237,0.16) 0%, transparent 55%)" }}
+            />
+            <div className="relative">
+              <p className="text-xs tracking-widest uppercase text-[#60A5FA] font-semibold mb-3">Types of Engagements</p>
+              <h3 className="font-[var(--font-outfit)] font-bold text-xl sm:text-2xl text-white mb-8 max-w-lg">
+                Whether You&apos;re...
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                {engagementTypes.map((e) => (
+                  <div
+                    key={e.label}
+                    className="group flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#2563EB]/40 rounded-2xl px-4 py-3.5 transition-all duration-200"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#2563EB] transition-colors duration-200">
+                      <e.icon size={14} className="text-white" />
+                    </div>
+                    <span className="text-sm text-white/80 leading-snug">{e.label}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-white/50 text-sm max-w-xl">
+                ...Audax provides the strategy, execution, and ongoing partnership to help you move forward.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── How We're Different ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -385,12 +481,53 @@ export default function AboutContent() {
           <p className="text-center text-[10px] tracking-widest uppercase text-[#9CA3AF] font-semibold mb-10">
             Trusted by Innovative Organizations
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-8 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
             {trustedStats.map((s) => (
               <div key={s.label}>
                 <p className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#2563EB] mb-1">{s.value}</p>
                 <p className="text-[#6B7280] text-xs">{s.label}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Leadership Team ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-14 max-w-2xl"
+          >
+            <p className="text-xs tracking-widest uppercase text-[#2563EB] font-semibold mb-3">Our Team</p>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#0F172A]">
+              Meet the Leadership Team
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
+            {leadershipTeam.map((m, i) => (
+              <motion.div
+                key={m.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+              >
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] mb-4 bg-[#F8F9FA]">
+                  <Image
+                    src={m.image}
+                    alt={m.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 260px"
+                  />
+                </div>
+                <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-base leading-snug">{m.name}</h3>
+                <p className="text-[#6B7280] text-sm">{m.title}</p>
+              </motion.div>
             ))}
           </div>
         </div>

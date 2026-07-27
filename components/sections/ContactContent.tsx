@@ -3,38 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Mail, MapPin, Clock, CheckCircle2, ArrowRight, Phone, Calendar } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, ArrowRight, Calendar } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const contactCards = [
-  {
-    icon: Mail,
-    label: "Email Us",
-    value: "info@audaxventures.ca",
-    href: "mailto:info@audaxventures.ca",
-    sub: "We respond within one business day",
-  },
-  {
-    icon: Calendar,
-    label: "Book a Call",
-    value: "Free 30-min strategy call",
-    href: "https://calendly.com/audax-ventures/30min",
-    sub: "No pitch. No pressure. Just clarity.",
-    external: true,
-  },
-  {
-    icon: MapPin,
-    label: "Based In",
-    value: "Winnipeg, Manitoba",
-    href: null,
-    sub: "Canada 🇨🇦 — working in your timezone",
-  },
-];
-
 const coreServices = [
   "AI Leadership",
-  "Custom Software Development",
+  "Software Development",
   "Digital Operations",
 ];
 
@@ -54,13 +30,6 @@ const nextSteps = [
     title: "We send a clear proposal",
     body: "A scoped, fixed-price proposal within 48 hours of the call. No vague hourly estimates.",
   },
-];
-
-const trustPoints = [
-  { value: "50+",   label: "Projects shipped" },
-  { value: "1 day", label: "Avg. response time" },
-  { value: "100%",  label: "IP ownership — always" },
-  { value: "🇨🇦",   label: "Canadian team" },
 ];
 
 const inputClass =
@@ -167,60 +136,7 @@ export default function ContactContent() {
             >
               <Calendar size={15} /> Book a Free Strategy Call
             </Link>
-            <a
-              href="mailto:info@audaxventures.ca"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white/80 font-bold hover:bg-white/10 transition-colors"
-            >
-              <Mail size={15} /> info@audaxventures.ca
-            </a>
           </motion.div>
-        </div>
-      </section>
-
-      {/* ── Contact info cards ── */}
-      <section className="py-10 bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-5">
-            {contactCards.map((card, i) => {
-              const Icon = card.icon;
-              const inner = (
-                <div className={`group flex items-start gap-4 bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100 transition-all duration-200 ${card.href ? "hover:border-[#2E5F8A]/30 hover:shadow-md cursor-pointer" : ""}`}>
-                  <div className="w-10 h-10 rounded-xl bg-[#2E5F8A]/10 flex items-center justify-center flex-shrink-0">
-                    <Icon size={18} className="text-[#2E5F8A]" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#374151] mb-1">{card.label}</p>
-                    <p className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-0.5 group-hover:text-[#2E5F8A] transition-colors">{card.value}</p>
-                    <p className="text-xs text-[#9CA3AF]">{card.sub}</p>
-                  </div>
-                </div>
-              );
-              return card.href ? (
-                <motion.a
-                  key={card.label}
-                  href={card.href}
-                  target={card.external ? "_blank" : undefined}
-                  rel={card.external ? "noopener noreferrer" : undefined}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                >
-                  {inner}
-                </motion.a>
-              ) : (
-                <motion.div
-                  key={card.label}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                >
-                  {inner}
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
@@ -232,23 +148,20 @@ export default function ContactContent() {
             {/* ── Left: trust + next steps ── */}
             <div className="space-y-6">
 
-              {/* Trust stats */}
+              {/* Photo */}
               <motion.div
                 initial={{ opacity: 0, x: -16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="rounded-2xl p-6 text-white"
-                style={{ background: "linear-gradient(135deg, #0F172A 0%, #1A3A5C 100%)" }}
+                className="relative rounded-2xl overflow-hidden aspect-[4/3]"
               >
-                <p className="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-5">Why Audax</p>
-                <div className="grid grid-cols-2 gap-4">
-                  {trustPoints.map((t) => (
-                    <div key={t.label} className="text-center bg-white/6 rounded-xl py-4 px-2">
-                      <p className="font-[var(--font-outfit)] font-extrabold text-2xl text-white mb-1">{t.value}</p>
-                      <p className="text-white/45 text-xs leading-tight">{t.label}</p>
-                    </div>
-                  ))}
-                </div>
+                <Image
+                  src="/about/whiteboard-strategy.png"
+                  alt="Audax Ventures team working through a strategy session"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 90vw, 380px"
+                />
               </motion.div>
 
               {/* What happens next */}
@@ -292,7 +205,6 @@ export default function ContactContent() {
                 <div className="flex items-center gap-3">
                   {[
                     { href: "https://www.linkedin.com/company/audax-ventures-inc/", label: "LinkedIn", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> },
-                    { href: "https://twitter.com/audaxventures", label: "Twitter", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg> },
                     { href: "https://instagram.com/audax.ventures", label: "Instagram", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> },
                   ].map((s) => (
                     <a
@@ -488,7 +400,7 @@ export default function ContactContent() {
             {[
               { q: "How quickly will you respond?", a: "Within one business day. Usually the same day if you reach out in the morning." },
               { q: "Is the strategy call really free?", a: "Yes — no credit card, no commitment. It's a 30-minute conversation to see if we're the right fit for each other." },
-              { q: "What's the minimum project size?", a: "Our engagements typically start at $15,000–$25,000 CAD for a focused scope. We'll tell you upfront if your project is outside that range." },
+              { q: "What if I'm not sure exactly what I need yet?", a: "That's completely normal — most conversations start that way. Tell us what you're working on and we'll help you figure out the right starting point on our call." },
               { q: "Do you sign NDAs?", a: "Absolutely. We sign an NDA before any substantive discussion about your product or idea." },
             ].map((faq) => (
               <div key={faq.q} className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100">

@@ -14,7 +14,7 @@ export default function AboutPage() {
   return (
     <>
       <AboutContent />
-      <CTABanner />
+      <CTABanner subtext="Let's create an AI strategy and custom solution that drives real, measurable impact." />
     </>
   );
 }

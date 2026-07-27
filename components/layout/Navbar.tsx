@@ -95,23 +95,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
         {/* ── Logo ── */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link href="/" className="flex items-center group">
           <Image
-            src="/audax-icon.png"
-            alt=""
-            width={36}
-            height={36}
+            src="/audax-logo.png"
+            alt="Audax Ventures"
+            width={160}
+            height={52}
             priority
-            className="h-9 w-9 transition-transform duration-300 group-hover:scale-[1.05]"
+            className="h-12 w-auto transition-transform duration-300 group-hover:scale-[1.04]"
           />
-          <span className="leading-none">
-            <span className="block font-[var(--font-outfit)] font-extrabold text-sm tracking-wide text-[#0F172A]">
-              AUDAX
-            </span>
-            <span className="block font-[var(--font-outfit)] font-medium text-[9px] tracking-[0.2em] text-[#6B7280]">
-              VENTURES
-            </span>
-          </span>
         </Link>
 
         {/* ── Desktop Nav ── */}

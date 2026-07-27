@@ -33,16 +33,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-4">
-              <Image src="/audax-icon.png" alt="" width={32} height={32} className="h-8 w-8" />
-              <span className="leading-none">
-                <span className="block font-[var(--font-outfit)] font-extrabold text-sm tracking-wide text-white">
-                  AUDAX
-                </span>
-                <span className="block font-[var(--font-outfit)] font-medium text-[9px] tracking-[0.2em] text-white/50">
-                  VENTURES
-                </span>
-              </span>
+            <Link href="/" className="inline-flex items-center mb-4">
+              <Image src="/audax-logo.png" alt="Audax Ventures" width={160} height={52} className="h-11 w-auto brightness-0 invert" />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-5">
               The AI strategy partner that actually builds. Fractional leadership. Custom software. Real impact.

@@ -2,17 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 const services = [
-  { label: "Fractional CAIO", href: "/services/fractional-caio" },
-  { label: "Software Development", href: "/services/custom-ai-software-development" },
-  { label: "AI Transformation", href: "/services/ai-transformation-advisory" },
-  { label: "Strategy & Advisory", href: "/services/ai-strategy-governance" },
+  { label: "AI Leadership", href: "/services/fractional-caio" },
+  { label: "Custom Software Development", href: "/services/custom-ai-software-development" },
+  { label: "Digital Operations", href: "/services/digital-operations" },
 ];
 
 const company = [
   { label: "About Us", href: "/about" },
-  { label: "Meet Our President", href: "/about/joshua-zaporzan" },
+  { label: "About Joshua Zaporzan", href: "/about/joshua-zaporzan" },
   { label: "Our Approach", href: "/approach" },
-  { label: "Industries", href: "/industries" },
   { label: "Products", href: "/products" },
   { label: "Programs", href: "/programs" },
   { label: "Contact", href: "/contact" },
@@ -97,8 +95,8 @@ export default function Footer() {
         {/* Differentiator line */}
         <div className="border-t border-white/10 pt-8 pb-2 text-center">
           <p className="text-sm sm:text-base font-medium max-w-2xl mx-auto leading-relaxed">
-            <span className="text-white/50">Most firms help you define the strategy or build the technology. </span>
-            <span className="bg-gradient-to-r from-[#60A5FA] to-[#A78BFA] bg-clip-text text-transparent font-semibold">
+            <span className="block text-white/50">Most firms help you define the strategy or build the technology.</span>
+            <span className="block bg-gradient-to-r from-[#60A5FA] to-[#A78BFA] bg-clip-text text-transparent font-semibold">
               Audax does both, then stays with you to ensure it delivers real business results.
             </span>
           </p>

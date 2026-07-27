@@ -1,141 +1,398 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { MapPin, Check, X, Minus } from "lucide-react";
+import {
+  Target, Eye, Gem, Check, X, User, Code2,
+  Flag, TrendingUp, Sparkles, Box, Rocket, ArrowRightLeft, Link2, Users, CheckCircle2,
+} from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
-const comparison = {
-  rows: [
-    { label: "Sets AI strategy" },
-    { label: "Builds the software" },
-    { label: "Ongoing executive accountability" },
-    { label: "In-house engineering team" },
-    { label: "Fixed-price, transparent scope" },
-    { label: "You own 100% of the code" },
-  ],
-  columns: [
-    { name: "Traditional AI Consultancy", values: ["yes", "no", "partial", "no", "partial", "partial"] },
-    { name: "Freelance Developer", values: ["no", "yes", "no", "partial", "partial", "partial"] },
-    { name: "Audax Ventures", values: ["yes", "yes", "yes", "yes", "yes", "yes"], highlight: true },
-  ],
-};
+const heroStats = [
+  { icon: Users, value: "50+", label: "Organizations Advised" },
+  { icon: TrendingUp, value: "$25M+", label: "Projects Delivered" },
+  { icon: Box, value: "10+", label: "Industries Served" },
+];
 
-function ComparisonMark({ value }: { value: string }) {
-  if (value === "yes") return <Check size={16} className="text-green-600 mx-auto" />;
-  if (value === "no") return <X size={16} className="text-red-400 mx-auto" />;
-  return <Minus size={16} className="text-[#D1D5DB] mx-auto" />;
-}
+const values = [
+  "Outcomes Over Outputs",
+  "Integrity & Transparency",
+  "Innovation With Purpose",
+  "Partnership & Trust",
+  "Excellence in Execution",
+];
+
+const pillars = [
+  {
+    icon: User,
+    title: "Fractional CAIO",
+    description: "Strategic AI leadership, governance, and team enablement to ensure AI drives real value across your organization.",
+    accentBg: "bg-[#0F172A]",
+  },
+  {
+    icon: Code2,
+    title: "Custom Software Development",
+    description: "From internal tools to AI-powered platforms, we build secure, scalable software that solves your most critical challenges.",
+    accentBg: "bg-[#7C3AED]",
+  },
+];
+
+const differentiators = [
+  { icon: ArrowRightLeft, title: "Strategy to Execution", description: "We go beyond recommendations to build and implement solutions that deliver results." },
+  { icon: Link2, title: "Integrated Partnership", description: "AI leadership and software development under one roof for seamless alignment." },
+  { icon: Users, title: "Embedded With You", description: "We become an extension of your team, not just an outside consultant." },
+  { icon: CheckCircle2, title: "Results That Matter", description: "We measure success by the impact on your business — not by the decks we deliver." },
+];
+
+const comparisonRows = [
+  { theirs: "PowerPoint Recommendations", ours: "Strategy + Execution That Delivers" },
+  { theirs: "Generalist Advice", ours: "Specialized AI Leadership & Software Expertise" },
+  { theirs: "No Implementation", ours: "We Build & Deploy With You" },
+  { theirs: "Short-Term Engagements", ours: "Long-Term Partnership & Continuous Optimization" },
+  { theirs: "Unclear Outcomes", ours: "Measurable Business Impact" },
+];
+
+const timeline = [
+  { icon: Flag, year: "2019", title: "The Beginning", description: "Audax Ventures was founded with a simple belief: strategy only matters when it creates real-world impact." },
+  { icon: TrendingUp, year: "2020–2021", title: "Early Impact", description: "We helped early partners modernize operations and leverage data and automation to scale." },
+  { icon: Sparkles, year: "2022–2023", title: "AI Leadership Emerges", description: "As AI surged, we stepped into a new role—guiding organizations as their Fractional Chief AI Officer." },
+  { icon: Box, year: "2024", title: "Building What Matters", description: "We expanded our team and capabilities, delivering custom AI solutions that drive measurable ROI." },
+  { icon: Rocket, year: "Today & Beyond", title: "The Future We Build", description: "We continue to partner with visionary organizations to turn AI strategy into lasting business advantage." },
+];
+
+const trustedStats = [
+  { value: "50+", label: "Organizations Advised" },
+  { value: "$25M+", label: "Projects Delivered" },
+  { value: "10+", label: "Industries Served" },
+  { value: "98%", label: "Client Retention Rate" },
+  { value: "25+", label: "AI Initiatives Launched" },
+];
 
 // ── Main Component ─────────────────────────────────────────────────────────────
 
 export default function AboutContent() {
   return (
-    <div className="bg-[#FAFAF8] relative">
-
-      {/* ── Continuous vertical thread (desktop only) ── */}
-      <div
-        className="hidden lg:block absolute left-8 pointer-events-none z-0"
-        style={{
-          top: "420px",
-          bottom: "140px",
-          width: "1px",
-          background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 6%, rgba(46,95,138,0.22) 94%, transparent 100%)",
-        }}
-      />
+    <div className="bg-white">
 
       {/* ── Hero ── */}
-      <section className="pt-32 pb-16 relative overflow-visible">
-        <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.10) 0%, transparent 68%)" }} />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.07) 0%, transparent 68%)" }} />
+      <section className="pt-32 pb-16 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 68%)" }} />
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-xs font-bold tracking-widest uppercase text-[#2563EB] mb-5"
+              >
+                About Audax Ventures
+              </motion.p>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.1 }}
+                className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#0F172A] mb-6 leading-tight"
+              >
+                AI Strategy. Custom Software.{" "}
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                  Real Impact.
+                </span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-[#6B7280] text-lg leading-relaxed mb-8 max-w-xl"
+              >
+                Audax Ventures is the partner organizations call when they&apos;re ready to lead with AI. We combine executive leadership with world-class software development to turn strategy into measurable business outcomes.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <a
+                  href="https://calendly.com/audax-ventures/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0B1220] text-white font-semibold hover:bg-[#1E293B] transition-colors shadow-lg shadow-black/10"
+                >
+                  Book a Free Strategy Call
+                </a>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3]">
+                <Image
+                  src="/about/winnipeg-office-meeting.png"
+                  alt="Audax Ventures team in a client meeting at the Winnipeg office"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 90vw, 560px"
+                  priority
+                />
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6, duration: 0.4 }}
+                className="absolute -bottom-6 -right-4 sm:right-4 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 space-y-3 w-48"
+              >
+                {heroStats.map((s) => (
+                  <div key={s.label} className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
+                      <s.icon size={16} className="text-[#2563EB]" />
+                    </div>
+                    <div>
+                      <p className="font-[var(--font-outfit)] font-extrabold text-sm text-[#0F172A] leading-none">{s.value}</p>
+                      <p className="text-[#9CA3AF] text-[10px] mt-0.5">{s.label}</p>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Mission / Vision / Values ── */}
+      <section className="pt-16 pb-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+              className="bg-[#F8F9FA] rounded-2xl border border-gray-100 p-7"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-4">
+                <Target size={18} className="text-[#2563EB]" />
+              </div>
+              <h3 className="font-[var(--font-outfit)] font-bold text-lg text-[#0F172A] mb-2">Our Mission</h3>
+              <p className="text-[#6B7280] text-sm leading-relaxed">
+                To empower organizations with AI leadership and software solutions that drive efficiency, accelerate growth, and create measurable impact.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: 0.08 }}
+              className="bg-[#F8F9FA] rounded-2xl border border-gray-100 p-7"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-4">
+                <Eye size={18} className="text-[#2563EB]" />
+              </div>
+              <h3 className="font-[var(--font-outfit)] font-bold text-lg text-[#0F172A] mb-2">Our Vision</h3>
+              <p className="text-[#6B7280] text-sm leading-relaxed">
+                A future where every organization—regardless of size—has access to world-class AI leadership and custom technology that transforms how they operate.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: 0.16 }}
+              className="bg-[#F8F9FA] rounded-2xl border border-gray-100 p-7"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-4">
+                <Gem size={18} className="text-[#2563EB]" />
+              </div>
+              <h3 className="font-[var(--font-outfit)] font-bold text-lg text-[#0F172A] mb-4">Our Values</h3>
+              <div className="space-y-2">
+                {values.map((v) => (
+                  <div key={v} className="flex items-center gap-2">
+                    <Check size={14} className="text-[#2563EB] flex-shrink-0" />
+                    <span className="text-sm text-[#374151]">{v}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why We Do What We Do ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-[#6B7280] font-semibold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
           >
-            <MapPin size={13} /> Winnipeg, Manitoba, Canada
+            <p className="text-xs tracking-widest uppercase text-[#2563EB] font-semibold mb-3">Why We Do What We Do</p>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#0F172A]">
+              Executive Leadership. Without the Full-Time Cost.
+            </h2>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2E5F8A] mb-6 leading-tight"
-          >
-            Built by Operators, Not Theorists
-          </motion.h1>
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="text-[#6B7280] leading-relaxed"
+            >
+              Hiring a full-time Chief AI Officer or building an in-house development team is costly and time-consuming. We provide senior AI leadership and custom software development—exactly when and how you need it.
+            </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-[#6B7280] text-lg leading-relaxed max-w-2xl mx-auto"
-          >
-            Most AI strategy stalls at the roadmap. We close the gap between strategy and execution — setting the plan and building the software ourselves, under one roof.
-          </motion.p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {pillars.map((p, i) => (
+                <motion.div
+                  key={p.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 + i * 0.08 }}
+                  className="flex items-start gap-3"
+                >
+                  <div className={`w-10 h-10 rounded-xl ${p.accentBg} flex items-center justify-center flex-shrink-0`}>
+                    <p.icon size={17} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-sm mb-1">{p.title}</h3>
+                    <p className="text-[#6B7280] text-xs leading-relaxed">{p.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ── How We're Different ── */}
-      <section className="py-20 pb-32 relative z-10 bg-white">
-        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
-
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="relative rounded-3xl overflow-hidden bg-[#0B1220] p-8 sm:p-12"
           >
-            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">How We&apos;re Different</p>
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">
-              Strategy and Execution, One Team
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: "radial-gradient(circle at 20% 20%, rgba(37,99,235,0.15) 0%, transparent 55%)" }}
+            />
+            <div className="relative grid lg:grid-cols-2 gap-10 lg:gap-14">
+              <div>
+                <p className="text-xs tracking-widest uppercase text-[#60A5FA] font-semibold mb-3">How We&apos;re Different</p>
+                <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-white mb-8 leading-snug">
+                  We Don&apos;t Just Advise. We Build. We Stay. We Deliver.
+                </h2>
+                <div className="space-y-6">
+                  {differentiators.map((d) => (
+                    <div key={d.title} className="flex items-start gap-3.5">
+                      <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <d.icon size={16} className="text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-white text-sm mb-1">{d.title}</h3>
+                        <p className="text-white/50 text-xs leading-relaxed">{d.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-2xl border border-white/10 overflow-hidden">
+                <div className="grid grid-cols-2 border-b border-white/10">
+                  <div className="px-4 py-3 text-center text-xs font-bold uppercase tracking-wide text-white/40">
+                    Traditional Consultants
+                  </div>
+                  <div className="px-4 py-3 text-center text-xs font-bold uppercase tracking-wide text-white bg-gradient-to-r from-[#2563EB]/25 to-[#7C3AED]/25">
+                    Audax Ventures
+                  </div>
+                </div>
+                {comparisonRows.map((row, i) => (
+                  <div key={row.theirs} className={`grid grid-cols-2 ${i % 2 === 0 ? "bg-white/[0.02]" : ""}`}>
+                    <div className="flex items-center gap-2 px-4 py-3.5 border-r border-white/5">
+                      <X size={13} className="text-red-400/70 flex-shrink-0" />
+                      <span className="text-white/50 text-xs leading-snug">{row.theirs}</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-4 py-3.5 bg-gradient-to-r from-[#2563EB]/10 to-[#7C3AED]/10">
+                      <Check size={13} className="text-[#60A5FA] flex-shrink-0" />
+                      <span className="text-white text-xs leading-snug font-medium">{row.ours}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Our Story ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-14"
+          >
+            <p className="text-xs tracking-widest uppercase text-[#2563EB] font-semibold mb-3">Our Story</p>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#0F172A]">
+              Built by Entrepreneurs. Driven by Results.
             </h2>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="overflow-x-auto"
-          >
-            <table className="w-full border-collapse min-w-[560px]">
-              <thead>
-                <tr>
-                  <th className="text-left text-xs font-semibold uppercase tracking-widest text-[#6B7280] pb-4 pr-4 w-1/3" />
-                  {comparison.columns.map((col) => (
-                    <th
-                      key={col.name}
-                      className={`text-center text-xs font-bold uppercase tracking-wide pb-4 px-3 ${
-                        col.highlight ? "text-[#2E5F8A]" : "text-[#6B7280]"
-                      }`}
-                    >
-                      {col.name}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {comparison.rows.map((row, ri) => (
-                  <tr key={row.label} className={ri % 2 === 0 ? "bg-[#F8F9FA]" : ""}>
-                    <td className="text-sm text-[#374151] font-medium py-3.5 pr-4 rounded-l-xl px-3">{row.label}</td>
-                    {comparison.columns.map((col) => (
-                      <td
-                        key={col.name}
-                        className={`text-center py-3.5 px-3 ${col.highlight ? "bg-[#2E5F8A]/6 rounded-r-xl" : ""}`}
-                      >
-                        <ComparisonMark value={col.values[ri]} />
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
+          <div className="relative">
+            <div className="hidden lg:block absolute top-6 left-0 right-0 h-px bg-gray-200" />
+            <div className="grid gap-8 lg:grid-cols-5">
+              {timeline.map((t, i) => (
+                <motion.div
+                  key={t.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="relative"
+                >
+                  <div className="relative z-10 w-12 h-12 rounded-full bg-white border-2 border-[#2563EB]/30 flex items-center justify-center mb-4">
+                    <t.icon size={18} className="text-[#2563EB]" />
+                  </div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#2563EB] mb-1.5">{t.year}</p>
+                  <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-sm mb-2">{t.title}</h3>
+                  <p className="text-[#6B7280] text-xs leading-relaxed">{t.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trusted-by stats ── */}
+      <section className="py-16 bg-[#F8F9FA] border-y border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-[10px] tracking-widest uppercase text-[#9CA3AF] font-semibold mb-10">
+            Trusted by Innovative Organizations
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-8 text-center">
+            {trustedStats.map((s) => (
+              <div key={s.label}>
+                <p className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#2563EB] mb-1">{s.value}</p>
+                <p className="text-[#6B7280] text-xs">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

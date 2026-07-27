@@ -64,6 +64,7 @@ const servicePackageSchema = z.object({
 
 export const serviceSchema = z.object({
   slug: slugSchema,
+  draft: z.boolean().optional(),
   title: z.string().min(1),
   heroTitle: z.string().min(1),
   heroSub: z.string().min(1),

@@ -4,21 +4,6 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const leaders = [
-  {
-    name: "Joshua Zaporzan",
-    title: "Founder & Fractional CAIO",
-    photo: "/team/joshua-zaporzan.avif",
-    credibility: "[PLACEHOLDER — one-line credibility marker]",
-  },
-  {
-    name: "Riley Peterson",
-    title: "[PLACEHOLDER title]",
-    photo: "/team/riley-peterson.png",
-    credibility: "[PLACEHOLDER — one-line credibility marker]",
-  },
-];
-
 export default function AboutAudaxSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
@@ -76,38 +61,6 @@ export default function AboutAudaxSection() {
               />
             </div>
           </motion.div>
-        </div>
-
-        {/* ── Leadership ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-10"
-        >
-          <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">Led By</p>
-          <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E]">Leadership</h3>
-        </motion.div>
-
-        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-          {leaders.map((leader, i) => (
-            <motion.div
-              key={leader.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="bg-[#F8F9FA] border border-gray-100 rounded-2xl p-7 text-center"
-            >
-              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden ring-2 ring-white shadow-md relative">
-                <Image src={leader.photo} alt={leader.name} fill className="object-cover object-top" sizes="96px" />
-              </div>
-              <h4 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-base mb-0.5">{leader.name}</h4>
-              <p className="text-[#2E5F8A] text-xs font-semibold mb-2">{leader.title}</p>
-              <p className="text-[#9CA3AF] text-xs italic leading-snug">{leader.credibility}</p>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>

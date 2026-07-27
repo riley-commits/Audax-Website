@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Crown, Code2, ArrowRight, Check, ShieldCheck } from "lucide-react";
+import { Crown, Code2, ArrowRight, Check } from "lucide-react";
 
 // ── Service data ─────────────────────────────────────────────────────────────
 
@@ -160,35 +160,6 @@ export default function ServicesGrid() {
             </motion.div>
           ))}
         </div>
-
-        {/* Smaller third card */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-6"
-        >
-          <Link
-            href="/services/ai-strategy-governance"
-            className="group flex flex-col sm:flex-row sm:items-center gap-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#2E5F8A]/30 transition-all duration-300 p-6"
-          >
-            <div className="w-11 h-11 rounded-xl bg-[#2E5F8A]/10 flex items-center justify-center flex-shrink-0">
-              <ShieldCheck size={20} className="text-[#2E5F8A]" />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-base mb-0.5">
-                AI Strategy &amp; Governance
-              </h3>
-              <p className="text-[#6B7280] text-sm">
-                Executive strategy and governance frameworks for leadership teams navigating AI adoption.
-              </p>
-            </div>
-            <div className="flex items-center gap-1.5 text-sm font-semibold text-[#2E5F8A] group-hover:gap-2.5 transition-all flex-shrink-0">
-              Learn more <ArrowRight size={14} />
-            </div>
-          </Link>
-        </motion.div>
 
         {/* View all services */}
         <div className="mt-8 text-center">

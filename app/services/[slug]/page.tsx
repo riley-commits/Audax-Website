@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: service.metaTitle,
     description: service.metaDescription,
     alternates: { canonical: `https://audaxventures.ca/services/${slug}` },
+    ...(service.draft && { robots: { index: false, follow: false } }),
     openGraph: {
       title: service.metaTitle,
       description: service.metaDescription,

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllServiceSlugs } from "@/lib/services-data";
+import { getPublishedServiceSlugs } from "@/lib/services-data";
 import { getAllSolutionSlugs } from "@/lib/solutions-data"; // slugs reused under /programs
 import { getAllGuideSlugs } from "@/lib/guides-data";
 import { getAllIndustrySlugs } from "@/lib/industries-data";
@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/products`,        lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   ];
 
-  const servicePages = getAllServiceSlugs().map((slug) => ({
+  const servicePages = getPublishedServiceSlugs().map((slug) => ({
     url: `${base}/services/${slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,

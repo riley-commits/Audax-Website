@@ -3,14 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Briefcase, ArrowRight, ArrowLeft, Award } from "lucide-react";
+import { Briefcase, ArrowRight, ArrowLeft } from "lucide-react";
 
 const credentials = [
-  "President, Audax Ventures",
-  "Founder & CEO, H2MB",
-  "Board Member, Winnipeg Impact Network (WIN)",
-  "Manitoba Premier's Business & Jobs Council (2023)",
-  "Manitoba's Top 10 People to Watch (2024)",
+  "Past Board Chair, Young Associates",
+  "Member, Manitoba Premier's Business & Jobs Council",
+  "Board Member, Winnipeg Impact Network",
+  "Manitoba's Top 10 People to Watch (2023)",
+  "Investor, Entrepreneur & Speaker",
 ];
 
 const bioParagraphs = [
@@ -61,13 +61,13 @@ export default function JoshuaBioContent() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <p className="text-xs font-bold tracking-widest uppercase text-[#2563EB] mb-4">
-                Meet the Team
+                Meet Joshua, the Leader of Audax
               </p>
               <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#0F172A] mb-3 leading-tight">
                 Joshua Zaporzan
               </h1>
               <p className="text-[#374151] text-lg font-medium mb-8">
-                President, Audax Ventures &amp; Founder &amp; CEO, H2MB
+                President, Audax Ventures &amp; CEO, H2MB
               </p>
 
               <div className="grid sm:grid-cols-2 gap-2.5 mb-8 max-w-lg">
@@ -126,18 +126,6 @@ export default function JoshuaBioContent() {
               </p>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* ── Recognition strip ── */}
-      <section className="py-16 bg-[#F8F9FA] border-y border-gray-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-12 h-12 rounded-2xl bg-[#2563EB]/10 flex items-center justify-center mx-auto mb-5">
-            <Award size={20} className="text-[#2563EB]" />
-          </div>
-          <p className="font-[var(--font-outfit)] font-bold text-xl sm:text-2xl text-[#0F172A] leading-snug">
-            Recognized as one of Manitoba&apos;s Top 10 People to Watch in 2024, and appointed to the Manitoba Premier&apos;s Business &amp; Jobs Council in 2023.
-          </p>
         </div>
       </section>
 

@@ -32,32 +32,10 @@ const contactCards = [
   },
 ];
 
-const serviceOptions = [
-  "MVP Development",
-  "SaaS Platform",
-  "Internal Tools",
-  "Mobile App (iOS / Android)",
-  "AI Integration or Consulting",
-  "Website or E-Commerce",
-  "Process Automation",
-  "Fractional Chief AI Officer",
-  "Other / Not sure yet",
-];
-
-const budgetOptions = [
-  "Under $25,000",
-  "$25,000 – $50,000",
-  "$50,000 – $100,000",
-  "$100,000 – $250,000",
-  "$250,000+",
-  "Not sure yet",
-];
-
-const timelineOptions = [
-  "As soon as possible",
-  "Within 1–3 months",
-  "Within 3–6 months",
-  "Just exploring for now",
+const coreServices = [
+  "AI Leadership",
+  "Custom Software Development",
+  "Digital Operations",
 ];
 
 const nextSteps = [
@@ -91,43 +69,53 @@ const labelClass = "block text-xs font-semibold text-[#1A1A2E] mb-1.5 tracking-w
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
+const initialForm = {
+  name: "", email: "", company: "", phone: "",
+  services: [] as string[], message: "",
+};
+
 export default function ContactContent() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    name: "", email: "", company: "", phone: "",
-    service: "", budget: "", timeline: "", message: "",
-  });
+  const [error, setError] = useState<string | null>(null);
+  const [form, setForm] = useState(initialForm);
 
-  const set = (field: keyof typeof form) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+  const set = (field: "name" | "email" | "company" | "phone" | "message") =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((f) => ({ ...f, [field]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const toggleService = (service: string) => {
+    setForm((f) => ({
+      ...f,
+      services: f.services.includes(service)
+        ? f.services.filter((s) => s !== service)
+        : [...f.services, service],
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
-    // Build a mailto link so messages arrive at info@audaxventures.ca
-    const subject = encodeURIComponent(`Project Inquiry — ${form.service || "General"} — ${form.name}`);
-    const body = encodeURIComponent([
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Company: ${form.company || "—"}`,
-      `Phone: ${form.phone || "—"}`,
-      `Service: ${form.service || "—"}`,
-      `Budget: ${form.budget || "—"}`,
-      `Timeline: ${form.timeline || "—"}`,
-      ``,
-      `Project Details:`,
-      form.message,
-    ].join("\n"));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    window.open(`mailto:info@audaxventures.ca?subject=${subject}&body=${body}`, "_blank");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
 
-    setTimeout(() => {
-      setLoading(false);
       setSubmitted(true);
-    }, 600);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -342,12 +330,12 @@ export default function ContactContent() {
                       <CheckCircle2 size={32} className="text-green-500" />
                     </div>
                     <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E] mb-3">
-                      Your email client should be open!
+                      Message sent!
                     </h3>
                     <p className="text-[#374151] max-w-sm leading-relaxed mb-8">
-                      Your message has been pre-filled in your email client addressed to{" "}
+                      Your message has been sent to{" "}
                       <span className="font-semibold text-[#2E5F8A]">info@audaxventures.ca</span>.
-                      Hit send and we&apos;ll get back to you within one business day.
+                      We&apos;ll get back to you within one business day.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link
@@ -359,7 +347,7 @@ export default function ContactContent() {
                         <Calendar size={14} /> Also book a call
                       </Link>
                       <button
-                        onClick={() => { setSubmitted(false); setForm({ name: "", email: "", company: "", phone: "", service: "", budget: "", timeline: "", message: "" }); }}
+                        onClick={() => { setSubmitted(false); setForm(initialForm); }}
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 text-[#374151] font-bold text-sm hover:border-[#2E5F8A] hover:text-[#2E5F8A] transition-colors"
                       >
                         Send another message
@@ -409,36 +397,37 @@ export default function ContactContent() {
                         </div>
                       </div>
 
-                      {/* Service type */}
+                      {/* Service(s) */}
                       <div>
-                        <label className={labelClass}>What are you looking to build?</label>
-                        <select value={form.service} onChange={set("service")} className={inputClass}>
-                          <option value="">Select a service type</option>
-                          {serviceOptions.map((s) => <option key={s} value={s}>{s}</option>)}
-                        </select>
-                      </div>
-
-                      {/* Budget + Timeline */}
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <div>
-                          <label className={labelClass}>Estimated Budget</label>
-                          <select value={form.budget} onChange={set("budget")} className={inputClass}>
-                            <option value="">Select a range</option>
-                            {budgetOptions.map((b) => <option key={b} value={b}>{b}</option>)}
-                          </select>
-                        </div>
-                        <div>
-                          <label className={labelClass}>When do you want to start?</label>
-                          <select value={form.timeline} onChange={set("timeline")} className={inputClass}>
-                            <option value="">Select a timeline</option>
-                            {timelineOptions.map((t) => <option key={t} value={t}>{t}</option>)}
-                          </select>
+                        <label className={labelClass}>Which service(s) are you interested in?</label>
+                        <div className="grid sm:grid-cols-3 gap-3">
+                          {coreServices.map((s) => {
+                            const checked = form.services.includes(s);
+                            return (
+                              <label
+                                key={s}
+                                className={`flex items-center gap-2.5 rounded-xl border px-4 py-3 text-sm cursor-pointer transition-colors ${
+                                  checked
+                                    ? "border-[#2E5F8A] bg-[#2E5F8A]/5 text-[#1A1A2E] font-semibold"
+                                    : "border-gray-200 text-[#374151] hover:border-[#2E5F8A]/40"
+                                }`}
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={checked}
+                                  onChange={() => toggleService(s)}
+                                  className="w-4 h-4 rounded border-gray-300 text-[#2E5F8A] focus:ring-[#2E5F8A]/25 flex-shrink-0"
+                                />
+                                {s}
+                              </label>
+                            );
+                          })}
                         </div>
                       </div>
 
                       {/* Message */}
                       <div>
-                        <label className={labelClass}>Tell us about your project <span className="text-red-400">*</span></label>
+                        <label className={labelClass}>Message <span className="text-red-400">*</span></label>
                         <textarea
                           required
                           rows={5}
@@ -448,6 +437,12 @@ export default function ContactContent() {
                           placeholder="What are you building? What problem does it solve? What stage are you at? Any specific constraints we should know about?"
                         />
                       </div>
+
+                      {error && (
+                        <p className="text-sm text-red-500 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
+                          {error}
+                        </p>
+                      )}
 
                       {/* Submit */}
                       <button
@@ -461,10 +456,10 @@ export default function ContactContent() {
                               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
                               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
                             </svg>
-                            Opening your email client…
+                            Sending…
                           </>
                         ) : (
-                          <>Send to info@audaxventures.ca <ArrowRight size={15} /></>
+                          <>Submit <ArrowRight size={15} /></>
                         )}
                       </button>
 

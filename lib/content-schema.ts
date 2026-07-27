@@ -28,63 +28,63 @@ const faqEntrySchema = z.object({
 });
 
 // ------------------------------------------------------------------
-// Services (lib/services-data.ts)
+// Service pages (lib/service-pages-data.ts) — the 3 core Think/Build/Scale
+// service landing pages, each following the same fixed 9-section layout.
 // ------------------------------------------------------------------
 
-const serviceProcessStepSchema = z.object({
-  step: z.number().int().positive(),
+const serviceApproachStepSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
-  duration: z.string().min(1),
 });
 
-const serviceIncludedItemSchema = z.object({
-  icon: z.string().min(1),
-  label: z.string().min(1),
-  description: z.string().min(1),
-});
-
-// Package tier (used by Fractional CAIO and any future tiered/retainer service).
-const packageMonthlyPhaseSchema = z.object({
-  month: z.number().int().positive(),
-  title: z.string().min(1),
-  activities: z.array(z.string().min(1)),
-  deliverables: z.array(z.string().min(1)),
-});
-
-const servicePackageSchema = z.object({
-  name: z.string().min(1),
-  price: z.string().min(1),
-  priceUnit: z.string().min(1),
-  tagline: z.string().min(1),
-  bestFor: z.string().min(1),
-  features: z.array(z.string().min(1)).optional(),
-  monthlyPhases: z.array(packageMonthlyPhaseSchema),
-});
-
-export const serviceSchema = z.object({
+export const servicePageSchema = z.object({
   slug: slugSchema,
-  draft: z.boolean().optional(),
+  phase: z.enum(["Think", "Build", "Scale"]),
   title: z.string().min(1),
-  heroTitle: z.string().min(1),
-  heroSub: z.string().min(1),
-  heroSubtext: z.string().min(1).optional(),
   metaTitle: z.string().min(1),
   metaDescription: z.string().min(1),
-  description: z.string().min(1),
-  whatsIncluded: z.array(serviceIncludedItemSchema),
-  whoItsFor: z.array(z.string().min(1)),
-  // Optional — tiered/retainer services (Fractional CAIO) describe their
-  // engagement structure via `packages` instead of a single `process` arc.
-  process: z.array(serviceProcessStepSchema).optional(),
-  techStack: z.array(z.string().min(1)).optional(),
-  packages: z.array(servicePackageSchema).optional(),
+  hero: z.object({
+    eyebrow: z.string().min(1),
+    headline: z.string().min(1),
+    subhead: z.string().min(1),
+    body: z.string().min(1),
+  }),
+  challenge: z.object({
+    headline: z.string().min(1),
+    body: z.array(z.string().min(1)),
+  }),
+  howWeHelp: z.object({
+    headline: z.string().min(1),
+    intro: z.string().min(1),
+    listLabel: z.string().min(1),
+    services: z.array(z.string().min(1)),
+  }),
+  approach: z.object({
+    headline: z.string().min(1),
+    intro: z.array(z.string().min(1)),
+    steps: z.array(serviceApproachStepSchema),
+  }),
+  whatWeDeliver: z.object({
+    intro: z.string().min(1),
+    items: z.array(z.string().min(1)),
+  }),
+  whyAudax: z.object({
+    headline: z.string().min(1),
+    body: z.array(z.string().min(1)),
+  }),
+  whoThisIsFor: z.object({
+    intro: z.string().min(1),
+    items: z.array(z.string().min(1)),
+  }),
   faq: z.array(faqEntrySchema),
-  relatedServices: z.array(slugSchema),
+  cta: z.object({
+    headline: z.string().min(1),
+    sub: z.string().min(1),
+  }),
 });
 
-export const servicesSchema = z.array(serviceSchema);
-export type Service = z.infer<typeof serviceSchema>;
+export const servicePagesSchema = z.array(servicePageSchema);
+export type ServicePage = z.infer<typeof servicePageSchema>;
 
 // ------------------------------------------------------------------
 // Industries (lib/industries-data.ts)

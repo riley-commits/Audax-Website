@@ -13,7 +13,7 @@ const serviceLinks = [
   {
     phase: "Think",
     label: "AI Leadership",
-    href: "/services/fractional-caio",
+    href: "/services/ai-leadership",
     desc: "Strategy, roadmaps & executive AI advisory",
     icon: "👔",
     stat: "Exec-level AI leadership",
@@ -22,7 +22,7 @@ const serviceLinks = [
   {
     phase: "Build",
     label: "Custom Software Development",
-    href: "/services/custom-ai-software-development",
+    href: "/services/custom-software-development",
     desc: "AI applications, SaaS platforms & websites",
     icon: "💻",
     stat: "100% IP ownership",
@@ -200,18 +200,9 @@ export default function Navbar() {
                       className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[860px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
                     >
                       <div className="p-6">
-                        <div className="flex items-center justify-between mb-4">
-                          <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151]">
-                            Core Services
-                          </p>
-                          <Link
-                            href="/services"
-                            onClick={() => setOpenMenu(null)}
-                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#2563EB] hover:text-[#0F172A] transition-colors"
-                          >
-                            View all services <ArrowRight size={10} />
-                          </Link>
-                        </div>
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151] mb-4">
+                          Core Services
+                        </p>
                         <div className="grid grid-cols-3 gap-4">
                           {serviceLinks.map((s) => (
                             <BigCard
@@ -379,10 +370,6 @@ export default function Navbar() {
                     </span>
                   </Link>
                 ))}
-                <Link href="/services" onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-1.5 pl-3 pr-3 py-2 mt-1 rounded-lg text-sm font-semibold text-[#2563EB] hover:bg-[#F8F9FA] transition-colors">
-                  View all services <ArrowRight size={12} />
-                </Link>
               </div>
 
               <div className="border-t border-gray-100 pt-4 mb-4">

@@ -9,6 +9,12 @@ import type { IndustryData } from "@/lib/industries-data";
 
 // ── Hero photo for the 3 main industries only ─────────────────────────────────
 
+const serviceLabels: Record<string, string> = {
+  "ai-leadership": "AI Leadership",
+  "custom-software-development": "Custom Software Development",
+  "digital-operations": "Digital Operations",
+};
+
 const industryPhotos: Record<string, string> = {
   "financial-services": "/about/winnipeg-office-meeting.png",
   "professional-services": "/about-audax.png",
@@ -687,7 +693,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                         href={`/services/${s}`}
                         className="inline-flex items-center px-3 py-1 rounded-full border border-gray-200 text-xs font-medium text-[#374151] hover:border-[#2E5F8A] hover:text-[#2E5F8A] transition-colors bg-white"
                       >
-                        {s.replace(/-/g, " ")}
+                        {serviceLabels[s] ?? s.replace(/-/g, " ")}
                       </Link>
                     ))}
                   </div>

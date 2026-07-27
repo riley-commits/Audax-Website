@@ -105,10 +105,9 @@ export const industriesData: IndustryData[] = [
       "Financial data companies building aggregation, enrichment, or analytics platforms",
     ],
     relatedServices: [
-      "saas-development",
-      "mvp-development",
-      "ai-consulting",
-      "process-automation",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -209,10 +208,9 @@ export const industriesData: IndustryData[] = [
       "Legal tech startups building B2B or B2C products for the legal market",
     ],
     relatedServices: [
-      "internal-tools",
-      "crm-systems",
-      "process-automation",
-      "ai-consulting",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -306,10 +304,9 @@ export const industriesData: IndustryData[] = [
       "Vacation rental operators and property management companies managing distributed inventory",
     ],
     relatedServices: [
-      "website-development",
-      "ecommerce-development",
-      "crm-systems",
-      "process-automation",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -404,11 +401,9 @@ export const industriesData: IndustryData[] = [
       "Medical device companies building companion software for connected hardware",
     ],
     relatedServices: [
-      "mvp-development",
-      "saas-development",
-      "ai-consulting",
-      "ios-development",
-      "android-development",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -502,10 +497,9 @@ export const industriesData: IndustryData[] = [
       "Real estate investment firms requiring portfolio-level financial reporting and asset tracking",
     ],
     relatedServices: [
-      "internal-tools",
-      "crm-systems",
-      "saas-development",
-      "process-automation",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -599,10 +593,9 @@ export const industriesData: IndustryData[] = [
       "Retailers with complex inventory or pricing logic that off-the-shelf platforms cannot support",
     ],
     relatedServices: [
-      "ecommerce-development",
-      "saas-development",
-      "crm-systems",
-      "process-automation",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -696,10 +689,9 @@ export const industriesData: IndustryData[] = [
       "Professional associations and licensing bodies managing continuing education requirements",
     ],
     relatedServices: [
-      "saas-development",
-      "mvp-development",
-      "ai-consulting",
-      "internal-tools",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -793,10 +785,9 @@ export const industriesData: IndustryData[] = [
       "Contract manufacturers needing customer-facing portals for order status and quality records",
     ],
     relatedServices: [
-      "internal-tools",
-      "process-automation",
-      "crm-systems",
-      "saas-development",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -890,10 +881,9 @@ export const industriesData: IndustryData[] = [
       "Intermodal and drayage operators coordinating rail, port, and over-the-road movements",
     ],
     relatedServices: [
-      "internal-tools",
-      "saas-development",
-      "process-automation",
-      "crm-systems",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -987,10 +977,9 @@ export const industriesData: IndustryData[] = [
       "International development organizations managing multi-country program data collection",
     ],
     relatedServices: [
-      "crm-systems",
-      "internal-tools",
-      "website-development",
-      "process-automation",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {
@@ -1084,10 +1073,9 @@ export const industriesData: IndustryData[] = [
       "Technology companies building AI-powered features on top of existing SaaS platforms",
     ],
     relatedServices: [
-      "saas-development",
-      "ai-consulting",
-      "mvp-development",
-      "process-automation",
+      "ai-leadership",
+      "custom-software-development",
+      "digital-operations",
     ],
     faq: [
       {

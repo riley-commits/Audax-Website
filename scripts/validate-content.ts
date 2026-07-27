@@ -13,14 +13,14 @@
  * triggers this first. Local dev (`next dev`) skips it.
  */
 
-import { servicesData } from "../lib/services-data";
+import { servicePagesData } from "../lib/service-pages-data";
 import { industriesData } from "../lib/industries-data";
 import { blogPosts } from "../lib/insights-data";
 import { guidesData } from "../lib/guides-data";
 import { solutionsData } from "../lib/solutions-data";
 import { caseStudiesData } from "../lib/case-studies-data";
 import {
-  servicesSchema,
+  servicePagesSchema,
   industriesSchema,
   blogPostsSchema,
   guidesSchema,
@@ -33,7 +33,7 @@ interface Collection {
   name: string;
   data: unknown;
   schema:
-    | typeof servicesSchema
+    | typeof servicePagesSchema
     | typeof industriesSchema
     | typeof blogPostsSchema
     | typeof guidesSchema
@@ -42,7 +42,7 @@ interface Collection {
 }
 
 const collections: Collection[] = [
-  { name: "services", data: servicesData, schema: servicesSchema },
+  { name: "services", data: servicePagesData, schema: servicePagesSchema },
   { name: "industries", data: industriesData, schema: industriesSchema },
   { name: "blog posts", data: blogPosts, schema: blogPostsSchema },
   { name: "guides", data: guidesData, schema: guidesSchema },

@@ -103,7 +103,7 @@ export const servicePagesData: ServicePageData[] = [
     faq: [
       { q: "What is a Fractional Chief AI Officer?", a: "A Fractional Chief AI Officer gives your organization executive-level AI leadership on a flexible, part-time basis — the same strategic guidance and accountability as a full-time CAIO, without the cost or commitment of a full-time hire." },
       { q: "Do we need to already be using AI?", a: "No. Many of our clients are just beginning to explore AI. We start by understanding your business and identifying where AI can realistically create value, whether or not you have any AI in place today." },
-      { q: "How long are engagements?", a: "[PLACEHOLDER — confirm typical engagement length and minimum commitment]" },
+      { q: "How long are engagements?", a: "Most AI Leadership engagements start with a 3-month minimum commitment, which gives us time to complete your initial assessment, roadmap, and early implementation work. After that, the engagement continues on a monthly basis, so it can scale up or down as your AI priorities evolve." },
       { q: "Can you help implement the strategy?", a: "Absolutely. Our team provides both strategic leadership and custom software development." },
     ],
     cta: {
@@ -193,7 +193,7 @@ export const servicePagesData: ServicePageData[] = [
       ],
     },
     faq: [
-      { q: "How long does a project take?", a: "[PLACEHOLDER — confirm typical timeline ranges by project type]" },
+      { q: "How long does a project take?", a: "Most custom software projects take 8 to 16 weeks from kickoff to launch, depending on scope and complexity. Smaller tools and MVPs can move faster, while larger platforms with multiple integrations may take longer. We'll give you a clear timeline estimate after our discovery call." },
       { q: "Who owns the code?", a: "You do. We transfer full source code and IP ownership on every engagement — no exceptions." },
       { q: "Can you integrate with our existing systems?", a: "Yes. We regularly integrate with existing CRMs, ERPs, and other business systems to keep your new software connected to the tools you already rely on." },
       { q: "Do you provide support after launch?", a: "Absolutely. We offer ongoing support and enhancement plans to help your software continue evolving after launch." },
@@ -285,9 +285,9 @@ export const servicePagesData: ServicePageData[] = [
       ],
     },
     faq: [
-      { q: "Do you only support software you build?", a: "[PLACEHOLDER — confirm whether Digital Operations support extends to software built by other teams or vendors]" },
-      { q: "Can we start with support before building something new?", a: "[PLACEHOLDER — confirm entry points into a Digital Operations engagement]" },
-      { q: "How are ongoing engagements structured?", a: "[PLACEHOLDER — confirm retainer/engagement structure and pricing model]" },
+      { q: "Do you only support software you build?", a: "No. While we're often already familiar with software we've built for you, we also take on Digital Operations support for systems built by other teams or vendors. We start with a technical review to get up to speed, then move into ongoing support and improvement." },
+      { q: "Can we start with support before building something new?", a: "Yes. Many clients start with Digital Operations to stabilize and improve an existing system, then bring us in for new development once priorities are clear. There's no requirement to start with a new build." },
+      { q: "How are ongoing engagements structured?", a: "Digital Operations engagements are typically structured as a monthly retainer, giving you ongoing access to our team for support, improvements, and strategic guidance. Scope and hours are tailored to your systems and priorities, and can adjust as your needs change." },
       { q: "Can Digital Operations include Fractional CAIO support?", a: "Yes. Many clients combine Digital Operations with AI Leadership, creating a single long-term partnership that aligns technology, operations, and AI strategy as their organization grows." },
     ],
     cta: {

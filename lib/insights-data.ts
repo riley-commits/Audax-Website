@@ -4,9 +4,7 @@ export interface BlogPost {
   excerpt: string;
   category: string;
   publishDate: string;
-  readTime: string;
   author: string;
-  authorRole: string;
   metaTitle: string;
   metaDescription: string;
   content: string;
@@ -22,9 +20,7 @@ export const blogPosts: BlogPost[] = [
       "Before you raise a dollar, you need evidence. An MVP is the most efficient way to generate that evidence — without burning through savings on a product nobody asked for.",
     category: "Startups",
     publishDate: "March 15, 2025",
-    readTime: "8 min read",
-    author: "Riley Peterson",
-    authorRole: "CEO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "What Is an MVP? Why Startups Need It Before Raising Capital",
     metaDescription:
       "Learn what a minimum viable product is, why investors expect to see one before writing a check, and how to scope your MVP correctly to maximize learning with minimal spend.",
@@ -151,9 +147,7 @@ Ready to scope your MVP? [Book a free strategy call](/contact) and let's walk th
       "Buying off-the-shelf SaaS is almost always faster and cheaper upfront. But it's not always the right choice. Here's how to decide — with a practical framework you can use today.",
     category: "Development",
     publishDate: "April 2, 2025",
-    readTime: "9 min read",
-    author: "Marcus Chen",
-    authorRole: "CTO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "SaaS vs Custom Software: Which Is Right for Your Business?",
     metaDescription:
       "Trying to decide between buying SaaS or building custom software? This guide walks through the cost, tradeoffs, and decision framework you need to make the right call.",
@@ -280,9 +274,7 @@ If you're on the fence, [book a free strategy call](/contact). We'll walk throug
       "Choosing the wrong development partner is one of the most expensive mistakes a founder can make. Here's how to evaluate agencies, avoid red flags, and protect yourself contractually.",
     category: "Development",
     publishDate: "April 18, 2025",
-    readTime: "10 min read",
-    author: "Riley Peterson",
-    authorRole: "CEO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "How to Choose a Software Development Partner | Avoid Bad Agencies",
     metaDescription:
       "A practical guide to evaluating software development agencies, red flags to avoid, questions to ask, and contract terms that protect you as a founder.",
@@ -418,9 +410,7 @@ If you're evaluating your options, [book a free call with us](/contact). Even if
       "MVP development costs range from $10,000 to $250,000+. The difference isn't just scope — it's team quality, location, and the hidden costs most founders don't account for.",
     category: "Startups",
     publishDate: "May 1, 2025",
-    readTime: "9 min read",
-    author: "Marcus Chen",
-    authorRole: "CTO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "The Real Cost of Building an MVP in 2025 | Pricing Guide",
     metaDescription:
       "What does it actually cost to build an MVP in 2025? A detailed breakdown by product type, team type, and hidden costs most founders don't know about.",
@@ -562,9 +552,7 @@ If that range doesn't fit your budget, we'll tell you that honestly and suggest 
       "The most impactful AI deployments in 2025 aren't customer-facing chatbots. They're internal tools that automate the workflows your team does every day.",
     category: "AI",
     publishDate: "May 10, 2025",
-    readTime: "8 min read",
-    author: "Priya Nair",
-    authorRole: "Head of AI Practice, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "AI-Powered Internal Tools: How Enterprises Are Automating Operations",
     metaDescription:
       "Discover how enterprises are using AI to automate internal operations — from document processing to decision support. Real use cases and implementation advice.",
@@ -692,9 +680,7 @@ Ready to explore what AI-powered internal tools could mean for your team? [Book 
       "When James came to us with an idea for a B2B SaaS platform, he had strong domain expertise but no technical background. Twelve months later, he had 40 paying customers and a seed round closing.",
     category: "Case Studies",
     publishDate: "May 20, 2025",
-    readTime: "9 min read",
-    author: "Riley Peterson",
-    authorRole: "CEO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "Catalyst for Founders: From Idea to Launch Case Study",
     metaDescription:
       "How the Catalyst for Founders program helped a non-technical founder go from raw idea to 40 paying customers and a seed round in 12 months.",
@@ -830,9 +816,7 @@ If you're a founder with a clear problem, a defined market, and the drive to bui
       "Most startups fail because they build something nobody actually wants. Startup idea validation is the process of testing whether your idea is worth building before you spend time and money building it.",
     category: "Startups",
     publishDate: "April 10, 2025",
-    readTime: "4 min read",
-    author: "Riley Peterson",
-    authorRole: "CEO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "How to Validate a Startup Idea Before You Build Anything",
     metaDescription:
       "Learn how to validate a startup idea step by step — from defining the problem and talking to real customers to running cheap experiments and knowing when to build.",
@@ -938,9 +922,7 @@ If you have a startup idea and want help figuring out if it is worth building, A
       "As your business grows, small inefficiencies turn into major operational bottlenecks. Here are five clear signs that your processes are ready for automation.",
     category: "AI",
     publishDate: "April 4, 2025",
-    readTime: "3 min read",
-    author: "Riley Peterson",
-    authorRole: "CEO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "5 Signs Your Business Is Ready for Automation",
     metaDescription:
       "Discover the five key signs that your business processes are ready for automation — and learn how to take action before inefficiencies slow your growth.",
@@ -1030,9 +1012,7 @@ If you are not sure where to start, Audax Ventures can help. We specialize in he
       "For Canadian businesses, protecting intellectual property is not just a legal formality — it's a strategic investment that safeguards creativity, builds trust with customers, and increases market value.",
     category: "Startups",
     publishDate: "September 30, 2025",
-    readTime: "5 min read",
-    author: "Riley Peterson",
-    authorRole: "CEO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "The Importance of Protecting Intellectual Property for Businesses",
     metaDescription:
       "Learn how Canadian businesses can protect their intellectual property — from trademarks and patents to trade secrets — and why IP protection is a strategic investment.",
@@ -1145,9 +1125,7 @@ Your intellectual property is one of your most valuable resources. Don't wait un
       "Your tech stack is the foundation of your product. The right stack can help you launch faster, scale efficiently, and keep development costs under control — here's how to choose wisely.",
     category: "Development",
     publishDate: "September 17, 2025",
-    readTime: "4 min read",
-    author: "Marcus Chen",
-    authorRole: "CTO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "How to Choose the Right Tech Stack for Your Startup",
     metaDescription:
       "A practical guide to selecting the right tech stack for your startup — key factors to consider, common mistakes to avoid, and how to set your product up for long-term success.",
@@ -1262,9 +1240,7 @@ If you're unsure where to start — or want expert support to validate your choi
       "Startup costs can vary widely depending on your industry, product type, team structure, and growth strategy. This guide breaks down the real numbers so you can plan smarter.",
     category: "Startups",
     publishDate: "September 9, 2025",
-    readTime: "5 min read",
-    author: "Riley Peterson",
-    authorRole: "CEO, Audax Ventures",
+    author: "Audax Ventures",
     metaTitle: "How Much Does It Cost to Start a Tech Startup in 2025?",
     metaDescription:
       "A realistic breakdown of tech startup costs in 2025 — product development, marketing, team, and operations — plus smart tips to launch lean without cutting corners.",

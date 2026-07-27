@@ -122,13 +122,13 @@ export default function MVPCalculatorClient() {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#1A1A2E] mb-4">
             MVP Cost Calculator
           </h1>
-          <p className="text-[#6B7280]">Answer 5 questions to get your estimated project range.</p>
+          <p className="text-[#374151]">Answer 5 questions to get your estimated project range.</p>
         </div>
 
         {/* Progress bar */}
         {step < totalSteps && (
           <div className="mb-10">
-            <div className="flex justify-between text-xs text-[#6B7280] mb-2">
+            <div className="flex justify-between text-xs text-[#374151] mb-2">
               <span>Step {step + 1} of {totalSteps}</span>
               <span>{Math.round(((step) / totalSteps) * 100)}% complete</span>
             </div>
@@ -204,7 +204,7 @@ export default function MVPCalculatorClient() {
                           </div>
                           <span className="text-sm font-medium text-[#1A1A2E]">{f.label}</span>
                         </div>
-                        <span className="text-xs text-[#6B7280]">+${(f.cost / 1000).toFixed(0)}K</span>
+                        <span className="text-xs text-[#374151]">+${(f.cost / 1000).toFixed(0)}K</span>
                       </button>
                     ))}
                   </div>
@@ -292,11 +292,11 @@ export default function MVPCalculatorClient() {
                     Your Estimated Range
                   </h2>
                   <div className="bg-white rounded-2xl p-6 mb-6 border border-gray-100">
-                    <p className="text-[#6B7280] text-sm mb-2">Based on your selections:</p>
+                    <p className="text-[#374151] text-sm mb-2">Based on your selections:</p>
                     <p className="font-[var(--font-outfit)] font-extrabold text-4xl text-[#2E5F8A]">
                       ${(estimate.low / 1000).toFixed(0)}K – ${(estimate.high / 1000).toFixed(0)}K CAD
                     </p>
-                    <p className="text-[#6B7280] text-xs mt-2">
+                    <p className="text-[#374151] text-xs mt-2">
                       This is a rough estimate. Actual cost depends on final scope.
                     </p>
                   </div>
@@ -322,7 +322,7 @@ export default function MVPCalculatorClient() {
                   </Link>
                   <button
                     onClick={() => { setStep(0); setSelections({ productType: "", features: [], stage: "", timeline: "", budget: "" }); }}
-                    className="mt-4 text-sm text-[#6B7280] hover:text-[#2E5F8A] transition-colors"
+                    className="mt-4 text-sm text-[#374151] hover:text-[#2E5F8A] transition-colors"
                   >
                     Start over
                   </button>
@@ -337,7 +337,7 @@ export default function MVPCalculatorClient() {
           <div className="flex items-center justify-between mt-6">
             <button
               onClick={prev}
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-[#6B7280] hover:border-[#2E5F8A] hover:text-[#2E5F8A] transition-colors ${step === 0 ? "invisible" : ""}`}
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-[#374151] hover:border-[#2E5F8A] hover:text-[#2E5F8A] transition-colors ${step === 0 ? "invisible" : ""}`}
             >
               <ArrowLeft size={14} /> Back
             </button>

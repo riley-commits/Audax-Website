@@ -39,7 +39,7 @@ export default function PricingTiers({
             >
               {pkg.name}
             </h3>
-            <p className={`text-sm mb-5 ${highlighted ? "text-white/70" : "text-[#6B7280]"}`}>
+            <p className={`text-sm mb-5 ${highlighted ? "text-white/70" : "text-[#374151]"}`}>
               {pkg.tagline}
             </p>
 
@@ -52,7 +52,7 @@ export default function PricingTiers({
                 >
                   {pkg.price}
                 </span>
-                <span className={`text-sm ${highlighted ? "text-white/60" : "text-[#6B7280]"}`}>
+                <span className={`text-sm ${highlighted ? "text-white/60" : "text-[#374151]"}`}>
                   {pkg.priceUnit}
                 </span>
               </div>
@@ -60,7 +60,7 @@ export default function PricingTiers({
 
             <div
               className={`rounded-xl px-4 py-3 mb-6 text-xs leading-relaxed ${
-                highlighted ? "bg-white/10 text-white/80" : "bg-[#F8F9FA] text-[#6B7280]"
+                highlighted ? "bg-white/10 text-white/80" : "bg-[#F8F9FA] text-[#374151]"
               }`}
             >
               <span className={`font-bold ${highlighted ? "text-white" : "text-[#1A1A2E]"}`}>
@@ -112,7 +112,7 @@ export default function PricingTiers({
                           <li
                             key={a}
                             className={`flex gap-2 text-xs leading-relaxed ${
-                              highlighted ? "text-white/75" : "text-[#6B7280]"
+                              highlighted ? "text-white/75" : "text-[#374151]"
                             }`}
                           >
                             <CheckCircle2

@@ -53,7 +53,7 @@ export default function FractionalCaioSpotlight() {
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#0F172A] mb-3">
               Joshua Zaporzan
             </h2>
-            <p className="text-[#6B7280] leading-relaxed mb-6">
+            <p className="text-[#374151] leading-relaxed mb-6">
               President of Audax Ventures, entrepreneur, and AI strategist helping business owners turn ambitious ideas into practical technology. Joshua combines executive-level strategy with hands-on software development to help organizations adopt AI, build custom software, and create lasting competitive advantages.
             </p>
             <div className="space-y-2.5 mb-6">
@@ -76,14 +76,14 @@ export default function FractionalCaioSpotlight() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#6B7280] hover:bg-[#0F172A] hover:text-white transition-colors"
+                className="w-9 h-9 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#374151] hover:bg-[#0F172A] hover:text-white transition-colors"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
               <a
                 href="mailto:joshua@audaxventures.ca"
                 aria-label="Email"
-                className="w-9 h-9 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#6B7280] hover:bg-[#0F172A] hover:text-white transition-colors"
+                className="w-9 h-9 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#374151] hover:bg-[#0F172A] hover:text-white transition-colors"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
               </a>
@@ -102,7 +102,7 @@ export default function FractionalCaioSpotlight() {
             <p className="text-[#0F172A] text-base font-medium leading-relaxed mb-4">
               &ldquo;AI won&apos;t replace great businesses. Businesses that learn to use AI will replace those that don&apos;t. Our role is to help you become one of them.&rdquo;
             </p>
-            <p className="text-[#6B7280] text-sm">— Joshua Zaporzan</p>
+            <p className="text-[#374151] text-sm">— Joshua Zaporzan</p>
           </motion.div>
         </div>
       </div>

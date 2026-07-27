@@ -134,7 +134,7 @@ export default function ProcessContent() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[#6B7280] text-lg leading-relaxed"
+            className="text-[#374151] text-lg leading-relaxed"
           >
             A transparent, repeatable 5-phase process that keeps you in control, surfaces problems early, and delivers working software every two weeks.
           </motion.p>
@@ -162,19 +162,19 @@ export default function ProcessContent() {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3 mb-4">
-                      <span className="text-[#6B7280] text-sm font-mono">Phase {phase.number}</span>
+                      <span className="text-[#374151] text-sm font-mono">Phase {phase.number}</span>
                       <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E]">{phase.title}</h2>
-                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F8F9FA] border border-gray-200 text-xs text-[#6B7280]">
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F8F9FA] border border-gray-200 text-xs text-[#374151]">
                         <Clock size={12} />
                         {phase.duration}
                       </div>
                     </div>
-                    <p className="text-[#6B7280] leading-relaxed mb-6">{phase.description}</p>
+                    <p className="text-[#374151] leading-relaxed mb-6">{phase.description}</p>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-widest text-[#1A1A2E] mb-3">Key Deliverables</p>
                       <ul className="grid sm:grid-cols-2 gap-2">
                         {phase.deliverables.map((d) => (
-                          <li key={d} className="flex items-center gap-2 text-sm text-[#6B7280]">
+                          <li key={d} className="flex items-center gap-2 text-sm text-[#374151]">
                             <CheckCircle2 size={14} className="text-[#2E5F8A] flex-shrink-0" />
                             {d}
                           </li>
@@ -211,7 +211,7 @@ export default function ProcessContent() {
                 className="bg-[#F8F9FA] rounded-2xl p-6"
               >
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] mb-2">{f.q}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{f.a}</p>
+                <p className="text-[#374151] text-sm leading-relaxed">{f.a}</p>
               </motion.div>
             ))}
           </div>

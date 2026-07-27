@@ -63,7 +63,7 @@ export default function ImpactHighlights() {
                   <h3 className="font-[var(--font-outfit)] font-extrabold text-lg text-[#0F172A] mb-2">
                     {h.title}
                   </h3>
-                  <p className="text-[#6B7280] text-sm leading-relaxed mb-5 flex-1">{h.description}</p>
+                  <p className="text-[#374151] text-sm leading-relaxed mb-5 flex-1">{h.description}</p>
 
                   <div className="flex items-center justify-between">
                     <div>

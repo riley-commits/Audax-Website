@@ -54,7 +54,7 @@ export default function InsightsTeaser() {
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-base leading-snug mt-4 mb-2 group-hover:text-[#2E5F8A] transition-colors">
                   {a.title}
                 </h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{a.excerpt}</p>
+                <p className="text-[#374151] text-sm leading-relaxed">{a.excerpt}</p>
               </Link>
             </motion.div>
           ))}

@@ -96,7 +96,7 @@ function BigCard({
           <p className="text-[10px] tracking-widest uppercase text-[#2563EB] font-bold mb-1">{phase}</p>
         )}
         <p className="font-[var(--font-outfit)] font-extrabold text-[#0F172A] text-base mb-1 leading-snug">{label}</p>
-        <p className="text-[#6B7280] text-sm leading-snug">{desc}</p>
+        <p className="text-[#374151] text-sm leading-snug">{desc}</p>
       </div>
       <div className="inline-flex items-center self-start px-2.5 py-1 rounded-full bg-[#2563EB]/8 text-[#2563EB] text-xs font-bold mt-1">
         {stat}
@@ -201,7 +201,7 @@ export default function Navbar() {
                     >
                       <div className="p-6">
                         <div className="flex items-center justify-between mb-4">
-                          <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280]">
+                          <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151]">
                             Core Services
                           </p>
                           <Link
@@ -263,7 +263,7 @@ export default function Navbar() {
                       className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[600px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
                     >
                       <div className="p-6">
-                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] mb-4">
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151] mb-4">
                           Resources
                         </p>
                         <div className="grid grid-cols-2 gap-4">

@@ -54,7 +54,7 @@ export default function ProductsPage() {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#1A1A2E] mb-4">
             Software Products You Can Go Use
           </h1>
-          <p className="text-[#6B7280] text-lg leading-relaxed">
+          <p className="text-[#374151] text-lg leading-relaxed">
             Across enough client engagements, we kept hearing the same problems come up again and again — so instead
             of solving them one project at a time, we built products to solve them for good. The products below are
             live and available to use or purchase directly — click through to try one out.
@@ -99,7 +99,7 @@ export default function ProductsPage() {
                       {product.description}
                     </p>
                     {product.note && (
-                      <p className={`text-xs italic leading-relaxed mt-3 ${light ? "text-white/40" : "text-[#6B7280]"}`}>
+                      <p className={`text-xs italic leading-relaxed mt-3 ${light ? "text-white/40" : "text-[#374151]"}`}>
                         {product.note}
                       </p>
                     )}
@@ -110,7 +110,7 @@ export default function ProductsPage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-[#6B7280] text-sm">
+            <p className="text-[#374151] text-sm">
               Want to see how we build these?{" "}
               <Link href="/work" className="text-[#2E5F8A] font-semibold hover:underline">
                 See our client work →

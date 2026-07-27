@@ -37,7 +37,7 @@ export default function AboutAudaxSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
           >
-            <p className="text-[#6B7280] text-lg leading-relaxed">
+            <p className="text-[#374151] text-lg leading-relaxed">
               Most AI advisory stops at the roadmap. Audax Ventures pairs executive-level Fractional Chief AI Officer leadership with an in-house development team — so the strategy we set is the same team that builds it. No handoff to a separate vendor, no slide deck that never becomes software. Just a single accountable partner from opportunity assessment through shipped product.
             </p>
           </motion.div>

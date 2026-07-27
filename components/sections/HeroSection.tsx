@@ -154,7 +154,7 @@ function AIDashboardMockup() {
         </div>
         <div>
           <p className="text-[11px] font-bold text-[#0F172A]">68% Automated</p>
-          <p className="text-[9px] text-[#6B7280]">Across live workflows</p>
+          <p className="text-[9px] text-[#374151]">Across live workflows</p>
         </div>
       </motion.div>
 
@@ -170,7 +170,7 @@ function AIDashboardMockup() {
         </div>
         <div>
           <p className="text-[11px] font-bold text-[#0F172A]">347% ROI</p>
-          <p className="text-[9px] text-[#6B7280]">This year</p>
+          <p className="text-[9px] text-[#374151]">This year</p>
         </div>
       </motion.div>
     </motion.div>
@@ -241,7 +241,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-lg"
+              className="text-[#374151] text-lg leading-relaxed mb-10 max-w-lg"
             >
               Audax helps organizations transform how they operate through AI leadership, custom software, and long-term technology partnership.
             </motion.p>

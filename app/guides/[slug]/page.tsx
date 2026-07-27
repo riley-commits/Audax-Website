@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import CTABanner from "@/components/layout/CTABanner";
 import { getGuideBySlug, getAllGuideSlugs } from "@/lib/guides-data";
-import { servicesData } from "@/lib/services-data";
+import { servicePagesData } from "@/lib/service-pages-data";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -71,7 +71,7 @@ export default async function GuidePage({ params }: Props) {
   };
 
   const relatedServicesData = guide.relatedServices
-    .map((s) => servicesData.find((d) => d.slug === s))
+    .map((s) => servicePagesData.find((d) => d.slug === s))
     .filter(Boolean);
 
   return (

@@ -2,16 +2,16 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { User, Code2, TrendingUp, ArrowRight, Check } from "lucide-react";
+import { Lightbulb, Code2, TrendingUp, ArrowRight, Check } from "lucide-react";
 
 const pillars = [
   {
     phase: "Think",
-    icon: User,
+    icon: Lightbulb,
     title: "AI Leadership",
     description:
       "We work alongside founders and leadership teams to identify opportunities, develop AI strategies, prioritize investments, and create a practical roadmap for adopting AI across the organization.",
-    href: "/services/fractional-caio",
+    href: "/services/ai-leadership",
     accentBg: "bg-[#0F172A]",
     features: [
       "Fractional Chief AI Officer (CAIO)",
@@ -28,7 +28,7 @@ const pillars = [
     title: "Custom Software Development",
     description:
       "Once the strategy is clear, we design and build the technology that powers it. From AI applications and SaaS platforms to internal business systems and modern websites, every solution is built specifically around your business.",
-    href: "/services/custom-ai-software-development",
+    href: "/services/custom-software-development",
     accentBg: "bg-[#7C3AED]",
     features: [
       "AI Applications",

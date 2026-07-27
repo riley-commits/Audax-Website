@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 const services = [
-  { label: "AI Leadership", href: "/services/fractional-caio" },
-  { label: "Custom Software Development", href: "/services/custom-ai-software-development" },
+  { label: "AI Leadership", href: "/services/ai-leadership" },
+  { label: "Custom Software Development", href: "/services/custom-software-development" },
   { label: "Digital Operations", href: "/services/digital-operations" },
 ];
 

@@ -102,7 +102,7 @@ export default function ContactContent() {
             className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-white/40 font-semibold mb-5"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Accepting new projects
+            Open to new conversations
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -110,7 +110,7 @@ export default function ContactContent() {
             transition={{ delay: 0.1 }}
             className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white mb-5 leading-tight"
           >
-            Let&apos;s Build Something Together
+            Let&apos;s Connect
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -118,7 +118,7 @@ export default function ContactContent() {
             transition={{ delay: 0.2 }}
             className="text-white/55 text-lg leading-relaxed max-w-2xl mx-auto mb-12"
           >
-            Tell us what you&apos;re building. We&apos;ll tell you exactly what it takes — scope, timeline, and cost — with no fluff and no obligation.
+            Whether you have a question, an idea, or just want to explore what&apos;s possible — we&apos;d love to hear from you. Reach out and let&apos;s start the conversation.
           </motion.p>
 
           {/* Quick-access chips */}
@@ -276,10 +276,10 @@ export default function ContactContent() {
                   >
                     <div className="mb-8">
                       <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E] mb-2">
-                        Tell Us About Your Project
+                        Connect with Us Today
                       </h2>
                       <p className="text-[#374151] text-sm">
-                        Fill in what you know — we&apos;ll ask the rest on our call.
+                        Share a few details and we&apos;ll take it from there.
                       </p>
                     </div>
 
@@ -346,7 +346,7 @@ export default function ContactContent() {
                           value={form.message}
                           onChange={set("message")}
                           className={`${inputClass} resize-none`}
-                          placeholder="What are you building? What problem does it solve? What stage are you at? Any specific constraints we should know about?"
+                          placeholder="Tell us a bit about yourself and what you'd like to connect with us about — a question, an idea, a potential project, or just to say hello."
                         />
                       </div>
 

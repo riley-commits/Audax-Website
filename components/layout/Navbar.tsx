@@ -21,7 +21,7 @@ const serviceLinks = [
   },
   {
     phase: "Build",
-    label: "Custom Software Development",
+    label: "Software Development",
     href: "/services/custom-software-development",
     desc: "AI applications, SaaS platforms & websites",
     icon: "💻",
@@ -197,7 +197,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.98 }}
                       transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[860px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[940px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
                     >
                       <div className="p-6">
                         <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151] mb-4">

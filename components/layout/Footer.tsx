@@ -19,8 +19,6 @@ const company = [
 const resources = [
   { label: "Articles", href: "/insights" },
   { label: "Case Studies", href: "/work" },
-  { label: "Guides", href: "/guides" },
-  { label: "Tools", href: "/mvp-calculator" },
 ];
 
 export default function Footer() {

@@ -10,57 +10,110 @@ import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const serviceLinks = [
-  { label: "Fractional CAIO", href: "/services/fractional-caio", desc: "Executive AI leadership without the full-time cost" },
-  { label: "AI Software Development", href: "/services/custom-ai-software-development", desc: "Custom software and AI solutions" },
-  { label: "AI Transformation & Advisory", href: "/services/ai-transformation-advisory", desc: "Process, data, and adoption at scale" },
+  {
+    label: "Fractional CAIO",
+    href: "/services/fractional-caio",
+    desc: "Executive-level AI leadership & strategic guidance",
+    icon: "👔",
+    stat: "Exec-level AI leadership",
+    preview: "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer — strategy, governance, training, and ROI tracking on a monthly retainer.",
+  },
+  {
+    label: "AI Software Development",
+    href: "/services/custom-ai-software-development",
+    desc: "Custom software, automation & AI-powered apps",
+    icon: "💻",
+    stat: "100% IP ownership",
+    preview: "Custom software, automation solutions, AI-powered applications, and digital products built around your business.",
+  },
 ];
 
 const resourceLinks = [
-  { label: "Articles", href: "/insights", desc: "AI leadership & software insights" },
-  { label: "Case Studies", href: "/work", desc: "Real results from real engagements" },
-  { label: "Guides", href: "/guides", desc: "In-depth guides for builders & buyers" },
-  { label: "Tools", href: "/mvp-calculator", desc: "MVP cost & timeline calculator" },
+  {
+    label: "Articles",
+    href: "/insights",
+    desc: "AI leadership & software insights",
+    icon: "📰",
+    stat: "Updated regularly",
+  },
+  {
+    label: "Case Studies",
+    href: "/work",
+    desc: "Real results from real engagements",
+    icon: "📊",
+    stat: "8+ case studies",
+  },
+  {
+    label: "Guides",
+    href: "/guides",
+    desc: "In-depth guides for builders & buyers",
+    icon: "📚",
+    stat: "10+ guides",
+  },
+  {
+    label: "Tools",
+    href: "/mvp-calculator",
+    desc: "MVP cost & timeline calculator",
+    icon: "🧮",
+    stat: "Free to use",
+  },
 ];
 
 const navLinks = [
-  { label: "Services",     href: "/services",  kind: "services" as const },
-  { label: "Our Approach", href: "/approach",   kind: "link" as const },
-  { label: "Our Work",     href: "/work",       kind: "link" as const },
-  { label: "About",        href: "/about",      kind: "link" as const },
-  { label: "Resources",    href: "/insights",   kind: "resources" as const },
-  { label: "Contact",      href: "/contact",    kind: "link" as const },
+  { label: "About",     href: "/about",     kind: "link" as const },
+  { label: "Services",  href: "/services",  kind: "services" as const },
+  { label: "Our Work",  href: "/work",      kind: "link" as const },
+  { label: "Resources", href: "/insights",  kind: "resources" as const },
+  { label: "Contact",   href: "/contact",   kind: "link" as const },
 ];
 
-// ── Shared dropdown panel ──────────────────────────────────────────────────────
+// ── Shared sub-components ─────────────────────────────────────────────────────
 
-function DropdownPanel({
-  items, onClose,
+/** Large, prominent card for a service/resource shown directly in the dropdown */
+function BigCard({
+  href, icon, label, desc, stat, onClose,
 }: {
-  items: { label: string; href: string; desc: string }[];
+  href: string; icon: string; label: string; desc: string; stat: string;
   onClose: () => void;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 10, scale: 0.98 }}
-      transition={{ duration: 0.18, ease: [0.33, 1, 0.68, 1] }}
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[320px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden p-2"
+    <Link
+      href={href}
+      onClick={onClose}
+      className="group flex flex-col gap-3 p-5 rounded-2xl border border-gray-100 hover:border-[#2563EB]/30 hover:bg-[#F8F9FA] hover:shadow-md transition-all duration-200"
     >
-      {items.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          onClick={onClose}
-          className="group flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-[#F8F9FA] transition-colors"
-        >
-          <span className="font-semibold text-sm text-[#0F172A] group-hover:text-[#2563EB] transition-colors">
-            {item.label}
-          </span>
-          <span className="text-xs text-[#6B7280]">{item.desc}</span>
-        </Link>
-      ))}
-    </motion.div>
+      <div className="flex items-center justify-between">
+        <span className="text-3xl">{icon}</span>
+        <ArrowRight size={14} className="text-[#9CA3AF] group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all" />
+      </div>
+      <div>
+        <p className="font-[var(--font-outfit)] font-extrabold text-[#0F172A] text-base mb-1 leading-snug">{label}</p>
+        <p className="text-[#6B7280] text-sm leading-snug">{desc}</p>
+      </div>
+      <div className="inline-flex items-center self-start px-2.5 py-1 rounded-full bg-[#2563EB]/8 text-[#2563EB] text-xs font-bold mt-1">
+        {stat}
+      </div>
+    </Link>
+  );
+}
+
+/** Full-width CTA strip at the bottom of a mega-dropdown */
+function CTAStrip({ prompt, linkLabel, href }: { prompt: string; linkLabel: string; href: string }) {
+  return (
+    <div
+      className="px-6 py-4 flex items-center justify-between"
+      style={{ background: "linear-gradient(90deg, #0B1220 0%, #1E293B 100%)" }}
+    >
+      <p className="text-white/55 text-xs">{prompt}</p>
+      <Link
+        href={href}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        className="inline-flex items-center gap-1.5 text-xs font-bold text-white hover:text-[#60A5FA] transition-colors"
+      >
+        {linkLabel} <ArrowRight size={11} />
+      </Link>
+    </div>
   );
 }
 
@@ -109,32 +162,125 @@ export default function Navbar() {
         {/* ── Desktop Nav ── */}
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
-            if (link.kind === "services" || link.kind === "resources") {
-              const isOpen = openMenu === link.kind;
-              const items = link.kind === "services" ? serviceLinks : resourceLinks;
-              return (
-                <div
-                  key={link.label}
-                  className="relative"
-                  onMouseEnter={() => setOpenMenu(link.kind)}
-                  onMouseLeave={() => setOpenMenu(null)}
+
+            /* ── Services Mega Dropdown ── */
+            if (link.kind === "services") return (
+              <div
+                key={link.label}
+                className="relative"
+                onMouseEnter={() => setOpenMenu("services")}
+                onMouseLeave={() => setOpenMenu(null)}
+              >
+                <button
+                  className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                    isActive(link.href) || openMenu === "services"
+                      ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
+                      : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
+                  }`}
                 >
-                  <button
-                    className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
-                      isActive(link.href) || isOpen
-                        ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
-                        : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
-                    }`}
-                  >
-                    {link.label}
-                    <ChevronDown size={13} className={`transition-transform duration-250 ${isOpen ? "rotate-180" : ""}`} />
-                  </button>
-                  <AnimatePresence>
-                    {isOpen && <DropdownPanel items={items} onClose={() => setOpenMenu(null)} />}
-                  </AnimatePresence>
-                </div>
-              );
-            }
+                  {link.label}
+                  <ChevronDown size={13} className={`transition-transform duration-250 ${openMenu === "services" ? "rotate-180" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {openMenu === "services" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                      transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[600px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
+                    >
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280]">
+                            Core Services
+                          </p>
+                          <Link
+                            href="/services"
+                            onClick={() => setOpenMenu(null)}
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#2563EB] hover:text-[#0F172A] transition-colors"
+                          >
+                            View all services <ArrowRight size={10} />
+                          </Link>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                          {serviceLinks.map((s) => (
+                            <BigCard
+                              key={s.href}
+                              href={s.href} icon={s.icon} label={s.label} desc={s.desc} stat={s.stat}
+                              onClose={() => setOpenMenu(null)}
+                            />
+                          ))}
+                        </div>
+                      </div>
+
+                      <CTAStrip
+                        prompt="Not sure which service fits? Tell us what you're building."
+                        linkLabel="Book a Free AI Strategy Call"
+                        href="https://calendly.com/audax-ventures/30min"
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+
+            /* ── Resources Mega Dropdown ── */
+            if (link.kind === "resources") return (
+              <div
+                key={link.label}
+                className="relative"
+                onMouseEnter={() => setOpenMenu("resources")}
+                onMouseLeave={() => setOpenMenu(null)}
+              >
+                <button
+                  className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                    isActive(link.href) || openMenu === "resources"
+                      ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
+                      : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
+                  }`}
+                >
+                  {link.label}
+                  <ChevronDown size={13} className={`transition-transform duration-250 ${openMenu === "resources" ? "rotate-180" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {openMenu === "resources" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                      transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[600px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
+                    >
+                      <div className="p-6">
+                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] mb-4">
+                          Resources
+                        </p>
+                        <div className="grid grid-cols-2 gap-4">
+                          {resourceLinks.map((r) => (
+                            <BigCard
+                              key={r.href}
+                              href={r.href} icon={r.icon} label={r.label} desc={r.desc} stat={r.stat}
+                              onClose={() => setOpenMenu(null)}
+                            />
+                          ))}
+                        </div>
+                      </div>
+
+                      <CTAStrip
+                        prompt="Looking for something specific? Just ask us."
+                        linkLabel="Book a Free AI Strategy Call"
+                        href="https://calendly.com/audax-ventures/30min"
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+
+            /* ── Regular link ── */
             return (
               <Link
                 key={link.label}
@@ -217,17 +363,23 @@ export default function Navbar() {
                 <p className="text-[10px] font-bold tracking-widest uppercase text-[#0F172A] px-3 mb-2">Services</p>
                 {serviceLinks.map((s) => (
                   <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)}
-                    className="flex items-center pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
+                    className="flex items-center gap-2 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
+                    <span className="text-base">{s.icon}</span>
                     {s.label}
                   </Link>
                 ))}
+                <Link href="/services" onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-1.5 pl-3 pr-3 py-2 mt-1 rounded-lg text-sm font-semibold text-[#2563EB] hover:bg-[#F8F9FA] transition-colors">
+                  View all services <ArrowRight size={12} />
+                </Link>
               </div>
 
               <div className="border-t border-gray-100 pt-4 mb-4">
                 <p className="text-[10px] font-bold tracking-widest uppercase text-[#0F172A] px-3 mb-2">Resources</p>
                 {resourceLinks.map((r) => (
                   <Link key={r.href} href={r.href} onClick={() => setMobileOpen(false)}
-                    className="flex items-center pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
+                    className="flex items-center gap-2 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
+                    <span className="text-base">{r.icon}</span>
                     {r.label}
                   </Link>
                 ))}

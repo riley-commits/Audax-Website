@@ -21,7 +21,7 @@ const pillars = [
   },
   {
     icon: Code2,
-    title: "AI Software Development",
+    title: "Software Development",
     description: "Custom software and AI solutions to solve your most critical challenges.",
     href: "/services/custom-ai-software-development",
     accentBg: "bg-[#7C3AED]",

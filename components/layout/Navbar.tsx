@@ -19,7 +19,7 @@ const serviceLinks = [
     preview: "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer — strategy, governance, training, and ROI tracking on a monthly retainer.",
   },
   {
-    label: "AI Software Development",
+    label: "Software Development",
     href: "/services/custom-ai-software-development",
     desc: "Custom software, automation & AI-powered apps",
     icon: "💻",

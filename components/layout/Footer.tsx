@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const services = [
   { label: "Fractional CAIO", href: "/services/fractional-caio" },
-  { label: "AI Software Development", href: "/services/custom-ai-software-development" },
+  { label: "Software Development", href: "/services/custom-ai-software-development" },
   { label: "AI Transformation", href: "/services/ai-transformation-advisory" },
   { label: "Strategy & Advisory", href: "/services/ai-strategy-governance" },
 ];

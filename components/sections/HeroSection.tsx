@@ -222,7 +222,7 @@ export default function HeroSection() {
               transition={{ duration: 0.5 }}
               className="text-xs font-bold tracking-widest uppercase text-[#2563EB] mb-6"
             >
-              Fractional AI Leadership. Real Software. Real Impact.
+              Think Bigger. Build Better. Scale Smarter.
             </motion.p>
 
             <motion.h1
@@ -243,7 +243,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-lg"
             >
-              Fractional CAIO leadership and custom software development that help organizations operate smarter, move faster, and create measurable impact.
+              Audax helps organizations transform how they operate through AI leadership, custom software, and long-term technology partnership.
             </motion.p>
 
             <motion.div

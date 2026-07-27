@@ -31,7 +31,7 @@ export default function JoshuaBioContent() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/about"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#6B7280] hover:text-[#0F172A] transition-colors mb-8"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#374151] hover:text-[#0F172A] transition-colors mb-8"
           >
             <ArrowLeft size={14} /> Back to About
           </Link>
@@ -66,7 +66,7 @@ export default function JoshuaBioContent() {
               <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#0F172A] mb-3 leading-tight">
                 Joshua Zaporzan
               </h1>
-              <p className="text-[#6B7280] text-lg font-medium mb-8">
+              <p className="text-[#374151] text-lg font-medium mb-8">
                 President, Audax Ventures &amp; Founder &amp; CEO, H2MB
               </p>
 
@@ -93,14 +93,14 @@ export default function JoshuaBioContent() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Joshua Zaporzan on LinkedIn"
-                  className="w-11 h-11 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#6B7280] hover:bg-[#0F172A] hover:text-white transition-colors flex-shrink-0"
+                  className="w-11 h-11 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#374151] hover:bg-[#0F172A] hover:text-white transition-colors flex-shrink-0"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 </a>
                 <a
                   href="mailto:joshua@audaxventures.ca"
                   aria-label="Email Joshua Zaporzan"
-                  className="w-11 h-11 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#6B7280] hover:bg-[#0F172A] hover:text-white transition-colors flex-shrink-0"
+                  className="w-11 h-11 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#374151] hover:bg-[#0F172A] hover:text-white transition-colors flex-shrink-0"
                 >
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
                 </a>
@@ -147,7 +147,7 @@ export default function JoshuaBioContent() {
           <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-4">
             Want to Talk AI Strategy or Custom Software?
           </h2>
-          <p className="text-[#6B7280] mb-8 max-w-xl mx-auto">
+          <p className="text-[#374151] mb-8 max-w-xl mx-auto">
             Book a free, no-pressure call with Joshua to discuss where AI and custom technology could create real value for your business.
           </p>
           <a

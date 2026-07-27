@@ -113,7 +113,7 @@ export default function ServicesPage() {
             AI Leadership &amp; Software Development for{" "}
             <span className="text-[#2E5F8A]">Businesses Navigating AI</span>
           </h1>
-          <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-[#374151] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
             AI leadership when you need direction, and custom software when you&apos;re ready to build — everything in between to get you from an idea to something shipped.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -171,7 +171,7 @@ export default function ServicesPage() {
 
                 <h3 className="font-[var(--font-outfit)] font-extrabold text-xl text-[#1A1A2E] mb-1">{s.title}</h3>
                 <p className={`text-xs font-semibold uppercase tracking-wide mb-3 ${s.accentText}`}>{s.tagline}</p>
-                <p className="text-[#6B7280] text-sm leading-relaxed mb-6">{s.description}</p>
+                <p className="text-[#374151] text-sm leading-relaxed mb-6">{s.description}</p>
 
                 <div className="space-y-2 mb-6">
                   {s.highlights.map((h) => (
@@ -185,7 +185,7 @@ export default function ServicesPage() {
                 <div className="mt-auto flex items-center justify-between">
                   <div className={`${s.accentBg} rounded-xl px-4 py-2.5 text-center`}>
                     <p className="font-[var(--font-outfit)] font-extrabold text-lg text-[#1A1A2E] leading-none">{s.stat.value}</p>
-                    <p className="text-[#6B7280] text-[10px] mt-0.5">{s.stat.label}</p>
+                    <p className="text-[#374151] text-[10px] mt-0.5">{s.stat.label}</p>
                   </div>
                   <div className={`flex items-center gap-2 text-sm font-semibold ${s.accentText} group-hover:gap-3 transition-all`}>
                     Full details <ArrowRight size={14} />
@@ -225,7 +225,7 @@ export default function ServicesPage() {
                   <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E]">
                     {cat.label}
                   </h2>
-                  <p className="text-[#6B7280] mt-1 text-sm">{cat.description}</p>
+                  <p className="text-[#374151] mt-1 text-sm">{cat.description}</p>
                 </div>
               </div>
             </div>
@@ -241,7 +241,7 @@ export default function ServicesPage() {
                   <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-1.5 group-hover:text-[#2E5F8A] transition-colors leading-snug">
                     {s.title}
                   </h3>
-                  <p className="text-[#6B7280] text-xs leading-relaxed mb-4 flex-1">{s.tagline}</p>
+                  <p className="text-[#374151] text-xs leading-relaxed mb-4 flex-1">{s.tagline}</p>
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-[#2E5F8A] group-hover:gap-2.5 transition-all">
                     Learn more <ArrowRight size={12} />
                   </div>
@@ -258,7 +258,7 @@ export default function ServicesPage() {
           <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E] mb-4">
             Not Sure Which Service You Need?
           </h2>
-          <p className="text-[#6B7280] leading-relaxed mb-8">
+          <p className="text-[#374151] leading-relaxed mb-8">
             Book a free 30-minute call. We&apos;ll listen to what you&apos;re building, ask the right questions, and tell you exactly where to start — no pitch, no pressure.
           </p>
           <Link

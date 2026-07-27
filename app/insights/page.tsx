@@ -23,7 +23,7 @@ export default function InsightsPage() {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#1A1A2E] mb-4">
             News & Tech Insights
           </h1>
-          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
+          <p className="text-[#374151] text-lg max-w-xl mx-auto">
             Practical advice on AI strategy, executive AI leadership, and building software that ships.
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function InsightsPage() {
           {categories.map((cat) => (
             <button
               key={cat}
-              className="px-4 py-1.5 rounded-full text-sm font-medium border border-gray-200 text-[#6B7280] hover:border-[#2E5F8A] hover:text-[#2E5F8A] transition-colors"
+              className="px-4 py-1.5 rounded-full text-sm font-medium border border-gray-200 text-[#374151] hover:border-[#2E5F8A] hover:text-[#2E5F8A] transition-colors"
             >
               {cat}
             </button>
@@ -57,11 +57,11 @@ export default function InsightsPage() {
               <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E] mb-3 group-hover:text-[#2E5F8A] transition-colors">
                 {featured.title}
               </h2>
-              <p className="text-[#6B7280] leading-relaxed mb-5">{featured.excerpt}</p>
+              <p className="text-[#374151] leading-relaxed mb-5">{featured.excerpt}</p>
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-semibold text-[#1A1A2E]">{featured.author}</p>
-                  <p className="text-xs text-[#6B7280]">{featured.publishDate} · {featured.readTime}</p>
+                  <p className="text-xs text-[#374151]">{featured.publishDate} · {featured.readTime}</p>
                 </div>
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E5F8A]">
                   Read more <ArrowRight size={14} />
@@ -85,14 +85,14 @@ export default function InsightsPage() {
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xs font-semibold text-[#2E5F8A] bg-blue-50 px-2.5 py-0.5 rounded-full">{post.category}</span>
-                  <span className="text-xs text-[#6B7280]">{post.readTime}</span>
+                  <span className="text-xs text-[#374151]">{post.readTime}</span>
                 </div>
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-base leading-snug mb-3 group-hover:text-[#2E5F8A] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-[#6B7280] text-sm line-clamp-2 mb-4">{post.excerpt}</p>
+                <p className="text-[#374151] text-sm line-clamp-2 mb-4">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#6B7280]">{post.publishDate}</span>
+                  <span className="text-xs text-[#374151]">{post.publishDate}</span>
                   <span className="text-xs font-semibold text-[#2E5F8A] inline-flex items-center gap-1">
                     Read more <ArrowRight size={12} />
                   </span>

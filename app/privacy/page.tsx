@@ -11,8 +11,8 @@ export default function PrivacyPage() {
     <section className="pt-32 pb-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl text-[#1A1A2E] mb-6">Privacy Policy</h1>
-        <p className="text-[#6B7280] mb-8">Last updated: [confirm publish date]</p>
-        <div className="prose prose-lg text-[#6B7280]">
+        <p className="text-[#374151] mb-8">Last updated: [confirm publish date]</p>
+        <div className="prose prose-lg text-[#374151]">
           <p>
             Audax Ventures (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is a Canadian AI strategy and software
             development studio based in Winnipeg, Manitoba. This Privacy Policy explains what personal information we

@@ -20,7 +20,7 @@ export default function GuidesPage() {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#0F172A] mb-4">
             Guides
           </h1>
-          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
+          <p className="text-[#374151] text-lg max-w-xl mx-auto">
             In-depth guides for builders and buyers navigating AI strategy and software development.
           </p>
         </div>

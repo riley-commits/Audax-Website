@@ -60,12 +60,12 @@ export default async function InsightPostPage({ params }: Props) {
       <article className="pt-32 pb-16">
         {/* Header */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <Link href="/insights" className="inline-flex items-center gap-1.5 text-sm text-[#6B7280] hover:text-[#2E5F8A] transition-colors mb-8">
+          <Link href="/insights" className="inline-flex items-center gap-1.5 text-sm text-[#374151] hover:text-[#2E5F8A] transition-colors mb-8">
             <ArrowLeft size={14} /> Back to Insights
           </Link>
           <div className="flex items-center gap-2 mb-4">
             <span className="text-xs font-semibold text-[#2E5F8A] bg-blue-50 px-2.5 py-0.5 rounded-full">{post.category}</span>
-            <span className="text-xs text-[#6B7280]">{post.readTime}</span>
+            <span className="text-xs text-[#374151]">{post.readTime}</span>
           </div>
           <h1 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl md:text-5xl text-[#1A1A2E] mb-6 leading-tight">
             {post.title}
@@ -76,7 +76,7 @@ export default async function InsightPostPage({ params }: Props) {
             </div>
             <div>
               <p className="font-semibold text-[#1A1A2E] text-sm">{post.author}</p>
-              <p className="text-xs text-[#6B7280]">{post.authorRole} · {post.publishDate}</p>
+              <p className="text-xs text-[#374151]">{post.authorRole} · {post.publishDate}</p>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default async function InsightPostPage({ params }: Props) {
         {/* Content */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className="prose prose-lg prose-headings:font-[var(--font-outfit)] prose-headings:font-bold prose-headings:text-[#1A1A2E] prose-p:text-[#6B7280] prose-p:leading-relaxed prose-a:text-[#2E5F8A] prose-strong:text-[#1A1A2E] prose-li:text-[#6B7280] max-w-none"
+            className="prose prose-lg prose-headings:font-[var(--font-outfit)] prose-headings:font-bold prose-headings:text-[#1A1A2E] prose-p:text-[#374151] prose-p:leading-relaxed prose-a:text-[#2E5F8A] prose-strong:text-[#1A1A2E] prose-li:text-[#374151] max-w-none"
             dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }}
           />
         </div>
@@ -105,7 +105,7 @@ export default async function InsightPostPage({ params }: Props) {
             <div>
               <p className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] mb-0.5">{post.author}</p>
               <p className="text-[#2E5F8A] text-sm font-medium mb-2">{post.authorRole}</p>
-              <p className="text-[#6B7280] text-sm">
+              <p className="text-[#374151] text-sm">
                 The Audax Ventures team writes about software development, startups, and building great products. All views are our own.
               </p>
             </div>

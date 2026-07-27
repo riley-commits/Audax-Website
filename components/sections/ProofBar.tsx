@@ -26,7 +26,7 @@ export default function ProofBar() {
               <div className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#2E5F8A] mb-1 tabular-nums">
                 {s.value}
               </div>
-              <div className="text-[#6B7280] text-sm font-medium">{s.label}</div>
+              <div className="text-[#374151] text-sm font-medium">{s.label}</div>
             </motion.div>
           ))}
         </div>

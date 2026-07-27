@@ -68,7 +68,7 @@ export default function IndustriesPage() {
             Software Built for{" "}
             <span className="text-[#2E5F8A]">Your Industry</span>
           </h1>
-          <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-[#374151] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
             Off-the-shelf software solves generic problems. We build around the real rules, workflows, and data you actually deal with in your industry — not a one-size-fits-all template.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -98,7 +98,7 @@ export default function IndustriesPage() {
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">
               Our Main Industries
             </h2>
-            <p className="text-[#6B7280] mt-4 max-w-xl mx-auto">
+            <p className="text-[#374151] mt-4 max-w-xl mx-auto">
               Where our deepest domain expertise and most extensive delivery track record lives.
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function IndustriesPage() {
                 <h3 className="font-[var(--font-outfit)] font-extrabold text-xl text-[#1A1A2E] mb-3 group-hover:text-[#2E5F8A] transition-colors">
                   {industry.title}
                 </h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed mb-6">{industry.tagline}</p>
+                <p className="text-[#374151] text-sm leading-relaxed mb-6">{industry.tagline}</p>
 
                 {/* Solutions preview */}
                 <div className="space-y-2 mb-8">
@@ -130,7 +130,7 @@ export default function IndustriesPage() {
                     </div>
                   ))}
                   {industry.solutions.length > 3 && (
-                    <div className="text-xs text-[#6B7280] pl-5">
+                    <div className="text-xs text-[#374151] pl-5">
                       +{industry.solutions.length - 3} more solutions
                     </div>
                   )}
@@ -149,11 +149,11 @@ export default function IndustriesPage() {
       <section className="py-20 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] mb-3">Full Coverage</p>
+            <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151] mb-3">Full Coverage</p>
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">
               All Industries
             </h2>
-            <p className="text-[#6B7280] mt-4 max-w-xl mx-auto">
+            <p className="text-[#374151] mt-4 max-w-xl mx-auto">
               Deep domain knowledge across every vertical we serve — with purpose-built solutions for each industry&apos;s unique constraints.
             </p>
           </div>
@@ -169,7 +169,7 @@ export default function IndustriesPage() {
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] mb-2 group-hover:text-[#2E5F8A] transition-colors text-sm leading-snug">
                   {industry.title}
                 </h3>
-                <p className="text-[#6B7280] text-xs leading-relaxed mb-4 line-clamp-2">{industry.tagline}</p>
+                <p className="text-[#374151] text-xs leading-relaxed mb-4 line-clamp-2">{industry.tagline}</p>
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-[#2E5F8A] group-hover:gap-2 transition-all">
                   Learn more <ArrowRight size={12} />
                 </div>
@@ -193,7 +193,7 @@ export default function IndustriesPage() {
               <div key={item.title} className="text-center">
                 <item.icon size={32} className="mx-auto mb-4 text-[#2E5F8A]" strokeWidth={1.75} />
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] mb-3 text-base">{item.title}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{item.description}</p>
+                <p className="text-[#374151] text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>

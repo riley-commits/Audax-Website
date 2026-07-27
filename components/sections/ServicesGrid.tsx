@@ -95,13 +95,13 @@ export default function ServicesGrid() {
               <h3 className="font-[var(--font-outfit)] font-extrabold text-xl text-[#0F172A] mb-2">
                 {p.title}
               </h3>
-              <p className="text-[#6B7280] text-sm leading-relaxed mb-6">
+              <p className="text-[#374151] text-sm leading-relaxed mb-6">
                 {p.description}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-x-3 gap-y-2.5 mb-8 flex-1">
+              <div className="space-y-2.5 mb-8 flex-1">
                 {p.features.map((f) => (
-                  <div key={f} className="flex items-start gap-2">
+                  <div key={f} className="flex items-start gap-2.5">
                     <Check size={14} className="text-[#10B981] mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-[#374151] leading-snug">{f}</span>
                   </div>

@@ -81,7 +81,7 @@ function CountUpStat({ stat, label, accentHex }: { stat: string; label: string; 
       >
         {displayed}
       </div>
-      <div className="text-[#6B7280] text-xs leading-snug max-w-[140px] mx-auto">{label}</div>
+      <div className="text-[#374151] text-xs leading-snug max-w-[140px] mx-auto">{label}</div>
     </div>
   );
 }
@@ -132,7 +132,7 @@ function ChallengeSolutionSection({
               >
                 {solutions[i].title}
               </p>
-              <p className="text-[#6B7280] text-xs leading-relaxed">{solutions[i].description}</p>
+              <p className="text-[#374151] text-xs leading-relaxed">{solutions[i].description}</p>
             </div>
           </div>
         </motion.div>
@@ -154,7 +154,7 @@ function ChallengeSolutionSection({
               </div>
               <div>
                 <p className="font-[var(--font-outfit)] font-bold text-sm mb-1 text-[#1A1A2E]">{sol.title}</p>
-                <p className="text-[#6B7280] text-xs leading-relaxed">{sol.description}</p>
+                <p className="text-[#374151] text-xs leading-relaxed">{sol.description}</p>
               </div>
             </div>
           ))}
@@ -200,7 +200,7 @@ function SolutionsExplorer({
             <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl mb-3 leading-snug text-[#1A1A2E]">
               {featured.title}
             </h3>
-            <p className="text-[#6B7280] leading-relaxed text-sm mb-8">{featured.description}</p>
+            <p className="text-[#374151] leading-relaxed text-sm mb-8">{featured.description}</p>
             <Link
               href="https://calendly.com/audax-ventures/30min"
               target="_blank"
@@ -293,7 +293,7 @@ function FAQAccordion({ faq, accentHex }: { faq: IndustryData["faq"]; accentHex:
                 >
                   <div className="px-6 pb-5">
                     <div className="border-t border-gray-100 pt-4">
-                      <p className="text-[#6B7280] text-sm leading-relaxed">{item.a}</p>
+                      <p className="text-[#374151] text-sm leading-relaxed">{item.a}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -351,7 +351,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
           <div className={heroPhoto ? "grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-center" : ""}>
           <div>
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-8">
+          <nav className="flex items-center gap-2 text-xs text-[#374151] mb-8">
             <Link href="/" className="hover:text-[#2E5F8A] transition-colors">Home</Link>
             <span>/</span>
             <Link href="/industries" className="hover:text-[#2E5F8A] transition-colors">Industries</Link>
@@ -369,7 +369,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl mb-5 leading-tight max-w-3xl" style={{ color: accentHex }}>
             {industry.title}
           </h1>
-          <p className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-2xl">{industry.heroSub}</p>
+          <p className="text-[#374151] text-lg leading-relaxed mb-10 max-w-2xl">{industry.heroSub}</p>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-14">
             <Link
@@ -443,7 +443,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 >
                   →
                 </div>
-                <p className="text-[#6B7280] text-xs leading-relaxed max-w-[160px]">
+                <p className="text-[#374151] text-xs leading-relaxed max-w-[160px]">
                   {beforeAfter.context}
                 </p>
               </div>
@@ -465,7 +465,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 >
                   {beforeAfter.after}
                 </p>
-                <p className="text-[#6B7280] text-xs font-medium">{beforeAfter.metric}</p>
+                <p className="text-[#374151] text-xs font-medium">{beforeAfter.metric}</p>
               </div>
             </div>
           </div>
@@ -496,7 +496,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 The {industry.title} Software Challenge
               </h2>
               {industry.overview.split("\n\n").map((para, i) => (
-                <p key={i} className="text-[#6B7280] text-base leading-relaxed mb-5 last:mb-0">
+                <p key={i} className="text-[#374151] text-base leading-relaxed mb-5 last:mb-0">
                   {para}
                 </p>
               ))}
@@ -513,7 +513,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E]">
                   Challenge → Solution
                 </h2>
-                <p className="text-[#6B7280] text-sm mt-2">
+                <p className="text-[#374151] text-sm mt-2">
                   Every challenge on the left maps to a solution we&apos;ve built on the right.
                 </p>
               </div>
@@ -535,7 +535,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E]">
                   {industry.title} Solutions We Deliver
                 </h2>
-                <p className="text-[#6B7280] text-sm mt-2">
+                <p className="text-[#374151] text-sm mt-2">
                   Click any solution to explore the full scope.
                 </p>
               </div>
@@ -585,7 +585,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E] mb-3">
                   Ready to Build for {industry.title}?
                 </h3>
-                <p className="text-[#6B7280] mb-7 max-w-md mx-auto text-sm leading-relaxed">
+                <p className="text-[#374151] mb-7 max-w-md mx-auto text-sm leading-relaxed">
                   {industry.tagline} Book a free 30-minute strategy call — we&apos;ll walk through your specific requirements, timeline, and budget.
                 </p>
                 <Link
@@ -626,7 +626,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-2xl">{industry.icon}</span>
                   <div>
-                    <p className="text-[#6B7280] text-[10px] uppercase tracking-widest font-semibold">Industry</p>
+                    <p className="text-[#374151] text-[10px] uppercase tracking-widest font-semibold">Industry</p>
                     <h3 className="font-[var(--font-outfit)] font-extrabold text-base leading-snug text-[#1A1A2E]">
                       {industry.title}
                     </h3>
@@ -635,7 +635,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                 <div className="space-y-3 mb-6">
                   {industry.caseHighlights.map((h) => (
                     <div key={h.label} className="flex items-start justify-between gap-3">
-                      <span className="text-[#6B7280] text-xs leading-tight flex-1">{h.label}</span>
+                      <span className="text-[#374151] text-xs leading-tight flex-1">{h.label}</span>
                       <span
                         className="font-[var(--font-outfit)] font-bold text-sm flex-shrink-0"
                         style={{ color: accentHex }}
@@ -658,13 +658,13 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
 
               {/* Jump links */}
               <div className="rounded-2xl border border-gray-100 bg-white p-5">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#6B7280] mb-3">On This Page</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#374151] mb-3">On This Page</p>
                 <nav className="space-y-1">
                   {sectionLinks.map((link) => (
                     <a
                       key={link.id}
                       href={`#${link.id}`}
-                      className="flex items-center gap-2 text-sm text-[#6B7280] hover:text-[#1A1A2E] py-1.5 transition-colors group"
+                      className="flex items-center gap-2 text-sm text-[#374151] hover:text-[#1A1A2E] py-1.5 transition-colors group"
                     >
                       <span
                         className="w-1 h-1 rounded-full bg-gray-300 group-hover:bg-current transition-colors"
@@ -679,7 +679,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
               {/* Related services pills */}
               {industry.relatedServices.length > 0 && (
                 <div className="rounded-2xl border border-gray-100 bg-[#F8F9FA] p-5">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#6B7280] mb-3">Related Services</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#374151] mb-3">Related Services</p>
                   <div className="flex flex-wrap gap-2">
                     {industry.relatedServices.slice(0, 4).map((s) => (
                       <Link
@@ -718,7 +718,7 @@ export default function IndustryPageContent({ industry, relatedIndustries }: Pro
                     <p className="font-[var(--font-outfit)] font-bold text-sm text-[#1A1A2E] mb-1 group-hover:text-[#2E5F8A] transition-colors">
                       {ind.title}
                     </p>
-                    <p className="text-xs text-[#6B7280] leading-snug line-clamp-2">{ind.tagline}</p>
+                    <p className="text-xs text-[#374151] leading-snug line-clamp-2">{ind.tagline}</p>
                   </div>
                 </Link>
               ))}

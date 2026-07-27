@@ -54,7 +54,7 @@ export default async function CaseStudyPage({ params }: Props) {
       {/* Breadcrumb */}
       <div className="pt-24 pb-0 bg-[#F8F9FA]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/work" className="inline-flex items-center gap-1.5 text-sm text-[#6B7280] hover:text-[#2E5F8A] transition-colors">
+          <Link href="/work" className="inline-flex items-center gap-1.5 text-sm text-[#374151] hover:text-[#2E5F8A] transition-colors">
             <ArrowLeft size={14} /> Back to Work
           </Link>
         </div>
@@ -72,7 +72,7 @@ export default async function CaseStudyPage({ params }: Props) {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E] mb-5 leading-tight">
             {study.clientName}
           </h1>
-          <p className="text-[#6B7280] text-lg leading-relaxed max-w-2xl mx-auto">{study.tagline}</p>
+          <p className="text-[#374151] text-lg leading-relaxed max-w-2xl mx-auto">{study.tagline}</p>
         </div>
       </section>
 

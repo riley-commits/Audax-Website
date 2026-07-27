@@ -62,7 +62,7 @@ export default function HomeProcessSection() {
           <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#0F172A] mb-4">
             A Clear Path From Strategy to Impact
           </h2>
-          <p className="text-[#6B7280] text-sm leading-relaxed">
+          <p className="text-[#374151] text-sm leading-relaxed">
             Click a stage to see how we take you from idea to real-world results.
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export default function HomeProcessSection() {
                     </div>
                     <span
                       className={`font-[var(--font-outfit)] font-bold text-lg transition-colors duration-300 ${
-                        isActive ? "text-[#0F172A]" : "text-[#B0B5BF] group-hover:text-[#6B7280]"
+                        isActive ? "text-[#0F172A]" : "text-[#B0B5BF] group-hover:text-[#374151]"
                       }`}
                     >
                       {s.title}
@@ -138,7 +138,7 @@ export default function HomeProcessSection() {
                     {step.title}
                   </h3>
                 </div>
-                <p className="text-[#6B7280] leading-relaxed mb-8">{step.description}</p>
+                <p className="text-[#374151] leading-relaxed mb-8">{step.description}</p>
                 <p className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-3">Key Activities</p>
                 <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
                   {step.activities.map((a) => (

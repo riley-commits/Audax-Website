@@ -130,7 +130,7 @@ export default function AboutContent() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-[#6B7280] text-lg leading-relaxed mb-8 max-w-xl"
+                className="text-[#374151] text-lg leading-relaxed mb-8 max-w-xl"
               >
                 Audax Ventures is the partner organizations call when they&apos;re ready to lead with AI. We combine executive leadership with world-class software development to turn strategy into measurable business outcomes.
               </motion.p>
@@ -206,7 +206,7 @@ export default function AboutContent() {
                 <Target size={18} className="text-[#2563EB]" />
               </div>
               <h3 className="font-[var(--font-outfit)] font-bold text-lg text-[#0F172A] mb-2">Our Mission</h3>
-              <p className="text-[#6B7280] text-sm leading-relaxed">
+              <p className="text-[#374151] text-sm leading-relaxed">
                 To empower organizations with AI leadership and software solutions that drive efficiency, accelerate growth, and create measurable impact.
               </p>
             </motion.div>
@@ -222,7 +222,7 @@ export default function AboutContent() {
                 <Eye size={18} className="text-[#2563EB]" />
               </div>
               <h3 className="font-[var(--font-outfit)] font-bold text-lg text-[#0F172A] mb-2">Our Vision</h3>
-              <p className="text-[#6B7280] text-sm leading-relaxed">
+              <p className="text-[#374151] text-sm leading-relaxed">
                 A future where every organization—regardless of size—has access to world-class AI leadership and custom technology that transforms how they operate.
               </p>
             </motion.div>
@@ -272,7 +272,7 @@ export default function AboutContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.05 }}
-              className="text-[#6B7280] leading-relaxed"
+              className="text-[#374151] leading-relaxed"
             >
               Hiring a full-time Chief AI Officer or building an in-house development team is costly and time-consuming. We provide senior AI leadership and custom software development—exactly when and how you need it.
             </motion.p>
@@ -292,7 +292,7 @@ export default function AboutContent() {
                   </div>
                   <div>
                     <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-sm mb-1">{p.title}</h3>
-                    <p className="text-[#6B7280] text-xs leading-relaxed">{p.description}</p>
+                    <p className="text-[#374151] text-xs leading-relaxed">{p.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -314,7 +314,7 @@ export default function AboutContent() {
             <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#0F172A] mb-4">
               Built for Founders, Growing Teams &amp; Established Organizations
             </h2>
-            <p className="text-[#6B7280] leading-relaxed">
+            <p className="text-[#374151] leading-relaxed">
               We help organizations modernize operations, adopt AI, and build custom technology. We partner with founders, leadership teams, and growing organizations that are ready to improve how they operate through technology. While many of our clients are service-based and product-based businesses, our approach is industry-agnostic and tailored to each organization&apos;s unique goals and challenges.
             </p>
           </motion.div>
@@ -333,7 +333,7 @@ export default function AboutContent() {
                   <a.icon size={20} className="text-[#2563EB] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="font-[var(--font-outfit)] font-bold text-lg text-[#0F172A] mb-2">{a.title}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{a.description}</p>
+                <p className="text-[#374151] text-sm leading-relaxed">{a.description}</p>
               </motion.div>
             ))}
           </div>
@@ -467,7 +467,7 @@ export default function AboutContent() {
                   </div>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-[#2563EB] mb-1.5">{t.year}</p>
                   <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-sm mb-2">{t.title}</h3>
-                  <p className="text-[#6B7280] text-xs leading-relaxed">{t.description}</p>
+                  <p className="text-[#374151] text-xs leading-relaxed">{t.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -485,7 +485,7 @@ export default function AboutContent() {
             {trustedStats.map((s) => (
               <div key={s.label}>
                 <p className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#2563EB] mb-1">{s.value}</p>
-                <p className="text-[#6B7280] text-xs">{s.label}</p>
+                <p className="text-[#374151] text-xs">{s.label}</p>
               </div>
             ))}
           </div>
@@ -526,7 +526,7 @@ export default function AboutContent() {
                   />
                 </div>
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-base leading-snug">{m.name}</h3>
-                <p className="text-[#6B7280] text-sm">{m.title}</p>
+                <p className="text-[#374151] text-sm">{m.title}</p>
               </motion.div>
             ))}
           </div>

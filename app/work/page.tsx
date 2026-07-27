@@ -21,7 +21,7 @@ export default function WorkPage() {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#1A1A2E] mb-4">
             Case Studies
           </h1>
-          <p className="text-[#6B7280] text-lg">
+          <p className="text-[#374151] text-lg">
             From AI-powered startups to established Manitoba hospitality brands — the problems we solved, what we built, and the outcomes.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function WorkPage() {
                   </div>
                 </div>
 
-                <p className="text-[#6B7280] text-sm leading-relaxed mb-5 flex-1">{c.whatWeBuilt}</p>
+                <p className="text-[#374151] text-sm leading-relaxed mb-5 flex-1">{c.whatWeBuilt}</p>
 
                 <div className="flex flex-wrap gap-2 mb-5">
                   {c.tags.map((t) => (

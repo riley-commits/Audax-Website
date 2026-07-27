@@ -201,7 +201,7 @@ export default function ContactContent() {
                     <Icon size={18} className="text-[#2E5F8A]" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#6B7280] mb-1">{card.label}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#374151] mb-1">{card.label}</p>
                     <p className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-0.5 group-hover:text-[#2E5F8A] transition-colors">{card.value}</p>
                     <p className="text-xs text-[#9CA3AF]">{card.sub}</p>
                   </div>
@@ -285,7 +285,7 @@ export default function ContactContent() {
                       </div>
                       <div className="pb-5 last:pb-0">
                         <p className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-1">{step.title}</p>
-                        <p className="text-[#6B7280] text-xs leading-relaxed">{step.body}</p>
+                        <p className="text-[#374151] text-xs leading-relaxed">{step.body}</p>
                       </div>
                     </div>
                   ))}
@@ -300,7 +300,7 @@ export default function ContactContent() {
                 transition={{ delay: 0.15 }}
                 className="rounded-2xl bg-white border border-gray-100 p-6"
               >
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#6B7280] mb-4">Follow Us</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#374151] mb-4">Follow Us</p>
                 <div className="flex items-center gap-3">
                   {[
                     { href: "https://www.linkedin.com/company/audax-ventures-inc/", label: "LinkedIn", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> },
@@ -313,7 +313,7 @@ export default function ContactContent() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="w-9 h-9 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#6B7280] hover:bg-[#2E5F8A] hover:text-white transition-all duration-200"
+                      className="w-9 h-9 rounded-full bg-[#F8F9FA] flex items-center justify-center text-[#374151] hover:bg-[#2E5F8A] hover:text-white transition-all duration-200"
                     >
                       {s.icon}
                     </a>
@@ -344,7 +344,7 @@ export default function ContactContent() {
                     <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E] mb-3">
                       Your email client should be open!
                     </h3>
-                    <p className="text-[#6B7280] max-w-sm leading-relaxed mb-8">
+                    <p className="text-[#374151] max-w-sm leading-relaxed mb-8">
                       Your message has been pre-filled in your email client addressed to{" "}
                       <span className="font-semibold text-[#2E5F8A]">info@audaxventures.ca</span>.
                       Hit send and we&apos;ll get back to you within one business day.
@@ -360,7 +360,7 @@ export default function ContactContent() {
                       </Link>
                       <button
                         onClick={() => { setSubmitted(false); setForm({ name: "", email: "", company: "", phone: "", service: "", budget: "", timeline: "", message: "" }); }}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 text-[#6B7280] font-bold text-sm hover:border-[#2E5F8A] hover:text-[#2E5F8A] transition-colors"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 text-[#374151] font-bold text-sm hover:border-[#2E5F8A] hover:text-[#2E5F8A] transition-colors"
                       >
                         Send another message
                       </button>
@@ -378,7 +378,7 @@ export default function ContactContent() {
                       <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E] mb-2">
                         Tell Us About Your Project
                       </h2>
-                      <p className="text-[#6B7280] text-sm">
+                      <p className="text-[#374151] text-sm">
                         Fill in what you know — we&apos;ll ask the rest on our call.
                       </p>
                     </div>
@@ -498,7 +498,7 @@ export default function ContactContent() {
             ].map((faq) => (
               <div key={faq.q} className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100">
                 <p className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-2">{faq.q}</p>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{faq.a}</p>
+                <p className="text-[#374151] text-sm leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>

@@ -171,7 +171,7 @@ function FAQAccordion({ faq }: { faq: ServiceData["faq"] }) {
                 >
                   <div className="px-6 pb-5">
                     <div className="border-t border-gray-100 pt-4">
-                      <p className="text-[#6B7280] text-sm leading-relaxed">{item.a}</p>
+                      <p className="text-[#374151] text-sm leading-relaxed">{item.a}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -204,7 +204,7 @@ function ProcessStepper({ process }: { process: NonNullable<ServiceData["process
               className={`relative flex-shrink-0 flex flex-col items-center gap-1 px-5 py-4 text-sm font-semibold transition-colors ${
                 activeStep === i
                   ? "text-[#2E5F8A]"
-                  : "text-[#6B7280] hover:text-[#1A1A2E]"
+                  : "text-[#374151] hover:text-[#1A1A2E]"
               }`}
             >
               {/* Step number bubble */}
@@ -214,7 +214,7 @@ function ProcessStepper({ process }: { process: NonNullable<ServiceData["process
                     ? "bg-[#2E5F8A] text-white"
                     : i < activeStep
                     ? "bg-[#2E5F8A]/20 text-[#2E5F8A]"
-                    : "bg-gray-100 text-[#6B7280]"
+                    : "bg-gray-100 text-[#374151]"
                 }`}
               >
                 {s.step}
@@ -248,11 +248,11 @@ function ProcessStepper({ process }: { process: NonNullable<ServiceData["process
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <h3 className="font-[var(--font-outfit)] font-extrabold text-[#1A1A2E] text-xl">{step.title}</h3>
-                  <span className="text-xs text-[#6B7280] bg-[#F8F9FA] px-3 py-1 rounded-full border border-gray-200 font-medium">
+                  <span className="text-xs text-[#374151] bg-[#F8F9FA] px-3 py-1 rounded-full border border-gray-200 font-medium">
                     {step.duration}
                   </span>
                 </div>
-                <p className="text-[#6B7280] leading-relaxed">{step.description}</p>
+                <p className="text-[#374151] leading-relaxed">{step.description}</p>
               </div>
             </div>
             {/* Navigation arrows */}
@@ -260,14 +260,14 @@ function ProcessStepper({ process }: { process: NonNullable<ServiceData["process
               <button
                 onClick={() => setActiveStep((p) => Math.max(0, p - 1))}
                 disabled={activeStep === 0}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B7280] hover:text-[#2E5F8A] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#374151] hover:text-[#2E5F8A] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
                 ← Previous step
               </button>
               <button
                 onClick={() => setActiveStep((p) => Math.min(process.length - 1, p + 1))}
                 disabled={activeStep === process.length - 1}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B7280] hover:text-[#2E5F8A] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#374151] hover:text-[#2E5F8A] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
                 Next step →
               </button>
@@ -293,7 +293,7 @@ function ProcessStepper({ process }: { process: NonNullable<ServiceData["process
               >
                 <span
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-colors ${
-                    isOpen ? "bg-[#2E5F8A] text-white" : "bg-gray-100 text-[#6B7280]"
+                    isOpen ? "bg-[#2E5F8A] text-white" : "bg-gray-100 text-[#374151]"
                   }`}
                 >
                   {s.step}
@@ -302,11 +302,11 @@ function ProcessStepper({ process }: { process: NonNullable<ServiceData["process
                   <p className={`font-[var(--font-outfit)] font-bold text-sm transition-colors ${isOpen ? "text-[#2E5F8A]" : "text-[#1A1A2E]"}`}>
                     {s.title}
                   </p>
-                  <p className="text-[#6B7280] text-xs">{s.duration}</p>
+                  <p className="text-[#374151] text-xs">{s.duration}</p>
                 </div>
                 <ChevronDown
                   size={16}
-                  className={`text-[#6B7280] flex-shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                  className={`text-[#374151] flex-shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                 />
               </button>
               <AnimatePresence initial={false}>
@@ -318,7 +318,7 @@ function ProcessStepper({ process }: { process: NonNullable<ServiceData["process
                     transition={{ duration: 0.2 }}
                   >
                     <div className="px-5 pb-5 pt-1">
-                      <p className="text-[#6B7280] text-sm leading-relaxed">{s.description}</p>
+                      <p className="text-[#374151] text-sm leading-relaxed">{s.description}</p>
                     </div>
                   </motion.div>
                 )}
@@ -386,7 +386,7 @@ export default function ServicePageContent({ service, related }: Props) {
           <div className={heroPhoto ? "grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-14 items-center" : ""}>
           <div>
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-xs text-[#6B7280] mb-8">
+          <nav className="flex items-center gap-2 text-xs text-[#374151] mb-8">
             <Link href="/" className="hover:text-[#2E5F8A] transition-colors">Home</Link>
             <span>/</span>
             <Link href="/services" className="hover:text-[#2E5F8A] transition-colors">Services</Link>
@@ -400,11 +400,11 @@ export default function ServicePageContent({ service, related }: Props) {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#2E5F8A] mb-5 leading-tight max-w-3xl">
             {service.title}
           </h1>
-          <p className={`text-[#6B7280] text-lg leading-relaxed max-w-2xl ${service.heroSubtext ? "mb-5" : "mb-10"}`}>
+          <p className={`text-[#374151] text-lg leading-relaxed max-w-2xl ${service.heroSubtext ? "mb-5" : "mb-10"}`}>
             {service.heroSub}
           </p>
           {service.heroSubtext && (
-            <p className="text-[#6B7280]/80 text-base leading-relaxed mb-10 max-w-2xl">{service.heroSubtext}</p>
+            <p className="text-[#374151]/80 text-base leading-relaxed mb-10 max-w-2xl">{service.heroSubtext}</p>
           )}
 
           {/* Stats row */}
@@ -412,7 +412,7 @@ export default function ServicePageContent({ service, related }: Props) {
             {stats.map((s) => (
               <div key={s.label} className="bg-white border border-gray-100 shadow-sm rounded-2xl px-6 py-4 text-center min-w-[120px]">
                 <p className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E] leading-none mb-1">{s.value}</p>
-                <p className="text-[#6B7280] text-xs">{s.label}</p>
+                <p className="text-[#374151] text-xs">{s.label}</p>
               </div>
             ))}
           </div>
@@ -453,7 +453,7 @@ export default function ServicePageContent({ service, related }: Props) {
       {/* ── Description ── */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#6B7280] text-lg leading-relaxed">{service.description}</p>
+          <p className="text-[#374151] text-lg leading-relaxed">{service.description}</p>
         </div>
       </section>
 
@@ -486,7 +486,7 @@ export default function ServicePageContent({ service, related }: Props) {
                     <div key={item.label} className="bg-[#F8F9FA] rounded-2xl p-6 border border-gray-100 hover:border-[#2E5F8A]/30 hover:shadow-sm transition-all">
                       <div className="text-2xl mb-3">{item.icon}</div>
                       <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-2">{item.label}</h3>
-                      <p className="text-[#6B7280] text-xs leading-relaxed">{item.description}</p>
+                      <p className="text-[#374151] text-xs leading-relaxed">{item.description}</p>
                     </div>
                   ))}
                 </div>
@@ -500,7 +500,7 @@ export default function ServicePageContent({ service, related }: Props) {
               <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-2">
                 Who This Is For
               </h2>
-              <p className="text-[#6B7280] text-sm mb-8">Does this sound like you?</p>
+              <p className="text-[#374151] text-sm mb-8">Does this sound like you?</p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {service.whoItsFor.map((w, i) => (
                   <div
@@ -524,7 +524,7 @@ export default function ServicePageContent({ service, related }: Props) {
                 <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-3">
                   {service.slug === "fractional-caio" ? "Packages" : "Packages & Pricing"}
                 </h2>
-                <p className="text-[#6B7280] text-base mb-10 max-w-2xl">
+                <p className="text-[#374151] text-base mb-10 max-w-2xl">
                   {service.slug === "fractional-caio"
                     ? "Three structured engagement tiers — pick the level of AI leadership that matches where your business is today, and grow into the next tier as your AI maturity increases."
                     : "Three structured monthly engagements. Pick the tier that matches where you are — switch up as your AI maturity grows."}
@@ -556,7 +556,7 @@ export default function ServicePageContent({ service, related }: Props) {
                 <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#1A1A2E] mb-3">
                   {midCTA.headline}
                 </h3>
-                <p className="text-[#6B7280] mb-7 max-w-md mx-auto">{midCTA.sub}</p>
+                <p className="text-[#374151] mb-7 max-w-md mx-auto">{midCTA.sub}</p>
                 <Link
                   href={calendlyUrl}
                   target="_blank"
@@ -576,7 +576,7 @@ export default function ServicePageContent({ service, related }: Props) {
                 <h2 className="font-[var(--font-outfit)] font-bold text-2xl text-[#1A1A2E] mb-6">Technologies We Use</h2>
                 <div className="flex flex-wrap gap-3">
                   {service.techStack.map((t) => (
-                    <span key={t} className="px-4 py-1.5 rounded-full bg-[#F8F9FA] border border-gray-200 text-sm text-[#6B7280] font-medium hover:border-[#2E5F8A]/30 transition-colors">
+                    <span key={t} className="px-4 py-1.5 rounded-full bg-[#F8F9FA] border border-gray-200 text-sm text-[#374151] font-medium hover:border-[#2E5F8A]/30 transition-colors">
                       {t}
                     </span>
                   ))}
@@ -604,12 +604,12 @@ export default function ServicePageContent({ service, related }: Props) {
 
               {/* Service name + stats card */}
               <div className="rounded-2xl bg-[#F8F9FA] border border-gray-100 p-6">
-                <p className="text-[#6B7280] text-xs font-semibold uppercase tracking-widest mb-1">Service</p>
+                <p className="text-[#374151] text-xs font-semibold uppercase tracking-widest mb-1">Service</p>
                 <h3 className="font-[var(--font-outfit)] font-extrabold text-[#1A1A2E] text-lg mb-5 leading-snug">{service.title}</h3>
                 <div className="space-y-3 mb-6">
                   {stats.map((s) => (
                     <div key={s.label} className="flex items-center justify-between">
-                      <span className="text-[#6B7280] text-xs">{s.label}</span>
+                      <span className="text-[#374151] text-xs">{s.label}</span>
                       <span className="font-[var(--font-outfit)] font-bold text-sm text-[#1A1A2E]">{s.value}</span>
                     </div>
                   ))}
@@ -626,13 +626,13 @@ export default function ServicePageContent({ service, related }: Props) {
 
               {/* Jump links */}
               <div className="rounded-2xl border border-gray-100 bg-white p-5">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#6B7280] mb-3">On This Page</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#374151] mb-3">On This Page</p>
                 <nav className="space-y-1">
                   {sectionLinks.map((link) => (
                     <a
                       key={link.id}
                       href={`#${link.id}`}
-                      className="flex items-center gap-2 text-sm text-[#6B7280] hover:text-[#2E5F8A] py-1.5 transition-colors group"
+                      className="flex items-center gap-2 text-sm text-[#374151] hover:text-[#2E5F8A] py-1.5 transition-colors group"
                     >
                       <span className="w-1 h-1 rounded-full bg-gray-300 group-hover:bg-[#2E5F8A] transition-colors" />
                       {link.label}

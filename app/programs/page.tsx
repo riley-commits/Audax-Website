@@ -50,7 +50,7 @@ export default function ProgramsPage() {
             Beyond a Dev Agency —{" "}
             <span className="text-[#2E5F8A]">A Program Partner</span>
           </h1>
-          <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-[#374151] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
             A structured, phased program for founders who need to validate before they build.
           </p>
 
@@ -113,10 +113,10 @@ export default function ProgramsPage() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-start">
               <div>
                 <p className="text-[10px] font-bold tracking-widest uppercase text-[#2E5F8A] mb-4">About This Program</p>
-                <p className="text-[#6B7280] text-base leading-relaxed">{program.description}</p>
+                <p className="text-[#374151] text-base leading-relaxed">{program.description}</p>
               </div>
               <div>
-                <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] mb-4">Who It&apos;s For</p>
+                <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151] mb-4">Who It&apos;s For</p>
                 <div className="space-y-2.5">
                   {program.whoItsFor.map((w) => (
                     <div key={w} className="flex items-start gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100">
@@ -147,15 +147,15 @@ export default function ProgramsPage() {
                         <p className="font-[var(--font-outfit)] font-extrabold text-[#1A1A2E] text-base">
                           Phase {phase.number}: {phase.name}
                         </p>
-                        <div className="flex items-center gap-1 text-xs text-[#6B7280] mt-0.5">
+                        <div className="flex items-center gap-1 text-xs text-[#374151] mt-0.5">
                           <Clock size={11} /> {phase.duration}
                         </div>
                       </div>
                     </div>
-                    <p className="text-[#6B7280] text-sm leading-relaxed mb-4">{phase.description}</p>
+                    <p className="text-[#374151] text-sm leading-relaxed mb-4">{phase.description}</p>
                     <div className="space-y-1.5">
                       {phase.deliverables.slice(0, 3).map((d) => (
-                        <div key={d} className="flex items-start gap-2 text-xs text-[#6B7280]">
+                        <div key={d} className="flex items-start gap-2 text-xs text-[#374151]">
                           <CheckCircle2 size={12} className="text-[#2E5F8A] mt-0.5 flex-shrink-0" />
                           {d}
                         </div>

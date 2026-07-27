@@ -66,7 +66,7 @@ export default async function ProgramPage({ params }: Props) {
       {/* ── Breadcrumb ── */}
       <div className="pt-24 pb-0 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-xs text-[#6B7280]">
+          <nav className="flex items-center gap-2 text-xs text-[#374151]">
             <Link href="/" className="hover:text-[#2E5F8A] transition-colors">Home</Link>
             <span>/</span>
             <Link href="/programs" className="hover:text-[#2E5F8A] transition-colors">Programs</Link>
@@ -85,7 +85,7 @@ export default async function ProgramPage({ params }: Props) {
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl text-[#1A1A2E] mb-5 leading-tight">
             {program.heroTitle}
           </h1>
-          <p className="text-[#6B7280] text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-[#374151] text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
             {program.heroSub}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -110,7 +110,7 @@ export default async function ProgramPage({ params }: Props) {
       {/* ── Description ── */}
       <section className="py-14 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#6B7280] text-lg leading-relaxed">{program.description}</p>
+          <p className="text-[#374151] text-lg leading-relaxed">{program.description}</p>
         </div>
       </section>
 
@@ -140,11 +140,11 @@ export default async function ProgramPage({ params }: Props) {
                       <h3 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#1A1A2E]">
                         Phase {phase.number}: {phase.name}
                       </h3>
-                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F8F9FA] border border-gray-200 text-xs text-[#6B7280]">
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F8F9FA] border border-gray-200 text-xs text-[#374151]">
                         <Clock size={12} /> {phase.duration}
                       </div>
                     </div>
-                    <p className="text-[#6B7280] leading-relaxed mb-5">{phase.description}</p>
+                    <p className="text-[#374151] leading-relaxed mb-5">{phase.description}</p>
                     <div className="grid md:grid-cols-[1fr_auto] gap-5 items-start">
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-widest text-[#1A1A2E] mb-3">
@@ -152,7 +152,7 @@ export default async function ProgramPage({ params }: Props) {
                         </p>
                         <ul className="grid sm:grid-cols-2 gap-2">
                           {phase.deliverables.map((d) => (
-                            <li key={d} className="flex items-start gap-2 text-sm text-[#6B7280]">
+                            <li key={d} className="flex items-start gap-2 text-sm text-[#374151]">
                               <CheckCircle2 size={14} className="text-[#2E5F8A] mt-0.5 flex-shrink-0" />
                               {d}
                             </li>
@@ -220,7 +220,7 @@ export default async function ProgramPage({ params }: Props) {
             {program.faq.map((f) => (
               <div key={f.q} className="bg-[#F8F9FA] rounded-2xl p-6 hover:shadow-sm transition-shadow">
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] mb-2">{f.q}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{f.a}</p>
+                <p className="text-[#374151] text-sm leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
@@ -230,7 +230,7 @@ export default async function ProgramPage({ params }: Props) {
       {/* ── Other program CTA ── */}
       <section className="py-14 bg-[#F8F9FA]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[10px] font-bold tracking-widest uppercase text-[#6B7280] mb-3">Also Available</p>
+          <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151] mb-3">Also Available</p>
           <h2 className="font-[var(--font-outfit)] font-bold text-xl text-[#1A1A2E] mb-4">
             Explore Our Other Program
           </h2>

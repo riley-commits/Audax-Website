@@ -81,7 +81,7 @@ export default async function GuidePage({ params }: Props) {
 
       <article className="pt-32 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <Link href="/insights" className="inline-flex items-center gap-1.5 text-sm text-[#6B7280] hover:text-[#2E5F8A] transition-colors mb-8">
+          <Link href="/insights" className="inline-flex items-center gap-1.5 text-sm text-[#374151] hover:text-[#2E5F8A] transition-colors mb-8">
             <ArrowLeft size={14} /> Back to Resources
           </Link>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-semibold mb-5 uppercase tracking-widest">
@@ -95,7 +95,7 @@ export default async function GuidePage({ params }: Props) {
               <div className="w-8 h-8 rounded-full bg-[#2E5F8A] flex items-center justify-center text-white text-xs font-bold">AV</div>
               <div>
                 <p className="text-sm font-semibold text-[#1A1A2E]">{guide.author}</p>
-                <p className="text-xs text-[#6B7280]">{guide.publishDate} · {guide.readTime}</p>
+                <p className="text-xs text-[#374151]">{guide.publishDate} · {guide.readTime}</p>
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default async function GuidePage({ params }: Props) {
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className="prose prose-lg prose-headings:font-[var(--font-outfit)] prose-headings:font-bold prose-headings:text-[#1A1A2E] prose-p:text-[#6B7280] prose-p:leading-relaxed prose-a:text-[#2E5F8A] prose-strong:text-[#1A1A2E] prose-li:text-[#6B7280] max-w-none"
+            className="prose prose-lg prose-headings:font-[var(--font-outfit)] prose-headings:font-bold prose-headings:text-[#1A1A2E] prose-p:text-[#374151] prose-p:leading-relaxed prose-a:text-[#2E5F8A] prose-strong:text-[#1A1A2E] prose-li:text-[#374151] max-w-none"
             dangerouslySetInnerHTML={{ __html: markdownToHtml(guide.content) }}
           />
         </div>
@@ -115,7 +115,7 @@ export default async function GuidePage({ params }: Props) {
             {guide.faq.map((f) => (
               <div key={f.q} className="bg-[#F8F9FA] rounded-2xl p-6">
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] mb-2">{f.q}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{f.a}</p>
+                <p className="text-[#374151] text-sm leading-relaxed">{f.a}</p>
               </div>
             ))}
           </div>
@@ -145,7 +145,7 @@ export default async function GuidePage({ params }: Props) {
             <div className="w-12 h-12 rounded-full bg-[#2E5F8A] flex items-center justify-center text-white font-bold flex-shrink-0">AV</div>
             <div>
               <p className="font-bold text-[#1A1A2E] text-sm">{guide.author}</p>
-              <p className="text-[#6B7280] text-sm mt-1">
+              <p className="text-[#374151] text-sm mt-1">
                 This guide was written by the Audax Ventures team — experienced builders who have helped 50+ founders and enterprise teams bring software products to market.
               </p>
             </div>

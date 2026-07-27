@@ -19,6 +19,10 @@
 
 html {
   scroll-behavior: smooth;
+  /* Site-wide text bump — scales every rem-based Tailwind text size
+     (and spacing) proportionally, so paragraph copy grows along with
+     headings without touching every className individually. */
+  font-size: 112.5%;
 }
 
 body {

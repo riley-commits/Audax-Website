@@ -142,7 +142,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/85 backdrop-blur-2xl shadow-[0_2px_20px_rgba(0,0,0,0.06)] py-3"
-          : "bg-white/95 backdrop-blur-md py-4"
+          : "bg-white/95 backdrop-blur-md py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -152,15 +152,15 @@ export default function Navbar() {
           <Image
             src="/audax-logo.png"
             alt="Audax Ventures"
-            width={160}
-            height={52}
+            width={220}
+            height={72}
             priority
-            className="h-12 w-auto transition-transform duration-300 group-hover:scale-[1.04]"
+            className="h-20 w-auto transition-transform duration-300 group-hover:scale-[1.04]"
           />
         </Link>
 
         {/* ── Desktop Nav ── */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-2">
           {navLinks.map((link) => {
 
             /* ── Services Mega Dropdown ── */
@@ -172,14 +172,14 @@ export default function Navbar() {
                 onMouseLeave={() => setOpenMenu(null)}
               >
                 <button
-                  className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                  className={`flex items-center gap-1.5 text-lg font-medium px-4 py-2.5 rounded-lg transition-all duration-200 ${
                     isActive(link.href) || openMenu === "services"
                       ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
                       : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
                   }`}
                 >
                   {link.label}
-                  <ChevronDown size={13} className={`transition-transform duration-250 ${openMenu === "services" ? "rotate-180" : ""}`} />
+                  <ChevronDown size={16} className={`transition-transform duration-250 ${openMenu === "services" ? "rotate-180" : ""}`} />
                 </button>
 
                 <AnimatePresence>
@@ -235,14 +235,14 @@ export default function Navbar() {
                 onMouseLeave={() => setOpenMenu(null)}
               >
                 <button
-                  className={`flex items-center gap-1 text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                  className={`flex items-center gap-1.5 text-lg font-medium px-4 py-2.5 rounded-lg transition-all duration-200 ${
                     isActive(link.href) || openMenu === "resources"
                       ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
                       : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
                   }`}
                 >
                   {link.label}
-                  <ChevronDown size={13} className={`transition-transform duration-250 ${openMenu === "resources" ? "rotate-180" : ""}`} />
+                  <ChevronDown size={16} className={`transition-transform duration-250 ${openMenu === "resources" ? "rotate-180" : ""}`} />
                 </button>
 
                 <AnimatePresence>
@@ -285,7 +285,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                className={`text-lg font-medium px-4 py-2.5 rounded-lg transition-all duration-200 ${
                   isActive(link.href)
                     ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
                     : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
@@ -303,10 +303,10 @@ export default function Navbar() {
             href="https://calendly.com/audax-ventures/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0B1220] text-white text-sm font-semibold transition-all duration-300 hover:bg-[#1E293B] hover:shadow-[0_0_24px_rgba(11,18,32,0.35)] hover:scale-[1.03]"
+            className="relative overflow-hidden inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0B1220] text-white text-lg font-semibold transition-all duration-300 hover:bg-[#1E293B] hover:shadow-[0_0_24px_rgba(11,18,32,0.35)] hover:scale-[1.03]"
           >
             Book a Free Strategy Call
-            <ArrowRight size={14} />
+            <ArrowRight size={17} />
           </Link>
         </div>
 
@@ -325,7 +325,7 @@ export default function Navbar() {
               transition={{ duration: 0.15 }}
               className="block"
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileOpen ? <X size={28} /> : <Menu size={28} />}
             </motion.span>
           </AnimatePresence>
         </button>
@@ -348,7 +348,7 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`flex items-center px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                    className={`flex items-center px-3 py-3 rounded-xl text-lg font-medium transition-colors ${
                       isActive(link.href)
                         ? "bg-[#0F172A]/6 text-[#0F172A] font-semibold"
                         : "text-[#374151] hover:bg-[#F8F9FA] hover:text-[#0F172A]"
@@ -389,10 +389,10 @@ export default function Navbar() {
                 href="https://calendly.com/audax-ventures/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-2xl bg-[#0B1220] text-white text-sm font-bold hover:bg-[#1E293B] transition-colors"
+                className="flex items-center justify-center gap-2 w-full px-5 py-4 rounded-2xl bg-[#0B1220] text-white text-lg font-bold hover:bg-[#1E293B] transition-colors"
               >
                 Book a Free Strategy Call
-                <ArrowRight size={14} />
+                <ArrowRight size={17} />
               </Link>
             </div>
           </motion.div>

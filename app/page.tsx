@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import CTABanner from "@/components/layout/CTABanner";
 import HeroSection from "@/components/sections/HeroSection";
-import AboutAudaxSection from "@/components/sections/AboutAudaxSection";
-import ServicesGrid from "@/components/sections/ServicesGrid";
 import StatsBar from "@/components/sections/StatsBar";
-import HomeCaseStudies from "@/components/sections/HomeCaseStudies";
+import ServicesGrid from "@/components/sections/ServicesGrid";
 import HomeProcessSection from "@/components/sections/HomeProcessSection";
+import ImpactHighlights from "@/components/sections/ImpactHighlights";
+import FractionalCaioSpotlight from "@/components/sections/FractionalCaioSpotlight";
 
 export const metadata: Metadata = {
-  title: "Audax Ventures — AI Strategy, Leadership & Innovation",
+  title: "Audax Ventures — The AI Strategy Partner That Actually Builds",
   description:
-    "Audax Ventures provides Fractional AI leadership, AI transformation services, and custom software development to help organizations stay competitive in an AI-driven world. Book a free strategy call today.",
+    "Fractional CAIO leadership and custom AI software that help organizations operate smarter, move faster, and create measurable impact. Book a free strategy call today.",
   openGraph: {
-    title: "Audax Ventures — AI Strategy, Leadership & Innovation",
+    title: "Audax Ventures — The AI Strategy Partner That Actually Builds",
     description:
-      "Helping businesses navigate the future of AI — Fractional Chief AI Officer services, AI transformation & advisory, and custom AI & software development.",
+      "Fractional CAIO leadership and custom AI software that help organizations operate smarter, move faster, and create measurable impact.",
     url: "https://audaxventures.ca",
   },
   alternates: { canonical: "https://audaxventures.ca" },
@@ -95,25 +95,11 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <HeroSection />
       <StatsBar />
-      <div className="relative bg-[#FAFAF8]">
-        {/* Continuous vertical thread (desktop only), matches About page */}
-        <div
-          className="hidden lg:block absolute left-8 top-0 bottom-0 pointer-events-none z-0"
-          style={{
-            width: "1px",
-            background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 6%, rgba(46,95,138,0.22) 94%, transparent 100%)",
-          }}
-        />
-        <AboutAudaxSection />
-        <ServicesGrid />
-      </div>
-      <HomeCaseStudies />
+      <ServicesGrid />
       <HomeProcessSection />
-      <CTABanner
-        heading="Not Sure Where AI Fits in Your Business Yet?"
-        subtext="A free strategy call gets you a straight answer — not a sales pitch."
-        buttonText="Book a Free Strategy Call"
-      />
+      <ImpactHighlights />
+      <FractionalCaioSpotlight />
+      <CTABanner />
     </>
   );
 }

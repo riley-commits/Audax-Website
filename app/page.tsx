@@ -3,6 +3,7 @@ import CTABanner from "@/components/layout/CTABanner";
 import HeroSection from "@/components/sections/HeroSection";
 import StatsBar from "@/components/sections/StatsBar";
 import ServicesGrid from "@/components/sections/ServicesGrid";
+import DifferentiatorStatement from "@/components/sections/DifferentiatorStatement";
 import HomeProcessSection from "@/components/sections/HomeProcessSection";
 import ImpactHighlights from "@/components/sections/ImpactHighlights";
 import FractionalCaioSpotlight from "@/components/sections/FractionalCaioSpotlight";
@@ -96,6 +97,7 @@ export default function HomePage() {
       <HeroSection />
       <StatsBar />
       <ServicesGrid />
+      <DifferentiatorStatement />
       <HomeProcessSection />
       <ImpactHighlights />
       <FractionalCaioSpotlight />

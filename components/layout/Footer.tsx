@@ -10,12 +10,11 @@ const services = [
 
 const company = [
   { label: "About Us", href: "/about" },
+  { label: "Meet Our President", href: "/about/joshua-zaporzan" },
   { label: "Our Approach", href: "/approach" },
-  { label: "Our Work", href: "/work" },
   { label: "Industries", href: "/industries" },
   { label: "Products", href: "/products" },
   { label: "Programs", href: "/programs" },
-  { label: "Careers", href: "/contact" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -95,8 +94,18 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Differentiator line */}
+        <div className="border-t border-white/10 pt-8 pb-2 text-center">
+          <p className="text-sm sm:text-base font-medium max-w-2xl mx-auto leading-relaxed">
+            <span className="text-white/50">Most firms help you define the strategy or build the technology. </span>
+            <span className="bg-gradient-to-r from-[#60A5FA] to-[#A78BFA] bg-clip-text text-transparent font-semibold">
+              Audax does both, then stays with you to ensure it delivers real business results.
+            </span>
+          </p>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-sm">
             © {new Date().getFullYear()} Audax Ventures Inc. All rights reserved.
           </p>

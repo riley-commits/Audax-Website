@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Briefcase, Quote } from "lucide-react";
+import { Briefcase, Quote, ArrowRight } from "lucide-react";
 
 const credentials = [
   "President, Audax Ventures",
@@ -64,6 +65,12 @@ export default function FractionalCaioSpotlight() {
               ))}
             </div>
             <div className="flex items-center gap-3">
+              <Link
+                href="/about/joshua-zaporzan"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#0F172A] text-white text-sm font-semibold hover:bg-[#1E293B] transition-colors"
+              >
+                Read Full Bio <ArrowRight size={14} />
+              </Link>
               <a
                 href="https://www.linkedin.com/in/joshua-zaporzan/"
                 target="_blank"

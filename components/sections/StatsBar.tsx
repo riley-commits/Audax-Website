@@ -18,8 +18,11 @@ export default function StatsBar() {
     <>
       {/* ── Trusted By Marquee ── */}
       <section className="bg-[#FAFAF8] py-10 overflow-hidden">
+        <p className="text-center text-sm text-[#6B7280] mb-3 max-w-xl mx-auto px-4">
+          From funded startups to established enterprise and hospitality brands across North America.
+        </p>
         <p className="text-center text-[10px] tracking-widest uppercase text-[#6B7280] font-semibold mb-7">
-          Trusted by founders and enterprises across North America
+          Trusted By
         </p>
 
         {/* Fade-edge wrapper */}

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import CTABanner from "@/components/layout/CTABanner";
-import { getBlogPostBySlug, getAllBlogSlugs, blogPosts } from "@/lib/blog-data";
+import { getBlogPostBySlug, getAllBlogSlugs, blogPosts } from "@/lib/insights-data";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,8 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.metaTitle,
     description: post.metaDescription,
-    alternates: { canonical: `https://audaxventures.ca/blog/${slug}` },
-    robots: { index: false, follow: false },
+    alternates: { canonical: `https://audaxventures.ca/insights/${slug}` },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
@@ -33,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function InsightPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
   if (!post) notFound();
@@ -61,8 +60,8 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="pt-32 pb-16">
         {/* Header */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-[#6B7280] hover:text-[#2E5F8A] transition-colors mb-8">
-            <ArrowLeft size={14} /> Back to Blog
+          <Link href="/insights" className="inline-flex items-center gap-1.5 text-sm text-[#6B7280] hover:text-[#2E5F8A] transition-colors mb-8">
+            <ArrowLeft size={14} /> Back to Insights
           </Link>
           <div className="flex items-center gap-2 mb-4">
             <span className="text-xs font-semibold text-[#2E5F8A] bg-blue-50 px-2.5 py-0.5 rounded-full">{post.category}</span>
@@ -123,7 +122,7 @@ export default async function BlogPostPage({ params }: Props) {
               {relatedPostsData.map((p) => p && (
                 <Link
                   key={p.slug}
-                  href={`/blog/${p.slug}`}
+                  href={`/insights/${p.slug}`}
                   className="group block bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-md transition-all"
                 >
                   <div className="relative h-36 overflow-hidden">

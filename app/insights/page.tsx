@@ -2,17 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { blogPosts, categories } from "@/lib/blog-data";
+import { blogPosts, categories } from "@/lib/insights-data";
 
 export const metadata: Metadata = {
-  title: "Blog — News & Tech Insights | Audax Ventures",
+  title: "Insights — AI Leadership & Software Development | Audax Ventures",
   description:
-    "Insights on MVP development, SaaS, AI, and startup growth from the Audax Ventures team. Practical advice for founders and enterprise builders.",
-  alternates: { canonical: "https://audaxventures.ca/blog" },
-  robots: { index: false, follow: false },
+    "Insights on AI strategy, Fractional CAIO leadership, and custom software development from the Audax Ventures team. Practical advice for executives and enterprise builders.",
+  alternates: { canonical: "https://audaxventures.ca/insights" },
 };
 
-export default function BlogPage() {
+export default function InsightsPage() {
   const featured = blogPosts[0];
   const rest = blogPosts.slice(1);
 
@@ -25,7 +24,7 @@ export default function BlogPage() {
             News & Tech Insights
           </h1>
           <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-            Practical advice on building software, validating ideas, and growing your business.
+            Practical advice on AI strategy, executive AI leadership, and building software that ships.
           </p>
         </div>
 
@@ -43,7 +42,7 @@ export default function BlogPage() {
 
         {/* Featured Post */}
         <Link
-          href={`/blog/${featured.slug}`}
+          href={`/insights/${featured.slug}`}
           className="group block mb-12 rounded-3xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300"
         >
           <div className="grid md:grid-cols-2">
@@ -77,7 +76,7 @@ export default function BlogPage() {
           {rest.map((post) => (
             <Link
               key={post.slug}
-              href={`/blog/${post.slug}`}
+              href={`/insights/${post.slug}`}
               className="group block rounded-3xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-48 overflow-hidden">

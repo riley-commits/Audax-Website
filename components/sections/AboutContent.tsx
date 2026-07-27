@@ -1,135 +1,54 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Target, Eye, MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
+import { MapPin, Check, X, Minus } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
-
-const stats = [
-  { prefix: "", value: 50,  suffix: "+", display: "50+",  label: "Projects Delivered"  },
-  { prefix: "", value: 98,  suffix: "%", display: "98%",  label: "Client Satisfaction" },
-  { prefix: "", value: 100, suffix: "%", display: "100%", label: "Code Ownership"      },
-];
 
 const team = [
   {
     name: "Joshua Zaporzan",
-    role: "President",
-    tagline: "AI strategy and capital strategy, under one roof.",
+    role: "Founder & Fractional CAIO",
+    tagline: "[PLACEHOLDER — one-line credibility marker]",
     photo: "/team/joshua-zaporzan.avif",
-    bio: "Joshua leads Audax Ventures' AI strategy and capital strategy in tandem — helping founders and enterprise teams decide where AI creates real business value, then structuring the investment to get there. He works directly with leadership teams to define what's possible and ensure every AI and software engagement delivers measurable outcomes.",
+    bio: "[PLACEHOLDER bio]",
     linkedin: "https://www.linkedin.com/in/joshua-zaporzan/",
   },
   {
-    name: "Manoj Manghnani",
-    role: "Director of Technology",
-    tagline: "Production-grade AI and software, from day one.",
-    photo: "/team/manoj-manghnani.png",
-    bio: "Manoj sets the technical standard across every Audax engagement, from custom AI-powered applications to the infrastructure behind them. He leads the architecture decisions for every build — ensuring the AI features and systems we ship are scalable, secure, and production-grade, not just proof-of-concept.",
-    linkedin: "https://www.linkedin.com/in/manojman/",
-  },
-  {
-    name: "Denise Zaporzan",
-    role: "Director of Strategy",
-    tagline: "AI roadmaps built around your business, not a vendor's.",
-    photo: "/team/denise-zaporzan.png",
-    bio: "Denise leads AI opportunity assessments and strategy development for Audax clients, helping founders and enterprise teams identify where AI actually moves the needle — then building the roadmap and go-to-market plan to get there.",
-    linkedin: "https://www.linkedin.com/in/denise-zaporzan-fcpa-27694610/",
-  },
-  {
     name: "Riley Peterson",
-    role: "Project & Venture Manager",
-    tagline: "AI initiatives that ship on scope, on schedule, on budget.",
+    role: "[PLACEHOLDER title]",
+    tagline: "[PLACEHOLDER — one-line credibility marker]",
     photo: "/team/riley-peterson.png",
-    bio: "Riley manages delivery across every AI and software engagement in the Audax portfolio — keeping projects on scope, on schedule, and on budget, with the governance and reporting clients need to trust their AI investment is being managed responsibly.",
+    bio: "[PLACEHOLDER bio]",
     linkedin: "https://www.linkedin.com/in/riley-peterson-708aa9225/",
   },
-  {
-    name: "Lawson Yates",
-    role: "Marketing Manager",
-    tagline: "Visibility and demand for AI-powered products.",
-    photo: "/team/lawson-yates.png",
-    bio: "Lawson drives marketing strategy for Audax's AI and software services, and supports clients bringing their own AI-powered products to market. He combines content strategy, digital marketing, and brand development to build visibility and demand for what we help create.",
-    linkedin: "https://www.linkedin.com/in/lawson-yates-286a1b188/",
-  },
-  {
-    name: "Lindsay Friesen",
-    role: "Project Manager",
-    tagline: "Clear communication, from AI strategy to shipped feature.",
-    photo: "/team/lindsay-friesen.png",
-    bio: "Lindsay ensures every Audax engagement — from AI opportunity audits to shipped automation — runs smoothly from kickoff through launch. She coordinates between strategy, development, and client stakeholders, keeping communication clear and delivery on track across multiple concurrent engagements.",
-    linkedin: "https://www.linkedin.com/in/friesenlindsay/",
-  },
 ];
 
-const segments = [
-  { badge: "AI-Curious SMEs",        num: "01", description: "Fractional AI leadership, opportunity audits, and workflow automation — for businesses that know AI matters but don't know where to start." },
-  { badge: "Funded Founders & Scale-Ups", num: "02", description: "Custom AI-powered products and internal tools, built and shipped fast — without the overhead of a full in-house engineering team." },
-  { badge: "Established & Regulated Firms", num: "03", description: "AI governance, risk management, and custom integrations for healthcare, legal, financial, and other firms that can't afford to get AI adoption wrong." },
-];
+const comparison = {
+  rows: [
+    { label: "Sets AI strategy" },
+    { label: "Builds the software" },
+    { label: "Ongoing executive accountability" },
+    { label: "In-house engineering team" },
+    { label: "Fixed-price, transparent scope" },
+    { label: "You own 100% of the code" },
+  ],
+  columns: [
+    { name: "Traditional AI Consultancy", values: ["yes", "no", "partial", "no", "partial", "partial"] },
+    { name: "Freelance Developer", values: ["no", "yes", "no", "partial", "partial", "partial"] },
+    { name: "Audax Ventures", values: ["yes", "yes", "yes", "yes", "yes", "yes"], highlight: true },
+  ],
+};
 
-const whyStatements = [
-  "We tell you when AI isn't the right answer for your problem.",
-  "You own 100% of the code and IP. No lock-in, ever.",
-  "We won't offshore your project without telling you.",
-  "Fixed-price phases. No runaway invoices.",
-  "We've turned down AI projects we didn't believe would work.",
-];
-
-const approach = [
-  { num: "01", title: "Honest AI Assessment",  body: "We tell you where AI will actually create value for your business — and where it won't. No hype, no vendor pitch, just a grounded audit." },
-  { num: "02", title: "Transparent Delivery",  body: "Weekly live demos, clear status, and no surprises. You see progress every fortnight — not just at the end." },
-  { num: "03", title: "Full IP Transfer",       body: "Source code, documentation, and all assets are yours from day one. No retainer required to keep the lights on." },
-  { num: "04", title: "Partnership Mentality", body: "We measure our success by your outcomes — not our billable hours. Our best relationships last years." },
-];
-
-// ── Option 1: Count-up stat ───────────────────────────────────────────────────
-
-function CountUp({ stat, started }: { stat: typeof stats[0]; started: boolean }) {
-  // Sentinel pattern: count=null means we render the final display value
-  // (SSR + pre-hydration). Once the parent signals started=true after
-  // hydration, we set count=0 and animate up. This keeps SSR HTML showing
-  // real numbers for SEO + no-JS users instead of placeholder zeros.
-  const [count, setCount] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (!started) return;
-    setCount(0);
-    const steps = 50;
-    const duration = 1600;
-    let step = 0;
-    const id = setInterval(() => {
-      step++;
-      const eased = 1 - Math.pow(1 - step / steps, 3);
-      setCount(eased * stat.value);
-      if (step >= steps) { setCount(stat.value); clearInterval(id); }
-    }, duration / steps);
-    return () => clearInterval(id);
-  }, [started, stat.value]);
-
-  let displayValue: string;
-  if (count === null) {
-    displayValue = stat.display;
-  } else {
-    const formatted = stat.value % 1 !== 0
-      ? count.toFixed(count >= stat.value ? 1 : 0)
-      : Math.round(count).toLocaleString();
-    displayValue = `${stat.prefix}${formatted}${stat.suffix}`;
-  }
-
-  return (
-    <div className="text-center">
-      <div className="font-[var(--font-outfit)] font-extrabold text-5xl sm:text-6xl text-[#2E5F8A] mb-2 tabular-nums">
-        {displayValue}
-      </div>
-      <div className="text-[#6B7280] text-sm font-medium">{stat.label}</div>
-    </div>
-  );
+function ComparisonMark({ value }: { value: string }) {
+  if (value === "yes") return <Check size={16} className="text-green-600 mx-auto" />;
+  if (value === "no") return <X size={16} className="text-red-400 mx-auto" />;
+  return <Minus size={16} className="text-[#D1D5DB] mx-auto" />;
 }
 
-// ── Option 2: Team card with hover-reveal bio ─────────────────────────────────
+// ── Team card with hover-reveal bio ─────────────────────────────────
 
 function TeamCard({ member, delay }: { member: typeof team[0]; delay: number }) {
   const [revealed, setRevealed] = useState(false);
@@ -199,13 +118,6 @@ function TeamCard({ member, delay }: { member: typeof team[0]; delay: number }) 
 // ── Main Component ─────────────────────────────────────────────────────────────
 
 export default function AboutContent() {
-  const [countStarted, setCountStarted] = useState(false);
-
-  useEffect(() => {
-    const t = setTimeout(() => setCountStarted(true), 400);
-    return () => clearTimeout(t);
-  }, []);
-
   return (
     <div className="bg-[#FAFAF8] relative">
 
@@ -213,7 +125,7 @@ export default function AboutContent() {
       <div
         className="hidden lg:block absolute left-8 pointer-events-none z-0"
         style={{
-          top: "520px",
+          top: "420px",
           bottom: "140px",
           width: "1px",
           background: "linear-gradient(to bottom, transparent 0%, rgba(46,95,138,0.22) 6%, rgba(46,95,138,0.22) 94%, transparent 100%)",
@@ -225,227 +137,147 @@ export default function AboutContent() {
         <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,95,138,0.10) 0%, transparent 68%)" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(58,123,213,0.07) 0%, transparent 68%)" }} />
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-start mb-16">
-            <div className="lg:pt-6">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-[#6B7280] font-semibold mb-6"
-              >
-                <MapPin size={13} /> Winnipeg, Manitoba, Canada
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.1 }}
-                className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2E5F8A] mb-6 leading-tight"
-              >
-                Your AI Strategy &amp; Software Development Partner
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-[#6B7280] text-lg leading-relaxed max-w-xl"
-              >
-                Audax Ventures is an AI strategy and innovation firm based in Canada. Through Fractional Chief AI Officer services and custom AI &amp; software development, we help organizations identify, implement, and scale technology solutions that create measurable business value.
-              </motion.p>
-            </div>
-
-            {/* Hero image bleeds into Mission section */}
-            <motion.div
-              initial={{ opacity: 0, x: 24, scale: 0.97 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] hidden sm:block lg:mb-[-160px] z-20"
-            >
-              <Image
-                src="/about/winnipeg-office-meeting.png"
-                alt="Audax team in a client meeting at the Winnipeg office"
-                fill
-                sizes="(max-width: 1024px) 90vw, 380px"
-                className="object-cover"
-                priority
-              />
-            </motion.div>
-          </div>
-
-          {/* Stats */}
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-[#6B7280] font-semibold mb-6"
+          >
+            <MapPin size={13} /> Winnipeg, Manitoba, Canada
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.1 }}
+            className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#2E5F8A] mb-6 leading-tight"
+          >
+            Built by Operators, Not Theorists
+          </motion.h1>
+
+          <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="grid grid-cols-3 gap-8 pt-10 border-t border-gray-200 relative z-10"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-[#6B7280] text-lg leading-relaxed max-w-2xl mx-auto"
           >
-            {stats.map((s) => (
-              <CountUp key={s.label} stat={s} started={countStarted} />
-            ))}
-          </motion.div>
+            Most AI strategy stalls at the roadmap. We close the gap between strategy and execution — setting the plan and building the software ourselves, under one roof.
+          </motion.p>
         </div>
       </section>
 
-      {/* ── Mission & Vision — pull-quote style, no boxes ── */}
-      <section className="pt-10 lg:pt-28 pb-16 relative z-10">
-        {/* Thread marker */}
+      {/* ── Our Story ── */}
+      <section className="pt-10 lg:pt-20 pb-16 relative z-10">
         <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-            {/* Mission */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="border-l-4 border-[#2E5F8A] pl-8"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#2E5F8A]/10 flex items-center justify-center mb-5">
-                <Target className="text-[#2E5F8A]" size={20} />
-              </div>
-              <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-bold mb-3">Our Mission</p>
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl text-[#1A1A2E] mb-4 leading-snug">
-                &ldquo;To give organizations executive-level AI leadership and the custom software they need to turn emerging technology into measurable business outcomes.&rdquo;
-              </h2>
-              <p className="text-[#6B7280] leading-relaxed text-sm">
-                We go beyond AI hype — we bring the strategy, governance, and engineering expertise that turn AI from a buzzword into a real driver of efficiency and growth.
-              </p>
-            </motion.div>
-
-            {/* Vision */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="border-l-4 border-[#3A7BD5] pl-8"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#3A7BD5]/10 flex items-center justify-center mb-5">
-                <Eye className="text-[#3A7BD5]" size={20} />
-              </div>
-              <p className="text-xs tracking-widest uppercase text-[#3A7BD5] font-bold mb-3">Our Vision</p>
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-xl sm:text-2xl text-[#1A1A2E] mb-4 leading-snug">
-                &ldquo;To ignite a world where AI-driven strategy and software reshape how organizations operate, compete, and grow.&rdquo;
-              </h2>
-              <p className="text-[#6B7280] leading-relaxed text-sm">
-                We believe in the power of AI to change how businesses work — and we are committed to making that change practical, responsible, and enduring.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Who We Are — whiteboard image bleeds into Client Segments ── */}
-      <section className="py-16 relative overflow-visible">
-        {/* Thread marker */}
-        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1fr_420px] gap-10 lg:gap-14 items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="lg:pt-6"
-            >
-              <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-4">Who We Are</p>
-              <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E] mb-6">
-                AI Strategy &amp; Innovation Experts, Based in Canada
-              </h2>
-              <div className="space-y-4 text-[#6B7280] text-base leading-relaxed">
-                <p>
-                  Audax Ventures is an AI strategy and innovation firm that helps organizations identify, implement, and scale technology solutions that create measurable business value. Through Fractional Chief AI Officer services, AI transformation initiatives, and custom software development, we work alongside leadership teams to turn emerging technology into practical business outcomes.
-                </p>
-                <p>
-                  We work with businesses that know AI matters but don&apos;t have the in-house leadership or engineering capacity to act on it — from funded founders building their first AI-powered product, to growing SMEs automating repetitive work, to established firms in regulated industries that need AI governance done right.
-                </p>
-                <p>
-                  Across every engagement, our approach is the same: a tailored mix of AI strategy, software innovation, and operational excellence — delivered by a team that fosters creativity, takes calculated risks, and treats your business as seriously as our own.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 24, scale: 0.97 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] hidden sm:block lg:mb-[-100px] z-20"
-            >
-              <Image
-                src="/about/whiteboard-strategy.png"
-                alt="Audax team mapping an AI strategy on a whiteboard"
-                fill
-                sizes="(max-width: 1024px) 90vw, 420px"
-                className="object-cover"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Client Segments — no cards, open text ── */}
-      <section className="pt-12 lg:pt-16 pb-16 relative z-10">
-        {/* Thread marker */}
-        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12"
+            transition={{ duration: 0.5 }}
+            className="mb-8"
           >
-            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">Who We Work With</p>
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E]">Built for Every Stage of AI Adoption</h2>
+            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">Our Story</p>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl text-[#1A1A2E]">How Audax Started</h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-10 lg:gap-16">
-            {segments.map((s, i) => (
-              <motion.div
-                key={s.badge}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-              >
-                <div className="w-8 h-0.5 bg-[#2E5F8A]/40 mb-5" />
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-bold tracking-wide mb-4">
-                  {s.num} — {s.badge}
-                </div>
-                <p className="text-[#374151] text-sm leading-relaxed">{s.description}</p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="space-y-4 text-[#6B7280] text-base leading-relaxed"
+          >
+            <p>[PLACEHOLDER — paragraph 1 of the Audax origin story.]</p>
+            <p>[PLACEHOLDER — paragraph 2: the gap between strategy and execution we set out to close.]</p>
+            <p>[PLACEHOLDER — paragraph 3: where the firm is today.]</p>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── Team ── */}
-      <section className="py-20 pb-32 relative">
-        {/* Thread marker */}
+      {/* ── Leadership ── */}
+      <section className="py-20 relative">
         <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-14"
           >
-            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">The People</p>
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">Our Team</h2>
+            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">Leadership</p>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">Who Runs Audax</h2>
             <p className="text-[#6B7280] mt-4 max-w-xl text-sm">
-              Hover (or tap) any card to meet the person behind the role.
+              Hover (or tap) either card to read the full bio.
             </p>
           </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
             {team.map((member, i) => (
               <TeamCard key={member.name} member={member} delay={i * 0.07} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── How We're Different ── */}
+      <section className="py-20 pb-32 relative z-10 bg-white">
+        <div className="hidden lg:block absolute left-8 top-14 -translate-x-1/2 w-3 h-3 rounded-full bg-[#FAFAF8] border-2 border-[#2E5F8A]/50 z-10" />
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <p className="text-xs tracking-widest uppercase text-[#2E5F8A] font-semibold mb-3">How We&apos;re Different</p>
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[#1A1A2E]">
+              Strategy and Execution, One Team
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="overflow-x-auto"
+          >
+            <table className="w-full border-collapse min-w-[560px]">
+              <thead>
+                <tr>
+                  <th className="text-left text-xs font-semibold uppercase tracking-widest text-[#6B7280] pb-4 pr-4 w-1/3" />
+                  {comparison.columns.map((col) => (
+                    <th
+                      key={col.name}
+                      className={`text-center text-xs font-bold uppercase tracking-wide pb-4 px-3 ${
+                        col.highlight ? "text-[#2E5F8A]" : "text-[#6B7280]"
+                      }`}
+                    >
+                      {col.name}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.rows.map((row, ri) => (
+                  <tr key={row.label} className={ri % 2 === 0 ? "bg-[#F8F9FA]" : ""}>
+                    <td className="text-sm text-[#374151] font-medium py-3.5 pr-4 rounded-l-xl px-3">{row.label}</td>
+                    {comparison.columns.map((col) => (
+                      <td
+                        key={col.name}
+                        className={`text-center py-3.5 px-3 ${col.highlight ? "bg-[#2E5F8A]/6 rounded-r-xl" : ""}`}
+                      >
+                        <ComparisonMark value={col.values[ri]} />
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
         </div>
       </section>
 

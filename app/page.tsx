@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import CTABanner from "@/components/layout/CTABanner";
 import HeroSection from "@/components/sections/HeroSection";
+import ProofBar from "@/components/sections/ProofBar";
 import AboutAudaxSection from "@/components/sections/AboutAudaxSection";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import StatsBar from "@/components/sections/StatsBar";
+import HomeCaseStudies from "@/components/sections/HomeCaseStudies";
+import HomeProcessSection from "@/components/sections/HomeProcessSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import InsightsTeaser from "@/components/sections/InsightsTeaser";
 
 export const metadata: Metadata = {
   title: "Audax Ventures — AI Strategy, Leadership & Innovation",
@@ -92,6 +97,7 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sitelinksSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <HeroSection />
+      <ProofBar />
       <StatsBar />
       <div className="relative bg-[#FAFAF8]">
         {/* Continuous vertical thread (desktop only), matches About page */}
@@ -105,10 +111,14 @@ export default function HomePage() {
         <AboutAudaxSection />
         <ServicesGrid />
       </div>
+      <HomeCaseStudies />
+      <HomeProcessSection />
+      <TestimonialsSection />
+      <InsightsTeaser />
       <CTABanner
-        heading="Ready to Put AI to Work in Your Business?"
-        subtext="Book a free AI strategy call and let's get started today."
-        buttonText="Book a Free AI Strategy Call"
+        heading="Not Sure Where AI Fits in Your Business Yet?"
+        subtext="A free strategy call gets you a straight answer — not a sales pitch."
+        buttonText="Book a Free Strategy Call"
       />
     </>
   );

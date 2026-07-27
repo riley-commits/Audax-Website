@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Zap, Lock, MapPin, Handshake } from "lucide-react";
+import { servicesData } from "@/lib/services-data";
 
 export const metadata: Metadata = {
   title: "AI Strategy & Software Development Services | Audax Ventures",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Strategy & Software Development Services | Audax Ventures",
     description:
-      "Fractional AI leadership, AI transformation services, and custom software development — 3 core service areas, 20 services total.",
+      "Fractional AI leadership, AI transformation services, and custom software development — the full path from strategy to shipped software.",
     url: "https://audaxventures.ca/services",
   },
 };
@@ -56,6 +57,7 @@ const categories = [
     description: "AI assessments, roadmaps, governance, training, and implementation planning.",
     services: [
       { icon: "🧭", title: "AI Transformation & Advisory",  tagline: "AI assessments, roadmaps, governance & training",          href: "/services/ai-transformation-advisory" },
+      { icon: "🛡️", title: "AI Strategy & Governance",     tagline: "Executive AI strategy and governance frameworks",          href: "/services/ai-strategy-governance" },
       { icon: "🎯", title: "AI Consulting",                 tagline: "Adding real AI features to your product, done right",      href: "/services/ai-consulting" },
       { icon: "🔄", title: "Process Automation",            tagline: "Automated approvals, routing, and system sync",            href: "/services/process-automation" },
       { icon: "💬", title: "Customer Service Automation",   tagline: "AI chatbots and self-service support portals",             href: "/services/customer-service-automation" },
@@ -67,6 +69,7 @@ const categories = [
     services: [
       { icon: "💻", title: "Custom AI & Software Dev", tagline: "Custom software, automation & AI-powered apps",              href: "/services/custom-ai-software-development" },
       { icon: "🚀", title: "MVP Development",          tagline: "8–16 weeks from idea to launch",                              href: "/services/mvp-development" },
+      { icon: "🏁", title: "MVP & Startup Track",      tagline: "[PLACEHOLDER tagline]",                                       href: "/services/mvp-startup-track" },
       { icon: "☁️", title: "SaaS Development",         tagline: "End-to-end platform builds",                                  href: "/services/saas-development" },
       { icon: "🌐", title: "Website Development",      tagline: "Marketing sites that load fast and rank higher",             href: "/services/website-development" },
       { icon: "🛍️", title: "E-Commerce Development",  tagline: "Custom storefronts and headless commerce platforms",          href: "/services/ecommerce-development" },
@@ -106,14 +109,14 @@ export default function ServicesPage() {
       <section className="pt-32 pb-20 bg-gradient-to-b from-[#F8F9FA] to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-semibold mb-6 uppercase tracking-widest">
-            20 Services
+            {servicesData.length} Services
           </div>
           <h1 className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#1A1A2E] mb-6 leading-tight">
             AI Leadership &amp; Software Development for{" "}
             <span className="text-[#2E5F8A]">Businesses Navigating AI</span>
           </h1>
           <p className="text-[#6B7280] text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            AI leadership when you need direction, and custom software when you're ready to build — everything in between to get you from an idea to something shipped.
+            AI leadership when you need direction, and custom software when you&apos;re ready to build — everything in between to get you from an idea to something shipped.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

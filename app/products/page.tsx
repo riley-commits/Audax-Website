@@ -112,7 +112,7 @@ export default function ProductsPage() {
           <div className="text-center mt-12">
             <p className="text-[#6B7280] text-sm">
               Want to see how we build these?{" "}
-              <Link href="/success-stories" className="text-[#2E5F8A] font-semibold hover:underline">
+              <Link href="/work" className="text-[#2E5F8A] font-semibold hover:underline">
                 See our client work →
               </Link>
             </p>

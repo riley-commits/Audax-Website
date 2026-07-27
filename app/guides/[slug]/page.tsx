@@ -65,7 +65,7 @@ export default async function GuidePage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://audaxventures.ca" },
-      { "@type": "ListItem", position: 2, name: "Guides", item: "https://audaxventures.ca/blog" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://audaxventures.ca/insights" },
       { "@type": "ListItem", position: 3, name: guide.title, item: `https://audaxventures.ca/guides/${slug}` },
     ],
   };
@@ -81,7 +81,7 @@ export default async function GuidePage({ params }: Props) {
 
       <article className="pt-32 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-          <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-[#6B7280] hover:text-[#2E5F8A] transition-colors mb-8">
+          <Link href="/insights" className="inline-flex items-center gap-1.5 text-sm text-[#6B7280] hover:text-[#2E5F8A] transition-colors mb-8">
             <ArrowLeft size={14} /> Back to Resources
           </Link>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-semibold mb-5 uppercase tracking-widest">

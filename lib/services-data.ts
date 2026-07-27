@@ -950,6 +950,71 @@ export const servicesData: ServiceData[] = [
     ],
     relatedServices: ["website-development", "saas-development", "custom-software-development"],
   },
+  {
+    slug: "ai-strategy-governance",
+    title: "AI Strategy & Governance",
+    heroTitle: "AI Strategy & Governance — [PLACEHOLDER headline]",
+    heroSub:
+      "[PLACEHOLDER — one to two sentences positioning this as a standalone strategy & governance engagement for leadership teams, distinct from the full Fractional CAIO retainer.]",
+    metaTitle: "AI Strategy & Governance Services | Audax Ventures",
+    metaDescription:
+      "[PLACEHOLDER meta description, 120–160 characters — AI strategy and governance services for executive teams from Audax Ventures.]",
+    description:
+      "[PLACEHOLDER — full description of the AI Strategy & Governance engagement: what problem it solves for executive buyers, and how it differs from AI Transformation & Advisory and Fractional CAIO.]",
+    whatsIncluded: [
+      { icon: "🎯", label: "[PLACEHOLDER]", description: "[PLACEHOLDER]" },
+      { icon: "📋", label: "[PLACEHOLDER]", description: "[PLACEHOLDER]" },
+      { icon: "🛡️", label: "[PLACEHOLDER]", description: "[PLACEHOLDER]" },
+      { icon: "📐", label: "[PLACEHOLDER]", description: "[PLACEHOLDER]" },
+    ],
+    whoItsFor: [
+      "[PLACEHOLDER]",
+      "[PLACEHOLDER]",
+      "[PLACEHOLDER]",
+    ],
+    process: [
+      { step: 1, title: "[PLACEHOLDER]", description: "[PLACEHOLDER]", duration: "[PLACEHOLDER]" },
+      { step: 2, title: "[PLACEHOLDER]", description: "[PLACEHOLDER]", duration: "[PLACEHOLDER]" },
+      { step: 3, title: "[PLACEHOLDER]", description: "[PLACEHOLDER]", duration: "[PLACEHOLDER]" },
+    ],
+    faq: [
+      { q: "[PLACEHOLDER question]", a: "[PLACEHOLDER answer]" },
+      { q: "How is this different from Fractional CAIO?", a: "[PLACEHOLDER — clarify scope difference: this is a defined strategy/governance engagement, Fractional CAIO is ongoing executive leadership.]" },
+    ],
+    relatedServices: ["fractional-caio", "ai-transformation-advisory", "custom-ai-software-development"],
+  },
+  {
+    slug: "mvp-startup-track",
+    title: "MVP & Startup Track",
+    heroTitle: "MVP & Startup Track — [PLACEHOLDER headline]",
+    heroSub:
+      "[PLACEHOLDER — one to two sentences positioning this as a startup-focused track distinct from the general MVP Development service, e.g. fixed scope/price for early-stage founders.]",
+    metaTitle: "MVP & Startup Track | Audax Ventures",
+    metaDescription:
+      "[PLACEHOLDER meta description, 120–160 characters — the startup MVP track offered by Audax Ventures.]",
+    description:
+      "[PLACEHOLDER — full description of what makes the Startup Track different from standard MVP Development: pricing model, timeline, and who it's built for.]",
+    whatsIncluded: [
+      { icon: "🚀", label: "[PLACEHOLDER]", description: "[PLACEHOLDER]" },
+      { icon: "🗺️", label: "[PLACEHOLDER]", description: "[PLACEHOLDER]" },
+      { icon: "⚙️", label: "[PLACEHOLDER]", description: "[PLACEHOLDER]" },
+    ],
+    whoItsFor: [
+      "[PLACEHOLDER]",
+      "[PLACEHOLDER]",
+      "[PLACEHOLDER]",
+    ],
+    process: [
+      { step: 1, title: "[PLACEHOLDER]", description: "[PLACEHOLDER]", duration: "[PLACEHOLDER]" },
+      { step: 2, title: "[PLACEHOLDER]", description: "[PLACEHOLDER]", duration: "[PLACEHOLDER]" },
+      { step: 3, title: "[PLACEHOLDER]", description: "[PLACEHOLDER]", duration: "[PLACEHOLDER]" },
+    ],
+    faq: [
+      { q: "[PLACEHOLDER question]", a: "[PLACEHOLDER answer]" },
+      { q: "How is this different from standard MVP Development?", a: "[PLACEHOLDER — clarify scope/pricing/timeline difference.]" },
+    ],
+    relatedServices: ["mvp-development", "saas-development", "custom-ai-software-development"],
+  },
 ];
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {

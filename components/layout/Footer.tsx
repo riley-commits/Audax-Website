@@ -3,24 +3,24 @@ import Image from "next/image";
 // Social icon SVGs inline (lucide-react doesn't include these in this version)
 
 const services = [
+  { label: "Fractional Chief AI Officer", href: "/services/fractional-caio" },
+  { label: "Custom AI & Software Development", href: "/services/custom-ai-software-development" },
+  { label: "AI Strategy & Governance", href: "/services/ai-strategy-governance" },
+  { label: "AI Transformation & Advisory", href: "/services/ai-transformation-advisory" },
+  { label: "AI Consulting", href: "/services/ai-consulting" },
   { label: "MVP Development", href: "/services/mvp-development" },
   { label: "SaaS Development", href: "/services/saas-development" },
   { label: "Internal Tools", href: "/services/internal-tools" },
   { label: "Website Development", href: "/services/website-development" },
-  { label: "E-Commerce Development", href: "/services/ecommerce-development" },
-  { label: "iOS Development", href: "/services/ios-development" },
-  { label: "Android Development", href: "/services/android-development" },
-  { label: "AI Consulting", href: "/services/ai-consulting" },
-  { label: "AI Transformation & Advisory", href: "/services/ai-transformation-advisory" },
-  { label: "Fractional Chief AI Officer", href: "/services/fractional-caio" },
 ];
 
-const solutions = [
-  { label: "Founder Prototype Program", href: "https://www.audaxventures.io" },
-  { label: "Our Process", href: "/process" },
-  { label: "Success Stories", href: "/success-stories" },
+const explore = [
+  { label: "Our Approach", href: "/approach" },
+  { label: "Our Work", href: "/work" },
+  { label: "Insights", href: "/insights" },
+  { label: "Programs", href: "/programs" },
+  { label: "Products", href: "/products" },
 ];
-
 
 const company = [
   { label: "About Us", href: "/about" },
@@ -40,7 +40,7 @@ export default function Footer() {
             <Image src="/audax-logo.png" alt="Audax Ventures" width={160} height={52} className="h-10 w-auto brightness-0 invert" />
           </Link>
           <p className="text-gray-400 text-sm max-w-xs">
-            Canada&apos;s most founder-aligned software development partner — from validated idea to scalable product.
+            Executive AI leadership and the custom software to back it up — Fractional CAIO services and AI-powered development from one Canadian team.
           </p>
         </div>
 
@@ -59,9 +59,9 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-4">Solutions</h3>
+            <h3 className="text-xs font-semibold tracking-widest uppercase text-gray-500 mb-4">Explore</h3>
             <ul className="space-y-2">
-              {solutions.map((s) => (
+              {explore.map((s) => (
                 <li key={s.href}>
                   <Link
                     href={s.href}

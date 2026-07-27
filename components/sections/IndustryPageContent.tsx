@@ -10,25 +10,25 @@ import type { IndustryData } from "@/lib/industries-data";
 // ── Hero photo for the 3 main industries only ─────────────────────────────────
 
 const industryPhotos: Record<string, string> = {
-  "healthcare-medical": "/about/winnipeg-office-meeting.png",
-  "legal-professional-services": "/about-audax.png",
-  "real-estate-construction": "/about/whiteboard-strategy.png",
+  "financial-services": "/about/winnipeg-office-meeting.png",
+  "professional-services": "/about-audax.png",
+  "hospitality-tourism": "/about/whiteboard-strategy.png",
 };
 
 // ── Option 1: Per-industry accent colors ──────────────────────────────────────
 
 const industryAccents: Record<string, { hex: string; label: string }> = {
-  "healthcare-medical":       { hex: "#0D9488", label: "teal" },
-  "manufacturing":            { hex: "#EA580C", label: "orange" },
-  "real-estate-construction": { hex: "#D97706", label: "amber" },
-  "fintech":                  { hex: "#059669", label: "emerald" },
-  "retail":                   { hex: "#E11D48", label: "rose" },
-  "education":                { hex: "#7C3AED", label: "violet" },
-  "hospitality":              { hex: "#4F46E5", label: "indigo" },
-  "legal":                    { hex: "#64748B", label: "slate" },
-  "logistics":                { hex: "#2563EB", label: "blue" },
-  "non-profit":               { hex: "#16A34A", label: "green" },
-  "saas-companies":           { hex: "#0891B2", label: "cyan" },
+  "financial-services":        { hex: "#059669", label: "emerald" },
+  "professional-services":     { hex: "#64748B", label: "slate" },
+  "hospitality-tourism":       { hex: "#4F46E5", label: "indigo" },
+  "healthcare-medical":        { hex: "#0D9488", label: "teal" },
+  "real-estate-construction":  { hex: "#D97706", label: "amber" },
+  "retail-ecommerce":          { hex: "#E11D48", label: "rose" },
+  "education-edtech":          { hex: "#7C3AED", label: "violet" },
+  "manufacturing":             { hex: "#EA580C", label: "orange" },
+  "transportation-logistics":  { hex: "#2563EB", label: "blue" },
+  "non-profit":                { hex: "#16A34A", label: "green" },
+  "technology-saas":           { hex: "#0891B2", label: "cyan" },
 };
 
 // ── Option 5: Before/After outcome data ───────────────────────────────────────

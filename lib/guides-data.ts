@@ -149,7 +149,7 @@ MVP costs vary significantly by product type and team:
 
 Timeline: 8–16 weeks for most MVPs built with an experienced team.
 
-See our full guide: [The Real Cost of Building an MVP in 2025](/blog/real-cost-of-building-an-mvp-2025).
+See our full guide: [The Real Cost of Building an MVP in 2025](/insights/real-cost-of-building-an-mvp-2025).
 
 ## When Are You Ready to Build?
 

@@ -3,54 +3,42 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import {
+  ArrowRight, LayoutGrid, User, BarChart3, Settings, Compass,
+  TrendingUp, Zap,
+} from "lucide-react";
 
-const roadmapPhases = [
-  { label: "Discover",   value: 100 },
-  { label: "Strategize", value: 100 },
-  { label: "Build",      value: 65  },
-  { label: "Scale",      value: 20  },
+// ── Dashboard mockup data ────────────────────────────────────────────────────
+
+const roadmapSteps = ["Discover", "Assess", "Design", "Build", "Deploy", "Optimize"];
+const activeStepIndex = 3; // "Build"
+
+const impactMetrics = [
+  { label: "Process Efficiency", value: "+37%", trend: "up" as const },
+  { label: "Cost Savings", value: "$2.4M", trend: "note" as const, note: "Projected" },
+  { label: "Automation Rate", value: "68%", trend: "up" as const, note: "+22% vs last quarter" },
 ];
 
-const kpis = [
-  { label: "AI Maturity Score",  value: "7.8/10",  change: "+2.3 pts",      color: "text-green-400" },
-  { label: "Opportunities Found", value: "14",      change: "+5 this qtr",   color: "text-blue-400" },
-  { label: "Projected ROI",       value: "3.4x",     change: "12-mo horizon", color: "text-purple-400" },
-  { label: "Governance Status",   value: "On Track", change: "Reviewed weekly", color: "text-emerald-400" },
+const initiatives = [
+  { name: "Customer Support AI Assistant", status: "Live", dot: "bg-green-400" },
+  { name: "Invoice Processing Automation", status: "In Progress", dot: "bg-blue-400" },
+  { name: "Demand Forecasting Model", status: "Testing", dot: "bg-purple-400" },
 ];
 
-const activity = [
-  { name: "Customer Support", action: "AI triage automated",         time: "Phase 2", dot: "bg-green-400" },
-  { name: "Sales Ops",        action: "lead scoring model live",     time: "Phase 2", dot: "bg-blue-400" },
-  { name: "Finance Team",     action: "AI governance policy drafted", time: "Phase 1", dot: "bg-purple-400" },
-];
+const sidebarIcons = [LayoutGrid, User, BarChart3, Settings, Compass];
 
-const sidebarIcons = [
-  // Grid / Dashboard
-  <svg key="grid" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>,
-  // Activity
-  <svg key="activity" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
-  // Users
-  <svg key="users" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-  // Settings
-  <svg key="settings" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>,
-];
-
-function AIStrategyMockup() {
+function AIDashboardMockup() {
   return (
     <motion.div
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       className="relative"
     >
-      {/* Glow behind */}
-      <div className="absolute inset-0 bg-[#2E5F8A]/25 rounded-3xl blur-3xl translate-y-6 scale-90 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#2563EB]/20 rounded-3xl blur-3xl translate-y-6 scale-90 pointer-events-none" />
 
-      {/* Main card */}
-      <div className="relative bg-[#0D1526] rounded-2xl overflow-hidden shadow-2xl border border-white/10 text-white">
-
-        {/* Browser chrome bar */}
-        <div className="flex items-center gap-3 px-4 py-3 bg-[#080F1C] border-b border-white/5">
+      <div className="relative bg-[#0B1220] rounded-2xl overflow-hidden shadow-2xl border border-white/10 text-white">
+        {/* Browser chrome */}
+        <div className="flex items-center gap-3 px-4 py-3 bg-[#080D18] border-b border-white/5">
           <div className="flex gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
@@ -59,90 +47,96 @@ function AIStrategyMockup() {
           <div className="flex-1 bg-white/5 rounded-md py-1 px-3 text-[10px] text-white/25 text-center max-w-xs mx-auto">
             app.audaxventures.ca/ai-roadmap
           </div>
-          <div className="w-6 h-6 rounded-full bg-[#2E5F8A] flex items-center justify-center text-[9px] font-bold">AV</div>
         </div>
 
         <div className="flex">
           {/* Sidebar */}
-          <div className="w-12 bg-[#080F1C] border-r border-white/5 py-4 flex flex-col items-center gap-3">
-            {sidebarIcons.map((icon, i) => (
+          <div className="w-12 bg-[#080D18] border-r border-white/5 py-4 flex flex-col items-center gap-3 flex-shrink-0">
+            {sidebarIcons.map((Icon, i) => (
               <div
                 key={i}
                 className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
-                  i === 0
-                    ? "bg-[#2E5F8A] text-white"
-                    : "text-white/20"
+                  i === 0 ? "bg-[#2563EB] text-white" : "text-white/20"
                 }`}
               >
-                {icon}
+                <Icon size={15} />
               </div>
             ))}
           </div>
 
           {/* Content */}
-          <div className="flex-1 p-4 space-y-3">
-            {/* Header row */}
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-white text-xs font-semibold">AI Strategy Roadmap</p>
-                <p className="text-white/30 text-[9px]">Last reviewed: this week</p>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="px-2 py-0.5 bg-green-500/10 rounded text-green-400 text-[9px] font-medium flex items-center gap-1">
-                  <span className="w-1 h-1 rounded-full bg-green-400 inline-block" /> Active
-                </span>
-                <span className="px-2 py-0.5 bg-white/5 rounded text-white/30 text-[9px]">12-mo plan</span>
-              </div>
-            </div>
+          <div className="flex-1 p-4 space-y-3 min-w-0">
+            <p className="text-white text-xs font-semibold">AI Roadmap</p>
 
-            {/* KPI grid */}
-            <div className="grid grid-cols-2 gap-2">
-              {kpis.map((k) => (
-                <div key={k.label} className="bg-white/5 rounded-xl p-2.5">
-                  <p className="text-white/35 text-[9px] mb-1">{k.label}</p>
-                  <p className="text-white font-bold text-sm leading-none">{k.value}</p>
-                  <p className={`text-[9px] mt-1 ${k.color}`}>↑ {k.change}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Roadmap phase progress */}
+            {/* 6-step stepper */}
             <div className="bg-white/5 rounded-xl p-3">
-              <div className="flex items-center justify-between mb-2.5">
-                <p className="text-white/50 text-[9px] font-medium">Implementation Roadmap</p>
-                <p className="text-white/20 text-[8px]">4 phases</p>
-              </div>
-              <div className="space-y-2">
-                {roadmapPhases.map((p, i) => (
-                  <div key={p.label} className="flex items-center gap-2">
-                    <p className="text-white/40 text-[8px] w-16 flex-shrink-0">{p.label}</p>
-                    <div className="flex-1 h-1.5 rounded-full bg-white/10 overflow-hidden">
+              <div className="flex items-center justify-between">
+                {roadmapSteps.map((step, i) => (
+                  <div key={step} className="flex items-center flex-1 last:flex-none">
+                    <div className="flex flex-col items-center gap-1.5">
                       <div
-                        className="h-full rounded-full"
-                        style={{
-                          width: `${p.value}%`,
-                          background: i < 2 ? "#3A7BD5" : "#2E5F8A",
-                        }}
-                      />
+                        className={`w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold flex-shrink-0 ${
+                          i === activeStepIndex
+                            ? "bg-[#2563EB] text-white ring-4 ring-[#2563EB]/25"
+                            : i < activeStepIndex
+                            ? "bg-white/25 text-white"
+                            : "bg-white/10 text-white/30"
+                        }`}
+                      >
+                        {i + 1}
+                      </div>
+                      <span className={`text-[7px] whitespace-nowrap ${i === activeStepIndex ? "text-white font-semibold" : "text-white/30"}`}>
+                        {step}
+                      </span>
                     </div>
-                    <p className="text-white/30 text-[8px] w-8 text-right">{p.value}%</p>
+                    {i < roadmapSteps.length - 1 && (
+                      <div className={`h-px flex-1 mx-1 mb-3.5 ${i < activeStepIndex ? "bg-white/25" : "bg-white/10"}`} />
+                    )}
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Activity feed */}
-            <div className="space-y-1.5">
-              <p className="text-white/30 text-[9px] font-medium uppercase tracking-wider">Strategic Recommendations</p>
-              {activity.map((a) => (
-                <div key={a.name} className="flex items-center gap-2 bg-white/[0.03] rounded-lg px-2.5 py-1.5">
-                  <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${a.dot}`} />
-                  <p className="flex-1 text-[9px] text-white/50 truncate">
-                    <span className="text-white/70 font-medium">{a.name}</span> {a.action}
-                  </p>
-                  <p className="text-white/20 text-[8px] flex-shrink-0">{a.time}</p>
+            {/* Executive Impact */}
+            <div className="bg-white/5 rounded-xl p-3">
+              <p className="text-white/50 text-[9px] font-medium uppercase tracking-wider mb-2">Executive Impact</p>
+              <div className="grid grid-cols-3 gap-2">
+                {impactMetrics.map((m) => (
+                  <div key={m.label} className="bg-white/5 rounded-lg p-2">
+                    <p className="text-white/35 text-[8px] mb-1 leading-tight">{m.label}</p>
+                    <p className="text-white font-bold text-xs leading-none">{m.value}</p>
+                    {m.note && <p className="text-[7px] mt-1 text-green-400">{m.note}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ROI + Active Initiatives row */}
+            <div className="grid grid-cols-[auto_1fr] gap-2">
+              <div className="bg-white/5 rounded-xl p-3 flex flex-col items-center justify-center w-24 flex-shrink-0">
+                <div className="relative w-14 h-14 flex items-center justify-center">
+                  <svg viewBox="0 0 36 36" className="w-14 h-14 -rotate-90">
+                    <circle cx="18" cy="18" r="15.5" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="3" />
+                    <circle cx="18" cy="18" r="15.5" fill="none" stroke="#7C3AED" strokeWidth="3" strokeDasharray="97 100" strokeLinecap="round" />
+                  </svg>
+                  <span className="absolute text-white font-bold text-[10px]">347%</span>
                 </div>
-              ))}
+                <p className="text-white/40 text-[7px] mt-1">ROI This Year</p>
+                <p className="text-green-400 text-[7px]">+85% YoY</p>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-2.5 min-w-0">
+                <p className="text-white/50 text-[8px] font-medium uppercase tracking-wider mb-1.5">Active Initiatives</p>
+                <div className="space-y-1.5">
+                  {initiatives.map((a) => (
+                    <div key={a.name} className="flex items-center gap-1.5">
+                      <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${a.dot}`} />
+                      <p className="flex-1 text-[8px] text-white/60 truncate">{a.name}</p>
+                      <p className="text-white/30 text-[7px] flex-shrink-0">{a.status}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -155,12 +149,12 @@ function AIStrategyMockup() {
         transition={{ delay: 0.9, duration: 0.4, ease: "backOut" }}
         className="absolute -top-5 -right-5 bg-white rounded-2xl shadow-xl border border-gray-100 px-3 py-2 flex items-center gap-2"
       >
-        <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-base leading-none">
-          🎯
+        <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-[#059669]">
+          <Zap size={14} />
         </div>
         <div>
-          <p className="text-[11px] font-bold text-[#1A1A2E]">Roadmap Delivered</p>
-          <p className="text-[9px] text-[#6B7280]">2 weeks from kickoff</p>
+          <p className="text-[11px] font-bold text-[#0F172A]">68% Automated</p>
+          <p className="text-[9px] text-[#6B7280]">Across live workflows</p>
         </div>
       </motion.div>
 
@@ -171,12 +165,12 @@ function AIStrategyMockup() {
         transition={{ delay: 1.2, duration: 0.4, ease: "backOut" }}
         className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl border border-gray-100 px-3 py-2 flex items-center gap-2"
       >
-        <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-[#2E5F8A]">
+        <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-[#2563EB]">
           <TrendingUp size={14} />
         </div>
         <div>
-          <p className="text-[11px] font-bold text-[#1A1A2E]">3.4x Projected ROI</p>
-          <p className="text-[9px] text-[#6B7280]">12-month horizon</p>
+          <p className="text-[11px] font-bold text-[#0F172A]">347% ROI</p>
+          <p className="text-[9px] text-[#6B7280]">This year</p>
         </div>
       </motion.div>
     </motion.div>
@@ -190,40 +184,28 @@ export default function HeroSection() {
   const contentOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.35]);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-[#FAFAF8] pt-20">
-      {/* Animated gradient mesh background */}
+    <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-white pt-20">
+      {/* Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Orb 1 — top-right, primary blue, drifts slowly */}
         <motion.div
           animate={{ x: [0, 40, 0], y: [0, -30, 0], scale: [1, 1.12, 1] }}
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-48 -right-48 w-[700px] h-[700px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(46,95,138,0.18) 0%, transparent 68%)" }}
+          style={{ background: "radial-gradient(circle, rgba(37,99,235,0.14) 0%, transparent 68%)" }}
         />
-        {/* Orb 2 — bottom-left, accent blue, offset phase */}
         <motion.div
           animate={{ x: [0, -30, 0], y: [0, 40, 0], scale: [1, 1.18, 1] }}
           transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
           className="absolute -bottom-48 -left-32 w-[600px] h-[600px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(58,123,213,0.13) 0%, transparent 68%)" }}
+          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.10) 0%, transparent 68%)" }}
         />
-        {/* Orb 3 — mid-canvas, subtle pulse */}
-        <motion.div
-          animate={{ scale: [1, 1.25, 1], opacity: [0.06, 0.13, 0.06] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(46,95,138,1) 0%, transparent 70%)" }}
-        />
-        {/* Fine dot grid overlay */}
         <div
-          className="absolute inset-0 opacity-[0.028]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
-            backgroundImage: "radial-gradient(#2E5F8A 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(#0F172A 1px, transparent 1px)",
             backgroundSize: "30px 30px",
           }}
         />
-        {/* Bottom fade — hides orb bleed for a clean handoff to the next section */}
-        <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent to-[#FAFAF8]" />
       </div>
 
       <motion.div
@@ -234,61 +216,57 @@ export default function HeroSection() {
 
           {/* ── Left: copy ── */}
           <div>
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-sm font-medium mb-6"
+              className="text-xs font-bold tracking-widest uppercase text-[#2563EB] mb-6"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2E5F8A] animate-pulse" />
-              Fractional CAIO &amp; Custom Software, One Team
-            </motion.div>
+              Fractional AI Leadership. Real Software. Real Impact.
+            </motion.p>
 
-            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] text-[#1A1A2E] leading-[1.1] mb-6"
+              className="font-[var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-[3.8rem] text-[#0F172A] leading-[1.1] mb-6"
             >
-              Executive AI Leadership
-              <br />
-              and the{" "}
-              <span className="gradient-text">Software to Back It Up.</span>
+              The AI Strategy Partner That Actually{" "}
+              <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                Builds.
+              </span>
             </motion.h1>
 
-            {/* Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-lg"
             >
-              Audax Ventures pairs Fractional Chief AI Officer leadership with in-house custom software development — one team that sets the AI strategy and builds it, so your roadmap doesn&apos;t stall at the slide deck.
+              Fractional CAIO leadership and custom AI software that help organizations operate smarter, move faster, and create measurable impact.
             </motion.p>
 
-            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row sm:items-center gap-4"
             >
               <Link
                 href="https://calendly.com/audax-ventures/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#2E5F8A] text-white font-semibold text-base hover:bg-[#3A7BD5] transition-colors shadow-lg shadow-blue-900/20"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0B1220] text-white font-semibold text-base hover:bg-[#1E293B] transition-colors shadow-lg shadow-black/10"
               >
                 Book a Free Strategy Call
                 <ArrowRight size={18} />
               </Link>
               <Link
                 href="/work"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-[#2E5F8A] text-[#2E5F8A] font-semibold text-base hover:bg-[#2E5F8A] hover:text-white transition-colors"
+                className="inline-flex items-center justify-center gap-1.5 text-[#0F172A] font-semibold text-base hover:text-[#2563EB] transition-colors"
               >
                 See Our Work
+                <ArrowRight size={16} />
               </Link>
             </motion.div>
 
@@ -302,9 +280,9 @@ export default function HeroSection() {
               <div className="flex -space-x-2.5">
                 {(
                   [
-                    { initials: "R", bg: "#2E5F8A" },
-                    { initials: "M", bg: "#3A7BD5" },
-                    { initials: "P", bg: "#1A1A2E" },
+                    { initials: "R", bg: "#0F172A" },
+                    { initials: "M", bg: "#2563EB" },
+                    { initials: "P", bg: "#7C3AED" },
                     { initials: "J", bg: "#6B7280" },
                   ] as { initials: string; bg: string }[]
                 ).map(({ initials, bg }) => (
@@ -325,9 +303,7 @@ export default function HeroSection() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-sm text-[#6B7280]">
-                  <span className="font-semibold text-[#1A1A2E]">50+ projects delivered</span>{" "}for founders &amp; enterprises
-                </p>
+                <p className="text-sm text-[#6B7280]">Trusted by founders and executives worldwide</p>
               </div>
             </motion.div>
           </div>
@@ -339,7 +315,7 @@ export default function HeroSection() {
             transition={{ duration: 0.75, delay: 0.35, ease: [0.33, 1, 0.68, 1] }}
             className="hidden lg:block px-6"
           >
-            <AIStrategyMockup />
+            <AIDashboardMockup />
           </motion.div>
         </div>
       </motion.div>

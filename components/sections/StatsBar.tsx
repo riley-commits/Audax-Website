@@ -1,59 +1,35 @@
 import Image from "next/image";
 
-// ── Marquee data ───────────────────────────────────────────────────────────
 const trustedBy: { name: string; logo: string; logoOnly: boolean }[] = [
-  { name: "FundEze",                logo: "/logos/fundeze.png",        logoOnly: true  },
-  { name: "MigrateEzy",             logo: "/logos/migrateezy.png",     logoOnly: true  },
-  { name: "LinkGlobal Network",     logo: "/logos/linkglobal.avif",    logoOnly: false },
-  { name: "GreenGlam Tech",         logo: "/logos/greenglam-tech.png", logoOnly: false },
-  { name: "H2MB",                   logo: "/logos/h2mb.avif",          logoOnly: false },
-  { name: "AssessTEAM",             logo: "/logos/assessteam.svg",     logoOnly: true  },
-  { name: "Elkhorn Resort",         logo: "/logos/elkhorn-resort.avif", logoOnly: false },
-  { name: "Clear Lake Golf Course", logo: "/logos/clear-lake-golf.avif", logoOnly: false },
+  { name: "LinkGlobal Network", logo: "/logos/linkglobal.avif",     logoOnly: false },
+  { name: "GreenGlam Tech",     logo: "/logos/greenglam-tech.png",  logoOnly: false },
+  { name: "H2MB",               logo: "/logos/h2mb.avif",           logoOnly: false },
+  { name: "FundEze",            logo: "/logos/fundeze.png",         logoOnly: true  },
+  { name: "MigrateEzy",         logo: "/logos/migrateezy.png",      logoOnly: true  },
 ];
 
-// ── Main component ─────────────────────────────────────────────────────────
 export default function StatsBar() {
   return (
-    <>
-      {/* ── Trusted By Marquee ── */}
-      <section className="bg-[#FAFAF8] py-10 overflow-hidden">
-        <p className="text-center text-sm text-[#6B7280] mb-3 max-w-xl mx-auto px-4">
-          From funded startups to established enterprise and hospitality brands across North America.
+    <section className="bg-white py-14 border-t border-gray-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-[10px] tracking-widest uppercase text-[#9CA3AF] font-semibold mb-8">
+          Trusted by Innovative Organizations
         </p>
-        <p className="text-center text-[10px] tracking-widest uppercase text-[#6B7280] font-semibold mb-7">
-          Trusted By
-        </p>
-
-        {/* Fade-edge wrapper */}
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#FAFAF8] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#FAFAF8] to-transparent z-10 pointer-events-none" />
-
-          {/* Duplicated list for seamless loop */}
-          <div className="animate-marquee">
-            {[...trustedBy, ...trustedBy].map((co, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 mx-3 flex items-center gap-2 px-5 py-2.5 bg-white rounded-xl border border-gray-100 shadow-sm text-[#6B7280] font-[var(--font-outfit)] font-bold text-sm tracking-tight select-none"
-              >
-                <div className="relative h-7 w-24 flex-shrink-0">
-                  <Image
-                    src={co.logo}
-                    alt={co.name}
-                    fill
-                    className="object-contain"
-                    sizes="96px"
-                  />
-                </div>
-                {!co.logoOnly && (
-                  <span>{co.name}</span>
-                )}
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+          {trustedBy.map((co) => (
+            <div key={co.name} className="flex items-center gap-2 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+              <div className="relative h-7 w-24 flex-shrink-0">
+                <Image src={co.logo} alt={co.name} fill className="object-contain" sizes="96px" />
               </div>
-            ))}
-          </div>
+              {!co.logoOnly && (
+                <span className="text-[#374151] font-[var(--font-outfit)] font-bold text-sm tracking-tight select-none">
+                  {co.name}
+                </span>
+              )}
+            </div>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

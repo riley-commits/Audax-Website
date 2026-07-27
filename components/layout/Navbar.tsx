@@ -11,20 +11,31 @@ import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 
 const serviceLinks = [
   {
-    label: "Fractional CAIO",
+    phase: "Think",
+    label: "AI Leadership",
     href: "/services/fractional-caio",
-    desc: "Executive-level AI leadership & strategic guidance",
+    desc: "Strategy, roadmaps & executive AI advisory",
     icon: "👔",
     stat: "Exec-level AI leadership",
-    preview: "Get executive-level AI leadership without the cost of hiring a full-time Chief AI Officer — strategy, governance, training, and ROI tracking on a monthly retainer.",
+    preview: "We work alongside founders and leadership teams to identify opportunities, develop AI strategies, and create a practical roadmap for adopting AI across the organization.",
   },
   {
-    label: "Software Development",
+    phase: "Build",
+    label: "Custom Software Development",
     href: "/services/custom-ai-software-development",
-    desc: "Custom software, automation & AI-powered apps",
+    desc: "AI applications, SaaS platforms & websites",
     icon: "💻",
     stat: "100% IP ownership",
-    preview: "Custom software, automation solutions, AI-powered applications, and digital products built around your business.",
+    preview: "We design and build the technology that powers your strategy — AI applications, SaaS platforms, internal business systems, and modern websites.",
+  },
+  {
+    phase: "Scale",
+    label: "Digital Operations",
+    href: "/services/digital-operations",
+    desc: "Long-term technology partnership & optimization",
+    icon: "🚀",
+    stat: "Ongoing partnership",
+    preview: "We become your long-term technology partner, helping you improve systems, introduce new capabilities, optimize workflows, and support the next stage of growth.",
   },
 ];
 
@@ -72,10 +83,10 @@ const navLinks = [
 
 /** Large, prominent card for a service/resource shown directly in the dropdown */
 function BigCard({
-  href, icon, label, desc, stat, onClose,
+  href, icon, label, desc, stat, phase, onClose,
 }: {
   href: string; icon: string; label: string; desc: string; stat: string;
-  onClose: () => void;
+  phase?: string; onClose: () => void;
 }) {
   return (
     <Link
@@ -88,6 +99,9 @@ function BigCard({
         <ArrowRight size={14} className="text-[#9CA3AF] group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all" />
       </div>
       <div>
+        {phase && (
+          <p className="text-[10px] tracking-widest uppercase text-[#2563EB] font-bold mb-1">{phase}</p>
+        )}
         <p className="font-[var(--font-outfit)] font-extrabold text-[#0F172A] text-base mb-1 leading-snug">{label}</p>
         <p className="text-[#6B7280] text-sm leading-snug">{desc}</p>
       </div>
@@ -190,7 +204,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.98 }}
                       transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[600px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[860px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
                     >
                       <div className="p-6">
                         <div className="flex items-center justify-between mb-4">
@@ -205,11 +219,11 @@ export default function Navbar() {
                             View all services <ArrowRight size={10} />
                           </Link>
                         </div>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-3 gap-4">
                           {serviceLinks.map((s) => (
                             <BigCard
                               key={s.href}
-                              href={s.href} icon={s.icon} label={s.label} desc={s.desc} stat={s.stat}
+                              href={s.href} icon={s.icon} label={s.label} desc={s.desc} stat={s.stat} phase={s.phase}
                               onClose={() => setOpenMenu(null)}
                             />
                           ))}
@@ -366,7 +380,10 @@ export default function Navbar() {
                   <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)}
                     className="flex items-center gap-2 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
                     <span className="text-base">{s.icon}</span>
-                    {s.label}
+                    <span>
+                      <span className="block text-[9px] tracking-widest uppercase text-[#2563EB] font-bold leading-none mb-0.5">{s.phase}</span>
+                      {s.label}
+                    </span>
                   </Link>
                 ))}
                 <Link href="/services" onClick={() => setMobileOpen(false)}

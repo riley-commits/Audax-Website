@@ -2,49 +2,58 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { User, Code2, Sparkles, ArrowRight, Check } from "lucide-react";
+import { User, Code2, TrendingUp, ArrowRight, Check } from "lucide-react";
 
 const pillars = [
   {
+    phase: "Think",
     icon: User,
-    title: "Fractional CAIO",
-    description: "Executive AI leadership without the full-time cost.",
+    title: "AI Leadership",
+    description:
+      "We work alongside founders and leadership teams to identify opportunities, develop AI strategies, prioritize investments, and create a practical roadmap for adopting AI across the organization.",
     href: "/services/fractional-caio",
     accentBg: "bg-[#0F172A]",
     features: [
-      "AI strategy & opportunity assessment",
-      "Governance & responsible AI",
-      "Roadmaps & KPI tracking",
-      "Team enablement & training",
-      "Executive reporting & ROI",
+      "Fractional Chief AI Officer (CAIO)",
+      "AI Strategy & Roadmaps",
+      "Executive Advisory",
+      "AI Opportunity Assessments",
+      "AI Governance & Adoption",
+      "Innovation Workshops",
     ],
   },
   {
+    phase: "Build",
     icon: Code2,
-    title: "Software Development",
-    description: "Custom software and AI solutions to solve your most critical challenges.",
+    title: "Custom Software Development",
+    description:
+      "Once the strategy is clear, we design and build the technology that powers it. From AI applications and SaaS platforms to internal business systems and modern websites, every solution is built specifically around your business.",
     href: "/services/custom-ai-software-development",
     accentBg: "bg-[#7C3AED]",
     features: [
-      "Custom web & mobile applications",
-      "AI-powered tools & assistants",
-      "Process automation & integrations",
-      "Dashboards & internal tools",
-      "Scalable, secure, future-ready",
+      "AI Applications",
+      "Custom Business Software",
+      "SaaS Platforms",
+      "Mobile Apps",
+      "Web Applications",
+      "Websites & Digital Experiences",
     ],
   },
   {
-    icon: Sparkles,
-    title: "AI Transformation",
-    description: "We implement AI across your business for measurable, lasting impact.",
-    href: "/services/ai-transformation-advisory",
+    phase: "Scale",
+    icon: TrendingUp,
+    title: "Digital Operations",
+    description:
+      "Technology should continue creating value long after launch. We become your long-term technology partner, helping you improve systems, introduce new capabilities, optimize workflows, and support the next stage of growth.",
+    href: "/services/digital-operations",
     accentBg: "bg-[#10B981]",
     features: [
-      "Process redesign & optimization",
-      "Change management & adoption",
-      "Data strategy & infrastructure",
-      "Continuous improvement",
-      "Measure, learn & scale",
+      "Technology Partnership",
+      "Product Evolution",
+      "Workflow Optimization",
+      "AI & Automation Expansion",
+      "System Integrations",
+      "Ongoing Support & Enhancement",
     ],
   },
 ];
@@ -80,6 +89,9 @@ export default function ServicesGrid() {
                 <p.icon size={22} className="text-white" />
               </div>
 
+              <p className="text-xs tracking-widest uppercase text-[#2563EB] font-bold mb-2">
+                {p.phase}
+              </p>
               <h3 className="font-[var(--font-outfit)] font-extrabold text-xl text-[#0F172A] mb-2">
                 {p.title}
               </h3>
@@ -87,11 +99,11 @@ export default function ServicesGrid() {
                 {p.description}
               </p>
 
-              <div className="space-y-2.5 mb-8 flex-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-x-3 gap-y-2.5 mb-8 flex-1">
                 {p.features.map((f) => (
-                  <div key={f} className="flex items-start gap-2.5">
+                  <div key={f} className="flex items-start gap-2">
                     <Check size={14} className="text-[#10B981] mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-[#374151]">{f}</span>
+                    <span className="text-sm text-[#374151] leading-snug">{f}</span>
                   </div>
                 ))}
               </div>

@@ -955,6 +955,36 @@ export const servicesData: ServiceData[] = [
     relatedServices: ["website-development", "saas-development", "custom-software-development"],
   },
   {
+    slug: "digital-operations",
+    title: "Digital Operations",
+    heroTitle: "Digital Operations — Your Long-Term Technology Partner",
+    heroSub:
+      "Technology should continue creating value long after launch. We become your long-term technology partner, helping you improve systems, introduce new capabilities, optimize workflows, and support the next stage of growth.",
+    metaTitle: "Digital Operations Services | Ongoing Technology Partnership",
+    metaDescription:
+      "Ongoing digital operations support from Audax Ventures — product evolution, workflow optimization, system integrations, and long-term technology partnership.",
+    description:
+      "Technology should continue creating value long after launch. We become your long-term technology partner, helping you improve systems, introduce new capabilities, optimize workflows, and support the next stage of growth.",
+    whatsIncluded: [
+      { icon: "🤝", label: "Technology Partnership", description: "An ongoing partner accountable for your technology, not a vendor you have to chase down." },
+      { icon: "🔄", label: "Product Evolution", description: "Continued development of your software as your business, users, and needs change." },
+      { icon: "⚙️", label: "Workflow Optimization", description: "Ongoing refinement of the systems and processes technology touches across your business." },
+      { icon: "🤖", label: "AI & Automation Expansion", description: "New AI capabilities and automations layered in as opportunities emerge." },
+      { icon: "🔗", label: "System Integrations", description: "New tools and data sources connected into your existing technology stack as you grow." },
+      { icon: "🛠️", label: "Ongoing Support & Enhancement", description: "Monitoring, maintenance, and continuous improvement so your systems stay reliable." },
+    ],
+    whoItsFor: [
+      "[PLACEHOLDER — audience 1]",
+      "[PLACEHOLDER — audience 2]",
+      "[PLACEHOLDER — audience 3]",
+    ],
+    faq: [
+      { q: "[PLACEHOLDER question]", a: "[PLACEHOLDER answer]" },
+      { q: "How is this different from a one-time project engagement?", a: "[PLACEHOLDER — clarify this is an ongoing partnership rather than a fixed-scope build.]" },
+    ],
+    relatedServices: ["fractional-caio", "custom-ai-software-development"],
+  },
+  {
     slug: "ai-strategy-governance",
     draft: true,
     title: "AI Strategy & Governance",

@@ -14,24 +14,6 @@ const coreServices = [
   "Digital Operations",
 ];
 
-const nextSteps = [
-  {
-    num: "01",
-    title: "We review your message",
-    body: "A real person reads every inquiry. You'll hear back within one business day — usually the same day.",
-  },
-  {
-    num: "02",
-    title: "We schedule a 30-min call",
-    body: "A focused discovery call to understand your goals, timeline, and constraints. No pitch deck.",
-  },
-  {
-    num: "03",
-    title: "We send a clear proposal",
-    body: "A scoped, fixed-price proposal within 48 hours of the call. No vague hourly estimates.",
-  },
-];
-
 const inputClass =
   "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-[#1A1A2E] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2E5F8A]/25 focus:border-[#2E5F8A] transition-colors";
 const labelClass = "block text-xs font-semibold text-[#1A1A2E] mb-1.5 tracking-wide";
@@ -162,35 +144,6 @@ export default function ContactContent() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 90vw, 380px"
                 />
-              </motion.div>
-
-              {/* What happens next */}
-              <motion.div
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="rounded-2xl bg-white border border-gray-100 p-6"
-              >
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#2E5F8A] mb-5">What Happens Next</p>
-                <div className="space-y-5">
-                  {nextSteps.map((step, i) => (
-                    <div key={step.num} className="flex gap-4">
-                      <div className="flex flex-col items-center">
-                        <span className="w-7 h-7 rounded-full bg-[#2E5F8A]/10 text-[#2E5F8A] text-xs font-bold flex items-center justify-center flex-shrink-0">
-                          {step.num}
-                        </span>
-                        {i < nextSteps.length - 1 && (
-                          <div className="w-px flex-1 bg-gray-100 mt-2" />
-                        )}
-                      </div>
-                      <div className="pb-5 last:pb-0">
-                        <p className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-sm mb-1">{step.title}</p>
-                        <p className="text-[#374151] text-xs leading-relaxed">{step.body}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </motion.div>
 
               {/* Social links */}

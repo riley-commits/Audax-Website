@@ -59,10 +59,7 @@ export default function InsightsPage() {
               </h2>
               <p className="text-[#374151] leading-relaxed mb-5">{featured.excerpt}</p>
               <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-[#1A1A2E]">{featured.author}</p>
-                  <p className="text-xs text-[#374151]">{featured.publishDate} · {featured.readTime}</p>
-                </div>
+                <p className="text-sm font-semibold text-[#1A1A2E]">{featured.author}</p>
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E5F8A]">
                   Read more <ArrowRight size={14} />
                 </span>
@@ -85,14 +82,13 @@ export default function InsightsPage() {
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xs font-semibold text-[#2E5F8A] bg-blue-50 px-2.5 py-0.5 rounded-full">{post.category}</span>
-                  <span className="text-xs text-[#374151]">{post.readTime}</span>
                 </div>
                 <h3 className="font-[var(--font-outfit)] font-bold text-[#1A1A2E] text-base leading-snug mb-3 group-hover:text-[#2E5F8A] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
                 <p className="text-[#374151] text-sm line-clamp-2 mb-4">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#374151]">{post.publishDate}</span>
+                  <span className="text-xs text-[#374151]">{post.author}</span>
                   <span className="text-xs font-semibold text-[#2E5F8A] inline-flex items-center gap-1">
                     Read more <ArrowRight size={12} />
                   </span>

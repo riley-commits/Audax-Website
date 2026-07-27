@@ -50,19 +50,9 @@ export default function HomeCaseStudies() {
                   </div>
                 </div>
 
-                <div className="space-y-3 mb-6 flex-1">
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#2E5F8A] mb-1">Problem</p>
-                    <p className="text-[#6B7280] text-xs leading-relaxed line-clamp-2">{c.problem}</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#2E5F8A] mb-1">What We Built</p>
-                    <p className="text-[#6B7280] text-xs leading-relaxed line-clamp-2">{c.whatWeBuilt}</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#2E5F8A] mb-1">Outcome</p>
-                    <p className="text-[#6B7280] text-xs leading-relaxed line-clamp-2">{c.outcome}</p>
-                  </div>
+                <div className="mb-6 flex-1">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#2E5F8A] mb-1">What We Built</p>
+                  <p className="text-[#6B7280] text-xs leading-relaxed line-clamp-3">{c.whatWeBuilt}</p>
                 </div>
 
                 <div className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E5F8A] group-hover:gap-2.5 transition-all">

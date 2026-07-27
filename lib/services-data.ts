@@ -24,6 +24,10 @@ export interface ServicePackage {
 
 export interface ServiceData {
   slug: string;
+  // Set on services whose page content is still [PLACEHOLDER] — excluded
+  // from the sitemap, noindexed, and left out of hub/nav listings until
+  // real copy replaces the placeholders.
+  draft?: boolean;
   title: string;
   heroTitle: string;
   heroSub: string;
@@ -952,6 +956,7 @@ export const servicesData: ServiceData[] = [
   },
   {
     slug: "ai-strategy-governance",
+    draft: true,
     title: "AI Strategy & Governance",
     heroTitle: "AI Strategy & Governance — [PLACEHOLDER headline]",
     heroSub:
@@ -985,6 +990,7 @@ export const servicesData: ServiceData[] = [
   },
   {
     slug: "mvp-startup-track",
+    draft: true,
     title: "MVP & Startup Track",
     heroTitle: "MVP & Startup Track — [PLACEHOLDER headline]",
     heroSub:
@@ -1023,4 +1029,8 @@ export function getServiceBySlug(slug: string): ServiceData | undefined {
 
 export function getAllServiceSlugs(): string[] {
   return servicesData.map((s) => s.slug);
+}
+
+export function getPublishedServiceSlugs(): string[] {
+  return servicesData.filter((s) => !s.draft).map((s) => s.slug);
 }

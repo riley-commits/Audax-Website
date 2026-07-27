@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Target, Hammer, TrendingUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, Hammer } from "lucide-react";
 import CTABanner from "@/components/layout/CTABanner";
 import { caseStudiesData, getCaseStudyBySlug, getAllCaseStudySlugs } from "@/lib/case-studies-data";
 
@@ -76,18 +76,9 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Problem / What We Built / Outcome */}
+      {/* What We Built */}
       <section className="py-14 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          <div className="flex gap-5">
-            <div className="w-11 h-11 rounded-xl bg-[#2E5F8A]/10 flex items-center justify-center flex-shrink-0">
-              <Target className="text-[#2E5F8A]" size={20} />
-            </div>
-            <div>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#2E5F8A] mb-2">The Problem</p>
-              <p className="text-[#374151] leading-relaxed">{study.problem}</p>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-5">
             <div className="w-11 h-11 rounded-xl bg-[#2E5F8A]/10 flex items-center justify-center flex-shrink-0">
               <Hammer className="text-[#2E5F8A]" size={20} />
@@ -97,33 +88,8 @@ export default async function CaseStudyPage({ params }: Props) {
               <p className="text-[#374151] leading-relaxed">{study.whatWeBuilt}</p>
             </div>
           </div>
-          <div className="flex gap-5">
-            <div className="w-11 h-11 rounded-xl bg-[#2E5F8A]/10 flex items-center justify-center flex-shrink-0">
-              <TrendingUp className="text-[#2E5F8A]" size={20} />
-            </div>
-            <div>
-              <p className="text-xs font-bold tracking-widest uppercase text-[#2E5F8A] mb-2">The Outcome</p>
-              <p className="text-[#374151] leading-relaxed">{study.outcome}</p>
-            </div>
-          </div>
         </div>
       </section>
-
-      {/* Results stats */}
-      {study.results && study.results.length > 0 && (
-        <section className="py-14 bg-[#2E5F8A]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid sm:grid-cols-3 gap-8 text-center">
-              {study.results.map((r) => (
-                <div key={r.label}>
-                  <div className="font-[var(--font-outfit)] font-extrabold text-3xl text-white mb-1">{r.stat}</div>
-                  <div className="text-blue-200 text-sm">{r.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Tags + external link */}
       <section className="py-14 bg-[#F8F9FA]">

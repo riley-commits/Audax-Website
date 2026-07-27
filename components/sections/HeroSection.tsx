@@ -243,7 +243,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[#6B7280] text-lg leading-relaxed mb-10 max-w-lg"
             >
-              Fractional CAIO leadership and custom AI software that help organizations operate smarter, move faster, and create measurable impact.
+              Fractional CAIO leadership and custom software development that help organizations operate smarter, move faster, and create measurable impact.
             </motion.p>
 
             <motion.div

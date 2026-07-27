@@ -3,7 +3,7 @@ import Image from "next/image";
 const trustedBy: { name: string; logo: string; logoOnly: boolean }[] = [
   { name: "LinkGlobal Network", logo: "/logos/linkglobal.avif",     logoOnly: false },
   { name: "GreenGlam Tech",     logo: "/logos/greenglam-tech.png",  logoOnly: false },
-  { name: "H2MB",               logo: "/logos/h2mb.avif",           logoOnly: false },
+  { name: "H2MB",               logo: "/logos/h2mb.avif",           logoOnly: true  },
   { name: "FundEze",            logo: "/logos/fundeze.png",         logoOnly: true  },
   { name: "MigrateEzy",         logo: "/logos/migrateezy.png",      logoOnly: true  },
 ];

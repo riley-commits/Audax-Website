@@ -29,7 +29,7 @@ export default function ImpactHighlights() {
             </h2>
           </div>
           <Link
-            href="/work"
+            href="/success-stories"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] hover:text-[#0F172A] transition-colors flex-shrink-0"
           >
             View All Success Stories <ArrowRight size={14} />
@@ -71,7 +71,7 @@ export default function ImpactHighlights() {
                       <p className="text-[#9CA3AF] text-xs mt-1">{h.statLabel}</p>
                     </div>
                     <Link
-                      href="/work"
+                      href="/success-stories"
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] group-hover:gap-2.5 transition-all"
                     >
                       View Success Story <ArrowRight size={14} />

@@ -262,7 +262,7 @@ export default function HeroSection() {
                 <ArrowRight size={18} />
               </Link>
               <Link
-                href="/work"
+                href="/success-stories"
                 className="inline-flex items-center justify-center gap-1.5 text-[#0F172A] font-semibold text-base hover:text-[#2563EB] transition-colors"
               >
                 See Our Work

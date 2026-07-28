@@ -43,7 +43,7 @@ export default function CaseStudyContent({ study, otherStudies }: { study: CaseS
           <div className="flex items-center justify-center gap-1.5 text-xs text-[#9CA3AF] mb-8">
             <Link href="/" className="hover:text-[#374151] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/work" className="hover:text-[#374151] transition-colors">Client Success Stories</Link>
+            <Link href="/success-stories" className="hover:text-[#374151] transition-colors">Client Success Stories</Link>
             <span>/</span>
             <span className="text-[#374151]">{study.industry}</span>
           </div>
@@ -227,7 +227,7 @@ export default function CaseStudyContent({ study, otherStudies }: { study: CaseS
               {otherStudies.map((c) => (
                 <Link
                   key={c.slug}
-                  href={`/work/${c.slug}`}
+                  href={`/success-stories/${c.slug}`}
                   className="group block bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition-all"
                 >
                   <p className="text-xs font-semibold text-[#2563EB] bg-blue-50 inline-flex px-2.5 py-0.5 rounded-full mb-3">

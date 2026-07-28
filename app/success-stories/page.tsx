@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Client Success Stories | Audax Ventures",
   description:
     "See how organizations have partnered with Audax to transform operations, build custom technology, and create measurable business outcomes.",
-  alternates: { canonical: "https://audaxventures.ca/work" },
+  alternates: { canonical: "https://audaxventures.ca/success-stories" },
 };
 
 export default function WorkPage() {

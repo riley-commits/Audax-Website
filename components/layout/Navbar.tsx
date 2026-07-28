@@ -54,7 +54,7 @@ const navLinks = [
   { label: "Services",     href: "/services",  kind: "services" as const },
   { label: "Products",     href: "/products",  kind: "link" as const },
   { label: "Resources",    href: "/insights",  kind: "resources" as const },
-  { label: "Success Stories", href: "/work",   kind: "link" as const },
+  { label: "Success Stories", href: "/success-stories", kind: "link" as const },
   { label: "Contact",      href: "/contact",   kind: "link" as const },
 ];
 

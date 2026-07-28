@@ -1,5 +1,9 @@
 export interface ProductData {
   name: string;
+  /** Small uppercase category label shown above the name, e.g. "AI Chatbot Platform". */
+  category: string;
+  /** Short, bold headline capturing what the product does — the card's main hook. */
+  headline: string;
   /** One sentence describing what the product does. */
   description: string;
   url: string;
@@ -17,6 +21,8 @@ export interface ProductData {
 export const productsData: ProductData[] = [
   {
     name: "Verclara",
+    category: "The Business Operating System",
+    headline: "Run your business from one command center.",
     description:
       "Verclara is a unified business operating system that brings clients, pipeline, revenue, meetings, and tasks into one workspace for fractional executives and service-based business owners.",
     url: "https://www.verclara.io/",
@@ -27,6 +33,8 @@ export const productsData: ProductData[] = [
   },
   {
     name: "Intuitina",
+    category: "AI Chatbot Platform",
+    headline: "AI agents that qualify, support, and convert.",
     description:
       "Intuitina deploys trained AI chatbots that qualify leads, answer support questions, and respond in over 120 languages, 24/7.",
     url: "https://www.intuitina.com/",

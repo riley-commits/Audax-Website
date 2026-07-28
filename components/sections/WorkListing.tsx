@@ -45,7 +45,7 @@ export default function WorkListing() {
           {visibleStudies.map((c) => (
             <Link
               key={c.slug}
-              href={`/work/${c.slug}`}
+              href={`/success-stories/${c.slug}`}
               className="group bg-white rounded-3xl border border-gray-100 shadow-sm p-8 flex flex-col hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
               <div className="flex items-center gap-2 mb-5">

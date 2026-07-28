@@ -18,7 +18,7 @@ const company = [
 
 const resources = [
   { label: "Articles", href: "/insights" },
-  { label: "Client Success Stories", href: "/work" },
+  { label: "Client Success Stories", href: "/success-stories" },
 ];
 
 export default function Footer() {

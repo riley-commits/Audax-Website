@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: study.metaTitle,
     description: study.metaDescription,
-    alternates: { canonical: `https://audaxventures.ca/work/${slug}` },
+    alternates: { canonical: `https://audaxventures.ca/success-stories/${slug}` },
     openGraph: {
       title: study.metaTitle,
       description: study.metaDescription,
-      url: `https://audaxventures.ca/work/${slug}`,
+      url: `https://audaxventures.ca/success-stories/${slug}`,
     },
   };
 }
@@ -38,8 +38,8 @@ export default async function CaseStudyPage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://audaxventures.ca" },
-      { "@type": "ListItem", position: 2, name: "Client Success Stories", item: "https://audaxventures.ca/work" },
-      { "@type": "ListItem", position: 3, name: study.title, item: `https://audaxventures.ca/work/${slug}` },
+      { "@type": "ListItem", position: 2, name: "Client Success Stories", item: "https://audaxventures.ca/success-stories" },
+      { "@type": "ListItem", position: 3, name: study.title, item: `https://audaxventures.ca/success-stories/${slug}` },
     ],
   };
 

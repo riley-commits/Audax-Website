@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about/joshua-zaporzan`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${base}/approach`,        lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/contact`,         lastModified: new Date(), changeFrequency: "yearly"  as const, priority: 0.9 },
-    { url: `${base}/work`,            lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${base}/success-stories`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/insights`,        lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/guides`,          lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${base}/mvp-calculator`,  lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },

@@ -16,7 +16,10 @@ const nextConfig: NextConfig = {
       { source: "/blog",            destination: "/insights",       permanent: true },
       { source: "/blog/:slug",      destination: "/insights/:slug", permanent: true },
       { source: "/process",         destination: "/approach",       permanent: true },
-      { source: "/success-stories", destination: "/work",           permanent: true },
+      // Case Studies rebranded to Client Success Stories 2026-07-28 — /work was
+      // briefly the live route before settling on /success-stories for SEO.
+      { source: "/work",            destination: "/success-stories",       permanent: true },
+      { source: "/work/:slug",      destination: "/success-stories/:slug", permanent: true },
       { source: "/industries/fintech-finance",             destination: "/industries/financial-services",   permanent: true },
       { source: "/industries/legal-professional-services", destination: "/industries/professional-services", permanent: true },
       // Enterprise Innovation Program and AI Implementation removed 2026-06-24 — send old links to the programs hub

@@ -32,7 +32,7 @@ export default function ImpactHighlights() {
             href="/work"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] hover:text-[#0F172A] transition-colors flex-shrink-0"
           >
-            View All Case Studies <ArrowRight size={14} />
+            View All Success Stories <ArrowRight size={14} />
           </Link>
         </motion.div>
 
@@ -74,7 +74,7 @@ export default function ImpactHighlights() {
                       href="/work"
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] group-hover:gap-2.5 transition-all"
                     >
-                      View Case Study <ArrowRight size={14} />
+                      View Success Story <ArrowRight size={14} />
                     </Link>
                   </div>
                 </div>

@@ -198,28 +198,35 @@ export const solutionsSchema = z.array(solutionSchema);
 export type Solution = z.infer<typeof solutionSchema>;
 
 // ------------------------------------------------------------------
-// Case studies (lib/case-studies-data.ts)
+// Client success stories (lib/case-studies-data.ts)
+// Clients are kept anonymous — no names, logos, or identifying URLs.
 // ------------------------------------------------------------------
 
 const caseStudyResultSchema = z.object({
-  stat: z.string().min(1),
+  stat: z.string().min(1).optional(),
   label: z.string().min(1),
 });
 
+const caseStudyServiceSchema = z.enum([
+  "AI Leadership",
+  "Custom Software Development",
+  "Digital Operations",
+]);
+
 export const caseStudySchema = z.object({
   slug: slugSchema,
-  clientName: z.string().min(1),
-  clientType: z.string().min(1),
-  logo: z.string().min(1).optional(),
-  externalUrl: z.string().url().optional(),
-  tagline: z.string().min(1),
+  industry: z.string().min(1),
+  title: z.string().min(1),
+  excerpt: z.string().min(1),
+  services: z.array(caseStudyServiceSchema).min(1),
+  tag: z.string().min(1).optional(),
   metaTitle: z.string().min(1),
   metaDescription: z.string().min(1),
-  problem: z.string().min(1),
-  whatWeBuilt: z.string().min(1),
-  outcome: z.string().min(1),
-  results: z.array(caseStudyResultSchema).optional(),
-  tags: z.array(z.string().min(1)),
+  challenge: z.array(z.string().min(1)),
+  approachIntro: z.array(z.string().min(1)).optional(),
+  approach: z.array(z.string().min(1)),
+  results: z.array(caseStudyResultSchema),
+  keyTakeaway: z.string().min(1),
 });
 
 export const caseStudiesSchema = z.array(caseStudySchema);

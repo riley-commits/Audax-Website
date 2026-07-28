@@ -507,7 +507,7 @@ export default function AboutContent() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-10">
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-x-4 gap-y-10 text-center">
             {leadershipTeam.map((m, i) => (
               <motion.div
                 key={m.name}
@@ -516,17 +516,17 @@ export default function AboutContent() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] mb-4 bg-[#F8F9FA]">
+                <div className="relative rounded-full overflow-hidden w-20 h-20 sm:w-28 sm:h-28 mx-auto mb-4 bg-[#F8F9FA]">
                   <Image
                     src={m.image}
                     alt={m.name}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 260px"
+                    sizes="(max-width: 640px) 80px, 112px"
                   />
                 </div>
-                <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-base leading-snug">{m.name}</h3>
-                <p className="text-[#374151] text-sm">{m.title}</p>
+                <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-sm leading-snug">{m.name}</h3>
+                <p className="text-[#374151] text-xs">{m.title}</p>
               </motion.div>
             ))}
           </div>

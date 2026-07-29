@@ -5,9 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Lightbulb, Code2, TrendingUp, Newspaper } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
+// Icons and accent colors mirror the homepage "What We Do" service cards
+// (components/sections/ServicesGrid.tsx) for a consistent visual identity.
 
 const serviceLinks = [
   {
@@ -15,7 +17,8 @@ const serviceLinks = [
     label: "AI Leadership",
     href: "/services/ai-leadership",
     desc: "Strategy, roadmaps & executive AI advisory",
-    icon: "👔",
+    icon: Lightbulb,
+    accentBg: "#0F172A",
     stat: "Exec-level AI leadership",
     preview: "We work alongside founders and leadership teams to identify opportunities, develop AI strategies, and create a practical roadmap for adopting AI across the organization.",
   },
@@ -24,7 +27,8 @@ const serviceLinks = [
     label: "Software Development",
     href: "/services/custom-software-development",
     desc: "AI applications, SaaS platforms & websites",
-    icon: "💻",
+    icon: Code2,
+    accentBg: "#7C3AED",
     stat: "100% IP ownership",
     preview: "We design and build the technology that powers your strategy — AI applications, SaaS platforms, internal business systems, and modern websites.",
   },
@@ -33,7 +37,8 @@ const serviceLinks = [
     label: "Digital Operations",
     href: "/services/digital-operations",
     desc: "Long-term technology partnership & optimization",
-    icon: "🚀",
+    icon: TrendingUp,
+    accentBg: "#10B981",
     stat: "Ongoing partnership",
     preview: "We become your long-term technology partner, helping you improve systems, introduce new capabilities, optimize workflows, and support the next stage of growth.",
   },
@@ -44,7 +49,8 @@ const resourceLinks = [
     label: "Articles",
     href: "/insights",
     desc: "AI leadership & software insights",
-    icon: "📰",
+    icon: Newspaper,
+    accentBg: "#2563EB",
     stat: "Updated regularly",
   },
 ];
@@ -62,9 +68,9 @@ const navLinks = [
 
 /** Large, prominent card for a service/resource shown directly in the dropdown */
 function BigCard({
-  href, icon, label, desc, stat, phase, onClose,
+  href, icon: Icon, accentBg, label, desc, stat, phase, onClose,
 }: {
-  href: string; icon: string; label: string; desc: string; stat: string;
+  href: string; icon: React.ElementType; accentBg: string; label: string; desc: string; stat: string;
   phase?: string; onClose: () => void;
 }) {
   return (
@@ -74,7 +80,9 @@ function BigCard({
       className="group flex flex-col gap-3 p-5 rounded-2xl border border-gray-100 hover:border-[#2563EB]/30 hover:bg-[#F8F9FA] hover:shadow-md transition-all duration-200"
     >
       <div className="flex items-center justify-between">
-        <span className="text-3xl">{icon}</span>
+        <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ backgroundColor: accentBg }}>
+          <Icon size={20} className="text-white" />
+        </div>
         <ArrowRight size={14} className="text-[#9CA3AF] group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all" />
       </div>
       <div>
@@ -166,7 +174,7 @@ export default function Navbar() {
                 onMouseLeave={() => setOpenMenu(null)}
               >
                 <button
-                  className={`flex items-center gap-1 text-base font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                  className={`relative flex items-center gap-1 text-[15px] font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
                     isActive(link.href) || openMenu === "services"
                       ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
                       : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
@@ -174,6 +182,9 @@ export default function Navbar() {
                 >
                   {link.label}
                   <ChevronDown size={14} className={`transition-transform duration-250 ${openMenu === "services" ? "rotate-180" : ""}`} />
+                  {isActive(link.href) && (
+                    <span className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full bg-[#CC5500]" />
+                  )}
                 </button>
 
                 <AnimatePresence>
@@ -193,7 +204,7 @@ export default function Navbar() {
                           {serviceLinks.map((s) => (
                             <BigCard
                               key={s.href}
-                              href={s.href} icon={s.icon} label={s.label} desc={s.desc} stat={s.stat} phase={s.phase}
+                              href={s.href} icon={s.icon} accentBg={s.accentBg} label={s.label} desc={s.desc} stat={s.stat} phase={s.phase}
                               onClose={() => setOpenMenu(null)}
                             />
                           ))}
@@ -220,7 +231,7 @@ export default function Navbar() {
                 onMouseLeave={() => setOpenMenu(null)}
               >
                 <button
-                  className={`flex items-center gap-1 text-base font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                  className={`relative flex items-center gap-1 text-[15px] font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
                     isActive(link.href) || openMenu === "resources"
                       ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
                       : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
@@ -228,6 +239,9 @@ export default function Navbar() {
                 >
                   {link.label}
                   <ChevronDown size={14} className={`transition-transform duration-250 ${openMenu === "resources" ? "rotate-180" : ""}`} />
+                  {isActive(link.href) && (
+                    <span className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full bg-[#CC5500]" />
+                  )}
                 </button>
 
                 <AnimatePresence>
@@ -247,7 +261,7 @@ export default function Navbar() {
                           {resourceLinks.map((r) => (
                             <BigCard
                               key={r.href}
-                              href={r.href} icon={r.icon} label={r.label} desc={r.desc} stat={r.stat}
+                              href={r.href} icon={r.icon} accentBg={r.accentBg} label={r.label} desc={r.desc} stat={r.stat}
                               onClose={() => setOpenMenu(null)}
                             />
                           ))}
@@ -270,13 +284,16 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-base font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
+                className={`relative text-[15px] font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
                   isActive(link.href)
                     ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
                     : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
                 }`}
               >
                 {link.label}
+                {isActive(link.href) && (
+                  <span className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full bg-[#CC5500]" />
+                )}
               </Link>
             );
           })}
@@ -348,8 +365,10 @@ export default function Navbar() {
                 <p className="text-[10px] font-bold tracking-widest uppercase text-[#0F172A] px-3 mb-2">Services</p>
                 {serviceLinks.map((s) => (
                   <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
-                    <span className="text-base">{s.icon}</span>
+                    className="flex items-center gap-2.5 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: s.accentBg }}>
+                      <s.icon size={13} className="text-white" />
+                    </div>
                     <span>
                       <span className="block text-[9px] tracking-widest uppercase text-[#2563EB] font-bold leading-none mb-0.5">{s.phase}</span>
                       {s.label}
@@ -362,8 +381,10 @@ export default function Navbar() {
                 <p className="text-[10px] font-bold tracking-widest uppercase text-[#0F172A] px-3 mb-2">Resources</p>
                 {resourceLinks.map((r) => (
                   <Link key={r.href} href={r.href} onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
-                    <span className="text-base">{r.icon}</span>
+                    className="flex items-center gap-2.5 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: r.accentBg }}>
+                      <r.icon size={13} className="text-white" />
+                    </div>
                     {r.label}
                   </Link>
                 ))}

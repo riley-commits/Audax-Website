@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ArrowRight, Lightbulb, Code2, TrendingUp, Newspaper } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Lightbulb, Code2, TrendingUp } from "lucide-react";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 // Icons and accent colors mirror the homepage "What We Do" service cards
@@ -44,29 +44,18 @@ const serviceLinks = [
   },
 ];
 
-const resourceLinks = [
-  {
-    label: "Articles",
-    href: "/insights",
-    desc: "AI leadership & software insights",
-    icon: Newspaper,
-    accentBg: "#2563EB",
-    stat: "Updated regularly",
-  },
-];
-
 const navLinks = [
   { label: "About",        href: "/about",     kind: "link" as const },
   { label: "Services",     href: "/services",  kind: "services" as const },
   { label: "Products",     href: "/products",  kind: "link" as const },
-  { label: "Resources",    href: "/insights",  kind: "resources" as const },
+  { label: "Articles",     href: "/insights",  kind: "link" as const },
   { label: "Success Stories", href: "/success-stories", kind: "link" as const },
   { label: "Contact",      href: "/contact",   kind: "link" as const },
 ];
 
 // ── Shared sub-components ─────────────────────────────────────────────────────
 
-/** Large, prominent card for a service/resource shown directly in the dropdown */
+/** Large, prominent card for a service shown directly in the dropdown */
 function BigCard({
   href, icon: Icon, accentBg, label, desc, stat, phase, onClose,
 }: {
@@ -124,7 +113,7 @@ function CTAStrip({ prompt, linkLabel, href }: { prompt: string; linkLabel: stri
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState<"services" | "resources" | null>(null);
+  const [openMenu, setOpenMenu] = useState<"services" | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -213,63 +202,6 @@ export default function Navbar() {
 
                       <CTAStrip
                         prompt="Not sure which service fits? Tell us what you're building."
-                        linkLabel="Book a Free AI Strategy Call"
-                        href="https://calendly.com/audax-ventures/30min"
-                      />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-
-            /* ── Resources Mega Dropdown ── */
-            if (link.kind === "resources") return (
-              <div
-                key={link.label}
-                className="relative"
-                onMouseEnter={() => setOpenMenu("resources")}
-                onMouseLeave={() => setOpenMenu(null)}
-              >
-                <button
-                  className={`relative flex items-center gap-1 text-[15px] font-medium px-3 py-2 rounded-lg transition-all duration-200 ${
-                    isActive(link.href) || openMenu === "resources"
-                      ? "text-[#0F172A] bg-[#0F172A]/6 font-semibold"
-                      : "text-[#374151] hover:text-[#0F172A] hover:bg-[#0F172A]/5"
-                  }`}
-                >
-                  {link.label}
-                  <ChevronDown size={14} className={`transition-transform duration-250 ${openMenu === "resources" ? "rotate-180" : ""}`} />
-                  {isActive(link.href) && (
-                    <span className="absolute left-3 right-3 -bottom-0.5 h-[2px] rounded-full bg-[#CC5500]" />
-                  )}
-                </button>
-
-                <AnimatePresence>
-                  {openMenu === "resources" && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                      transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[320px] bg-white rounded-2xl shadow-2xl shadow-black/12 border border-gray-100 overflow-hidden"
-                    >
-                      <div className="p-6">
-                        <p className="text-[10px] font-bold tracking-widest uppercase text-[#374151] mb-4">
-                          Resources
-                        </p>
-                        <div className="grid grid-cols-1 gap-4">
-                          {resourceLinks.map((r) => (
-                            <BigCard
-                              key={r.href}
-                              href={r.href} icon={r.icon} accentBg={r.accentBg} label={r.label} desc={r.desc} stat={r.stat}
-                              onClose={() => setOpenMenu(null)}
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                      <CTAStrip
-                        prompt="Looking for something specific? Just ask us."
                         linkLabel="Book a Free AI Strategy Call"
                         href="https://calendly.com/audax-ventures/30min"
                       />
@@ -373,19 +305,6 @@ export default function Navbar() {
                       <span className="block text-[9px] tracking-widest uppercase text-[#2563EB] font-bold leading-none mb-0.5">{s.phase}</span>
                       {s.label}
                     </span>
-                  </Link>
-                ))}
-              </div>
-
-              <div className="border-t border-gray-100 pt-4 mb-4">
-                <p className="text-[10px] font-bold tracking-widest uppercase text-[#0F172A] px-3 mb-2">Resources</p>
-                {resourceLinks.map((r) => (
-                  <Link key={r.href} href={r.href} onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2.5 pl-3 pr-3 py-2 rounded-lg text-sm text-[#374151] hover:text-[#0F172A] hover:bg-[#F8F9FA] transition-colors font-medium">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: r.accentBg }}>
-                      <r.icon size={13} className="text-white" />
-                    </div>
-                    {r.label}
                   </Link>
                 ))}
               </div>

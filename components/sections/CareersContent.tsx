@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRight, Target, Sparkles, Users, CheckCircle2, Check, Upload, FileCheck2, Video,
+  ArrowRight, CheckCircle2, Upload, FileCheck2, Video,
 } from "lucide-react";
 import type { CareerJob } from "@/lib/careers-data";
 
@@ -13,17 +13,9 @@ import type { CareerJob } from "@/lib/careers-data";
 const inputClass =
   "w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-[#0F172A] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20 focus:border-[#2563EB] transition-colors";
 const labelClass = "block text-xs font-semibold text-[#0F172A] mb-1.5 tracking-wide";
-
-function SectionEyebrow({ icon: Icon, label, accent }: { icon: React.ElementType; label: string; accent: string }) {
-  return (
-    <div className="flex items-center gap-2.5 mb-4">
-      <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${accent}14` }}>
-        <Icon size={15} style={{ color: accent }} />
-      </div>
-      <p className="text-xs font-bold tracking-widest uppercase" style={{ color: accent }}>{label}</p>
-    </div>
-  );
-}
+const bodyTextClass = "text-[#374151] leading-relaxed";
+const listClass = "list-disc pl-5 space-y-1.5 text-[#374151] leading-relaxed marker:text-[#9CA3AF]";
+const sectionHeadingClass = "font-[var(--font-outfit)] font-bold text-xl text-[#0F172A] mb-3";
 
 const MAX_FILE_SIZE = 4 * 1024 * 1024;
 const ALLOWED_DOC_TYPES = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
@@ -189,112 +181,62 @@ export default function CareersContent({ job }: { job: CareerJob }) {
         </div>
       </section>
 
-      {/* ── Intro ── */}
+      {/* ── Job Description ── */}
       <section className="pb-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          {job.intro.map((p, i) => (
-            <p key={i} className="text-[#374151] leading-relaxed text-lg">{p}</p>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
+          <div className="space-y-4 mb-8">
+            {job.intro.map((p, i) => (
+              <p key={i} className={bodyTextClass}>{p}</p>
+            ))}
+          </div>
+
+          <h2 className={sectionHeadingClass}>What You&apos;ll Own</h2>
+          <p className={`${bodyTextClass} mb-3`}>{job.ownership.intro}</p>
+          <ul className={`${listClass} mb-3`}>
+            {job.ownership.items.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+          <p className={`${bodyTextClass} mb-8`}>{job.ownership.outro}</p>
+
+          <h2 className={sectionHeadingClass}>The Opportunity</h2>
+          {job.opportunity.intro.map((p, i) => (
+            <p key={i} className={`${bodyTextClass} mb-3`}>{p}</p>
           ))}
-        </div>
-      </section>
+          <p className={`${bodyTextClass} mb-3`}>{job.opportunity.compIntro}</p>
+          <ul className={`${listClass} mb-3`}>
+            {job.opportunity.compItems.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+          <p className={`${bodyTextClass} mb-8`}>{job.opportunity.outro}</p>
 
-      {/* ── What You'll Own ── */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <SectionEyebrow icon={Target} label="What You'll Own" accent="#2563EB" />
-            <p className="text-[#374151] leading-relaxed mb-6">{job.ownership.intro}</p>
-            <div className="space-y-3 mb-6">
-              {job.ownership.items.map((item) => (
-                <div key={item} className="flex items-start gap-2.5">
-                  <Check size={15} className="mt-0.5 flex-shrink-0 text-[#2563EB]" />
-                  <span className="text-sm text-[#374151] leading-snug">{item}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-[#374151] leading-relaxed">{job.ownership.outro}</p>
-          </motion.div>
-        </div>
-      </section>
+          <h2 className={sectionHeadingClass}>Who We&apos;re Looking For</h2>
+          <p className={`${bodyTextClass} mb-3`}>{job.whoWereLookingFor.intro}</p>
+          <ul className={`${listClass} mb-3`}>
+            {job.whoWereLookingFor.items.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+          <div className="space-y-3 mb-8">
+            {job.whoWereLookingFor.outro.map((p, i) => (
+              <p key={i} className={bodyTextClass}>{p}</p>
+            ))}
+          </div>
 
-      {/* ── The Opportunity ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden bg-[#0B1220] p-8 sm:p-12"
+          <div className="space-y-3 mb-8">
+            {job.closing.map((p, i) => (
+              <p key={i} className={bodyTextClass}>{p}</p>
+            ))}
+          </div>
+
+          <button
+            onClick={scrollToApply}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0B1220] text-white font-semibold hover:bg-[#1E293B] transition-colors shadow-lg shadow-black/10"
           >
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{ background: "radial-gradient(circle at 80% 10%, #7C3AED29 0%, transparent 55%)" }}
-            />
-            <div className="relative">
-              <p className="text-xs tracking-widest uppercase font-semibold mb-3" style={{ color: "#A78BFA" }}>The Opportunity</p>
-              {job.opportunity.intro.map((p, i) => (
-                <p key={i} className="text-white/70 leading-relaxed mb-2 max-w-2xl">{p}</p>
-              ))}
-              <p className="text-white/90 font-semibold mt-6 mb-4">{job.opportunity.compIntro}</p>
-              <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                {job.opportunity.compItems.map((item) => (
-                  <div key={item} className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-3.5">
-                    <Check size={14} className="text-[#A78BFA] mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-white/80 leading-snug">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-white/70 leading-relaxed">{job.opportunity.outro}</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Who We're Looking For ── */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <SectionEyebrow icon={Users} label="Who We're Looking For" accent="#10B981" />
-            <p className="text-[#374151] leading-relaxed mb-6">{job.whoWereLookingFor.intro}</p>
-            <div className="space-y-3 mb-6">
-              {job.whoWereLookingFor.items.map((item) => (
-                <div key={item} className="flex items-start gap-2.5">
-                  <Check size={15} className="mt-0.5 flex-shrink-0 text-[#10B981]" />
-                  <span className="text-sm text-[#374151] leading-snug">{item}</span>
-                </div>
-              ))}
-            </div>
-            <div className="space-y-3">
-              {job.whoWereLookingFor.outro.map((p, i) => (
-                <p key={i} className="text-[#374151] leading-relaxed">{p}</p>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Closing / CTA ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <div className="flex justify-center mb-4">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center bg-[#2563EB]/10">
-                <Sparkles size={16} className="text-[#2563EB]" />
-              </div>
-            </div>
-            <div className="space-y-3 mb-8">
-              {job.closing.map((p, i) => (
-                <p key={i} className="text-[#374151] text-lg leading-relaxed">{p}</p>
-              ))}
-            </div>
-            <button
-              onClick={scrollToApply}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0B1220] text-white font-semibold hover:bg-[#1E293B] transition-colors shadow-lg shadow-black/10"
-            >
-              Apply for This Role <ArrowRight size={16} />
-            </button>
-          </motion.div>
-        </div>
+            Apply for This Role <ArrowRight size={16} />
+          </button>
+        </motion.div>
       </section>
 
       {/* ── Application form ── */}

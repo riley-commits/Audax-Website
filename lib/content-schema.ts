@@ -239,6 +239,7 @@ export type CaseStudy = z.infer<typeof caseStudySchema>;
 export const careerJobSchema = z.object({
   slug: slugSchema,
   title: z.string().min(1),
+  excerpt: z.string().min(1),
   metaTitle: z.string().min(1),
   metaDescription: z.string().min(1),
   intro: z.array(z.string().min(1)),

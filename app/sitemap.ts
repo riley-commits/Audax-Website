@@ -4,6 +4,7 @@ import { getAllSolutionSlugs } from "@/lib/solutions-data"; // slugs reused unde
 import { getAllGuideSlugs } from "@/lib/guides-data";
 import { getAllIndustrySlugs } from "@/lib/industries-data";
 import { getAllBlogSlugs } from "@/lib/insights-data";
+import { getAllCareerSlugs } from "@/lib/careers-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://audaxventures.ca";
@@ -62,6 +63,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const careerPages = getAllCareerSlugs().map((slug) => ({
+    url: `${base}/careers/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }));
+
   return [
     ...staticPages,
     ...servicePages,
@@ -69,5 +77,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...programPages,
     ...guidePages,
     ...insightPages,
+    ...careerPages,
   ];
 }

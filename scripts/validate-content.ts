@@ -19,6 +19,7 @@ import { blogPosts } from "../lib/insights-data";
 import { guidesData } from "../lib/guides-data";
 import { solutionsData } from "../lib/solutions-data";
 import { caseStudiesData } from "../lib/case-studies-data";
+import { careersData } from "../lib/careers-data";
 import {
   servicePagesSchema,
   industriesSchema,
@@ -26,6 +27,7 @@ import {
   guidesSchema,
   solutionsSchema,
   caseStudiesSchema,
+  careersSchema,
   checkMetaDescriptionLength,
 } from "../lib/content-schema";
 
@@ -38,7 +40,8 @@ interface Collection {
     | typeof blogPostsSchema
     | typeof guidesSchema
     | typeof solutionsSchema
-    | typeof caseStudiesSchema;
+    | typeof caseStudiesSchema
+    | typeof careersSchema;
 }
 
 const collections: Collection[] = [
@@ -48,6 +51,7 @@ const collections: Collection[] = [
   { name: "guides", data: guidesData, schema: guidesSchema },
   { name: "solutions", data: solutionsData, schema: solutionsSchema },
   { name: "case studies", data: caseStudiesData, schema: caseStudiesSchema },
+  { name: "careers", data: careersData, schema: careersSchema },
 ];
 
 let hardFailures = 0;

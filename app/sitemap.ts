@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services`,        lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/industries`,      lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/products`,        lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${base}/careers`,         lastModified: new Date(), changeFrequency: "weekly"  as const, priority: 0.5 },
   ];
 
   const servicePages = getAllServicePageSlugs().map((slug) => ({

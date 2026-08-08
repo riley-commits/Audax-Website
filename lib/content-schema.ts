@@ -233,6 +233,39 @@ export const caseStudiesSchema = z.array(caseStudySchema);
 export type CaseStudy = z.infer<typeof caseStudySchema>;
 
 // ------------------------------------------------------------------
+// Careers (lib/careers-data.ts)
+// ------------------------------------------------------------------
+
+export const careerJobSchema = z.object({
+  slug: slugSchema,
+  title: z.string().min(1),
+  metaTitle: z.string().min(1),
+  metaDescription: z.string().min(1),
+  intro: z.array(z.string().min(1)),
+  ownership: z.object({
+    intro: z.string().min(1),
+    items: z.array(z.string().min(1)),
+    outro: z.string().min(1),
+  }),
+  opportunity: z.object({
+    intro: z.array(z.string().min(1)),
+    compIntro: z.string().min(1),
+    compItems: z.array(z.string().min(1)),
+    outro: z.string().min(1),
+  }),
+  whoWereLookingFor: z.object({
+    intro: z.string().min(1),
+    items: z.array(z.string().min(1)),
+    outro: z.array(z.string().min(1)),
+  }),
+  closing: z.array(z.string().min(1)),
+  questions: z.array(z.string().min(1)).length(5),
+});
+
+export const careersSchema = z.array(careerJobSchema);
+export type CareerJob = z.infer<typeof careerJobSchema>;
+
+// ------------------------------------------------------------------
 // Soft-warning helpers — surfaced as warnings, never block the build.
 // Use these in CI dashboards or content-quality reports.
 // ------------------------------------------------------------------

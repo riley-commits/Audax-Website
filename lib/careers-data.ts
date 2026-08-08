@@ -107,8 +107,7 @@ export const careersData: CareerJob[] = [
     title: "Audax Founder Program",
     excerpt:
       "A selective venture-building program for aspiring entrepreneurs. No startup idea required — just the ambition to build one, with Audax's technology and product team behind you.",
-    badgeLabel: "Open Program",
-    applyLabel: "Apply to the Program",
+    badgeLabel: "Open Role",
     metaTitle: "Careers — Audax Founder Program | Audax Ventures",
     metaDescription:
       "The Audax Founder Program is a selective venture-building program for aspiring entrepreneurs who want to build a technology company with Audax's team.",

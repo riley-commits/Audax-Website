@@ -3,6 +3,7 @@ import { getCareerBySlug } from "@/lib/careers-data";
 
 const TO_ADDRESS = "joshua@audaxventures.ca";
 const FROM_ADDRESS = "Audax Ventures Careers <careers@audaxventures.ca>";
+const APPLICANT_FROM_ADDRESS = "Audax Ventures <careers@audaxventures.ca>";
 
 const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB per file — stays under typical serverless request-body limits
 const ALLOWED_DOC_TYPES = new Set([
@@ -136,6 +137,41 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Resend error:", error);
       return Response.json({ error: "Failed to submit application. Please email joshua@audaxventures.ca directly." }, { status: 502 });
+    }
+
+    // Best-effort applicant confirmation — the internal notification above is
+    // the critical email, so a failure here shouldn't fail the submission.
+    try {
+      const { error: confirmError } = await resend.emails.send({
+        from: APPLICANT_FROM_ADDRESS,
+        to: email,
+        subject: `We've received your application — ${job.title}`,
+        text: [
+          `Hi ${name},`,
+          "",
+          `Thanks for applying for the ${job.title} role at Audax Ventures. This email confirms we've received your application, including your resume and cover letter.`,
+          "",
+          "Our team will review it carefully. If you're selected to move forward, we'll be in touch to schedule an interview.",
+          "",
+          "Thanks again for your interest in Audax Ventures.",
+          "",
+          "— The Audax Ventures Team",
+        ].join("\n"),
+        html: `
+          <div style="font-family: sans-serif; font-size: 14px; color: #0F172A; line-height: 1.6;">
+            <p>Hi ${escapeHtml(name)},</p>
+            <p>Thanks for applying for the <strong>${escapeHtml(job.title)}</strong> role at Audax Ventures. This email confirms we've received your application, including your resume and cover letter.</p>
+            <p>Our team will review it carefully. If you're selected to move forward, we'll be in touch to schedule an interview.</p>
+            <p>Thanks again for your interest in Audax Ventures.</p>
+            <p>— The Audax Ventures Team</p>
+          </div>
+        `,
+      });
+      if (confirmError) {
+        console.error("Applicant confirmation email failed:", confirmError);
+      }
+    } catch (confirmErr) {
+      console.error("Applicant confirmation email failed:", confirmErr);
     }
 
     return Response.json({ success: true });

@@ -321,7 +321,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
                     Application submitted!
                   </h3>
                   <p className="text-[#374151] max-w-sm leading-relaxed">
-                    Thanks for applying for the {job.title} role. We&apos;ll review your application and be in touch soon.
+                    Thanks for applying for the {job.title} role. We&apos;ve sent a confirmation to your email, and if you&apos;re selected to move forward, we&apos;ll reach out to schedule an interview.
                   </p>
                 </motion.div>
               ) : (

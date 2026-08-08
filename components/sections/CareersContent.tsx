@@ -150,13 +150,21 @@ export default function CareersContent({ job }: { job: CareerJob }) {
       <section className="pt-32 pb-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, #2563EB14 0%, transparent 68%)" }} />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center gap-1.5 text-xs text-[#9CA3AF] mb-6">
+            <Link href="/" className="hover:text-[#374151] transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/careers" className="hover:text-[#374151] transition-colors">Careers</Link>
+            <span>/</span>
+            <span className="text-[#374151]">{job.title}</span>
+          </div>
+
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-xs font-bold tracking-widest uppercase text-[#2563EB] mb-5"
           >
-            Careers at Audax Ventures — Open Position
+            Open Position
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

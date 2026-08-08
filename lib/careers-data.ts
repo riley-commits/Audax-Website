@@ -1,6 +1,7 @@
 export interface CareerJob {
   slug: string;
   title: string;
+  excerpt: string;
   metaTitle: string;
   metaDescription: string;
   intro: string[];
@@ -28,6 +29,8 @@ export const careersData: CareerJob[] = [
   {
     slug: "founding-operator-entrepreneur-in-residence-verclara",
     title: "Founding Operator / Entrepreneur-in-Residence — Verclara",
+    excerpt:
+      "Take ownership of Verclara's commercial growth as a Founding Operator. Not a traditional salaried role — compensation is structured around equity, profit share, and a path to leading the business.",
     metaTitle: "Careers — Founding Operator / Entrepreneur-in-Residence | Audax Ventures",
     metaDescription:
       "Audax Ventures is looking for a Founding Operator / EIR to take ownership of Verclara's growth, with compensation tied to equity and profits.",

@@ -92,6 +92,10 @@ const scrollToApply = () => {
 };
 
 export default function CareersContent({ job }: { job: CareerJob }) {
+  const badgeLabel = job.badgeLabel ?? "Open Position";
+  const applyLabel = job.applyLabel ?? "Apply for This Role";
+  const hasQuestions = job.questions.length > 0;
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -115,7 +119,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
 
     if (!resume) { setError("Please upload your resume."); return; }
     if (!coverLetter) { setError("Please upload your cover letter."); return; }
-    if (answers.some((a) => a === null)) { setError("Please answer all 5 screening questions."); return; }
+    if (hasQuestions && answers.some((a) => a === null)) { setError("Please answer all screening questions."); return; }
 
     setLoading(true);
     try {
@@ -164,7 +168,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
             transition={{ duration: 0.5 }}
             className="text-xs font-bold tracking-widest uppercase text-[#2563EB] mb-5"
           >
-            Open Position
+            {badgeLabel}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -183,7 +187,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
               onClick={scrollToApply}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0B1220] text-white font-semibold hover:bg-[#1E293B] transition-colors shadow-lg shadow-black/10"
             >
-              Apply for This Role <ArrowRight size={16} />
+              {applyLabel} <ArrowRight size={16} />
             </button>
           </motion.div>
         </div>
@@ -204,33 +208,22 @@ export default function CareersContent({ job }: { job: CareerJob }) {
             ))}
           </div>
 
-          <h2 className={sectionHeadingClass}>What You&apos;ll Own</h2>
-          <p className={`${bodyTextClass} mb-3`}>{job.ownership.intro}</p>
-          <ul className={`${listClass} mb-3`}>
-            {job.ownership.items.map((item) => <li key={item}>{item}</li>)}
-          </ul>
-          <p className={`${bodyTextClass} mb-8`}>{job.ownership.outro}</p>
-
-          <h2 className={sectionHeadingClass}>The Opportunity</h2>
-          {job.opportunity.intro.map((p, i) => (
-            <p key={i} className={`${bodyTextClass} mb-3`}>{p}</p>
+          {job.sections.map((section, si) => (
+            <div key={si} className="mb-8">
+              {section.heading && <h2 className={sectionHeadingClass}>{section.heading}</h2>}
+              {section.paragraphs?.map((p, i) => (
+                <p key={i} className={`${bodyTextClass} mb-3`}>{p}</p>
+              ))}
+              {section.items && (
+                <ul className={`${listClass} mb-3`}>
+                  {section.items.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+              )}
+              {section.outro?.map((p, i) => (
+                <p key={i} className={`${bodyTextClass} mb-3`}>{p}</p>
+              ))}
+            </div>
           ))}
-          <p className={`${bodyTextClass} mb-3`}>{job.opportunity.compIntro}</p>
-          <ul className={`${listClass} mb-3`}>
-            {job.opportunity.compItems.map((item) => <li key={item}>{item}</li>)}
-          </ul>
-          <p className={`${bodyTextClass} mb-8`}>{job.opportunity.outro}</p>
-
-          <h2 className={sectionHeadingClass}>Who We&apos;re Looking For</h2>
-          <p className={`${bodyTextClass} mb-3`}>{job.whoWereLookingFor.intro}</p>
-          <ul className={`${listClass} mb-3`}>
-            {job.whoWereLookingFor.items.map((item) => <li key={item}>{item}</li>)}
-          </ul>
-          <div className="space-y-3 mb-8">
-            {job.whoWereLookingFor.outro.map((p, i) => (
-              <p key={i} className={bodyTextClass}>{p}</p>
-            ))}
-          </div>
 
           <div className="space-y-3 mb-8">
             {job.closing.map((p, i) => (
@@ -242,7 +235,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
             onClick={scrollToApply}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#0B1220] text-white font-semibold hover:bg-[#1E293B] transition-colors shadow-lg shadow-black/10"
           >
-            Apply for This Role <ArrowRight size={16} />
+            {applyLabel} <ArrowRight size={16} />
           </button>
         </motion.div>
       </section>
@@ -271,7 +264,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
                     Application submitted!
                   </h3>
                   <p className="text-[#374151] max-w-sm leading-relaxed">
-                    Thanks for applying for the {job.title} role. We&apos;ve sent a confirmation to your email, and if you&apos;re selected to move forward, we&apos;ll reach out to schedule an interview.
+                    Thanks for applying to {job.title}. We&apos;ve sent a confirmation to your email, and if you&apos;re selected to move forward, we&apos;ll be in touch.
                   </p>
                 </motion.div>
               ) : (
@@ -284,7 +277,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
                 >
                   <div className="mb-8">
                     <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl text-[#0F172A] mb-2">
-                      Apply for This Role
+                      {applyLabel}
                     </h2>
                     <p className="text-[#374151] text-sm">
                       All fields are required. We&apos;ll follow up by email or phone.
@@ -325,14 +318,16 @@ export default function CareersContent({ job }: { job: CareerJob }) {
                       />
                     </div>
 
-                    <div className="pt-2">
-                      <p className={labelClass}>Screening Questions</p>
-                      <div className="space-y-5 bg-[#F8F9FA] rounded-2xl p-5">
-                        {job.questions.map((q, i) => (
-                          <YesNoQuestion key={i} index={i} question={q} value={answers[i]} onChange={(v) => setAnswer(i, v)} />
-                        ))}
+                    {hasQuestions && (
+                      <div className="pt-2">
+                        <p className={labelClass}>Screening Questions</p>
+                        <div className="space-y-5 bg-[#F8F9FA] rounded-2xl p-5">
+                          {job.questions.map((q, i) => (
+                            <YesNoQuestion key={i} index={i} question={q} value={answers[i]} onChange={(v) => setAnswer(i, v)} />
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
 
                     {error && (
                       <p className="text-sm text-red-500 bg-red-50 border border-red-100 rounded-xl px-4 py-3">

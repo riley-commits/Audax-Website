@@ -78,7 +78,7 @@ export async function POST(request: Request) {
   for (let i = 0; i < job.questions.length; i++) {
     const answer = formData.get(`question-${i}`)?.toString().trim() ?? "";
     if (!QUESTION_ANSWER_VALUES.has(answer)) {
-      return Response.json({ error: "Please answer all 5 screening questions." }, { status: 400 });
+      return Response.json({ error: "Please answer all screening questions." }, { status: 400 });
     }
     answers.push(answer);
   }
@@ -110,9 +110,7 @@ export async function POST(request: Request) {
         `Email: ${email}`,
         `Phone: ${phone}`,
         `Video cover letter link: ${videoLink || "—"}`,
-        "",
-        "Screening questions:",
-        questionsText,
+        ...(job.questions.length > 0 ? ["", "Screening questions:", questionsText] : []),
         "",
         "Resume and cover letter attached.",
       ].join("\n"),
@@ -123,8 +121,7 @@ export async function POST(request: Request) {
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
           <p><strong>Video cover letter link:</strong> ${videoLink ? `<a href="${escapeHtml(videoLink)}">${escapeHtml(videoLink)}</a>` : "—"}</p>
-          <p><strong>Screening questions:</strong></p>
-          ${questionsHtml}
+          ${job.questions.length > 0 ? `<p><strong>Screening questions:</strong></p>${questionsHtml}` : ""}
           <p>Resume and cover letter attached.</p>
         </div>
       `,
@@ -149,9 +146,9 @@ export async function POST(request: Request) {
         text: [
           `Hi ${name},`,
           "",
-          `Thanks for applying for the ${job.title} role at Audax Ventures. This email confirms we've received your application, including your resume and cover letter.`,
+          `Thanks for applying to ${job.title} at Audax Ventures. This email confirms we've received your application, including your resume and cover letter.`,
           "",
-          "Our team will review it carefully. If you're selected to move forward, we'll be in touch to schedule an interview.",
+          "Our team will review it carefully and be in touch if you're selected to move forward.",
           "",
           "Thanks again for your interest in Audax Ventures.",
           "",
@@ -160,8 +157,8 @@ export async function POST(request: Request) {
         html: `
           <div style="font-family: sans-serif; font-size: 14px; color: #0F172A; line-height: 1.6;">
             <p>Hi ${escapeHtml(name)},</p>
-            <p>Thanks for applying for the <strong>${escapeHtml(job.title)}</strong> role at Audax Ventures. This email confirms we've received your application, including your resume and cover letter.</p>
-            <p>Our team will review it carefully. If you're selected to move forward, we'll be in touch to schedule an interview.</p>
+            <p>Thanks for applying to <strong>${escapeHtml(job.title)}</strong> at Audax Ventures. This email confirms we've received your application, including your resume and cover letter.</p>
+            <p>Our team will review it carefully and be in touch if you're selected to move forward.</p>
             <p>Thanks again for your interest in Audax Ventures.</p>
             <p>— The Audax Ventures Team</p>
           </div>

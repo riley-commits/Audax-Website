@@ -236,31 +236,32 @@ export type CaseStudy = z.infer<typeof caseStudySchema>;
 // Careers (lib/careers-data.ts)
 // ------------------------------------------------------------------
 
+// A single headed block of body copy — heading optional (for a leading
+// block with no heading), paragraphs before the list, a bullet list, and
+// paragraphs after. Flexible enough to fit postings with very different
+// structures without forcing every job into the same section shape.
+const careerJobSectionSchema = z.object({
+  heading: z.string().min(1).optional(),
+  paragraphs: z.array(z.string().min(1)).optional(),
+  items: z.array(z.string().min(1)).optional(),
+  outro: z.array(z.string().min(1)).optional(),
+});
+
 export const careerJobSchema = z.object({
   slug: slugSchema,
   title: z.string().min(1),
   excerpt: z.string().min(1),
+  /** Badge shown on the listing card and detail-page eyebrow. Defaults to "Open Position" in the UI when omitted. */
+  badgeLabel: z.string().min(1).optional(),
+  /** Apply button text. Defaults to "Apply for This Role" in the UI when omitted. */
+  applyLabel: z.string().min(1).optional(),
   metaTitle: z.string().min(1),
   metaDescription: z.string().min(1),
   intro: z.array(z.string().min(1)),
-  ownership: z.object({
-    intro: z.string().min(1),
-    items: z.array(z.string().min(1)),
-    outro: z.string().min(1),
-  }),
-  opportunity: z.object({
-    intro: z.array(z.string().min(1)),
-    compIntro: z.string().min(1),
-    compItems: z.array(z.string().min(1)),
-    outro: z.string().min(1),
-  }),
-  whoWereLookingFor: z.object({
-    intro: z.string().min(1),
-    items: z.array(z.string().min(1)),
-    outro: z.array(z.string().min(1)),
-  }),
+  sections: z.array(careerJobSectionSchema),
   closing: z.array(z.string().min(1)),
-  questions: z.array(z.string().min(1)).length(5),
+  /** Yes/no screening questions. Some postings (e.g. non-employment programs) have none. */
+  questions: z.array(z.string().min(1)),
 });
 
 export const careersSchema = z.array(careerJobSchema);

@@ -251,7 +251,7 @@ export const careerJobSchema = z.object({
   slug: slugSchema,
   title: z.string().min(1),
   excerpt: z.string().min(1),
-  /** Badge shown on the listing card and detail-page eyebrow. Defaults to "Open Position" in the UI when omitted. */
+  /** Badge shown on the listing card and detail-page eyebrow. Defaults to "Open Role" in the UI when omitted. */
   badgeLabel: z.string().min(1).optional(),
   /** Apply button text. Defaults to "Apply for This Role" in the UI when omitted. */
   applyLabel: z.string().min(1).optional(),
@@ -262,6 +262,11 @@ export const careerJobSchema = z.object({
   closing: z.array(z.string().min(1)),
   /** Yes/no screening questions. Some postings (e.g. non-employment programs) have none. */
   questions: z.array(z.string().min(1)),
+  /**
+   * When set, the application form asks this question in a required text box
+   * instead of a cover-letter file upload. Omit to keep the default file upload.
+   */
+  coverLetterPrompt: z.string().min(1).optional(),
 });
 
 export const careersSchema = z.array(careerJobSchema);

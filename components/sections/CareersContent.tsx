@@ -95,6 +95,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
   const badgeLabel = job.badgeLabel ?? "Open Role";
   const applyLabel = job.applyLabel ?? "Apply for This Role";
   const hasQuestions = job.questions.length > 0;
+  const hasCoverLetterPrompt = !!job.coverLetterPrompt;
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -108,6 +109,7 @@ export default function CareersContent({ job }: { job: CareerJob }) {
   const [resumeError, setResumeError] = useState<string | null>(null);
   const [coverLetter, setCoverLetter] = useState<File | null>(null);
   const [coverLetterError, setCoverLetterError] = useState<string | null>(null);
+  const [coverLetterText, setCoverLetterText] = useState("");
   const [answers, setAnswers] = useState<(string | null)[]>(Array(job.questions.length).fill(null));
 
   const setAnswer = (i: number, v: string) =>
@@ -118,7 +120,12 @@ export default function CareersContent({ job }: { job: CareerJob }) {
     setError(null);
 
     if (!resume) { setError("Please upload your resume."); return; }
-    if (!coverLetter) { setError("Please upload your cover letter."); return; }
+    if (hasCoverLetterPrompt) {
+      if (!coverLetterText.trim()) { setError("Please answer the cover letter question."); return; }
+    } else if (!coverLetter) {
+      setError("Please upload your cover letter.");
+      return;
+    }
     if (hasQuestions && answers.some((a) => a === null)) { setError("Please answer all screening questions."); return; }
 
     setLoading(true);
@@ -130,7 +137,11 @@ export default function CareersContent({ job }: { job: CareerJob }) {
       fd.append("phone", phone);
       fd.append("videoLink", videoLink);
       fd.append("resume", resume);
-      fd.append("coverLetter", coverLetter);
+      if (hasCoverLetterPrompt) {
+        fd.append("coverLetterText", coverLetterText);
+      } else {
+        fd.append("coverLetter", coverLetter as File);
+      }
       answers.forEach((a, i) => fd.append(`question-${i}`, a as string));
 
       const res = await fetch("/api/careers/apply", { method: "POST", body: fd });
@@ -302,7 +313,22 @@ export default function CareersContent({ job }: { job: CareerJob }) {
                     </div>
 
                     <FileField label="Resume" file={resume} error={resumeError} onChange={(f, err) => { setResume(f); setResumeError(err); }} />
-                    <FileField label="Cover Letter" file={coverLetter} error={coverLetterError} onChange={(f, err) => { setCoverLetter(f); setCoverLetterError(err); }} />
+
+                    {hasCoverLetterPrompt ? (
+                      <div>
+                        <label className={labelClass}>{job.coverLetterPrompt} <span className="text-red-400">*</span></label>
+                        <textarea
+                          required
+                          rows={6}
+                          value={coverLetterText}
+                          onChange={(e) => setCoverLetterText(e.target.value)}
+                          className={`${inputClass} resize-none`}
+                          placeholder="Type your answer here…"
+                        />
+                      </div>
+                    ) : (
+                      <FileField label="Cover Letter" file={coverLetter} error={coverLetterError} onChange={(f, err) => { setCoverLetter(f); setCoverLetterError(err); }} />
+                    )}
 
                     <div>
                       <label className={labelClass}>

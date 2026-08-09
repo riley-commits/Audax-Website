@@ -19,6 +19,11 @@ export interface CareerJob {
   sections: CareerJobSection[];
   closing: string[];
   questions: string[];
+  /**
+   * When set, the application form asks this question in a required text box
+   * instead of a cover-letter file upload. Omit to keep the default file upload.
+   */
+  coverLetterPrompt?: string;
 }
 
 export const careersData: CareerJob[] = [
@@ -208,6 +213,8 @@ export const careersData: CareerJob[] = [
       "Do you understand that this is a founder program, not a salaried employment opportunity?",
       "If accepted, are you willing and financially able to make a modest personal investment toward the development and launch of your business?",
     ],
+    coverLetterPrompt:
+      "Tell us why you want to be an entrepreneur and why you think you have what it takes to build a successful tech/software company?",
   },
 ];
 

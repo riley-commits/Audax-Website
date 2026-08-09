@@ -71,8 +71,18 @@ export async function POST(request: Request) {
   const resumeCheck = validateFile(formData.get("resume"), "Resume");
   if (resumeCheck.error) return Response.json({ error: resumeCheck.error }, { status: 400 });
 
-  const coverLetterCheck = validateFile(formData.get("coverLetter"), "Cover letter");
-  if (coverLetterCheck.error) return Response.json({ error: coverLetterCheck.error }, { status: 400 });
+  let coverLetterFile: File | undefined;
+  let coverLetterText = "";
+  if (job.coverLetterPrompt) {
+    coverLetterText = formData.get("coverLetterText")?.toString().trim() ?? "";
+    if (!coverLetterText) {
+      return Response.json({ error: "Please answer the cover letter question." }, { status: 400 });
+    }
+  } else {
+    const coverLetterCheck = validateFile(formData.get("coverLetter"), "Cover letter");
+    if (coverLetterCheck.error) return Response.json({ error: coverLetterCheck.error }, { status: 400 });
+    coverLetterFile = coverLetterCheck.file!;
+  }
 
   const answers: string[] = [];
   for (let i = 0; i < job.questions.length; i++) {
@@ -84,10 +94,9 @@ export async function POST(request: Request) {
   }
 
   const resume = resumeCheck.file!;
-  const coverLetter = coverLetterCheck.file!;
   const [resumeBuffer, coverLetterBuffer] = await Promise.all([
     resume.arrayBuffer().then(Buffer.from),
-    coverLetter.arrayBuffer().then(Buffer.from),
+    coverLetterFile ? coverLetterFile.arrayBuffer().then(Buffer.from) : Promise.resolve(undefined),
   ]);
 
   const resend = new Resend(apiKey);
@@ -97,6 +106,11 @@ export async function POST(request: Request) {
     .join("");
 
   const questionsText = job.questions.map((q, i) => `${q}\n${answers[i]}`).join("\n\n");
+
+  const attachments = [{ filename: resume.name, content: resumeBuffer }];
+  if (coverLetterFile && coverLetterBuffer) {
+    attachments.push({ filename: coverLetterFile.name, content: coverLetterBuffer });
+  }
 
   try {
     const { error } = await resend.emails.send({
@@ -110,9 +124,10 @@ export async function POST(request: Request) {
         `Email: ${email}`,
         `Phone: ${phone}`,
         `Video cover letter link: ${videoLink || "—"}`,
+        ...(job.coverLetterPrompt ? ["", job.coverLetterPrompt, coverLetterText] : []),
         ...(job.questions.length > 0 ? ["", "Screening questions:", questionsText] : []),
         "",
-        "Resume and cover letter attached.",
+        job.coverLetterPrompt ? "Resume attached." : "Resume and cover letter attached.",
       ].join("\n"),
       html: `
         <div style="font-family: sans-serif; font-size: 14px; color: #0F172A;">
@@ -121,14 +136,12 @@ export async function POST(request: Request) {
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
           <p><strong>Video cover letter link:</strong> ${videoLink ? `<a href="${escapeHtml(videoLink)}">${escapeHtml(videoLink)}</a>` : "—"}</p>
+          ${job.coverLetterPrompt ? `<p><strong>${escapeHtml(job.coverLetterPrompt)}</strong></p><p style="white-space: pre-wrap;">${escapeHtml(coverLetterText)}</p>` : ""}
           ${job.questions.length > 0 ? `<p><strong>Screening questions:</strong></p>${questionsHtml}` : ""}
-          <p>Resume and cover letter attached.</p>
+          <p>${job.coverLetterPrompt ? "Resume attached." : "Resume and cover letter attached."}</p>
         </div>
       `,
-      attachments: [
-        { filename: resume.name, content: resumeBuffer },
-        { filename: coverLetter.name, content: coverLetterBuffer },
-      ],
+      attachments,
     });
 
     if (error) {

@@ -202,7 +202,12 @@ export const careersData: CareerJob[] = [
       "If you've always thought \"I'd love to start a company someday\", this may be the opportunity to stop waiting for someday.",
       "Apply to the Audax Founder Program and tell us why you want to become an entrepreneur.",
     ],
-    questions: [],
+    questions: [
+      "Are you genuinely interested in becoming the founder of your own software or technology company?",
+      "Are you prepared to commit meaningful time and effort to building and growing a company, including customer discovery, sales and business development?",
+      "Do you understand that this is a founder program, not a salaried employment opportunity?",
+      "If accepted, are you willing and financially able to make a modest personal investment toward the development and launch of your business?",
+    ],
   },
 ];
 

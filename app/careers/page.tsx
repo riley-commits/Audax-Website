@@ -35,7 +35,7 @@ export default function CareersPage() {
                   className="group flex flex-col bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-8"
                 >
                   <span className="inline-flex items-center self-start px-3 py-1 rounded-full bg-[#2563EB]/10 text-[#2563EB] text-xs font-bold uppercase tracking-widest mb-4">
-                    {job.badgeLabel ?? "Open Position"}
+                    {job.badgeLabel ?? "Open Role"}
                   </span>
                   <h2 className="font-[var(--font-outfit)] font-extrabold text-xl text-[#0F172A] mb-3 leading-snug group-hover:text-[#2563EB] transition-colors">
                     {job.title}

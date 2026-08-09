@@ -92,7 +92,7 @@ const scrollToApply = () => {
 };
 
 export default function CareersContent({ job }: { job: CareerJob }) {
-  const badgeLabel = job.badgeLabel ?? "Open Position";
+  const badgeLabel = job.badgeLabel ?? "Open Role";
   const applyLabel = job.applyLabel ?? "Apply for This Role";
   const hasQuestions = job.questions.length > 0;
 

@@ -9,7 +9,7 @@ export interface CareerJob {
   slug: string;
   title: string;
   excerpt: string;
-  /** Badge shown on the listing card and detail-page eyebrow. Defaults to "Open Position" when omitted. */
+  /** Badge shown on the listing card and detail-page eyebrow. Defaults to "Open Role" when omitted. */
   badgeLabel?: string;
   /** Apply button text. Defaults to "Apply for This Role" when omitted. */
   applyLabel?: string;
@@ -107,7 +107,6 @@ export const careersData: CareerJob[] = [
     title: "Audax Founder Program",
     excerpt:
       "A selective venture-building program for aspiring entrepreneurs. No startup idea required — just the ambition to build one, with Audax's technology and product team behind you.",
-    badgeLabel: "Open Role",
     metaTitle: "Careers — Audax Founder Program | Audax Ventures",
     metaDescription:
       "The Audax Founder Program is a selective venture-building program for aspiring entrepreneurs who want to build a technology company with Audax's team.",

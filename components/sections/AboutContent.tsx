@@ -7,6 +7,7 @@ import {
   Flag, TrendingUp, Sparkles, Box, Rocket, ArrowRightLeft, Link2, Users, CheckCircle2,
   Building2, Compass, Layers, RefreshCw, Settings, PackagePlus, Handshake,
 } from "lucide-react";
+import { comparisonRows } from "@/lib/comparison-data";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
@@ -43,14 +44,6 @@ const differentiators = [
   { icon: Link2, title: "Integrated Partnership", description: "AI leadership and software development under one roof for seamless alignment." },
   { icon: Users, title: "Embedded With You", description: "We become an extension of your team, not just an outside consultant." },
   { icon: CheckCircle2, title: "Results That Matter", description: "We measure success by the impact on your business — not by the decks we deliver." },
-];
-
-const comparisonRows = [
-  { theirs: "PowerPoint Recommendations", ours: "Strategy + Execution That Delivers" },
-  { theirs: "Generalist Advice", ours: "Specialized AI Leadership & Software Expertise" },
-  { theirs: "No Implementation", ours: "We Build & Deploy With You" },
-  { theirs: "Short-Term Engagements", ours: "Long-Term Partnership & Continuous Optimization" },
-  { theirs: "Unclear Outcomes", ours: "Measurable Business Impact" },
 ];
 
 const timeline = [

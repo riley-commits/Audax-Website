@@ -241,9 +241,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[#374151] text-lg leading-relaxed mb-10 max-w-lg"
+              className="text-[#374151] text-lg leading-relaxed mb-10 max-w-xl"
             >
-              Audax helps organizations transform how they operate through AI leadership, custom software, and long-term technology partnership.
+              We define your AI strategy, identify the workflows worth automating, build the agents that run them, measure the results, and keep optimizing — all under one roof.
             </motion.p>
 
             <motion.div

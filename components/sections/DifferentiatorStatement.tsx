@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Check, X } from "lucide-react";
+import { comparisonRows } from "@/lib/comparison-data";
 
 export default function DifferentiatorStatement() {
   return (
@@ -48,6 +50,35 @@ export default function DifferentiatorStatement() {
             Audax does both, then stays with you to ensure it delivers real business results.
           </span>
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-14 bg-white/5 rounded-2xl border border-white/10 overflow-hidden text-left max-w-2xl mx-auto"
+        >
+          <div className="grid grid-cols-2 border-b border-white/10">
+            <div className="px-4 py-3 text-center text-xs font-bold uppercase tracking-wide text-white/40">
+              Traditional Consultants
+            </div>
+            <div className="px-4 py-3 text-center text-xs font-bold uppercase tracking-wide text-white bg-gradient-to-r from-[#2563EB]/25 to-[#7C3AED]/25">
+              Audax Ventures
+            </div>
+          </div>
+          {comparisonRows.map((row, i) => (
+            <div key={row.theirs} className={`grid grid-cols-2 ${i % 2 === 0 ? "bg-white/[0.02]" : ""}`}>
+              <div className="flex items-center gap-2 px-4 py-3.5 border-r border-white/5">
+                <X size={13} className="text-red-400/70 flex-shrink-0" />
+                <span className="text-white/50 text-xs leading-snug">{row.theirs}</span>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-3.5 bg-gradient-to-r from-[#2563EB]/10 to-[#7C3AED]/10">
+                <Check size={13} className="text-[#60A5FA] flex-shrink-0" />
+                <span className="text-white text-xs leading-snug font-medium">{row.ours}</span>
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

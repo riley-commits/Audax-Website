@@ -16,6 +16,13 @@ const phaseAccent: Record<ServicePageData["phase"], string> = {
   Scale: "#10B981",
 };
 
+// Approach step counts vary by page (AI Leadership's process has 5 steps,
+// the other two have 4) — pick the grid column count that matches.
+const stepGridCols: Record<number, string> = {
+  4: "lg:grid-cols-4",
+  5: "lg:grid-cols-5",
+};
+
 function SectionEyebrow({ icon: Icon, label, accent }: { icon: React.ElementType; label: string; accent: string }) {
   return (
     <div className="flex items-center gap-2.5 mb-4">
@@ -168,7 +175,7 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
 
           <div className="relative">
             <div className="hidden lg:block absolute top-6 left-0 right-0 h-px bg-gray-200" />
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className={`grid gap-8 sm:grid-cols-2 ${stepGridCols[data.approach.steps.length] ?? "lg:grid-cols-4"}`}>
               {data.approach.steps.map((s, i) => (
                 <motion.div
                   key={s.title}

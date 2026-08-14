@@ -64,10 +64,25 @@ export const servicePageSchema = z.object({
     intro: z.array(z.string().min(1)),
     steps: z.array(serviceApproachStepSchema),
   }),
+  /** Static "What We Deliver" grid. Omit in favor of firstNinetyDays for an interactive alternative. */
   whatWeDeliver: z.object({
     intro: z.string().min(1),
     items: z.array(z.string().min(1)),
-  }),
+  }).optional(),
+  /** Interactive "Your First N Days" stage-selector, shown instead of the static whatWeDeliver grid when present. */
+  firstNinetyDays: z.object({
+    eyebrow: z.string().min(1),
+    heading: z.string().min(1),
+    subhead: z.string().min(1),
+    permanentNote: z.string().min(1),
+    stages: z.array(z.object({
+      range: z.string().min(1),
+      title: z.string().min(1),
+      description: z.string().min(1),
+      bullets: z.array(z.string().min(1)).min(1),
+    })).min(1),
+    footerNote: z.string().min(1),
+  }).optional(),
   whyAudax: z.object({
     headline: z.string().min(1),
     body: z.array(z.string().min(1)),

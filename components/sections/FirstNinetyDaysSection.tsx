@@ -34,13 +34,13 @@ export default function FirstNinetyDaysSection({
   return (
     <section className="py-20 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mb-14">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-4xl mb-14">
           <SectionEyebrow icon={Calendar} label={data.eyebrow} accent={accent} />
-          <p className="text-sm font-semibold mb-4" style={{ color: accent }}>{data.permanentNote}</p>
+          <p className="text-sm font-semibold mb-4 text-pretty" style={{ color: accent }}>{data.permanentNote}</p>
           <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-4 leading-snug">
             {data.heading}
           </h2>
-          <p className="text-[#374151] leading-relaxed">{data.subhead}</p>
+          <p className="text-[#374151] leading-relaxed text-pretty">{data.subhead}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-16 items-start">
@@ -142,7 +142,7 @@ export default function FirstNinetyDaysSection({
           </AnimatePresence>
         </div>
 
-        <p className="text-sm text-[#374151] leading-relaxed mt-8 max-w-2xl">{data.footerNote}</p>
+        <p className="text-sm text-[#374151] leading-relaxed mt-8 max-w-4xl text-pretty">{data.footerNote}</p>
       </div>
     </section>
   );

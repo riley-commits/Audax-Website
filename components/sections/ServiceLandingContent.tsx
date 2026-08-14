@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import type { ServicePageData } from "@/lib/service-pages-data";
 import ServiceJourneyNav from "./ServiceJourneyNav";
+import FirstNinetyDaysSection from "./FirstNinetyDaysSection";
 import CTABanner from "@/components/layout/CTABanner";
 
 const phaseAccent: Record<ServicePageData["phase"], string> = {
@@ -201,35 +202,39 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
       </section>
 
       {/* ── What We Deliver ── */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl overflow-hidden bg-[#0B1220] p-8 sm:p-12"
-          >
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{ background: `radial-gradient(circle at 80% 10%, ${accent}29 0%, transparent 55%)` }}
-            />
-            <div className="relative">
-              <p className="text-xs tracking-widest uppercase font-semibold mb-3" style={{ color: "#60A5FA" }}>What We Deliver</p>
-              <p className="text-white/70 leading-relaxed mb-8 max-w-lg">{data.whatWeDeliver.intro}</p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {data.whatWeDeliver.items.map((item) => (
-                  <div key={item} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-3.5">
-                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
-                      <PackageCheck size={13} className="text-white" />
+      {data.firstNinetyDays ? (
+        <FirstNinetyDaysSection data={data.firstNinetyDays} accent={accent} />
+      ) : data.whatWeDeliver ? (
+        <section className="py-20 bg-[#F8F9FA]">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative rounded-3xl overflow-hidden bg-[#0B1220] p-8 sm:p-12"
+            >
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: `radial-gradient(circle at 80% 10%, ${accent}29 0%, transparent 55%)` }}
+              />
+              <div className="relative">
+                <p className="text-xs tracking-widest uppercase font-semibold mb-3" style={{ color: "#60A5FA" }}>What We Deliver</p>
+                <p className="text-white/70 leading-relaxed mb-8 max-w-lg">{data.whatWeDeliver.intro}</p>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {data.whatWeDeliver.items.map((item) => (
+                    <div key={item} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-3.5">
+                      <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <PackageCheck size={13} className="text-white" />
+                      </div>
+                      <span className="text-sm text-white/80 leading-snug">{item}</span>
                     </div>
-                    <span className="text-sm text-white/80 leading-snug">{item}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            </motion.div>
+          </div>
+        </section>
+      ) : null}
 
       {/* ── Why Audax ── */}
       <section className="py-20 bg-white">

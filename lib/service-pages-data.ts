@@ -8,7 +8,17 @@ export interface ServicePageData {
   challenge: { headline: string; body: string[] };
   howWeHelp: { headline: string; intro: string; listLabel: string; services: string[] };
   approach: { headline: string; intro: string[]; steps: { title: string; description: string }[] };
-  whatWeDeliver: { intro: string; items: string[] };
+  /** Static "What We Deliver" grid. Omit in favor of firstNinetyDays for an interactive alternative. */
+  whatWeDeliver?: { intro: string; items: string[] };
+  /** Interactive "Your First N Days" stage-selector, shown instead of the static whatWeDeliver grid when present. */
+  firstNinetyDays?: {
+    eyebrow: string;
+    heading: string;
+    subhead: string;
+    permanentNote: string;
+    stages: { range: string; title: string; description: string; bullets: string[] }[];
+    footerNote: string;
+  };
   whyAudax: { headline: string; body: string[] };
   whoThisIsFor: { intro: string; items: string[] };
   faq: { q: string; a: string }[];
@@ -69,19 +79,32 @@ export const servicePagesData: ServicePageData[] = [
         { title: "Optimize", description: "Measure performance and continuously improve what's live." },
       ],
     },
-    whatWeDeliver: {
-      intro: "Every engagement is tailored, but typical deliverables include:",
-      items: [
-        "AI Strategy Roadmap",
-        "1–2 Live AI Agents or Automations Deployed Within 60 Days",
-        "Executive AI Recommendations",
-        "Opportunity Prioritization Matrix",
-        "Technology Evaluation",
-        "AI Governance Framework",
-        "Implementation Plan",
-        "Executive Workshops",
-        "Quarterly Strategic Reviews",
+    firstNinetyDays: {
+      eyebrow: "What to Expect",
+      heading: "Your First 90 Days",
+      subhead: "Every engagement is tailored to your business — but here's the pace you can expect.",
+      permanentNote: "Every engagement begins with an AI Strategy Roadmap — after that, what gets built together is shaped entirely around your goals.",
+      stages: [
+        {
+          range: "Days 1–30",
+          title: "Discover & Assess",
+          description: "We start by understanding your business, workflows, and goals. Through stakeholder interviews and opportunity mapping, we identify where AI can create the most measurable value — and leave you with a prioritized AI Strategy Roadmap.",
+          bullets: ["Business & workflow discovery", "Stakeholder interviews", "Opportunity prioritization"],
+        },
+        {
+          range: "Days 31–60",
+          title: "Design & Build",
+          description: "We design the highest-priority opportunity in detail and get to work building it — a real AI agent or automation, not just a plan for one.",
+          bullets: ["Solution design", "Technology evaluation", "Hands-on build of your first agent or automation"],
+        },
+        {
+          range: "Days 61–90",
+          title: "Deploy & Optimize",
+          description: "We deploy what we've built, put it in front of real users, and start measuring what matters — usage, accuracy, time saved. From there, we set the cadence for ongoing optimization.",
+          bullets: ["Deployment", "Performance measurement", "Optimization cadence", "Executive review"],
+        },
       ],
+      footerNote: "What we build in those 90 days depends entirely on your business. This is the pace you can expect — not a fixed package.",
     },
     whyAudax: {
       headline: "Strategy Is Only Valuable If It Leads to Action.",

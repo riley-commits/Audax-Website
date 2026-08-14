@@ -43,6 +43,7 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {servicePagesData.map((s) => {
               const Icon = icons[s.phase];
+              const previewItems = s.whatWeDeliver?.items ?? s.howWeHelp.services;
               return (
                 <Link
                   key={s.slug}
@@ -58,7 +59,7 @@ export default function ServicesPage() {
                   <p className="text-[#374151] text-sm leading-relaxed mb-6">{s.hero.body}</p>
 
                   <div className="space-y-2.5 mb-8 flex-1">
-                    {s.whatWeDeliver.items.slice(0, 4).map((item) => (
+                    {previewItems.slice(0, 4).map((item) => (
                       <div key={item} className="flex items-start gap-2.5">
                         <Check size={14} className="text-[#10B981] mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-[#374151]">{item}</span>

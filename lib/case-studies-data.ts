@@ -270,7 +270,7 @@ export const caseStudiesData: CaseStudy[] = [
     industry: "Professional Services",
     title: "Deploying an AI Client Assistant to Improve Customer Experience and Reduce Administrative Work",
     excerpt:
-      "Repetitive client questions and scheduling requests were creating administrative bottlenecks. Audax designed a custom AI assistant that handles them around the clock.",
+      "Repetitive client questions and scheduling requests were creating administrative bottlenecks. Audax built a custom AI agent that handles them around the clock.",
     services: ["AI Leadership", "Custom Software Development", "Digital Operations"],
     tag: "AI Automation",
     metaTitle: "AI Client Assistant Case Study — Professional Services | Audax Ventures",
@@ -305,7 +305,7 @@ export const caseStudiesData: CaseStudy[] = [
     industry: "Engineering & Consulting",
     title: "Transforming Internal Knowledge Into an AI Assistant for Employees",
     excerpt:
-      "Years of internal documentation left employees searching, asking, and recreating work that already existed. Audax built a secure AI assistant trained on company knowledge.",
+      "Years of internal documentation left employees searching, asking, and recreating work that already existed. Audax built a secure AI agent trained on company knowledge.",
     services: ["AI Leadership", "Custom Software Development", "Digital Operations"],
     tag: "AI Automation",
     metaTitle: "Internal AI Knowledge Assistant Case Study | Audax Ventures",

@@ -46,6 +46,7 @@ export const servicePagesData: ServicePageData[] = [
         "AI Strategy Development",
         "Executive AI Advisory",
         "AI Opportunity Identification",
+        "AI Agents & Workflow Automation",
         "AI Governance & Risk",
         "Technology Roadmaps",
         "AI Vendor Evaluation",
@@ -64,13 +65,15 @@ export const servicePagesData: ServicePageData[] = [
         { title: "Discover", description: "Understand your business, workflows, goals, and challenges." },
         { title: "Assess", description: "Identify where AI can create measurable value." },
         { title: "Design", description: "Develop an AI roadmap prioritized by business impact." },
-        { title: "Guide", description: "Support implementation, adoption, governance, and continuous improvement." },
+        { title: "Build & Deploy", description: "Build the AI agents and automations the roadmap calls for, and put them into production." },
+        { title: "Optimize", description: "Measure performance and continuously improve what's live." },
       ],
     },
     whatWeDeliver: {
       intro: "Every engagement is tailored, but typical deliverables include:",
       items: [
         "AI Strategy Roadmap",
+        "1–2 Live AI Agents or Automations Deployed Within 60 Days",
         "Executive AI Recommendations",
         "Opportunity Prioritization Matrix",
         "Technology Evaluation",
@@ -85,7 +88,7 @@ export const servicePagesData: ServicePageData[] = [
       body: [
         "Many AI consulting firms stop after delivering a strategy document.",
         "Audax goes further.",
-        "Our team not only develops your AI roadmap but can also design, build, implement, and support the technology required to bring that strategy to life.",
+        "Our team designs, builds, implements, and supports the technology required to bring that strategy to life.",
         "That means one partner from strategy through execution.",
       ],
     },
@@ -228,7 +231,7 @@ export const servicePagesData: ServicePageData[] = [
     },
     howWeHelp: {
       headline: "Long-Term Technology Partnership",
-      intro: "Rather than handing over software and walking away, we remain part of your team, providing strategic guidance and ongoing technical support as your business grows.",
+      intro: "Rather than handing over software and walking away, we remain part of your team, providing strategic guidance and ongoing technical support as your business grows. We track outcomes like accuracy, time saved, adoption rate, and cost per resolution, reviewed on a regular cadence, so every optimization is grounded in real data instead of guesswork.",
       listLabel: "Services Include",
       services: [
         "Product Evolution",
@@ -247,8 +250,8 @@ export const servicePagesData: ServicePageData[] = [
       headline: "Continuous Improvement Never Stops",
       intro: [],
       steps: [
-        { title: "Monitor", description: "Measure usage, feedback, and performance." },
-        { title: "Improve", description: "Prioritize enhancements and optimize workflows." },
+        { title: "Monitor", description: "Track usage, accuracy, and performance against clear benchmarks, reviewed monthly." },
+        { title: "Improve", description: "Tune AI agents and automations and re-optimize workflows based on real usage data." },
         { title: "Expand", description: "Introduce new capabilities as your business grows." },
         { title: "Partner", description: "Provide ongoing strategic technology leadership." },
       ],
@@ -271,6 +274,7 @@ export const servicePagesData: ServicePageData[] = [
       body: [
         "Technology should evolve alongside your business.",
         "Audax stays involved after launch to ensure your software continues delivering value through continuous innovation, optimization, and strategic guidance.",
+        "This is where the AI strategy and agents we build together in AI Leadership keep getting sharper — the same relationship, continued, not a separate service.",
       ],
     },
     whoThisIsFor: {

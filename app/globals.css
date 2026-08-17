@@ -60,3 +60,19 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/*
+ * Reduced-motion override for FadeIn (components/ui/FadeIn.tsx).
+ * framer-motion's useReducedMotion() hook doesn't reliably read the media
+ * query on first render in an SSR app (it caches its value once, and the
+ * server-rendered pass has no `window`), so enforcing the final visible
+ * state here in CSS is the reliable fallback — this always wins over the
+ * inline styles framer-motion sets, no JS timing involved.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

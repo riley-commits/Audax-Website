@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Check } from "lucide-react";
 import type { ServicePageData } from "@/lib/service-pages-data";
+import { FadeIn } from "@/components/ui/FadeIn";
+import { SECTION_CREAM_BG, headerAccentClass, SignatureLine } from "./ServicePageVisuals";
 
 function SectionEyebrow({ icon: Icon, label, accent }: { icon: React.ElementType; label: string; accent: string }) {
   return (
@@ -32,27 +34,22 @@ export default function FirstNinetyDaysSection({
   const stageAccent = stageAccents[active] ?? accent;
 
   return (
-    <section className="py-20 bg-[#F8F9FA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-4xl mb-14">
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: SECTION_CREAM_BG }}>
+      <SignatureLine variant={2} color={`${accent}0D`} />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn className="max-w-4xl mb-14">
           <SectionEyebrow icon={Calendar} label={data.eyebrow} accent={accent} />
           <p className="text-sm font-semibold mb-4 text-pretty" style={{ color: accent }}>{data.permanentNote}</p>
-          <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-4 leading-snug">
+          <h2 className={`font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-4 leading-snug ${headerAccentClass}`} style={{ borderColor: accent }}>
             {data.heading}
           </h2>
           <p className="text-[#374151] leading-relaxed text-pretty">{data.subhead}</p>
-        </motion.div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-16 items-start">
 
           {/* ── Vertical stage stepper ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.08 }}
-            className="relative"
-          >
+          <FadeIn delay={0.08} className="relative">
             <div
               className="absolute left-[21px] top-3 bottom-3 w-px"
               style={{ background: "linear-gradient(180deg, #2563EB4D 0%, #7C3AED4D 50%, #10B9814D 100%)" }}
@@ -65,8 +62,8 @@ export default function FirstNinetyDaysSection({
                   <button
                     key={s.title}
                     onClick={() => setActive(i)}
-                    className="group relative flex items-center gap-4 py-3 px-3 -mx-3 text-left rounded-2xl transition-colors duration-300"
-                    style={{ backgroundColor: isActive ? `${sAccent}0D` : "transparent" }}
+                    className={`group relative flex items-center gap-4 py-3 px-3 -mx-3 text-left rounded-2xl transition-colors duration-300 ${!isActive ? "hover:bg-black/[0.02]" : ""}`}
+                    style={{ backgroundColor: isActive ? `${sAccent}0D` : undefined }}
                   >
                     <div
                       className="relative z-10 w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 border-2 font-[var(--font-outfit)] font-extrabold text-sm transition-all duration-300"
@@ -93,7 +90,7 @@ export default function FirstNinetyDaysSection({
                 );
               })}
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* ── Detail panel ── */}
           <AnimatePresence mode="wait">

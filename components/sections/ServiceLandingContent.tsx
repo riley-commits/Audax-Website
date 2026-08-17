@@ -10,12 +10,8 @@ import type { ServicePageData } from "@/lib/service-pages-data";
 import ServiceJourneyNav from "./ServiceJourneyNav";
 import FirstNinetyDaysSection from "./FirstNinetyDaysSection";
 import CTABanner from "@/components/layout/CTABanner";
-
-const phaseAccent: Record<ServicePageData["phase"], string> = {
-  Think: "#2563EB",
-  Build: "#7C3AED",
-  Scale: "#10B981",
-};
+import { FadeIn } from "@/components/ui/FadeIn";
+import { pageAccent, SECTION_TINT_BG, SECTION_CREAM_BG, headerAccentClass, HeaderAccentUnderline, SignatureLine } from "./ServicePageVisuals";
 
 // Approach step counts vary by page (AI Leadership's process has 5 steps,
 // the other two have 4) — pick the grid column count that matches.
@@ -36,7 +32,7 @@ function SectionEyebrow({ icon: Icon, label, accent }: { icon: React.ElementType
 }
 
 export default function ServiceLandingContent({ data }: { data: ServicePageData }) {
-  const accent = phaseAccent[data.phase];
+  const accent = pageAccent[data.phase];
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
@@ -44,6 +40,7 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
 
       {/* ── Hero ── */}
       <section className="pt-32 pb-16 relative overflow-hidden">
+        <SignatureLine variant={1} color={`${accent}0D`} />
         <div className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: `radial-gradient(circle, ${accent}14 0%, transparent 68%)` }} />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -120,11 +117,11 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
       </section>
 
       {/* ── The Challenge ── */}
-      <section className="py-20 bg-[#F8F9FA]">
+      <section className="py-20" style={{ backgroundColor: SECTION_TINT_BG }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <FadeIn>
             <SectionEyebrow icon={AlertTriangle} label="The Challenge" accent={accent} />
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-6 leading-snug">
+            <h2 className={`font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-6 leading-snug ${headerAccentClass}`} style={{ borderColor: accent }}>
               {data.challenge.headline}
             </h2>
             <div className="space-y-4">
@@ -132,22 +129,22 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
                 <p key={i} className="text-[#374151] leading-relaxed">{p}</p>
               ))}
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── How We Help ── */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mb-12">
+          <FadeIn className="max-w-2xl mb-12">
             <SectionEyebrow icon={Layers} label="How We Help" accent={accent} />
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-5 leading-snug">
+            <h2 className={`font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-5 leading-snug ${headerAccentClass}`} style={{ borderColor: accent }}>
               {data.howWeHelp.headline}
             </h2>
             <p className="text-[#374151] leading-relaxed">{data.howWeHelp.intro}</p>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.08 }}>
+          <FadeIn delay={0.1}>
             <p className="text-xs font-bold uppercase tracking-widest text-[#9CA3AF] mb-4">{data.howWeHelp.listLabel}</p>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
               {data.howWeHelp.services.map((s) => (
@@ -157,35 +154,28 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
                 </div>
               ))}
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── Our Approach ── */}
-      <section id="approach" className="py-20 bg-white scroll-mt-20">
+      <section id="approach" className="py-20 scroll-mt-20" style={{ backgroundColor: SECTION_TINT_BG }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mb-14">
+          <FadeIn className="max-w-2xl mb-14">
             <SectionEyebrow icon={Compass} label="Our Approach" accent={accent} />
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-5 leading-snug">
+            <h2 className={`font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-5 leading-snug ${headerAccentClass}`} style={{ borderColor: accent }}>
               {data.approach.headline}
             </h2>
             {data.approach.intro.map((p, i) => (
               <p key={i} className="text-[#374151] leading-relaxed mb-2">{p}</p>
             ))}
-          </motion.div>
+          </FadeIn>
 
           <div className="relative">
             <div className="hidden lg:block absolute top-6 left-0 right-0 h-px bg-gray-200" />
             <div className={`grid gap-8 sm:grid-cols-2 ${stepGridCols[data.approach.steps.length] ?? "lg:grid-cols-4"}`}>
               {data.approach.steps.map((s, i) => (
-                <motion.div
-                  key={s.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="relative"
-                >
+                <FadeIn key={s.title} delay={i * 0.08}>
                   <div
                     className="relative z-10 w-12 h-12 rounded-full bg-white border-2 flex items-center justify-center mb-4 font-[var(--font-outfit)] font-extrabold text-sm"
                     style={{ borderColor: `${accent}4D`, color: accent }}
@@ -194,7 +184,7 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
                   </div>
                   <h3 className="font-[var(--font-outfit)] font-bold text-[#0F172A] text-base mb-2">{s.title}</h3>
                   <p className="text-[#374151] text-sm leading-relaxed">{s.description}</p>
-                </motion.div>
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -205,14 +195,10 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
       {data.firstNinetyDays ? (
         <FirstNinetyDaysSection data={data.firstNinetyDays} accent={accent} />
       ) : data.whatWeDeliver ? (
-        <section className="py-20 bg-[#F8F9FA]">
+        <section className="py-20" style={{ backgroundColor: SECTION_CREAM_BG }}>
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative rounded-3xl overflow-hidden bg-[#0B1220] p-8 sm:p-12"
-            >
+            <FadeIn className="relative rounded-3xl overflow-hidden bg-[#0B1220] p-8 sm:p-12">
+              <SignatureLine variant={3} color="#FFFFFF0D" />
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{ background: `radial-gradient(circle at 80% 10%, ${accent}29 0%, transparent 55%)` }}
@@ -222,7 +208,7 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
                 <p className="text-white/70 leading-relaxed mb-8 max-w-lg">{data.whatWeDeliver.intro}</p>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {data.whatWeDeliver.items.map((item) => (
-                    <div key={item} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-3.5">
+                    <div key={item} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-4 py-3.5 transition-colors hover:bg-white/[0.08]">
                       <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                         <PackageCheck size={13} className="text-white" />
                       </div>
@@ -231,7 +217,7 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
       ) : null}
@@ -239,58 +225,59 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
       {/* ── Why Audax ── */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <FadeIn>
             <div className="flex justify-center mb-4">
               <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${accent}14` }}>
                 <Sparkles size={16} style={{ color: accent }} />
               </div>
             </div>
             <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: accent }}>Why Audax</p>
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-8 leading-snug">
+            <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] mb-2 leading-snug">
               {data.whyAudax.headline}
             </h2>
+            <HeaderAccentUnderline color={accent} className="mb-6" />
             <div className="space-y-2">
               {data.whyAudax.body.map((p, i) => (
                 <p key={i} className="text-[#374151] text-lg leading-relaxed">{p}</p>
               ))}
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── Who This Is For ── */}
-      <section className="py-20 bg-[#F8F9FA]">
+      <section className="py-20" style={{ backgroundColor: SECTION_TINT_BG }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <FadeIn>
             <SectionEyebrow icon={Users} label="Who This Is For" accent={accent} />
             <p className="text-[#374151] leading-relaxed mb-6">{data.whoThisIsFor.intro}</p>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
               {data.whoThisIsFor.items.map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
-                  <Check size={15} className="text-[#10B981] mt-0.5 flex-shrink-0" />
+                  <Check size={15} className="mt-0.5 flex-shrink-0" style={{ color: accent }} />
                   <span className="text-sm text-[#374151] leading-snug">{item}</span>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── FAQ ── */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-10">
+          <FadeIn className="mb-10">
             <SectionEyebrow icon={HelpCircle} label="FAQ" accent={accent} />
-            <h2 className="font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A]">
+            <h2 className={`font-[var(--font-outfit)] font-extrabold text-2xl sm:text-3xl text-[#0F172A] ${headerAccentClass}`} style={{ borderColor: accent }}>
               Frequently Asked Questions
             </h2>
-          </motion.div>
+          </FadeIn>
 
           <div className="space-y-3">
             {data.faq.map((f, i) => {
               const isOpen = openFaq === i;
               return (
-                <div key={f.q} className="rounded-2xl border border-gray-100 bg-[#F8F9FA] overflow-hidden">
+                <div key={f.q} className="rounded-2xl border border-gray-100 bg-[#F8F9FA] overflow-hidden transition-colors hover:bg-[#F1F2F5]">
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : i)}
                     className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"

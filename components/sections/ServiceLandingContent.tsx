@@ -9,6 +9,7 @@ import {
 import type { ServicePageData } from "@/lib/service-pages-data";
 import ServiceJourneyNav from "./ServiceJourneyNav";
 import FirstNinetyDaysSection from "./FirstNinetyDaysSection";
+import ServiceResultsSection from "./ServiceResultsSection";
 import CTABanner from "@/components/layout/CTABanner";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { pageAccent, SECTION_TINT_BG, SECTION_CREAM_BG, headerAccentClass, HeaderAccentUnderline, SignatureLine } from "./ServicePageVisuals";
@@ -262,6 +263,9 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
           </FadeIn>
         </div>
       </section>
+
+      {/* ── Real Results ── */}
+      <ServiceResultsSection phase={data.phase} accent={accent} />
 
       {/* ── FAQ ── */}
       <section className="py-20 bg-white">

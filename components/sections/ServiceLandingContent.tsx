@@ -10,6 +10,7 @@ import type { ServicePageData } from "@/lib/service-pages-data";
 import ServiceJourneyNav from "./ServiceJourneyNav";
 import FirstNinetyDaysSection from "./FirstNinetyDaysSection";
 import ServiceResultsSection from "./ServiceResultsSection";
+import ServiceTestimonialsSection from "./ServiceTestimonialsSection";
 import CTABanner from "@/components/layout/CTABanner";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { pageAccent, SECTION_TINT_BG, SECTION_CREAM_BG, headerAccentClass, HeaderAccentUnderline, SignatureLine } from "./ServicePageVisuals";
@@ -305,6 +306,9 @@ export default function ServiceLandingContent({ data }: { data: ServicePageData 
           </div>
         </div>
       </section>
+
+      {/* ── Testimonials ── */}
+      <ServiceTestimonialsSection phase={data.phase} accent={accent} />
 
       {/* ── CTA ── */}
       <CTABanner heading={data.cta.headline} subtext={data.cta.sub} />

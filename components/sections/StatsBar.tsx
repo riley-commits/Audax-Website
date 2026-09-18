@@ -6,6 +6,7 @@ const trustedBy: { name: string; logo: string; logoOnly: boolean }[] = [
   { name: "FundEze",            logo: "/logos/fundeze.png",         logoOnly: true  },
   { name: "MigrateEzy",         logo: "/logos/migrateezy.png",      logoOnly: true  },
   { name: "Verclara",           logo: "/logos/verclara.png",        logoOnly: true  },
+  { name: "Jetz Aviation",      logo: "/logos/jetzaviationlogo.png", logoOnly: true  },
 ];
 
 export default function StatsBar() {
